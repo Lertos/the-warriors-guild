@@ -20,7 +20,8 @@ func load_monsters(region_name):
 	
 	for index in range(0, len(monster_list)):
 		var inst_monster_record = scene_monster_record.instance()
-		inst_monster_record.name = monster_list[index]['id']
+		inst_monster_record.set_meta('region_name', region_name)
+		inst_monster_record.set_meta('index', index)
 
 		monster_list_path.add_child(inst_monster_record)
 		
@@ -36,7 +37,7 @@ func update_monster_record(monster, monster_index):
 	var animated_tex = AnimatedTexture.new()
 	animated_tex.frames = 2
 	animated_tex.fps = 2
-	animated_tex.set_frame_texture(0, load('res://assets/monsters/' + monster['img'] + ' (1).png'))
-	animated_tex.set_frame_texture(1, load('res://assets/monsters/' + monster['img'] + ' (2).png'))
+	animated_tex.set_frame_texture(0, load('res://assets/monsters/' + monster['id'] + ' (1).png'))
+	animated_tex.set_frame_texture(1, load('res://assets/monsters/' + monster['id'] + ' (2).png'))
 	
 	parent_node.get_node('monster').icon = animated_tex
