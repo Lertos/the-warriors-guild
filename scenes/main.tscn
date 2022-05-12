@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://assets/regions/verdant_valley.png" type="Texture" id=1]
 [ext_resource path="res://assets/icons/icon2.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://ui/separator.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/icons/icon5.png" type="Texture" id=7]
 [ext_resource path="res://assets/icons/icon3.png" type="Texture" id=8]
+[ext_resource path="res://scripts/main.gd" type="Script" id=9]
 [ext_resource path="res://themes/colors/dark_brown.tres" type="StyleBox" id=10]
 [ext_resource path="res://themes/popup.tres" type="StyleBox" id=11]
 [ext_resource path="res://themes/button_region.tres" type="Theme" id=12]
@@ -37,6 +38,7 @@ bg_color = Color( 0, 0, 0, 0.780392 )
 [node name="root" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 9 )
 
 [node name="parent" type="VBoxContainer" parent="."]
 anchor_right = 1.0
@@ -347,15 +349,17 @@ custom_styles/panel = SubResource( 30 )
 
 [node name="Popup" type="Popup" parent="."]
 visible = true
-margin_bottom = 238.0
+margin_right = 340.0
+margin_bottom = 500.0
 rect_min_size = Vector2( 340, 100 )
-size_flags_vertical = 3
+size_flags_vertical = 4
 popup_exclusive = true
 script = ExtResource( 13 )
 
 [node name="container" type="PanelContainer" parent="Popup"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_bottom = -60.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = ExtResource( 11 )
@@ -364,15 +368,24 @@ custom_styles/panel = ExtResource( 11 )
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 330.0
-margin_bottom = 226.0
+margin_bottom = 428.0
+size_flags_vertical = 3
 alignment = 1
 
-[node name="bottom" type="HBoxContainer" parent="Popup/container/parent_vbox"]
-margin_top = 92.0
+[node name="placeholder" type="Control" parent="Popup/container/parent_vbox"]
 margin_right = 320.0
-margin_bottom = 124.0
-rect_min_size = Vector2( 0, 32 )
+margin_bottom = 382.0
 size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="bottom" type="HBoxContainer" parent="Popup/container/parent_vbox"]
+margin_top = 386.0
+margin_right = 320.0
+margin_bottom = 418.0
+rect_min_size = Vector2( 0, 32 )
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
 alignment = 1
 
 [node name="close" type="Button" parent="Popup/container/parent_vbox/bottom"]

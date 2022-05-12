@@ -17,7 +17,7 @@ script = ExtResource( 1 )
 [node name="vbox" type="VBoxContainer" parent="."]
 margin_left = 12.0
 margin_right = 308.0
-margin_bottom = 180.0
+margin_bottom = 236.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 8
@@ -66,98 +66,99 @@ margin_right = 296.0
 margin_bottom = 51.0
 
 [node name="stats" type="HBoxContainer" parent="vbox"]
-margin_left = 33.0
+margin_left = 32.0
 margin_top = 59.0
 margin_right = 263.0
 margin_bottom = 157.0
 size_flags_horizontal = 4
 custom_constants/separation = 16
+alignment = 1
 
-[node name="left_side" type="HBoxContainer" parent="vbox/stats"]
-margin_right = 107.0
+[node name="left_panel" type="HBoxContainer" parent="vbox/stats"]
+margin_right = 108.0
 margin_bottom = 98.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 8
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="vbox/stats/left_side"]
-margin_right = 75.0
+[node name="labels" type="VBoxContainer" parent="vbox/stats/left_panel"]
+margin_right = 76.0
 margin_bottom = 98.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 0
 
-[node name="Label" type="Label" parent="vbox/stats/left_side/VBoxContainer"]
-margin_right = 75.0
+[node name="atk_stab" type="Label" parent="vbox/stats/left_panel/labels"]
+margin_right = 76.0
 margin_bottom = 14.0
 theme = ExtResource( 2 )
 text = "Stab ATK"
 align = 2
 
-[node name="Label2" type="Label" parent="vbox/stats/left_side/VBoxContainer"]
+[node name="atk_slash" type="Label" parent="vbox/stats/left_panel/labels"]
 margin_top = 14.0
-margin_right = 75.0
+margin_right = 76.0
 margin_bottom = 28.0
 theme = ExtResource( 2 )
 text = "Slash ATK"
 align = 2
 
-[node name="Label3" type="Label" parent="vbox/stats/left_side/VBoxContainer"]
+[node name="atk_crush" type="Label" parent="vbox/stats/left_panel/labels"]
 margin_top = 28.0
-margin_right = 75.0
+margin_right = 76.0
 margin_bottom = 42.0
 theme = ExtResource( 2 )
 text = "Crush ATK"
 align = 2
 
-[node name="Label7" type="Label" parent="vbox/stats/left_side/VBoxContainer"]
+[node name="spacer" type="Label" parent="vbox/stats/left_panel/labels"]
 margin_top = 42.0
-margin_right = 75.0
+margin_right = 76.0
 margin_bottom = 56.0
 theme = ExtResource( 2 )
 align = 2
 
-[node name="Label4" type="Label" parent="vbox/stats/left_side/VBoxContainer"]
+[node name="health" type="Label" parent="vbox/stats/left_panel/labels"]
 margin_top = 56.0
-margin_right = 75.0
+margin_right = 76.0
 margin_bottom = 70.0
 theme = ExtResource( 2 )
-text = "Stab DEF"
+text = "Health"
 align = 2
 
-[node name="Label5" type="Label" parent="vbox/stats/left_side/VBoxContainer"]
+[node name="attack_speed" type="Label" parent="vbox/stats/left_panel/labels"]
 margin_top = 70.0
-margin_right = 75.0
+margin_right = 76.0
 margin_bottom = 84.0
 theme = ExtResource( 2 )
-text = "Slash DEF"
+text = "ATK Speed"
 align = 2
 
-[node name="Label6" type="Label" parent="vbox/stats/left_side/VBoxContainer"]
+[node name="Label6" type="Label" parent="vbox/stats/left_panel/labels"]
 margin_top = 84.0
-margin_right = 75.0
+margin_right = 76.0
 margin_bottom = 98.0
 theme = ExtResource( 2 )
-text = "Crush DEF"
+text = "Damage"
 align = 2
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="vbox/stats/left_side"]
-margin_left = 83.0
-margin_right = 107.0
+[node name="values" type="VBoxContainer" parent="vbox/stats/left_panel"]
+margin_left = 84.0
+margin_right = 108.0
 margin_bottom = 98.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 0
 
-[node name="Label" type="Label" parent="vbox/stats/left_side/VBoxContainer2"]
+[node name="atk_stab" type="Label" parent="vbox/stats/left_panel/values"]
 margin_right = 24.0
 margin_bottom = 14.0
 theme = ExtResource( 2 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "100"
 
-[node name="Label2" type="Label" parent="vbox/stats/left_side/VBoxContainer2"]
+[node name="atk_slash" type="Label" parent="vbox/stats/left_panel/values"]
 margin_top = 14.0
 margin_right = 24.0
 margin_bottom = 28.0
@@ -165,7 +166,7 @@ theme = ExtResource( 2 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "100"
 
-[node name="Label3" type="Label" parent="vbox/stats/left_side/VBoxContainer2"]
+[node name="atk_crush" type="Label" parent="vbox/stats/left_panel/values"]
 margin_top = 28.0
 margin_right = 24.0
 margin_bottom = 42.0
@@ -173,14 +174,14 @@ theme = ExtResource( 2 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "100"
 
-[node name="Label7" type="Label" parent="vbox/stats/left_side/VBoxContainer2"]
+[node name="spacer" type="Label" parent="vbox/stats/left_panel/values"]
 margin_top = 42.0
 margin_right = 24.0
 margin_bottom = 56.0
 theme = ExtResource( 2 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="Label4" type="Label" parent="vbox/stats/left_side/VBoxContainer2"]
+[node name="health" type="Label" parent="vbox/stats/left_panel/values"]
 margin_top = 56.0
 margin_right = 24.0
 margin_bottom = 70.0
@@ -188,7 +189,7 @@ theme = ExtResource( 2 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "100"
 
-[node name="Label5" type="Label" parent="vbox/stats/left_side/VBoxContainer2"]
+[node name="attack_speed" type="Label" parent="vbox/stats/left_panel/values"]
 margin_top = 70.0
 margin_right = 24.0
 margin_bottom = 84.0
@@ -196,7 +197,7 @@ theme = ExtResource( 2 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "100"
 
-[node name="Label6" type="Label" parent="vbox/stats/left_side/VBoxContainer2"]
+[node name="Label6" type="Label" parent="vbox/stats/left_panel/values"]
 margin_top = 84.0
 margin_right = 24.0
 margin_bottom = 98.0
@@ -204,30 +205,30 @@ theme = ExtResource( 2 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "100"
 
-[node name="right_side" type="HBoxContainer" parent="vbox/stats"]
-margin_left = 123.0
-margin_right = 230.0
+[node name="right_panel" type="HBoxContainer" parent="vbox/stats"]
+margin_left = 124.0
+margin_right = 231.0
 margin_bottom = 98.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 8
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="vbox/stats/right_side"]
+[node name="labels" type="VBoxContainer" parent="vbox/stats/right_panel"]
 margin_right = 75.0
 margin_bottom = 98.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 0
 
-[node name="Label8" type="Label" parent="vbox/stats/right_side/VBoxContainer"]
+[node name="def_stab" type="Label" parent="vbox/stats/right_panel/labels"]
 margin_right = 75.0
 margin_bottom = 14.0
 theme = ExtResource( 2 )
 text = "Stab DEF"
 align = 2
 
-[node name="Label9" type="Label" parent="vbox/stats/right_side/VBoxContainer"]
+[node name="def_slash" type="Label" parent="vbox/stats/right_panel/labels"]
 margin_top = 14.0
 margin_right = 75.0
 margin_bottom = 28.0
@@ -235,7 +236,7 @@ theme = ExtResource( 2 )
 text = "Slash DEF"
 align = 2
 
-[node name="Label10" type="Label" parent="vbox/stats/right_side/VBoxContainer"]
+[node name="def_crush" type="Label" parent="vbox/stats/right_panel/labels"]
 margin_top = 28.0
 margin_right = 75.0
 margin_bottom = 42.0
@@ -243,30 +244,30 @@ theme = ExtResource( 2 )
 text = "Crush DEF"
 align = 2
 
-[node name="Label7" type="Label" parent="vbox/stats/right_side/VBoxContainer"]
+[node name="spacer" type="Label" parent="vbox/stats/right_panel/labels"]
 margin_top = 42.0
 margin_right = 75.0
 margin_bottom = 56.0
 theme = ExtResource( 2 )
 align = 2
 
-[node name="Label4" type="Label" parent="vbox/stats/right_side/VBoxContainer"]
+[node name="min_hit" type="Label" parent="vbox/stats/right_panel/labels"]
 margin_top = 56.0
 margin_right = 75.0
 margin_bottom = 70.0
 theme = ExtResource( 2 )
-text = "Stab DEF"
+text = "Min Hit"
 align = 2
 
-[node name="Label5" type="Label" parent="vbox/stats/right_side/VBoxContainer"]
+[node name="max_hit" type="Label" parent="vbox/stats/right_panel/labels"]
 margin_top = 70.0
 margin_right = 75.0
 margin_bottom = 84.0
 theme = ExtResource( 2 )
-text = "Slash DEF"
+text = "Max Hit"
 align = 2
 
-[node name="Label6" type="Label" parent="vbox/stats/right_side/VBoxContainer"]
+[node name="Label6" type="Label" parent="vbox/stats/right_panel/labels"]
 margin_top = 84.0
 margin_right = 75.0
 margin_bottom = 98.0
@@ -274,7 +275,7 @@ theme = ExtResource( 2 )
 text = "Crush DEF"
 align = 2
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="vbox/stats/right_side"]
+[node name="values" type="VBoxContainer" parent="vbox/stats/right_panel"]
 margin_left = 83.0
 margin_right = 107.0
 margin_bottom = 98.0
@@ -282,14 +283,14 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 0
 
-[node name="Label" type="Label" parent="vbox/stats/right_side/VBoxContainer2"]
+[node name="def_stab" type="Label" parent="vbox/stats/right_panel/values"]
 margin_right = 24.0
 margin_bottom = 14.0
 theme = ExtResource( 2 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "100"
 
-[node name="Label2" type="Label" parent="vbox/stats/right_side/VBoxContainer2"]
+[node name="def_slash" type="Label" parent="vbox/stats/right_panel/values"]
 margin_top = 14.0
 margin_right = 24.0
 margin_bottom = 28.0
@@ -297,7 +298,7 @@ theme = ExtResource( 2 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "100"
 
-[node name="Label3" type="Label" parent="vbox/stats/right_side/VBoxContainer2"]
+[node name="def_crush" type="Label" parent="vbox/stats/right_panel/values"]
 margin_top = 28.0
 margin_right = 24.0
 margin_bottom = 42.0
@@ -305,14 +306,14 @@ theme = ExtResource( 2 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "100"
 
-[node name="Label7" type="Label" parent="vbox/stats/right_side/VBoxContainer2"]
+[node name="spacer" type="Label" parent="vbox/stats/right_panel/values"]
 margin_top = 42.0
 margin_right = 24.0
 margin_bottom = 56.0
 theme = ExtResource( 2 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="Label4" type="Label" parent="vbox/stats/right_side/VBoxContainer2"]
+[node name="Label4" type="Label" parent="vbox/stats/right_panel/values"]
 margin_top = 56.0
 margin_right = 24.0
 margin_bottom = 70.0
@@ -320,7 +321,7 @@ theme = ExtResource( 2 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "100"
 
-[node name="Label5" type="Label" parent="vbox/stats/right_side/VBoxContainer2"]
+[node name="Label5" type="Label" parent="vbox/stats/right_panel/values"]
 margin_top = 70.0
 margin_right = 24.0
 margin_bottom = 84.0
@@ -328,10 +329,49 @@ theme = ExtResource( 2 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "100"
 
-[node name="Label6" type="Label" parent="vbox/stats/right_side/VBoxContainer2"]
+[node name="Label6" type="Label" parent="vbox/stats/right_panel/values"]
 margin_top = 84.0
 margin_right = 24.0
 margin_bottom = 98.0
 theme = ExtResource( 2 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "100"
+
+[node name="Label" type="Label" parent="vbox"]
+margin_top = 165.0
+margin_right = 296.0
+margin_bottom = 186.0
+theme = ExtResource( 3 )
+text = "Abilities"
+align = 1
+
+[node name="separator2" parent="vbox" instance=ExtResource( 4 )]
+margin_top = 194.0
+margin_right = 296.0
+margin_bottom = 198.0
+
+[node name="bottom_panel" type="HBoxContainer" parent="vbox"]
+margin_top = 206.0
+margin_right = 296.0
+margin_bottom = 236.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 8
+alignment = 1
+
+[node name="abilities" type="VBoxContainer" parent="vbox/bottom_panel"]
+margin_right = 296.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+alignment = 1
+
+[node name="def_stab" type="RichTextLabel" parent="vbox/bottom_panel/abilities"]
+margin_right = 296.0
+margin_bottom = 30.0
+theme = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "([color=yellow]60% [/color]) [color=red]Fire Breath [/color] Each round take 2% of your maximum HP as damage"
+text = "(60% ) Fire Breath  Each round take 2% of your maximum HP as damage"
+fit_content_height = true

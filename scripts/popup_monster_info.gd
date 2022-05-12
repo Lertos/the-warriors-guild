@@ -3,8 +3,6 @@ extends Node
 
 func _ready():
 	var monster = self.get_meta('monster')
-	print(monster['name'])
-	
 	var parent_node = get_node('vbox/header')
 	
 	parent_node.get_node('vbox/name').text = monster['name']
