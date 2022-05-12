@@ -1,0 +1,188 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://assets/regions/verdant_valley.png" type="Texture" id=1]
+[ext_resource path="res://scripts/scrollbar.gd" type="Script" id=2]
+[ext_resource path="res://assets/regions/vicious_void.png" type="Texture" id=3]
+[ext_resource path="res://assets/regions/fatal_forest.png" type="Texture" id=4]
+[ext_resource path="res://assets/regions/perilous_peaks.png" type="Texture" id=5]
+[ext_resource path="res://assets/regions/gruesome_grove.png" type="Texture" id=6]
+[ext_resource path="res://assets/regions/satanic_swamp.png" type="Texture" id=7]
+[ext_resource path="res://assets/regions/dangerous_depths.png" type="Texture" id=8]
+[ext_resource path="res://assets/regions/menacing_mountain.png" type="Texture" id=9]
+[ext_resource path="res://assets/regions/gory_graveyard.png" type="Texture" id=10]
+[ext_resource path="res://assets/regions/wretched_wasteland.png" type="Texture" id=11]
+[ext_resource path="res://scripts/screen_map.gd" type="Script" id=12]
+[ext_resource path="res://ui/separator.tscn" type="PackedScene" id=13]
+[ext_resource path="res://themes/button_region.tres" type="Theme" id=14]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.717647, 0.686275, 0.588235, 1 )
+
+[node name="screen_map" type="MarginContainer"]
+margin_right = 360.0
+margin_bottom = 512.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_top = 6
+custom_constants/margin_bottom = 6
+script = ExtResource( 12 )
+
+[node name="parent_vbox" type="VBoxContainer" parent="."]
+margin_top = 6.0
+margin_right = 360.0
+margin_bottom = 506.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 6
+
+[node name="region_vbox" type="VBoxContainer" parent="parent_vbox"]
+margin_left = 40.0
+margin_right = 320.0
+margin_bottom = 101.0
+size_flags_horizontal = 4
+custom_constants/separation = 5
+alignment = 1
+
+[node name="region_row1" type="HBoxContainer" parent="parent_vbox/region_vbox"]
+margin_right = 280.0
+margin_bottom = 48.0
+custom_constants/separation = 10
+alignment = 1
+
+[node name="valley" type="Button" parent="parent_vbox/region_vbox/region_row1"]
+margin_right = 48.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource( 14 )
+icon = ExtResource( 1 )
+expand_icon = true
+
+[node name="forest" type="Button" parent="parent_vbox/region_vbox/region_row1"]
+margin_left = 58.0
+margin_right = 106.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource( 14 )
+icon = ExtResource( 4 )
+expand_icon = true
+
+[node name="grove" type="Button" parent="parent_vbox/region_vbox/region_row1"]
+margin_left = 116.0
+margin_right = 164.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource( 14 )
+icon = ExtResource( 6 )
+expand_icon = true
+
+[node name="depths" type="Button" parent="parent_vbox/region_vbox/region_row1"]
+margin_left = 174.0
+margin_right = 222.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource( 14 )
+icon = ExtResource( 8 )
+expand_icon = true
+
+[node name="wasteland" type="Button" parent="parent_vbox/region_vbox/region_row1"]
+margin_left = 232.0
+margin_right = 280.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource( 14 )
+icon = ExtResource( 11 )
+expand_icon = true
+
+[node name="region_row2" type="HBoxContainer" parent="parent_vbox/region_vbox"]
+margin_top = 53.0
+margin_right = 280.0
+margin_bottom = 101.0
+custom_constants/separation = 10
+alignment = 1
+
+[node name="graveyard" type="Button" parent="parent_vbox/region_vbox/region_row2"]
+margin_right = 48.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource( 14 )
+icon = ExtResource( 10 )
+expand_icon = true
+
+[node name="swamp" type="Button" parent="parent_vbox/region_vbox/region_row2"]
+margin_left = 58.0
+margin_right = 106.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource( 14 )
+icon = ExtResource( 7 )
+expand_icon = true
+
+[node name="peaks" type="Button" parent="parent_vbox/region_vbox/region_row2"]
+margin_left = 116.0
+margin_right = 164.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource( 14 )
+icon = ExtResource( 5 )
+expand_icon = true
+
+[node name="mountain" type="Button" parent="parent_vbox/region_vbox/region_row2"]
+margin_left = 174.0
+margin_right = 222.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource( 14 )
+icon = ExtResource( 9 )
+expand_icon = true
+
+[node name="void" type="Button" parent="parent_vbox/region_vbox/region_row2"]
+margin_left = 232.0
+margin_right = 280.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource( 14 )
+icon = ExtResource( 3 )
+expand_icon = true
+
+[node name="sep_bottom" type="Panel" parent="parent_vbox" instance=ExtResource( 13 )]
+margin_top = 107.0
+margin_right = 360.0
+margin_bottom = 111.0
+rect_min_size = Vector2( 0, 4 )
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 1 )
+
+[node name="monsters" type="ScrollContainer" parent="parent_vbox"]
+margin_top = 117.0
+margin_right = 360.0
+margin_bottom = 500.0
+mouse_filter = 1
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+script = ExtResource( 2 )
+
+[node name="vbox" type="VBoxContainer" parent="parent_vbox/monsters"]
+margin_right = 360.0
+margin_bottom = 383.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
