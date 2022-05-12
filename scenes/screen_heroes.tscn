@@ -1,0 +1,176 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://themes/font_normal.tres" type="Theme" id=1]
+[ext_resource path="res://assets/avatars/avatar (1).png" type="Texture" id=3]
+[ext_resource path="res://assets/avatars/avatar (2).png" type="Texture" id=4]
+[ext_resource path="res://assets/avatars/avatar (3).png" type="Texture" id=5]
+[ext_resource path="res://assets/avatars/avatar (5).png" type="Texture" id=6]
+[ext_resource path="res://assets/avatars/avatar (9).png" type="Texture" id=7]
+[ext_resource path="res://ui/separator.tscn" type="PackedScene" id=13]
+[ext_resource path="res://themes/button_region.tres" type="Theme" id=14]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.717647, 0.686275, 0.588235, 1 )
+
+[node name="screen_heroes" type="MarginContainer"]
+margin_right = 360.0
+margin_bottom = 512.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_top = 6
+custom_constants/margin_bottom = 6
+
+[node name="parent_vbox" type="VBoxContainer" parent="."]
+margin_top = 6.0
+margin_right = 360.0
+margin_bottom = 506.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 6
+
+[node name="vbox" type="VBoxContainer" parent="parent_vbox"]
+margin_left = 40.0
+margin_right = 320.0
+margin_bottom = 66.0
+size_flags_horizontal = 4
+custom_constants/separation = 5
+alignment = 1
+
+[node name="heroes" type="HBoxContainer" parent="parent_vbox/vbox"]
+margin_right = 280.0
+margin_bottom = 66.0
+custom_constants/separation = 10
+alignment = 1
+
+[node name="hero1" type="VBoxContainer" parent="parent_vbox/vbox/heroes"]
+margin_right = 48.0
+margin_bottom = 66.0
+
+[node name="img" type="Button" parent="parent_vbox/vbox/heroes/hero1"]
+margin_right = 48.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource( 14 )
+icon = ExtResource( 3 )
+expand_icon = true
+
+[node name="status" type="Label" parent="parent_vbox/vbox/heroes/hero1"]
+margin_top = 52.0
+margin_right = 48.0
+margin_bottom = 66.0
+theme = ExtResource( 1 )
+text = "21:02"
+align = 1
+
+[node name="hero2" type="VBoxContainer" parent="parent_vbox/vbox/heroes"]
+margin_left = 58.0
+margin_right = 106.0
+margin_bottom = 66.0
+
+[node name="img" type="Button" parent="parent_vbox/vbox/heroes/hero2"]
+margin_right = 48.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource( 14 )
+icon = ExtResource( 4 )
+expand_icon = true
+
+[node name="status" type="Label" parent="parent_vbox/vbox/heroes/hero2"]
+margin_top = 52.0
+margin_right = 48.0
+margin_bottom = 66.0
+theme = ExtResource( 1 )
+text = "15:30"
+align = 1
+
+[node name="hero3" type="VBoxContainer" parent="parent_vbox/vbox/heroes"]
+margin_left = 116.0
+margin_right = 164.0
+margin_bottom = 66.0
+
+[node name="img" type="Button" parent="parent_vbox/vbox/heroes/hero3"]
+margin_right = 48.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource( 14 )
+icon = ExtResource( 5 )
+expand_icon = true
+
+[node name="status" type="Label" parent="parent_vbox/vbox/heroes/hero3"]
+margin_top = 52.0
+margin_right = 48.0
+margin_bottom = 66.0
+theme = ExtResource( 1 )
+text = "IDLE"
+align = 1
+
+[node name="hero4" type="VBoxContainer" parent="parent_vbox/vbox/heroes"]
+margin_left = 174.0
+margin_right = 222.0
+margin_bottom = 66.0
+
+[node name="img" type="Button" parent="parent_vbox/vbox/heroes/hero4"]
+margin_right = 48.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource( 14 )
+icon = ExtResource( 6 )
+expand_icon = true
+
+[node name="status" type="Label" parent="parent_vbox/vbox/heroes/hero4"]
+margin_top = 52.0
+margin_right = 48.0
+margin_bottom = 66.0
+theme = ExtResource( 1 )
+text = "IDLE"
+align = 1
+
+[node name="hero5" type="VBoxContainer" parent="parent_vbox/vbox/heroes"]
+margin_left = 232.0
+margin_right = 280.0
+margin_bottom = 66.0
+
+[node name="img" type="Button" parent="parent_vbox/vbox/heroes/hero5"]
+margin_right = 48.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource( 14 )
+icon = ExtResource( 7 )
+expand_icon = true
+
+[node name="status" type="Label" parent="parent_vbox/vbox/heroes/hero5"]
+margin_top = 52.0
+margin_right = 48.0
+margin_bottom = 66.0
+theme = ExtResource( 1 )
+text = "3:56"
+align = 1
+
+[node name="sep_bottom" parent="parent_vbox" instance=ExtResource( 13 )]
+margin_top = 72.0
+margin_bottom = 76.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="heroes" type="ScrollContainer" parent="parent_vbox"]
+margin_top = 82.0
+margin_right = 360.0
+margin_bottom = 500.0
+mouse_filter = 1
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+
+[node name="vbox" type="VBoxContainer" parent="parent_vbox/heroes"]
+margin_right = 360.0
+margin_bottom = 418.0
+size_flags_horizontal = 3
+size_flags_vertical = 3

@@ -1,6 +1,8 @@
 extends Control
 
+var scene_screen_heroes = preload("res://scenes/screen_heroes.tscn")
 var scene_screen_map = preload("res://scenes/screen_map.tscn")
+var scene_screen_vendors = preload("res://scenes/screen_vendors.tscn")
 
 func _ready():
 	var buttons = get_node('/root/root/parent/footer/buttons')
@@ -21,18 +23,21 @@ func switch_screen(button_name):
 	if button_name == 'home':
 		load_screen(scene_screen_map, 'GUILD INFO')
 	elif button_name == 'heroes':
-		load_screen(scene_screen_map, 'HEROES')
+		load_screen(scene_screen_heroes, 'HEROES')
 	elif button_name == 'map':
 		load_screen(scene_screen_map, 'WORLD MAP')
-	elif button_name == 'map':
-		load_screen(scene_screen_map, 'VENDORS')
-	elif button_name == 'map':
+	elif button_name == 'vendors':
+		load_screen(scene_screen_vendors, 'VENDORS')
+	elif button_name == 'storage':
 		load_screen(scene_screen_map, 'STORAGE')
 
 
 func load_screen(scene_to_load, header_title):
 	var inst_scene = scene_to_load.instance()
 	var container = get_node('/root/root/parent/container')
+	var header = get_node('/root/root/parent/header/header')
+	
+	header.text = header_title
 	
 	for child in container.get_children():
 		container.remove_child(child)

@@ -17,6 +17,7 @@ run/main_scene="res://scenes/main.tscn"
 
 Global_Enemies="*res://scripts/global_data/enemies.gd"
 Global_Regions="*res://scripts/global_data/regions.gd"
+Global_Vendors="*res://scripts/global_data/vendors.gd"
 
 [display]
 

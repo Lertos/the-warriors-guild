@@ -10,7 +10,7 @@
 [ext_resource path="res://themes/colors/dark_brown.tres" type="StyleBox" id=10]
 [ext_resource path="res://themes/popup.tres" type="StyleBox" id=11]
 [ext_resource path="res://scripts/popup.gd" type="Script" id=13]
-[ext_resource path="res://scenes/button_manager.gd" type="Script" id=14]
+[ext_resource path="res://scripts/button_manager.gd" type="Script" id=14]
 [ext_resource path="res://themes/font_header.tres" type="Theme" id=15]
 [ext_resource path="res://themes/button.tres" type="Theme" id=26]
 [ext_resource path="res://themes/header.tres" type="StyleBox" id=28]
@@ -40,7 +40,7 @@ rect_min_size = Vector2( 0, 48 )
 size_flags_horizontal = 3
 custom_styles/panel = ExtResource( 28 )
 
-[node name="lbl_header" type="Label" parent="parent/header"]
+[node name="header" type="Label" parent="parent/header"]
 margin_left = 4.0
 margin_top = 4.0
 margin_right = 356.0
