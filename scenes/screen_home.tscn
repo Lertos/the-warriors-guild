@@ -1,0 +1,30 @@
+[gd_scene format=2]
+
+[node name="screen_home" type="MarginContainer"]
+margin_right = 360.0
+margin_bottom = 512.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_top = 6
+custom_constants/margin_bottom = 6
+
+[node name="parent_vbox" type="VBoxContainer" parent="."]
+margin_top = 6.0
+margin_right = 360.0
+margin_bottom = 506.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 6
+
+[node name="vendors" type="ScrollContainer" parent="parent_vbox"]
+margin_right = 360.0
+margin_bottom = 500.0
+mouse_filter = 1
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+
+[node name="vbox" type="VBoxContainer" parent="parent_vbox/vendors"]
+margin_right = 360.0
+margin_bottom = 500.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
