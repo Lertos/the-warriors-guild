@@ -1,5 +1,6 @@
 extends Control
 
+var scene_screen_home = preload("res://scenes/screen_home.tscn")
 var scene_screen_heroes = preload("res://scenes/screen_heroes.tscn")
 var scene_screen_map = preload("res://scenes/screen_map.tscn")
 var scene_screen_vendors = preload("res://scenes/screen_vendors.tscn")
@@ -21,7 +22,7 @@ func show_popup(node):
 
 func switch_screen(button_name):
 	if button_name == 'home':
-		load_screen(scene_screen_map, 'GUILD INFO')
+		load_screen(scene_screen_home, 'GUILD INFO')
 	elif button_name == 'heroes':
 		load_screen(scene_screen_heroes, 'HEROES')
 	elif button_name == 'map':
