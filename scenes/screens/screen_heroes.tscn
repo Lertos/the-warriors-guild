@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://themes/font_normal.tres" type="Theme" id=1]
-[ext_resource path="res://assets/avatars/avatar (1).png" type="Texture" id=3]
-[ext_resource path="res://assets/avatars/avatar (2).png" type="Texture" id=4]
-[ext_resource path="res://assets/avatars/avatar (3).png" type="Texture" id=5]
-[ext_resource path="res://assets/avatars/avatar (5).png" type="Texture" id=6]
-[ext_resource path="res://assets/avatars/avatar (9).png" type="Texture" id=7]
-[ext_resource path="res://ui/separator.tscn" type="PackedScene" id=13]
-[ext_resource path="res://themes/button_region.tres" type="Theme" id=14]
+[ext_resource path="res://assets/avatars/avatar (5).png" type="Texture" id=1]
+[ext_resource path="res://assets/avatars/avatar (9).png" type="Texture" id=2]
+[ext_resource path="res://assets/avatars/avatar (3).png" type="Texture" id=3]
+[ext_resource path="res://assets/avatars/avatar (1).png" type="Texture" id=4]
+[ext_resource path="res://assets/avatars/avatar (2).png" type="Texture" id=5]
+[ext_resource path="res://ui/separator.tscn" type="PackedScene" id=6]
+[ext_resource path="res://themes/font_normal.tres" type="Theme" id=7]
+[ext_resource path="res://themes/button_region.tres" type="Theme" id=8]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.717647, 0.686275, 0.588235, 1 )
@@ -52,15 +52,15 @@ margin_bottom = 48.0
 rect_min_size = Vector2( 48, 48 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = ExtResource( 14 )
-icon = ExtResource( 3 )
+theme = ExtResource( 8 )
+icon = ExtResource( 4 )
 expand_icon = true
 
 [node name="status" type="Label" parent="parent_vbox/vbox/heroes/hero1"]
 margin_top = 52.0
 margin_right = 48.0
 margin_bottom = 66.0
-theme = ExtResource( 1 )
+theme = ExtResource( 7 )
 text = "21:02"
 align = 1
 
@@ -75,15 +75,15 @@ margin_bottom = 48.0
 rect_min_size = Vector2( 48, 48 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = ExtResource( 14 )
-icon = ExtResource( 4 )
+theme = ExtResource( 8 )
+icon = ExtResource( 5 )
 expand_icon = true
 
 [node name="status" type="Label" parent="parent_vbox/vbox/heroes/hero2"]
 margin_top = 52.0
 margin_right = 48.0
 margin_bottom = 66.0
-theme = ExtResource( 1 )
+theme = ExtResource( 7 )
 text = "15:30"
 align = 1
 
@@ -98,15 +98,15 @@ margin_bottom = 48.0
 rect_min_size = Vector2( 48, 48 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = ExtResource( 14 )
-icon = ExtResource( 5 )
+theme = ExtResource( 8 )
+icon = ExtResource( 3 )
 expand_icon = true
 
 [node name="status" type="Label" parent="parent_vbox/vbox/heroes/hero3"]
 margin_top = 52.0
 margin_right = 48.0
 margin_bottom = 66.0
-theme = ExtResource( 1 )
+theme = ExtResource( 7 )
 text = "IDLE"
 align = 1
 
@@ -121,15 +121,15 @@ margin_bottom = 48.0
 rect_min_size = Vector2( 48, 48 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = ExtResource( 14 )
-icon = ExtResource( 6 )
+theme = ExtResource( 8 )
+icon = ExtResource( 1 )
 expand_icon = true
 
 [node name="status" type="Label" parent="parent_vbox/vbox/heroes/hero4"]
 margin_top = 52.0
 margin_right = 48.0
 margin_bottom = 66.0
-theme = ExtResource( 1 )
+theme = ExtResource( 7 )
 text = "IDLE"
 align = 1
 
@@ -144,19 +144,19 @@ margin_bottom = 48.0
 rect_min_size = Vector2( 48, 48 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = ExtResource( 14 )
-icon = ExtResource( 7 )
+theme = ExtResource( 8 )
+icon = ExtResource( 2 )
 expand_icon = true
 
 [node name="status" type="Label" parent="parent_vbox/vbox/heroes/hero5"]
 margin_top = 52.0
 margin_right = 48.0
 margin_bottom = 66.0
-theme = ExtResource( 1 )
+theme = ExtResource( 7 )
 text = "3:56"
 align = 1
 
-[node name="sep_bottom" parent="parent_vbox" instance=ExtResource( 13 )]
+[node name="sep_bottom" parent="parent_vbox" instance=ExtResource( 6 )]
 margin_top = 72.0
 margin_bottom = 76.0
 custom_styles/panel = SubResource( 1 )

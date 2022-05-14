@@ -1,9 +1,10 @@
 extends Control
 
-var scene_screen_home = preload("res://scenes/screen_home.tscn")
-var scene_screen_heroes = preload("res://scenes/screen_heroes.tscn")
-var scene_screen_map = preload("res://scenes/screen_map.tscn")
-var scene_screen_vendors = preload("res://scenes/screen_vendors.tscn")
+var scene_screen_home = preload("res://scenes/screens/screen_home.tscn")
+var scene_screen_heroes = preload("res://scenes/screens/screen_heroes.tscn")
+var scene_screen_map = preload("res://scenes/screens/screen_map.tscn")
+var scene_screen_vendors = preload("res://scenes/screens/screen_vendors.tscn")
+var scene_screen_storage = preload("res://scenes/screens/screen_storage.tscn")
 
 func _ready():
 	var buttons = get_node('/root/root/parent/footer/buttons')
@@ -30,7 +31,7 @@ func switch_screen(button_name):
 	elif button_name == 'vendors':
 		load_screen(scene_screen_vendors, 'VENDORS')
 	elif button_name == 'storage':
-		load_screen(scene_screen_map, 'STORAGE')
+		load_screen(scene_screen_storage, 'STORAGE')
 
 
 func load_screen(scene_to_load, header_title):
@@ -45,3 +46,4 @@ func load_screen(scene_to_load, header_title):
 		child.queue_free()
 		
 	container.add_child(inst_scene)
+	

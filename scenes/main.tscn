@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
-[ext_resource path="res://scenes/screen_home.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/screens/screen_home.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/icons/icon2.png" type="Texture" id=2]
+[ext_resource path="res://scenes/screens/screen_storage.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/icons/icon4.png" type="Texture" id=4]
 [ext_resource path="res://assets/icons/icon1.png" type="Texture" id=5]
 [ext_resource path="res://ui/separator.tscn" type="PackedScene" id=6]
@@ -10,6 +11,7 @@
 [ext_resource path="res://scripts/main.gd" type="Script" id=9]
 [ext_resource path="res://themes/colors/dark_brown.tres" type="StyleBox" id=10]
 [ext_resource path="res://themes/popup.tres" type="StyleBox" id=11]
+[ext_resource path="res://scripts/player_data.gd" type="Script" id=12]
 [ext_resource path="res://scripts/popup.gd" type="Script" id=13]
 [ext_resource path="res://scripts/button_manager.gd" type="Script" id=14]
 [ext_resource path="res://themes/font_header.tres" type="Theme" id=15]
@@ -25,6 +27,9 @@ bg_color = Color( 0, 0, 0, 0.780392 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 9 )
+
+[node name="player_data" type="Node" parent="."]
+script = ExtResource( 12 )
 
 [node name="parent" type="VBoxContainer" parent="."]
 anchor_right = 1.0
@@ -62,6 +67,9 @@ size_flags_vertical = 3
 custom_styles/panel = ExtResource( 10 )
 
 [node name="screen_home" parent="parent/container" instance=ExtResource( 1 )]
+visible = false
+
+[node name="screen_storage" parent="parent/container" instance=ExtResource( 3 )]
 
 [node name="sep_bottom" parent="parent" instance=ExtResource( 6 )]
 margin_top = 560.0
