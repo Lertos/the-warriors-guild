@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/regions/wretched_wasteland.png" type="Texture" id=1]
 [ext_resource path="res://assets/regions/perilous_peaks.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://scripts/screen_map.gd" type="Script" id=12]
 [ext_resource path="res://scripts/scrollbar.gd" type="Script" id=13]
 [ext_resource path="res://themes/button_region.tres" type="Theme" id=14]
+[ext_resource path="res://themes/scrollbar.tres" type="Theme" id=15]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.717647, 0.686275, 0.588235, 1 )
@@ -164,12 +165,9 @@ theme = ExtResource( 14 )
 icon = ExtResource( 6 )
 expand_icon = true
 
-[node name="sep_bottom" type="Panel" parent="parent_vbox" instance=ExtResource( 11 )]
+[node name="sep_bottom" parent="parent_vbox" instance=ExtResource( 11 )]
 margin_top = 107.0
-margin_right = 360.0
 margin_bottom = 111.0
-rect_min_size = Vector2( 0, 4 )
-size_flags_horizontal = 3
 custom_styles/panel = SubResource( 1 )
 
 [node name="monsters" type="ScrollContainer" parent="parent_vbox"]
@@ -178,6 +176,7 @@ margin_right = 360.0
 margin_bottom = 500.0
 mouse_filter = 1
 size_flags_vertical = 3
+theme = ExtResource( 15 )
 scroll_horizontal_enabled = false
 script = ExtResource( 13 )
 
