@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://themes/font_normal_outline.tres" type="Theme" id=3]
+
+[node name="item_id" type="Control"]
+margin_left = 32.0
+margin_right = 96.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+
+[node name="rarity" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 4.0
+margin_bottom = 4.0
+flat = true
+
+[node name="item" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+expand = true
+
+[node name="amount" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme = ExtResource( 3 )
+align = 2
+valign = 2

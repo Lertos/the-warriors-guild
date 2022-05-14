@@ -27,6 +27,12 @@ var player = {
 				{
 					'item_id': 'potato',
 					'amount': 1,
+					'rarity': 'common',
+				},
+				{
+					'item_id': 'potato',
+					'amount': 1,
+					'rarity': 'common',
 				}
 			],
 			'unlocks': {
