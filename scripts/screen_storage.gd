@@ -2,8 +2,6 @@ extends MarginContainer
 
 var scene_item_record = preload("res://scenes/item_record.tscn")
 var locked_texture = load('res://assets/icons/icon12.png')
-var frame_common_texture = load('res://assets/frames/frame_normal.png')
-var frame_locked_texture = load('res://assets/frames/frame_locked.png')
 
 var items_per_row = 4
 
@@ -52,13 +50,10 @@ func load_items(storage_type):
 
 				update_item_record(inst_item_record, item)
 			else:
-				#Empty slot
-				if (index) < unlocked_slots:
-					inst_item_record.get_node('rarity').icon = frame_common_texture
-				#Locked
-				elif (index) < max_slots:
-					inst_item_record.get_node('rarity').icon = frame_locked_texture
-					inst_item_record.get_node('item').texture = locked_texture
+				#Locked slots
+				if (index) >= unlocked_slots:
+					change_background_color(inst_item_record.get_node('rarity'), 'locked')
+					inst_item_record.get_node('rarity/item').texture = locked_texture
 
 
 func create_hbox():
@@ -71,14 +66,45 @@ func create_hbox():
 
 
 func update_item_record(item_record, item):
-	print(item['item_id'])
-	item_record.get_node('rarity').icon = load('res://assets/frames/frame_' + item['rarity'] + '.png')
-	item_record.get_node('amount').text = str(item['amount'])
-	
 	var item_data = Global_Items.items[item['item_id']]
 	
-	item_record.get_node('item').texture = load('res://assets/' + item_data['img'] + '.png')
+	change_border_color(item_record.get_node('rarity'), item['rarity'])
+
+	item_record.get_node('rarity/amount').text = str(item['amount'])
+	item_record.get_node('rarity/item').texture = load('res://assets/' + item_data['img'] + '.png')
+
+
+func change_border_color(node, rarity):
+	var temp_stylebox_normal = node.get_theme().get_stylebox('normal', 'Button').duplicate()
+	var temp_stylebox_hover = node.get_theme().get_stylebox('hover', 'Button').duplicate()
+	var temp_stylebox_pressed = node.get_theme().get_stylebox('pressed', 'Button').duplicate()
 	
+	var color = Global_Colors.colors[rarity]
+
+	temp_stylebox_normal.border_color = color
+	temp_stylebox_hover.border_color = color
+	temp_stylebox_pressed.border_color = color
+	
+	node.add_stylebox_override('normal',temp_stylebox_normal)
+	node.add_stylebox_override('hover',temp_stylebox_hover)
+	node.add_stylebox_override('pressed',temp_stylebox_pressed)
+
+
+func change_background_color(node, color_key):
+	var temp_stylebox_normal = node.get_theme().get_stylebox('normal', 'Button').duplicate()
+	var temp_stylebox_hover = node.get_theme().get_stylebox('hover', 'Button').duplicate()
+	var temp_stylebox_pressed = node.get_theme().get_stylebox('pressed', 'Button').duplicate()
+	
+	var color = Global_Colors.colors[color_key]
+
+	temp_stylebox_normal.bg_color = color
+	temp_stylebox_hover.bg_color = color
+	temp_stylebox_pressed.bg_color = color
+	
+	node.add_stylebox_override('normal',temp_stylebox_normal)
+	node.add_stylebox_override('hover',temp_stylebox_hover)
+	node.add_stylebox_override('pressed',temp_stylebox_pressed)
+
 	
 func switch_sub_type(type_name):
 	load_items(type_name)

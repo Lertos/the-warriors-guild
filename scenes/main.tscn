@@ -2,6 +2,7 @@
 
 [ext_resource path="res://scenes/screens/screen_home.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/icons/icon2.png" type="Texture" id=2]
+[ext_resource path="res://themes/item_base.tres" type="Theme" id=3]
 [ext_resource path="res://assets/icons/icon4.png" type="Texture" id=4]
 [ext_resource path="res://assets/icons/icon1.png" type="Texture" id=5]
 [ext_resource path="res://ui/separator.tscn" type="PackedScene" id=6]
@@ -13,8 +14,7 @@
 [ext_resource path="res://scripts/player_data.gd" type="Script" id=12]
 [ext_resource path="res://scripts/popup.gd" type="Script" id=13]
 [ext_resource path="res://scripts/button_manager.gd" type="Script" id=14]
-[ext_resource path="res://themes/font_header.tres" type="Theme" id=15]
-[ext_resource path="res://themes/button.tres" type="Theme" id=26]
+[ext_resource path="res://themes/fonts/font_header.tres" type="Theme" id=15]
 [ext_resource path="res://themes/header.tres" type="StyleBox" id=28]
 
 [sub_resource type="Theme" id=17]
@@ -46,14 +46,12 @@ size_flags_horizontal = 3
 custom_styles/panel = ExtResource( 28 )
 
 [node name="header" type="Label" parent="parent/header"]
-margin_left = 4.0
-margin_top = 4.0
-margin_right = 356.0
+margin_right = 360.0
 margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 15 )
-text = "WORLD MAP"
+text = "GUILD INFO"
 align = 1
 valign = 1
 
@@ -96,7 +94,7 @@ margin_bottom = 70.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = ExtResource( 26 )
+theme = ExtResource( 3 )
 icon = ExtResource( 5 )
 expand_icon = true
 
@@ -108,7 +106,7 @@ margin_bottom = 70.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = ExtResource( 26 )
+theme = ExtResource( 3 )
 icon = ExtResource( 2 )
 expand_icon = true
 
@@ -120,7 +118,7 @@ margin_bottom = 70.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = ExtResource( 26 )
+theme = ExtResource( 3 )
 icon = ExtResource( 8 )
 expand_icon = true
 
@@ -132,7 +130,7 @@ margin_bottom = 70.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = ExtResource( 26 )
+theme = ExtResource( 3 )
 icon = ExtResource( 4 )
 expand_icon = true
 
@@ -144,7 +142,7 @@ margin_bottom = 70.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = ExtResource( 26 )
+theme = ExtResource( 3 )
 icon = ExtResource( 7 )
 expand_icon = true
 
@@ -199,7 +197,7 @@ alignment = 1
 margin_left = 128.0
 margin_right = 192.0
 margin_bottom = 32.0
-theme = ExtResource( 26 )
+theme = ExtResource( 3 )
 text = "CLOSE"
 
 [connection signal="pressed" from="parent/footer/buttons/home" to="parent/footer/buttons" method="home_pressed"]

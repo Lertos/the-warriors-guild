@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://themes/button.tres" type="Theme" id=1]
+[ext_resource path="res://themes/buttons/button.tres" type="Theme" id=1]
 [ext_resource path="res://assets/materials/material31.png" type="Texture" id=2]
-[ext_resource path="res://themes/font_title.tres" type="Theme" id=3]
-[ext_resource path="res://themes/font_header.tres" type="Theme" id=4]
+[ext_resource path="res://themes/fonts/font_title.tres" type="Theme" id=3]
 [ext_resource path="res://ui/separator.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/materials/material32.png" type="Texture" id=6]
+[ext_resource path="res://themes/fonts/font_header_smaller.tres" type="Theme" id=7]
 
 [node name="screen_home" type="MarginContainer"]
 margin_right = 360.0
@@ -38,84 +38,108 @@ size_flags_vertical = 3
 
 [node name="list" type="VBoxContainer" parent="parent_vbox/vendors/vbox"]
 margin_right = 360.0
-margin_bottom = 469.0
+margin_bottom = 471.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="header" type="Label" parent="parent_vbox/vendors/vbox/list"]
+[node name="guild_renown" type="MarginContainer" parent="parent_vbox/vendors/vbox/list"]
 margin_right = 360.0
-margin_bottom = 36.0
-theme = ExtResource( 4 )
-text = "Guild Renown"
-align = 1
+margin_bottom = 32.0
+custom_constants/margin_right = 12
+custom_constants/margin_left = 12
 
-[node name="guild_renown" type="HBoxContainer" parent="parent_vbox/vendors/vbox/list"]
-margin_top = 40.0
-margin_right = 360.0
-margin_bottom = 76.0
+[node name="header" type="Label" parent="parent_vbox/vendors/vbox/list/guild_renown"]
+margin_left = 12.0
+margin_top = 2.0
+margin_right = 348.0
+margin_bottom = 30.0
+theme = ExtResource( 7 )
+text = "Guild Renown"
+
+[node name="hbox" type="HBoxContainer" parent="parent_vbox/vendors/vbox/list/guild_renown"]
+margin_left = 12.0
+margin_right = 348.0
+margin_bottom = 32.0
 size_flags_horizontal = 3
 size_flags_vertical = 5
-alignment = 1
+alignment = 2
 
-[node name="img" type="TextureRect" parent="parent_vbox/vendors/vbox/list/guild_renown"]
-margin_left = 133.0
-margin_right = 165.0
-margin_bottom = 36.0
+[node name="img" type="TextureRect" parent="parent_vbox/vendors/vbox/list/guild_renown/hbox"]
+margin_left = 255.0
+margin_right = 287.0
+margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
 texture = ExtResource( 6 )
 stretch_mode = 5
 
-[node name="lbl" type="Label" parent="parent_vbox/vendors/vbox/list/guild_renown"]
-margin_left = 169.0
-margin_right = 227.0
-margin_bottom = 36.0
-theme = ExtResource( 4 )
+[node name="lbl" type="Label" parent="parent_vbox/vendors/vbox/list/guild_renown/hbox"]
+margin_left = 291.0
+margin_top = 2.0
+margin_right = 336.0
+margin_bottom = 30.0
+theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "100"
 align = 1
 
-[node name="separator" parent="parent_vbox/vendors/vbox/list" instance=ExtResource( 5 )]
-margin_top = 80.0
-margin_bottom = 84.0
-
-[node name="gold" type="HBoxContainer" parent="parent_vbox/vendors/vbox/list"]
-margin_top = 88.0
+[node name="gold" type="MarginContainer" parent="parent_vbox/vendors/vbox/list"]
+margin_top = 36.0
 margin_right = 360.0
-margin_bottom = 120.0
+margin_bottom = 68.0
+custom_constants/margin_right = 12
+custom_constants/margin_left = 12
+
+[node name="header" type="Label" parent="parent_vbox/vendors/vbox/list/gold"]
+margin_left = 12.0
+margin_top = 2.0
+margin_right = 348.0
+margin_bottom = 30.0
+theme = ExtResource( 7 )
+text = "Gold"
+
+[node name="hbox" type="HBoxContainer" parent="parent_vbox/vendors/vbox/list/gold"]
+margin_left = 12.0
+margin_right = 348.0
+margin_bottom = 32.0
 size_flags_horizontal = 3
 size_flags_vertical = 5
-alignment = 1
+alignment = 2
 
-[node name="img" type="TextureRect" parent="parent_vbox/vendors/vbox/list/gold"]
-margin_left = 146.0
-margin_right = 178.0
+[node name="img" type="TextureRect" parent="parent_vbox/vendors/vbox/list/gold/hbox"]
+margin_left = 255.0
+margin_right = 287.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
 texture = ExtResource( 2 )
 stretch_mode = 5
 
-[node name="lbl" type="Label" parent="parent_vbox/vendors/vbox/list/gold"]
-margin_left = 182.0
-margin_top = 5.0
-margin_right = 214.0
-margin_bottom = 26.0
-theme = ExtResource( 3 )
+[node name="lbl" type="Label" parent="parent_vbox/vendors/vbox/list/gold/hbox"]
+margin_left = 291.0
+margin_top = 2.0
+margin_right = 336.0
+margin_bottom = 30.0
+theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "100"
+align = 1
+
+[node name="separator" parent="parent_vbox/vendors/vbox/list" instance=ExtResource( 5 )]
+margin_top = 72.0
+margin_bottom = 76.0
 
 [node name="spacer" type="HBoxContainer" parent="parent_vbox/vendors/vbox/list"]
-margin_top = 124.0
+margin_top = 80.0
 margin_right = 360.0
-margin_bottom = 134.0
+margin_bottom = 90.0
 rect_min_size = Vector2( 0, 10 )
 size_flags_horizontal = 5
 size_flags_vertical = 5
 alignment = 1
 
 [node name="farm_plots_idle" type="HBoxContainer" parent="parent_vbox/vendors/vbox/list"]
-margin_top = 138.0
+margin_top = 94.0
 margin_right = 360.0
-margin_bottom = 159.0
+margin_bottom = 115.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 alignment = 1
@@ -137,9 +161,9 @@ custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "0"
 
 [node name="heroes_idle" type="HBoxContainer" parent="parent_vbox/vendors/vbox/list"]
-margin_top = 163.0
+margin_top = 119.0
 margin_right = 360.0
-margin_bottom = 184.0
+margin_bottom = 140.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 alignment = 1
@@ -161,9 +185,9 @@ custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "0"
 
 [node name="research_idle" type="HBoxContainer" parent="parent_vbox/vendors/vbox/list"]
-margin_top = 188.0
+margin_top = 144.0
 margin_right = 360.0
-margin_bottom = 209.0
+margin_bottom = 165.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 alignment = 1
@@ -185,18 +209,18 @@ custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "IDLE"
 
 [node name="spacer2" type="HBoxContainer" parent="parent_vbox/vendors/vbox/list"]
-margin_top = 213.0
+margin_top = 169.0
 margin_right = 360.0
-margin_bottom = 223.0
-rect_min_size = Vector2( 0, 10 )
+margin_bottom = 185.0
+rect_min_size = Vector2( 0, 16 )
 size_flags_horizontal = 5
 size_flags_vertical = 5
 alignment = 1
 
 [node name="material_storage" type="HBoxContainer" parent="parent_vbox/vendors/vbox/list"]
-margin_top = 227.0
+margin_top = 189.0
 margin_right = 360.0
-margin_bottom = 248.0
+margin_bottom = 210.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 alignment = 1
@@ -234,9 +258,9 @@ custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "50"
 
 [node name="loot_storage" type="HBoxContainer" parent="parent_vbox/vendors/vbox/list"]
-margin_top = 252.0
+margin_top = 214.0
 margin_right = 360.0
-margin_bottom = 273.0
+margin_bottom = 235.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 alignment = 1
@@ -274,9 +298,9 @@ custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "40"
 
 [node name="consumable_storage" type="HBoxContainer" parent="parent_vbox/vendors/vbox/list"]
-margin_top = 277.0
+margin_top = 239.0
 margin_right = 360.0
-margin_bottom = 298.0
+margin_bottom = 260.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 alignment = 1
@@ -314,9 +338,9 @@ custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "30"
 
 [node name="gear_storage" type="HBoxContainer" parent="parent_vbox/vendors/vbox/list"]
-margin_top = 302.0
+margin_top = 264.0
 margin_right = 360.0
-margin_bottom = 323.0
+margin_bottom = 285.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 alignment = 1
@@ -354,9 +378,9 @@ custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "20"
 
 [node name="food_storage" type="HBoxContainer" parent="parent_vbox/vendors/vbox/list"]
-margin_top = 327.0
+margin_top = 289.0
 margin_right = 360.0
-margin_bottom = 348.0
+margin_bottom = 310.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 alignment = 1
@@ -394,18 +418,18 @@ custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "25"
 
 [node name="spacer3" type="HBoxContainer" parent="parent_vbox/vendors/vbox/list"]
-margin_top = 352.0
+margin_top = 314.0
 margin_right = 360.0
-margin_bottom = 362.0
-rect_min_size = Vector2( 0, 10 )
+margin_bottom = 330.0
+rect_min_size = Vector2( 0, 16 )
 size_flags_horizontal = 5
 size_flags_vertical = 5
 alignment = 1
 
 [node name="active_requests" type="HBoxContainer" parent="parent_vbox/vendors/vbox/list"]
-margin_top = 366.0
+margin_top = 334.0
 margin_right = 360.0
-margin_bottom = 387.0
+margin_bottom = 355.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 alignment = 1
@@ -427,9 +451,9 @@ custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "1"
 
 [node name="active_bounties" type="HBoxContainer" parent="parent_vbox/vendors/vbox/list"]
-margin_top = 391.0
+margin_top = 359.0
 margin_right = 360.0
-margin_bottom = 412.0
+margin_bottom = 380.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 alignment = 1
@@ -451,15 +475,15 @@ custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "2"
 
 [node name="buttons" type="HBoxContainer" parent="parent_vbox/vendors/vbox"]
-margin_left = 135.0
-margin_top = 473.0
-margin_right = 225.0
+margin_left = 136.0
+margin_top = 475.0
+margin_right = 224.0
 margin_bottom = 500.0
 size_flags_horizontal = 4
 alignment = 1
 
 [node name="options" type="Button" parent="parent_vbox/vendors/vbox/buttons"]
-margin_right = 90.0
-margin_bottom = 27.0
+margin_right = 88.0
+margin_bottom = 25.0
 theme = ExtResource( 1 )
 text = "OPTIONS"

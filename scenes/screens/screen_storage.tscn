@@ -7,7 +7,7 @@
 [ext_resource path="res://assets/icons/potion1.png" type="Texture" id=5]
 [ext_resource path="res://assets/icons/carrot.png" type="Texture" id=6]
 [ext_resource path="res://ui/separator.tscn" type="PackedScene" id=7]
-[ext_resource path="res://themes/button.tres" type="Theme" id=8]
+[ext_resource path="res://themes/buttons/button.tres" type="Theme" id=8]
 [ext_resource path="res://themes/scrollbar.tres" type="Theme" id=10]
 
 [node name="screen_storage" type="MarginContainer"]

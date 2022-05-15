@@ -73,8 +73,23 @@ var player = {
 				{
 					'item_id': 'midite_ingot',
 					'amount': 4,
+					'rarity': 'uncommon',
+				},
+				{
+					'item_id': 'dulite_ingot',
+					'amount': 2,
 					'rarity': 'rare',
-				}
+				},
+				{
+					'item_id': 'dulite_ingot',
+					'amount': 3,
+					'rarity': 'legendary',
+				},
+				{
+					'item_id': 'dulite_ingot',
+					'amount': 16,
+					'rarity': 'mythic',
+				},
 			],
 			'unlocks': {
 				
