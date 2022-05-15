@@ -113,3 +113,4 @@ margin_right = 360.0
 margin_bottom = 436.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_constants/separation = 8
