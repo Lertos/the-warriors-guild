@@ -4,6 +4,48 @@ extends Node
 var player = {
 	'guild_renown': 100,
 	'gold': 200,
+	'map': {
+		'valley': {
+			'current': 3,
+			'max': 10,
+		},
+		'forest': {
+			'current': 0,
+			'max': 10,
+		},
+		'grove': {
+			'current': 0,
+			'max': 10,
+		},
+		'depths': {
+			'current': 0,
+			'max': 10,
+		},
+		'wasteland': {
+			'current': 0,
+			'max': 10,
+		},
+		'graveyard': {
+			'current': 0,
+			'max': 10,
+		},
+		'swamp': {
+			'current': 0,
+			'max': 10,
+		},
+		'peaks': {
+			'current': 0,
+			'max': 10,
+		},
+		'mountain': {
+			'current': 0,
+			'max': 10,
+		},
+		'void': {
+			'current': 0,
+			'max': 10,
+		},
+	},
 	'heroes': {
 		0: {
 			'name': 'Jack',
