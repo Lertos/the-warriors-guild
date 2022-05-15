@@ -16,8 +16,7 @@ var player = {
 		}
 	},
 	'farming': {
-		'plots_unlocked': 4,
-		
+		'plots_unlocked': 4,	
 	},
 	'storage': {
 		'material': {
@@ -25,14 +24,14 @@ var player = {
 			'max': 30,
 			'slots': [
 				{
-					'item_id': 'potato',
-					'amount': 1,
+					'item_id': 'dulite_ingot',
+					'amount': 5,
 					'rarity': 'common',
 				},
 				{
-					'item_id': 'potato',
-					'amount': 1,
-					'rarity': 'common',
+					'item_id': 'midite_ingot',
+					'amount': 4,
+					'rarity': 'rare',
 				}
 			],
 			'unlocks': {
@@ -40,52 +39,40 @@ var player = {
 			},
 		},
 		'loot': {
-			'unlocked': 8,
+			'unlocked': 10,
 			'max': 30,
 			'slots': [
-				{
-					'item_id': 'potato',
-					'amount': 1,
-				}
+				
 			],
 			'unlocks': {
 				
 			},
 		},
 		'consumable': {
-			'unlocked': 8,
+			'unlocked': 13,
 			'max': 30,
 			'slots': [
-				{
-					'item_id': 'potato',
-					'amount': 1,
-				}
+			
 			],
 			'unlocks': {
 				
 			},
 		},
 		'gear': {
-			'unlocked': 8,
-			'max': 30,
+			'unlocked': 21,
+			'max': 28,
 			'slots': [
-				{
-					'item_id': 'potato',
-					'amount': 1,
-				}
+				
 			],
 			'unlocks': {
 				
 			},
 		},
 		'food': {
-			'unlocked': 8,
-			'max': 30,
+			'unlocked': 20,
+			'max': 22,
 			'slots': [
-				{
-					'item_id': 'potato',
-					'amount': 1,
-				}
+				
 			],
 			'unlocks': {
 				
