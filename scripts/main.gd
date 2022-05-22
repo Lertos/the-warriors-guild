@@ -6,6 +6,7 @@ var scene_screen_map = preload("res://scenes/screens/screen_map.tscn")
 var scene_screen_vendors = preload("res://scenes/screens/screen_vendors.tscn")
 var scene_screen_storage = preload("res://scenes/screens/screen_storage.tscn")
 
+
 func _ready():
 	var buttons = get_node('/root/root/parent/footer/buttons')
 	
@@ -16,8 +17,22 @@ func _ready():
 	buttons.get_node('storage').connect('pressed', self, 'switch_screen', ['storage'])
 
 
+func _unhandled_input(event):
+	if event is InputEventKey:
+		#Show item generator popup
+		if event.pressed and event.scancode == KEY_F2:
+			if get_node('ItemGenerator').visible == true:
+				get_node('/root/root/PopupBlackout').visible = false
+				get_node('ItemGenerator').visible = false
+			else:
+				get_node('/root/root/PopupBlackout').visible = true
+				get_node('ItemGenerator').popup_centered_minsize()
+
+
 func show_popup(node):
 	self.get_node('Popup/container/parent_vbox/placeholder').add_child(node)
+	
+	get_node('/root/root/PopupBlackout').visible = true
 	get_node('Popup').popup_centered_minsize()
 
 
@@ -46,4 +61,3 @@ func load_screen(scene_to_load, header_title):
 		child.queue_free()
 		
 	container.add_child(inst_scene)
-	

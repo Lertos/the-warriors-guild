@@ -9,8 +9,6 @@ func _ready():
 
 
 func show_info_popup(region_name, index):
-	get_node('/root/root/PopupBlackout').visible = true
-	
 	var monster = Global_Enemies.enemies[region_name][index]
 
 	var inst_popup_monster_info = scene_popup_monster_info.instance()
