@@ -4,6 +4,8 @@ var current_type = 'item'
 
 
 func _ready():
+	clear_item_info(current_type)
+	
 	#TODO - Load from item global config
 	var type_dropdown = get_node('container/parent_vbox/vbox/line1/type/type')
 	
@@ -38,6 +40,8 @@ func _ready():
 	ability_list.add_item('placeholder9')
 	ability_list.add_item('placeholder10')
 	
+	ability_list.sort_items_by_text()
+	
 	var potion_types = get_node('container/parent_vbox/vbox/consumable/vbox/type/type')
 	
 	potion_types.add_item('Lasts X Fights')
@@ -53,6 +57,8 @@ func _ready():
 	effect_list.add_item('Effect2 II')
 	effect_list.add_item('Effect3 I')
 	effect_list.add_item('Effect4 I')
+	
+	effect_list.sort_items_by_text()
 
 
 func _unhandled_input(event):
@@ -67,24 +73,33 @@ func _unhandled_input(event):
 			#Delete the current item_id
 			elif event.scancode == KEY_F7:
 				print('delete')
-			elif event.scancode == KEY_TAB:
-				print('tab')
 
 
-#TODO
-func clear_info():
+func clear_item_info(type):
+	var parent = get_node('container/parent_vbox/vbox')
+	
+	#Clear shared item info
+	parent.get_node('line1/id/id').text = ''
+	parent.get_node('line2/name/name').text = ''
+	parent.get_node('line2/rarity/rarity').select(0)
+	parent.get_node('description/description').text = ''
+	parent.get_node('line3/buy_price/buy_price').text = '-1'
+	parent.get_node('line3/sell_price/sell_price').text = '-1'
+	
+	if type != 'item':
+		var type_node = parent.get_node(type).get_child(0)
+		
+		for child in type_node.get_children():
+			var child_node = child.get_child(1)
+			if child_node is LineEdit:
+				child_node.text = ''
+			elif child_node is ItemList:
+				child_node.unselect_all()
+			elif child_node is OptionButton:
+				child_node.select(0)
 	#Basically get parent node. loop thru, check type of each and if lineedit then set text to blank
 	#if optionbutton leave alone except if name is rarity set to common
 	#if lineedfit and name is buy_price or sell_price, set to -1
-	get_node('/root/root/PopupBlackout').visible = false
-	
-	var popup_container = get_node('/root/root/Popup/container/parent_vbox/placeholder')
-	
-	for child in popup_container.get_children():
-		popup_container.remove_child(child)
-		child.queue_free()
-		
-	self.visible = false
 
 
 func on_type_selected(index):
@@ -93,8 +108,9 @@ func on_type_selected(index):
 	
 	if current_type != 'item':
 		parent.get_node(current_type).visible = false
-	parent.get_node(type).visible = true
 	
+	clear_item_info(current_type)
+	parent.get_node(type).visible = true
 	current_type = type
 
 
@@ -118,5 +134,5 @@ func on_potion_type_selected(index):
 		parent.get_node('gold').visible = true
 
 
-func _on_description_text_changed():
-	pass # Replace with function body.
+func on_clear_pressed():
+	clear_item_info(current_type)

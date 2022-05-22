@@ -1353,6 +1353,7 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 
 [node name="mount" type="MarginContainer" parent="ItemGenerator/container/parent_vbox/vbox"]
+visible = false
 margin_top = 166.0
 margin_right = 324.0
 margin_bottom = 522.0
@@ -1610,3 +1611,4 @@ text = "Delete (F7)"
 [connection signal="pressed" from="Popup/container/parent_vbox/bottom/close" to="Popup" method="close_popup"]
 [connection signal="item_selected" from="ItemGenerator/container/parent_vbox/vbox/line1/type/type" to="ItemGenerator" method="on_type_selected"]
 [connection signal="item_selected" from="ItemGenerator/container/parent_vbox/vbox/consumable/vbox/type/type" to="ItemGenerator" method="on_potion_type_selected"]
+[connection signal="pressed" from="ItemGenerator/container/parent_vbox/bottom/clear" to="ItemGenerator" method="on_clear_pressed"]
