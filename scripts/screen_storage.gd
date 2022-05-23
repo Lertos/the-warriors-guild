@@ -10,7 +10,7 @@ func _ready():
 	var buttons = get_node('parent_vbox/types_vbox/types')
 	
 	buttons.get_node('material').connect('pressed', self, 'switch_sub_type', ['material'])
-	buttons.get_node('loot').connect('pressed', self, 'switch_sub_type', ['loot'])
+	buttons.get_node('jewelry').connect('pressed', self, 'switch_sub_type', ['jewelry'])
 	buttons.get_node('consumable').connect('pressed', self, 'switch_sub_type', ['consumable'])
 	buttons.get_node('gear').connect('pressed', self, 'switch_sub_type', ['gear'])
 	buttons.get_node('food').connect('pressed', self, 'switch_sub_type', ['food'])

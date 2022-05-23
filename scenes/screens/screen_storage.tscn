@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/icons/helmet8.png" type="Texture" id=1]
-[ext_resource path="res://assets/materials/material10.png" type="Texture" id=2]
+[ext_resource path="res://assets/icons/accessory13.png" type="Texture" id=2]
 [ext_resource path="res://assets/materials/material1.png" type="Texture" id=3]
 [ext_resource path="res://scripts/screen_storage.gd" type="Script" id=4]
 [ext_resource path="res://assets/icons/potion1.png" type="Texture" id=5]
@@ -51,7 +51,7 @@ theme = ExtResource( 8 )
 icon = ExtResource( 3 )
 expand_icon = true
 
-[node name="loot" type="Button" parent="parent_vbox/types_vbox/types"]
+[node name="jewelry" type="Button" parent="parent_vbox/types_vbox/types"]
 margin_left = 58.0
 margin_right = 106.0
 margin_bottom = 48.0

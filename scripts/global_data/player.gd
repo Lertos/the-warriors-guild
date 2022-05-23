@@ -57,13 +57,19 @@ var player = {
 			}
 		}
 	},
+	'mounts': {
+		
+	},
 	'farming': {
-		'plots_unlocked': 4,	
+		'plots_unlocked': 4,
 	},
 	'storage': {
 		'material': {
 			'unlocked': 8,
 			'max': 30,
+			'categories': [
+				'item'
+			],
 			'slots': [
 				{
 					'item_id': 'dulite_ingot',
@@ -95,9 +101,12 @@ var player = {
 				
 			},
 		},
-		'loot': {
+		'jewelry': {
 			'unlocked': 10,
 			'max': 30,
+			'categories': [
+				'jewelry'
+			],
 			'slots': [
 				
 			],
@@ -108,6 +117,9 @@ var player = {
 		'consumable': {
 			'unlocked': 13,
 			'max': 30,
+			'categories': [
+				'consumable'
+			],
 			'slots': [
 			
 			],
@@ -118,6 +130,10 @@ var player = {
 		'gear': {
 			'unlocked': 21,
 			'max': 28,
+			'categories': [
+				'weapon',
+				'armor'
+			],
 			'slots': [
 				
 			],
@@ -128,6 +144,9 @@ var player = {
 		'food': {
 			'unlocked': 20,
 			'max': 22,
+			'categories': [
+				'food'
+			],
 			'slots': [
 				
 			],
@@ -136,5 +155,4 @@ var player = {
 			},
 		},
 	},
-	#'': '',
 }
