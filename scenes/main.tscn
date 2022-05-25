@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://scenes/screens/screen_home.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/icons/icon2.png" type="Texture" id=2]
@@ -15,10 +15,11 @@
 [ext_resource path="res://scripts/popup.gd" type="Script" id=13]
 [ext_resource path="res://scripts/button_manager.gd" type="Script" id=14]
 [ext_resource path="res://themes/fonts/font_header.tres" type="Theme" id=15]
-[ext_resource path="res://scripts/ItemGenerator.gd" type="Script" id=16]
+[ext_resource path="res://scripts/item_generator.gd" type="Script" id=16]
 [ext_resource path="res://themes/fonts/font_normal.tres" type="Theme" id=17]
 [ext_resource path="res://themes/fonts/font_title.tres" type="Theme" id=18]
 [ext_resource path="res://scripts/text_edit_tabbing.gd" type="Script" id=19]
+[ext_resource path="res://scripts/combat.gd" type="Script" id=20]
 [ext_resource path="res://themes/header.tres" type="StyleBox" id=28]
 
 [sub_resource type="Theme" id=17]
@@ -33,6 +34,9 @@ script = ExtResource( 9 )
 
 [node name="player_data" type="Node" parent="."]
 script = ExtResource( 12 )
+
+[node name="TESTING_COMBAT" type="Node" parent="."]
+script = ExtResource( 20 )
 
 [node name="parent" type="VBoxContainer" parent="."]
 anchor_right = 1.0
