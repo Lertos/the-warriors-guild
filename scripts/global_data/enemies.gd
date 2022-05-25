@@ -42,6 +42,7 @@ var enemies = {
 				'dmg_reduc': 4.5,
 				'min_hit': 23,
 				'max_hit': 87,
+				'main_stat': 'atk_crush',
 				'abilities': {
 					0: {
 						'name': 'Fire Breath',
@@ -75,6 +76,7 @@ var enemies = {
 				'dmg_reduc': 4.5,
 				'min_hit': 23,
 				'max_hit': 87,
+				'main_stat': 'atk_crush',
 				'abilities': {
 
 				}
@@ -96,6 +98,7 @@ var enemies = {
 				'dmg_reduc': 4.5,
 				'min_hit': 23,
 				'max_hit': 87,
+				'main_stat': 'atk_crush',
 				'abilities': {
 
 				}
@@ -117,6 +120,7 @@ var enemies = {
 				'dmg_reduc': 4.5,
 				'min_hit': 23,
 				'max_hit': 87,
+				'main_stat': 'atk_crush',
 				'abilities': {
 
 				}
@@ -138,6 +142,7 @@ var enemies = {
 				'dmg_reduc': 4.5,
 				'min_hit': 23,
 				'max_hit': 87,
+				'main_stat': 'atk_crush',
 				'abilities': {
 
 				}
@@ -159,6 +164,7 @@ var enemies = {
 				'dmg_reduc': 4.5,
 				'min_hit': 23,
 				'max_hit': 87,
+				'main_stat': 'atk_crush',
 				'abilities': {
 
 				}
@@ -180,6 +186,7 @@ var enemies = {
 				'dmg_reduc': 4.5,
 				'min_hit': 23,
 				'max_hit': 87,
+				'main_stat': 'atk_crush',
 				'abilities': {
 
 				}
@@ -201,6 +208,7 @@ var enemies = {
 				'dmg_reduc': 4.5,
 				'min_hit': 23,
 				'max_hit': 87,
+				'main_stat': 'atk_crush',
 				'abilities': {
 					
 				}
