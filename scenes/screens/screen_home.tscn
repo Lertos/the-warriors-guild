@@ -184,43 +184,19 @@ theme = ExtResource( 3 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "0"
 
-[node name="research_idle" type="HBoxContainer" parent="parent_vbox/vendors/vbox/list"]
+[node name="spacer2" type="HBoxContainer" parent="parent_vbox/vendors/vbox/list"]
 margin_top = 144.0
 margin_right = 360.0
-margin_bottom = 165.0
-size_flags_horizontal = 5
-size_flags_vertical = 5
-alignment = 1
-
-[node name="lbl" type="Label" parent="parent_vbox/vendors/vbox/list/research_idle"]
-margin_left = 108.0
-margin_right = 203.0
-margin_bottom = 21.0
-theme = ExtResource( 3 )
-text = "Research"
-align = 2
-
-[node name="lbl2" type="Label" parent="parent_vbox/vendors/vbox/list/research_idle"]
-margin_left = 207.0
-margin_right = 252.0
-margin_bottom = 21.0
-theme = ExtResource( 3 )
-custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
-text = "IDLE"
-
-[node name="spacer2" type="HBoxContainer" parent="parent_vbox/vendors/vbox/list"]
-margin_top = 169.0
-margin_right = 360.0
-margin_bottom = 185.0
+margin_bottom = 160.0
 rect_min_size = Vector2( 0, 16 )
 size_flags_horizontal = 5
 size_flags_vertical = 5
 alignment = 1
 
 [node name="material_storage" type="HBoxContainer" parent="parent_vbox/vendors/vbox/list"]
-margin_top = 189.0
+margin_top = 164.0
 margin_right = 360.0
-margin_bottom = 210.0
+margin_bottom = 185.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 alignment = 1
@@ -258,9 +234,9 @@ custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "50"
 
 [node name="loot_storage" type="HBoxContainer" parent="parent_vbox/vendors/vbox/list"]
-margin_top = 214.0
+margin_top = 189.0
 margin_right = 360.0
-margin_bottom = 235.0
+margin_bottom = 210.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 alignment = 1
@@ -298,9 +274,9 @@ custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "40"
 
 [node name="consumable_storage" type="HBoxContainer" parent="parent_vbox/vendors/vbox/list"]
-margin_top = 239.0
+margin_top = 214.0
 margin_right = 360.0
-margin_bottom = 260.0
+margin_bottom = 235.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 alignment = 1
@@ -338,9 +314,9 @@ custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "30"
 
 [node name="gear_storage" type="HBoxContainer" parent="parent_vbox/vendors/vbox/list"]
-margin_top = 264.0
+margin_top = 239.0
 margin_right = 360.0
-margin_bottom = 285.0
+margin_bottom = 260.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 alignment = 1
@@ -378,9 +354,9 @@ custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "20"
 
 [node name="food_storage" type="HBoxContainer" parent="parent_vbox/vendors/vbox/list"]
-margin_top = 289.0
+margin_top = 264.0
 margin_right = 360.0
-margin_bottom = 310.0
+margin_bottom = 285.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 alignment = 1
@@ -418,15 +394,39 @@ custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "25"
 
 [node name="spacer3" type="HBoxContainer" parent="parent_vbox/vendors/vbox/list"]
-margin_top = 314.0
+margin_top = 289.0
 margin_right = 360.0
-margin_bottom = 330.0
+margin_bottom = 305.0
 rect_min_size = Vector2( 0, 16 )
 size_flags_horizontal = 5
 size_flags_vertical = 5
 alignment = 1
 
 [node name="active_requests" type="HBoxContainer" parent="parent_vbox/vendors/vbox/list"]
+margin_top = 309.0
+margin_right = 360.0
+margin_bottom = 330.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+alignment = 1
+
+[node name="lbl" type="Label" parent="parent_vbox/vendors/vbox/list/active_requests"]
+margin_left = 80.0
+margin_right = 268.0
+margin_bottom = 21.0
+theme = ExtResource( 3 )
+text = "Available Requests"
+align = 2
+
+[node name="amount" type="Label" parent="parent_vbox/vendors/vbox/list/active_requests"]
+margin_left = 272.0
+margin_right = 280.0
+margin_bottom = 21.0
+theme = ExtResource( 3 )
+custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
+text = "1"
+
+[node name="active_bounties" type="HBoxContainer" parent="parent_vbox/vendors/vbox/list"]
 margin_top = 334.0
 margin_right = 360.0
 margin_bottom = 355.0
@@ -434,41 +434,17 @@ size_flags_horizontal = 5
 size_flags_vertical = 5
 alignment = 1
 
-[node name="lbl" type="Label" parent="parent_vbox/vendors/vbox/list/active_requests"]
-margin_left = 93.0
-margin_right = 254.0
-margin_bottom = 21.0
-theme = ExtResource( 3 )
-text = "Active Requests"
-align = 2
-
-[node name="amount" type="Label" parent="parent_vbox/vendors/vbox/list/active_requests"]
-margin_left = 258.0
-margin_right = 266.0
-margin_bottom = 21.0
-theme = ExtResource( 3 )
-custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
-text = "1"
-
-[node name="active_bounties" type="HBoxContainer" parent="parent_vbox/vendors/vbox/list"]
-margin_top = 359.0
-margin_right = 360.0
-margin_bottom = 380.0
-size_flags_horizontal = 5
-size_flags_vertical = 5
-alignment = 1
-
 [node name="lbl" type="Label" parent="parent_vbox/vendors/vbox/list/active_bounties"]
-margin_left = 95.0
-margin_right = 249.0
+margin_left = 81.0
+margin_right = 262.0
 margin_bottom = 21.0
 theme = ExtResource( 3 )
-text = "Active Bounties"
+text = "Available Bounties"
 align = 2
 
 [node name="amount" type="Label" parent="parent_vbox/vendors/vbox/list/active_bounties"]
-margin_left = 253.0
-margin_right = 265.0
+margin_left = 266.0
+margin_right = 278.0
 margin_bottom = 21.0
 theme = ExtResource( 3 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )

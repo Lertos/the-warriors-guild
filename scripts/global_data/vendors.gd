@@ -59,31 +59,10 @@ var vendors = {
 		'renown_needed': 1500,
 	},
 	8: {
-		'id': 'scientist',
-		'name': 'Scientist',
-		'img': 'vendor11',
-		'locked': true,
-		'renown_needed': 2000,
-	},
-	9: {
 		'id': 'blacksmith',
 		'name': 'Blacksmith',
 		'img': 'vendor4',
 		'locked': true,
 		'renown_needed': 2500,
-	},
-	10: {
-		'id': 'priest',
-		'name': 'Priest',
-		'img': 'vendor10',
-		'locked': true,
-		'renown_needed': 3000,
-	},
-	11: {
-		'id': 'historian',
-		'name': 'Historian',
-		'img': 'vendor6',
-		'locked': true,
-		'renown_needed': 3500,
 	},
 }
