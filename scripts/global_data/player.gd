@@ -50,8 +50,9 @@ var player = {
 		0: {
 			'name': 'Jack',
 			'level': 1,
-			'class': 'sapper',
 			'activity': {
+				'type': 'map', #Could also be 'dead' and time-done is when he revives
+				'region': 'valley',
 				'name': 'valley_chicken',
 				'time_done': 219038, #OS TIME
 			}

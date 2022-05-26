@@ -6,8 +6,12 @@ var scene_screen_map = preload("res://scenes/screens/screen_map.tscn")
 var scene_screen_vendors = preload("res://scenes/screens/screen_vendors.tscn")
 var scene_screen_storage = preload("res://scenes/screens/screen_storage.tscn")
 
+var data_manager
 
 func _ready():
+	data_manager = get_node('player_data')
+	data_manager.initial_load()
+	
 	var buttons = get_node('/root/root/parent/footer/buttons')
 	
 	buttons.get_node('home').connect('pressed', self, 'switch_screen', ['home'])
