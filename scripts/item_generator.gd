@@ -85,6 +85,7 @@ func clear_item_info(type):
 	parent.get_node('description/description').text = ''
 	parent.get_node('line3/buy_price/buy_price').text = '-1'
 	parent.get_node('line3/sell_price/sell_price').text = '-1'
+	parent.get_node('line4/img_path/img_path').text = ''
 	
 	if type != 'item':
 		var type_node = parent.get_node(type).get_child(0)
@@ -97,9 +98,6 @@ func clear_item_info(type):
 				child_node.unselect_all()
 			elif child_node is OptionButton:
 				child_node.select(0)
-	#Basically get parent node. loop thru, check type of each and if lineedit then set text to blank
-	#if optionbutton leave alone except if name is rarity set to common
-	#if lineedfit and name is buy_price or sell_price, set to -1
 
 
 func on_type_selected(index):

@@ -11,7 +11,7 @@
 [ext_resource path="res://scripts/main.gd" type="Script" id=9]
 [ext_resource path="res://themes/colors/dark_brown.tres" type="StyleBox" id=10]
 [ext_resource path="res://themes/popup.tres" type="StyleBox" id=11]
-[ext_resource path="res://scripts/player_data.gd" type="Script" id=12]
+[ext_resource path="res://scripts/game_data.gd" type="Script" id=12]
 [ext_resource path="res://scripts/popup.gd" type="Script" id=13]
 [ext_resource path="res://scripts/button_manager.gd" type="Script" id=14]
 [ext_resource path="res://themes/fonts/font_header.tres" type="Theme" id=15]
@@ -32,7 +32,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 9 )
 
-[node name="player_data" type="Node" parent="."]
+[node name="game_data" type="Node" parent="."]
 script = ExtResource( 12 )
 
 [node name="TESTING_COMBAT" type="Node" parent="."]
@@ -209,6 +209,7 @@ theme = ExtResource( 3 )
 text = "CLOSE"
 
 [node name="ItemGenerator" type="Popup" parent="."]
+visible = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
@@ -449,10 +450,38 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 clear_button_enabled = true
 
-[node name="separator2" parent="ItemGenerator/container/parent_vbox/vbox" instance=ExtResource( 6 )]
+[node name="line4" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox"]
 margin_top = 154.0
 margin_right = 324.0
-margin_bottom = 158.0
+margin_bottom = 178.0
+custom_constants/separation = 8
+
+[node name="img_path" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/line4"]
+margin_right = 324.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/line4/img_path"]
+margin_right = 64.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
+theme = ExtResource( 17 )
+text = "Img Path"
+align = 2
+valign = 1
+
+[node name="img_path" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/line4/img_path"]
+margin_left = 68.0
+margin_right = 324.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+theme = ExtResource( 17 )
+clear_button_enabled = true
+
+[node name="separator2" parent="ItemGenerator/container/parent_vbox/vbox" instance=ExtResource( 6 )]
+margin_top = 186.0
+margin_right = 324.0
+margin_bottom = 190.0
 
 [node name="weapon" type="MarginContainer" parent="ItemGenerator/container/parent_vbox/vbox"]
 visible = false
