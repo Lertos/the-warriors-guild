@@ -134,3 +134,52 @@ func on_potion_type_selected(index):
 
 func on_clear_pressed():
 	clear_item_info(current_type)
+
+
+func on_save_pressed():
+	var parent = get_node('container/parent_vbox/vbox')
+	var type_node = parent.get_node('line1/type/type')
+	
+	var type = type_node.get_item_text(type_node.get_selected_id())
+	
+	if default_fields_have_incorrect_values():
+		return
+		
+	if type_fields_have_incorrect_values(type):
+		return
+	
+	print('SAVED ITEM!')
+	get_node('/root/root').save_data('items')
+	
+	
+func default_fields_have_incorrect_values():
+	var parent = get_node('container/parent_vbox/vbox')
+	
+	var regex = RegEx.new()
+	regex.compile("\\d")
+	
+	var id = parent.get_node('line1/id/id').text
+	var name = parent.get_node('line2/name/name').text
+	var img_path = parent.get_node('line4/img_path/img_path').text
+	
+	if regex.search(id) or regex.search(name) or regex.search(img_path):
+		print('==ERROR: The id, name, or img_path field has a number in it')
+		return true
+	
+	var desc = parent.get_node('description/description').text
+	var buy_price = parent.get_node('line3/buy_price/buy_price').text
+	var sell_price = parent.get_node('line3/sell_price/sell_price').text
+	
+	if id == '' or name == '' or img_path == '' or desc == '' or buy_price == '' or sell_price == '':
+		print('==ERROR: A default field has no value')
+		return true
+
+	if !buy_price.is_valid_float() or !sell_price.is_valid_float():
+		print('==ERROR: Buy Price or Sell Price has an incorrect value')
+		return true
+
+	return false
+
+
+func type_fields_have_incorrect_values(type):
+	pass

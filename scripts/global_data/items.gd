@@ -2,6 +2,10 @@ extends Node
 
 
 var items = {
+
+}
+
+"""
 	'dulite_ingot': {
 		'name': 'Dulite Ingot',
 		'img': 'materials/material1'
@@ -10,4 +14,4 @@ var items = {
 		'name': 'Midite Ingot',
 		'img': 'materials/material2'
 	},
-}
+"""

@@ -21,6 +21,11 @@ func _ready():
 	buttons.get_node('storage').connect('pressed', self, 'switch_screen', ['storage'])
 
 
+#Find the keys in the game_data.gd dictionary at the top
+func save_data(file_key):
+	data_manager.save_data(file_key)
+
+
 func _unhandled_input(event):
 	if event is InputEventKey:
 		#Show item generator popup

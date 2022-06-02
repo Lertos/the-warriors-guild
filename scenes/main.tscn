@@ -1643,4 +1643,5 @@ text = "Delete (F7)"
 [connection signal="pressed" from="Popup/container/parent_vbox/bottom/close" to="Popup" method="close_popup"]
 [connection signal="item_selected" from="ItemGenerator/container/parent_vbox/vbox/line1/type/type" to="ItemGenerator" method="on_type_selected"]
 [connection signal="item_selected" from="ItemGenerator/container/parent_vbox/vbox/consumable/vbox/type/type" to="ItemGenerator" method="on_potion_type_selected"]
+[connection signal="pressed" from="ItemGenerator/container/parent_vbox/bottom/save" to="ItemGenerator" method="on_save_pressed"]
 [connection signal="pressed" from="ItemGenerator/container/parent_vbox/bottom/clear" to="ItemGenerator" method="on_clear_pressed"]
