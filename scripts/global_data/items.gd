@@ -2,7 +2,27 @@ extends Node
 
 
 var items = {
-
+	'item': {
+		
+	},
+	'weapon': {
+		
+	},
+	'armor': {
+		
+	},
+	'jewelry': {
+		
+	},
+	'consumable': {
+		
+	},
+	'food': {
+		
+	},
+	'mount': {
+		
+	},
 }
 
 """
