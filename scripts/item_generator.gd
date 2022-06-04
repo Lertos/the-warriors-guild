@@ -17,49 +17,12 @@ func _ready():
 	
 	clear_item_info(current_type)
 	
-	var type_dropdown = get_node('container/parent_vbox/vbox/line1/type/type')
+	fill_type_dropdown()
+	fill_rarity_dropdown()
 	
-	for i in range(0, len(types)):
-		type_dropdown.add_item(types[i], i)
-	
-	var rarity_dropdown = get_node('container/parent_vbox/vbox/line2/rarity/rarity')
-	
-	for key in MasterConfig.config['rarities']:
-		rarity_dropdown.add_item(key, MasterConfig.config['rarities'][key]['order'])
-	
-	#TODO - Load from ability global config
-	var ability_list = get_node('container/parent_vbox/vbox/weapon/vbox/abilities/abilities')
-	
-	ability_list.add_item('placeholder1')
-	ability_list.add_item('placeholder2')
-	ability_list.add_item('placeholder3')
-	ability_list.add_item('placeholder4')
-	ability_list.add_item('placeholder5')
-	ability_list.add_item('placeholder6')
-	ability_list.add_item('placeholder7')
-	ability_list.add_item('placeholder8')
-	ability_list.add_item('placeholder9')
-	ability_list.add_item('placeholder10')
-	
-	ability_list.sort_items_by_text()
-	
-	var potion_types = get_node('container/parent_vbox/vbox/consumable/vbox/type/type')
-	
-	potion_types.add_item('Lasts X Fights')
-	potion_types.add_item('Restore Health')
-	potion_types.add_item('Receive Gold')
-	
-	var effect_list = get_node('container/parent_vbox/vbox/consumable/vbox/effects/effects')
-	
-	effect_list.add_item('Effect1 I')
-	effect_list.add_item('Effect1 II')
-	effect_list.add_item('Effect1 III')
-	effect_list.add_item('Effect2 I')
-	effect_list.add_item('Effect2 II')
-	effect_list.add_item('Effect3 I')
-	effect_list.add_item('Effect4 I')
-	
-	effect_list.sort_items_by_text()
+	fill_ability_item_list()
+	fill_potion_types_item_list()
+	fill_potion_effect_item_list()
 
 
 func _unhandled_input(event):
@@ -337,3 +300,72 @@ func are_fields_incorrect(item_dict):
 				return true
 			
 	return false
+
+
+func fill_type_dropdown():
+	var type_dropdown = get_node('container/parent_vbox/vbox/line1/type/type')
+	
+	for i in range(0, len(types)):
+		type_dropdown.add_item(types[i], i)
+
+
+func fill_rarity_dropdown():
+	var rarity_dropdown = get_node('container/parent_vbox/vbox/line2/rarity/rarity')
+	
+	for key in MasterConfig.config['rarities']:
+		rarity_dropdown.add_item(key, MasterConfig.config['rarities'][key]['order'])
+	
+
+func fill_ability_item_list():
+	var item_list = get_node('container/parent_vbox/vbox/weapon/vbox/abilities/abilities')
+	var ability_dict = MasterConfig.config['abilities']
+	var current_index = 0
+	
+	for key in ability_dict:
+		var ability = ability_dict[key]
+		
+		for level_key in ability['levels']:
+			if level_key == 0:
+				item_list.add_item(ability_dict[key]['name'])
+			else:
+				item_list.add_item(ability_dict[key]['name'] + ' ' + get_roman_numeral(level_key))
+				
+			item_list.set_item_metadata(current_index, {'id': key})
+			current_index += 1
+	
+	item_list.sort_items_by_text()
+
+
+func fill_potion_types_item_list():
+	var potion_types = get_node('container/parent_vbox/vbox/consumable/vbox/type/type')
+	
+	potion_types.add_item('Lasts X Fights')
+	potion_types.add_item('Restore Health')
+	potion_types.add_item('Receive Gold')
+
+
+func fill_potion_effect_item_list():
+	var effect_list = get_node('container/parent_vbox/vbox/consumable/vbox/effects/effects')
+	
+	effect_list.add_item('Effect1 I')
+	effect_list.add_item('Effect1 II')
+	effect_list.add_item('Effect1 III')
+	effect_list.add_item('Effect2 I')
+	effect_list.add_item('Effect2 II')
+	effect_list.add_item('Effect3 I')
+	effect_list.add_item('Effect4 I')
+	
+	effect_list.sort_items_by_text()
+
+
+func get_roman_numeral(level: int):
+	if level == 1:
+		return 'I'
+	elif level == 2:
+		return 'II'
+	elif level == 3:
+		return 'III'
+	elif level == 4:
+		return 'IV'
+	elif level == 5:
+		return 'V'
