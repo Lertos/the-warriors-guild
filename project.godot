@@ -21,6 +21,7 @@ Global_Vendors="*res://scripts/global_data/vendors.gd"
 Global_Player="*res://scripts/global_data/player.gd"
 Global_Items="*res://scripts/global_data/items.gd"
 Global_Colors="*res://scripts/global_data/colors.gd"
+MasterConfig="*res://scripts/global_data/master_config.gd"
 
 [display]
 
