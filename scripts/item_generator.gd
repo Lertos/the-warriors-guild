@@ -1,6 +1,10 @@
 extends Popup
 
+var scene_item_id_record = preload("res://scenes/item_id_record.tscn")
+
 onready var parent = get_node('container/parent_vbox/vbox')
+
+const MIN_SEARCH_TEXT_LEN = 3
 
 var current_type = 'item'
 var number_regex = RegEx.new()
@@ -71,13 +75,16 @@ func _unhandled_input(event):
 		if event.pressed:
 			#Save the record
 			if event.scancode == KEY_F5:
-				print('save')
+				if get_node('container/parent_vbox/search_list').visible:
+					on_close_pressed()
+				else:
+					on_save_pressed()
 			#Search for the item
 			elif event.scancode == KEY_F6:
-				print('search')
+				on_search_pressed()
 			#Delete the current item_id
 			elif event.scancode == KEY_F7:
-				print('delete')
+				on_delete_pressed()
 
 
 func clear_item_info(type: String):
@@ -141,14 +148,83 @@ func on_clear_pressed():
 	clear_item_info(current_type)
 
 
-func on_save_pressed():
+func on_search_bar_text_changed(new_text):
+	if len(new_text) > MIN_SEARCH_TEXT_LEN:
+		on_search_pressed()
+	else:
+		on_close_pressed()
+
+
+func on_search_pressed():
+	get_node('container/parent_vbox/vbox').visible = false
+	get_node('container/parent_vbox/bottom').visible = false
+	get_node('container/parent_vbox/search_list').visible = true
+	
+	var search_bar = get_node('container/parent_vbox/top/search_bar')
+	var searched_text = search_bar.text
+
+	search_bar.grab_focus()
+	
+	clear_search_list_items()
+	create_item_records(searched_text)
+
+
+func on_show_all_pressed():
+	get_node('container/parent_vbox/top/search_bar').text = ''
+	
+	on_search_pressed()
+
+
+func on_delete_pressed():
+	var item_id = parent.get_node('line1/id/id').text
+	
+	if item_id != '' and item_id in Global_Items.items:
+		Global_Items.items.erase(item_id)
+		
+		get_node('/root/root').save_data('items')
+		clear_item_info(current_type)
+
+
+func create_item_records(searched_text):
+	var node = get_node('container/parent_vbox/search_list/vbox/vbox')
+	
+	for item_id in Global_Items.items:
+		if searched_text in item_id or searched_text == '':
+			var inst = scene_item_id_record.instance()
+			
+			inst.get_node('button').name = item_id
+			inst.get_node('id').text = item_id
+			node.add_child(inst)
+
+
+func clear_search_list_items():
+	var search_list_items = get_node('container/parent_vbox/search_list/vbox/vbox')
+	
+	for child in search_list_items.get_children():
+		search_list_items.remove_child(child)
+		child.queue_free()
+
+
+func on_close_pressed():
+	get_node('container/parent_vbox/search_list').visible = false
+	get_node('container/parent_vbox/vbox').visible = true
+	get_node('container/parent_vbox/bottom').visible = true
+
+	clear_search_list_items()
+
+
+func on_update_pressed():
+	on_save_pressed(true)
+
+
+func on_save_pressed(update = false):
 	var type_node = parent.get_node('line1/type/type')
 	var type = type_node.get_item_text(type_node.get_selected_id())
 	
 	var item_id = parent.get_node('line1/id/id').text
 	var item_dict = {}
 
-	if item_id in Global_Items.items[type]:
+	if item_id in Global_Items.items and !update:
 		print('==ERROR: The id you entered already exists')
 		return
 	
@@ -160,8 +236,12 @@ func on_save_pressed():
 	if are_fields_incorrect(item_dict):
 		return
 	
-	Global_Items.items[type][item_id] = item_dict
+	item_dict['type'] = type
+	
+	Global_Items.items[item_id] = item_dict
+	
 	get_node('/root/root').save_data('items')
+	clear_item_info(current_type)
 
 
 func add_base_fields(item_dict):

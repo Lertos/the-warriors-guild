@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://scenes/screens/screen_home.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/icons/icon2.png" type="Texture" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://themes/fonts/font_title.tres" type="Theme" id=18]
 [ext_resource path="res://scripts/text_edit_tabbing.gd" type="Script" id=19]
 [ext_resource path="res://scripts/combat.gd" type="Script" id=20]
+[ext_resource path="res://themes/buttons/button.tres" type="Theme" id=21]
 [ext_resource path="res://themes/header.tres" type="StyleBox" id=28]
 
 [sub_resource type="Theme" id=17]
@@ -235,6 +236,7 @@ margin_top = 10.0
 margin_right = 334.0
 margin_bottom = 612.0
 size_flags_vertical = 3
+custom_constants/separation = 6
 alignment = 1
 
 [node name="top" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox"]
@@ -248,28 +250,35 @@ custom_constants/separation = 10
 alignment = 1
 
 [node name="search_bar" type="LineEdit" parent="ItemGenerator/container/parent_vbox/top"]
-margin_right = 223.0
+margin_right = 202.0
 margin_bottom = 32.0
 size_flags_horizontal = 3
 theme = ExtResource( 18 )
 virtual_keyboard_enabled = false
 
 [node name="search" type="Button" parent="ItemGenerator/container/parent_vbox/top"]
-margin_left = 233.0
+margin_left = 212.0
+margin_right = 286.0
+margin_bottom = 32.0
+theme = ExtResource( 3 )
+text = " F (F6) "
+
+[node name="show_all" type="Button" parent="ItemGenerator/container/parent_vbox/top"]
+margin_left = 296.0
 margin_right = 324.0
 margin_bottom = 32.0
 theme = ExtResource( 3 )
-text = "Find (F6)"
+text = "All"
 
 [node name="separator" parent="ItemGenerator/container/parent_vbox" instance=ExtResource( 6 )]
-margin_top = 36.0
+margin_top = 38.0
 margin_right = 324.0
-margin_bottom = 40.0
+margin_bottom = 42.0
 
 [node name="vbox" type="VBoxContainer" parent="ItemGenerator/container/parent_vbox"]
-margin_top = 44.0
+margin_top = 48.0
 margin_right = 324.0
-margin_bottom = 566.0
+margin_bottom = 554.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 8
@@ -1607,6 +1616,44 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 clear_button_enabled = true
 
+[node name="search_list" type="ScrollContainer" parent="ItemGenerator/container/parent_vbox"]
+visible = false
+margin_top = 48.0
+margin_right = 324.0
+margin_bottom = 554.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="vbox" type="VBoxContainer" parent="ItemGenerator/container/parent_vbox/search_list"]
+margin_right = 324.0
+margin_bottom = 506.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="vbox" type="VBoxContainer" parent="ItemGenerator/container/parent_vbox/search_list/vbox"]
+margin_right = 324.0
+margin_bottom = 477.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="hbox" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/search_list/vbox"]
+margin_top = 481.0
+margin_right = 324.0
+margin_bottom = 506.0
+alignment = 1
+
+[node name="close" type="Button" parent="ItemGenerator/container/parent_vbox/search_list/vbox/hbox"]
+margin_left = 132.0
+margin_right = 192.0
+margin_bottom = 25.0
+theme = ExtResource( 21 )
+text = "Close (F5)"
+
+[node name="separator2" parent="ItemGenerator/container/parent_vbox" instance=ExtResource( 6 )]
+margin_top = 560.0
+margin_right = 324.0
+margin_bottom = 564.0
+
 [node name="bottom" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox"]
 margin_top = 570.0
 margin_right = 324.0
@@ -1619,29 +1666,42 @@ custom_constants/separation = 10
 alignment = 1
 
 [node name="save" type="Button" parent="ItemGenerator/container/parent_vbox/bottom"]
-margin_left = 18.0
-margin_right = 116.0
+margin_left = 41.0
+margin_right = 117.0
 margin_bottom = 32.0
-theme = ExtResource( 3 )
-text = "Save (F5)"
+theme = ExtResource( 21 )
+text = " S (F5) "
+
+[node name="update" type="Button" parent="ItemGenerator/container/parent_vbox/bottom"]
+margin_left = 127.0
+margin_right = 157.0
+margin_bottom = 32.0
+theme = ExtResource( 21 )
+text = " U "
 
 [node name="clear" type="Button" parent="ItemGenerator/container/parent_vbox/bottom"]
-margin_left = 126.0
-margin_right = 183.0
+margin_left = 167.0
+margin_right = 197.0
 margin_bottom = 32.0
-theme = ExtResource( 3 )
-text = "Clear"
+theme = ExtResource( 21 )
+text = " C "
 
 [node name="delete" type="Button" parent="ItemGenerator/container/parent_vbox/bottom"]
-margin_left = 193.0
-margin_right = 306.0
+margin_left = 207.0
+margin_right = 283.0
 margin_bottom = 32.0
-theme = ExtResource( 3 )
-text = "Delete (F7)"
+theme = ExtResource( 21 )
+text = " D (F7) "
 
 [connection signal="pressed" from="parent/footer/buttons/home" to="parent/footer/buttons" method="home_pressed"]
 [connection signal="pressed" from="Popup/container/parent_vbox/bottom/close" to="Popup" method="close_popup"]
+[connection signal="text_changed" from="ItemGenerator/container/parent_vbox/top/search_bar" to="ItemGenerator" method="on_search_bar_text_changed"]
+[connection signal="pressed" from="ItemGenerator/container/parent_vbox/top/search" to="ItemGenerator" method="on_search_pressed"]
+[connection signal="pressed" from="ItemGenerator/container/parent_vbox/top/show_all" to="ItemGenerator" method="on_show_all_pressed"]
 [connection signal="item_selected" from="ItemGenerator/container/parent_vbox/vbox/line1/type/type" to="ItemGenerator" method="on_type_selected"]
 [connection signal="item_selected" from="ItemGenerator/container/parent_vbox/vbox/consumable/vbox/type/type" to="ItemGenerator" method="on_potion_type_selected"]
+[connection signal="pressed" from="ItemGenerator/container/parent_vbox/search_list/vbox/hbox/close" to="ItemGenerator" method="on_close_pressed"]
 [connection signal="pressed" from="ItemGenerator/container/parent_vbox/bottom/save" to="ItemGenerator" method="on_save_pressed"]
+[connection signal="pressed" from="ItemGenerator/container/parent_vbox/bottom/update" to="ItemGenerator" method="on_update_pressed"]
 [connection signal="pressed" from="ItemGenerator/container/parent_vbox/bottom/clear" to="ItemGenerator" method="on_clear_pressed"]
+[connection signal="pressed" from="ItemGenerator/container/parent_vbox/bottom/delete" to="ItemGenerator" method="on_delete_pressed"]
