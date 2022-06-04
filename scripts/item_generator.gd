@@ -1,6 +1,6 @@
 extends Popup
 
-var scene_item_id_record = preload("res://scenes/item_id_record.tscn")
+var scene_item_id_record = preload("res://scenes/record_templates/item_id_record.tscn")
 
 onready var parent = get_node('container/parent_vbox/vbox')
 

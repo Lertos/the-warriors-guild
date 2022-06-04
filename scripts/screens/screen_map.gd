@@ -1,6 +1,6 @@
 extends MarginContainer
 
-var scene_monster_record = preload("res://scenes/monster_record.tscn")
+var scene_monster_record = preload("res://scenes/record_templates/monster_record.tscn")
 var unlocked_bg_color = preload("res://themes/record_box.tres")
 var locked_texture = load('res://assets/icons/icon12.png')
 

@@ -1,6 +1,6 @@
 extends MarginContainer
 
-var scene_item_record = preload("res://scenes/item_record.tscn")
+var scene_item_record = preload("res://scenes/record_templates/item_record.tscn")
 var locked_texture = load('res://assets/icons/icon12.png')
 
 var items_per_row = 4

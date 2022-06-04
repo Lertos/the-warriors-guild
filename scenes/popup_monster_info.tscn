@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://scripts/popup_monster_info.gd" type="Script" id=1]
+[ext_resource path="res://scripts/record_templates/popup_monster_info.gd" type="Script" id=1]
 [ext_resource path="res://themes/fonts/font_normal.tres" type="Theme" id=2]
 [ext_resource path="res://themes/fonts/font_title.tres" type="Theme" id=3]
 [ext_resource path="res://ui/separator.tscn" type="PackedScene" id=4]
