@@ -22,14 +22,10 @@ func _ready():
 	for i in range(0, len(types)):
 		type_dropdown.add_item(types[i], i)
 	
-	#TODO - Load from rarity global config
 	var rarity_dropdown = get_node('container/parent_vbox/vbox/line2/rarity/rarity')
 	
-	rarity_dropdown.add_item('common', 0)
-	rarity_dropdown.add_item('uncommon', 1)
-	rarity_dropdown.add_item('rare', 2)
-	rarity_dropdown.add_item('legendary', 3)
-	rarity_dropdown.add_item('mythic', 4)
+	for key in MasterConfig.config['rarities']:
+		rarity_dropdown.add_item(key, MasterConfig.config['rarities'][key]['order'])
 	
 	#TODO - Load from ability global config
 	var ability_list = get_node('container/parent_vbox/vbox/weapon/vbox/abilities/abilities')
