@@ -8,23 +8,19 @@ const MIN_SEARCH_TEXT_LEN = 3
 
 var current_type = 'item'
 var number_regex = RegEx.new()
-	
+
+var types = ['item', 'food', 'weapon', 'armor', 'consumable', 'jewelry', 'mount']
+
 
 func _ready():
 	number_regex.compile("\\d")
 	
 	clear_item_info(current_type)
 	
-	#TODO - Load from item global config
 	var type_dropdown = get_node('container/parent_vbox/vbox/line1/type/type')
 	
-	type_dropdown.add_item('item', 0)
-	type_dropdown.add_item('food', 1)
-	type_dropdown.add_item('weapon', 2)
-	type_dropdown.add_item('armor', 3)
-	type_dropdown.add_item('consumable', 4)
-	type_dropdown.add_item('jewelry', 5)
-	type_dropdown.add_item('mount', 6)
+	for i in range(0, len(types)):
+		type_dropdown.add_item(types[i], i)
 	
 	#TODO - Load from rarity global config
 	var rarity_dropdown = get_node('container/parent_vbox/vbox/line2/rarity/rarity')
@@ -116,7 +112,7 @@ func on_type_selected(index: int):
 	if current_type != 'item':
 		parent.get_node(current_type).visible = false
 	
-	clear_item_info(type)
+	clear_item_info(current_type)
 	
 	if type != 'item':
 		parent.get_node(type).visible = true
@@ -192,9 +188,47 @@ func create_item_records(searched_text):
 		if searched_text in item_id or searched_text == '':
 			var inst = scene_item_id_record.instance()
 			
+			inst.get_node('button').connect('pressed', self, 'load_item_info', [item_id])
 			inst.get_node('button').name = item_id
 			inst.get_node('id').text = item_id
 			node.add_child(inst)
+
+
+func load_item_info(item_id):
+	var item_dict = Global_Items.items[item_id]
+	var type = item_dict['type']
+	
+	on_close_pressed()
+	
+	var type_node = get_node('container/parent_vbox/vbox/line1/type/type')
+	var index = types.find(type)
+	type_node.select(index)
+	type_node.emit_signal("item_selected", index)
+	
+	parent.get_node('line1/id/id').text = item_id
+	
+	load_base_fields(item_dict)
+	
+	if type != 'item':
+		load_type_fields(item_dict, type)
+
+
+func load_base_fields(item_dict):
+	parent.get_node('line2/name/name').text = item_dict['name']
+	parent.get_node('line4/img_path/img_path').text = item_dict['img_path']
+	parent.get_node('description/description').text = item_dict['desc']
+	parent.get_node('line3/buy_price/buy_price').text = item_dict['buy_price']
+	parent.get_node('line3/sell_price/sell_price').text = item_dict['sell_price']
+
+
+func load_type_fields(item_dict, type):
+	var node = parent.get_node(type + '/vbox')
+	
+	for key in item_dict:
+		if key == 'name' or key == 'img_path' or key == 'desc' or key == 'buy_price' or key == 'sell_price' or key == 'type' or key == '':
+			continue
+		else:
+			node.get_node(key + '/' + key).text = item_dict[key]
 
 
 func clear_search_list_items():
