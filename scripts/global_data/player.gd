@@ -6,7 +6,7 @@ var player = {
 	'gold': 200,
 	'map': {
 		'valley': {
-			'current': 3,
+			'current': 4,
 			'max': 10,
 		},
 		'forest': {
@@ -42,7 +42,7 @@ var player = {
 			'max': 10,
 		},
 		'void': {
-			'current': 1,
+			'current': 0,
 			'max': 10,
 		},
 	},

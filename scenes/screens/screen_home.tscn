@@ -451,15 +451,15 @@ custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "2"
 
 [node name="buttons" type="HBoxContainer" parent="parent_vbox/vendors/vbox"]
-margin_left = 136.0
+margin_left = 135.0
 margin_top = 475.0
-margin_right = 224.0
+margin_right = 225.0
 margin_bottom = 500.0
 size_flags_horizontal = 4
 alignment = 1
 
 [node name="options" type="Button" parent="parent_vbox/vendors/vbox/buttons"]
-margin_right = 88.0
+margin_right = 90.0
 margin_bottom = 25.0
 theme = ExtResource( 1 )
 text = "OPTIONS"
