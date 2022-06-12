@@ -4,6 +4,7 @@ extends Node
 var player = {
 	'guild_renown': 100,
 	'gold': 200,
+	'heroes_unlocked': 2,
 	'map': {
 		'verdant_valley': {
 			'current': 4,
@@ -49,6 +50,7 @@ var player = {
 	'heroes': {
 		0: {
 			'name': 'Jack',
+			'img_path': 'avatar (1)',
 			'level': 1,
 			'activity': {
 				'type': 'map', #Could also be 'dead' and time-done is when he revives
