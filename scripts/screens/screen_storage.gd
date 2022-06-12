@@ -71,7 +71,7 @@ func update_item_record(item_record, item):
 	change_border_color(item_record.get_node('rarity'), item['rarity'])
 
 	item_record.get_node('rarity/amount').text = str(item['amount'])
-	item_record.get_node('rarity/item').texture = load('res://assets/' + item_data['img'] + '.png')
+	item_record.get_node('rarity/item').texture = load('res://assets/' + item_data['img_path'] + '.png')
 
 
 func change_border_color(node, rarity):

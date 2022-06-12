@@ -1,9 +1,6 @@
-[gd_resource type="Theme" load_steps=7 format=2]
+[gd_resource type="Theme" load_steps=6 format=2]
 
-[ext_resource path="res://Retro.ttf" type="DynamicFontData" id=1]
-
-[sub_resource type="DynamicFont" id=5]
-font_data = ExtResource( 1 )
+[ext_resource path="res://themes/fonts/normal_font.tres" type="DynamicFont" id=1]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -50,7 +47,7 @@ corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
 [resource]
-Button/fonts/font = SubResource( 5 )
+Button/fonts/font = ExtResource( 1 )
 Button/styles/focus = SubResource( 1 )
 Button/styles/hover = SubResource( 2 )
 Button/styles/normal = SubResource( 3 )

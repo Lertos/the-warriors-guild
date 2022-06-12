@@ -73,27 +73,27 @@ var player = {
 			],
 			'slots': [
 				{
-					'item_id': 'dulite_ingot',
+					'item_id': 'dul_ingot',
 					'amount': 5,
 					'rarity': 'common',
 				},
 				{
-					'item_id': 'midite_ingot',
+					'item_id': 'dul_ingot',
 					'amount': 4,
 					'rarity': 'uncommon',
 				},
 				{
-					'item_id': 'dulite_ingot',
+					'item_id': 'dul_ingot',
 					'amount': 2,
 					'rarity': 'rare',
 				},
 				{
-					'item_id': 'dulite_ingot',
+					'item_id': 'dul_ingot',
 					'amount': 3,
 					'rarity': 'legendary',
 				},
 				{
-					'item_id': 'dulite_ingot',
+					'item_id': 'lud_ingot',
 					'amount': 16,
 					'rarity': 'mythic',
 				},
