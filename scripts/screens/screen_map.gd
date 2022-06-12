@@ -15,8 +15,10 @@ func _ready():
 		for region_button in region_row.get_children():
 			if map_info[region_button.name]['current'] == 0:
 				region_button.icon = locked_texture
+			else:
+				region_button.connect('pressed', self, 'load_monsters', [region_button.name])
 	
-	load_monsters('valley')
+	load_monsters('verdant_valley')
 
 
 func load_monsters(region_name):
@@ -24,6 +26,9 @@ func load_monsters(region_name):
 	var monster_list = Global_Enemies.enemies[region_name]
 
 	var hbox
+	
+	update_region_header(region_name)
+	clear_list()
 	
 	for index in range(0, len(monster_list)):
 		if index % 2 == 0:
@@ -46,12 +51,30 @@ func load_monsters(region_name):
 		update_monster_record(monster_list[index], hbox.name, inst_monster_record.name)
 		
 		if index >= unlocked_enemy_count:
-			if index % 2 == 0:
-				var filer_record = inst_monster_record.duplicate()
-				filer_record.get_node('margin/vbox').visible = false
-				filer_record.set('custom_styles/panel', filler_bg_color)
-				hbox.add_child(filer_record)
+			add_filler_record(index, inst_monster_record, hbox)
 			break
+
+
+func add_filler_record(index, monster_record, hbox):
+	if index % 2 == 0:
+		var filler_record = monster_record.duplicate()
+		
+		filler_record.get_node('margin/vbox').visible = false
+		filler_record.set('custom_styles/panel', filler_bg_color)
+		
+		hbox.add_child(filler_record)
+
+
+func update_region_header(region_name):
+	var header = region_name
+	var index_of_underscore = region_name.find('_')
+		
+	header[0] = header[0].to_upper()
+	header[index_of_underscore + 1] = header[index_of_underscore + 1].to_upper()
+
+	header = header.replace('_', ' ')
+	
+	get_node('parent_vbox/header').text = header
 
 
 func update_monster_record(monster, hbox_name, monster_node_name):
@@ -78,3 +101,9 @@ func create_animated_texture(monster_id):
 	animated_tex.set_frame_texture(1, load('res://assets/monsters/' + monster_id + ' (2).png'))
 	
 	return animated_tex
+	
+
+func clear_list():
+	for child in record_list_node.get_children():
+		record_list_node.remove_child(child)
+		child.queue_free()

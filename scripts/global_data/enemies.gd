@@ -25,7 +25,7 @@ extends Node
 
 
 var enemies = {
-	'valley': {
+	'verdant_valley': {
 		0: {
 			'id': 'valley_chicken',
 			'name': 'Farm Chicken',
@@ -214,5 +214,75 @@ var enemies = {
 				}
 			},
 		},
-	}
+	},
+	'fatal_forest': {
+		0: {
+			'id': 'valley_chicken',
+			'name': 'Farm Chicken',
+			'level': 1,
+			'stats': {
+				'atk_stab': 1,
+				'atk_slash': 2,
+				'atk_crush': 3,
+				'def_stab': 4,
+				'def_slash': 5,
+				'def_crush': 6,
+				'health': 100,
+				'atk_speed': 1.2,
+				'dmg_reduc': 4.5,
+				'min_hit': 23,
+				'max_hit': 87,
+				'main_stat': 'atk_crush',
+				'abilities': {
+					0: {
+						'name': 'Fire Breath',
+						'description': 'Take 15% additional damage from the monster hit',
+						'chance': '60'
+					},
+					1: {
+						'name': 'Rooster Bark',
+						'description': 'You lose your turn',
+						'chance': '20'
+					},
+				}
+			},
+			'drops': {
+				#TODO
+			}
+		},
+		1: {
+			'id': 'valley_chicken',
+			'name': 'Farm Chicken',
+			'level': 1,
+			'stats': {
+				'atk_stab': 1,
+				'atk_slash': 2,
+				'atk_crush': 3,
+				'def_stab': 4,
+				'def_slash': 5,
+				'def_crush': 6,
+				'health': 100,
+				'atk_speed': 1.2,
+				'dmg_reduc': 4.5,
+				'min_hit': 23,
+				'max_hit': 87,
+				'main_stat': 'atk_crush',
+				'abilities': {
+					0: {
+						'name': 'Fire Breath',
+						'description': 'Take 15% additional damage from the monster hit',
+						'chance': '60'
+					},
+					1: {
+						'name': 'Rooster Bark',
+						'description': 'You lose your turn',
+						'chance': '20'
+					},
+				}
+			},
+			'drops': {
+				#TODO
+			}
+		},
+	},
 }

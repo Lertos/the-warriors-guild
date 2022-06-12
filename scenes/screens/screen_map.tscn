@@ -51,7 +51,7 @@ margin_bottom = 48.0
 custom_constants/separation = 10
 alignment = 1
 
-[node name="valley" type="Button" parent="parent_vbox/region_vbox/region_row1"]
+[node name="verdant_valley" type="Button" parent="parent_vbox/region_vbox/region_row1"]
 margin_right = 48.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 48, 48 )
@@ -61,7 +61,7 @@ theme = ExtResource( 14 )
 icon = ExtResource( 5 )
 expand_icon = true
 
-[node name="forest" type="Button" parent="parent_vbox/region_vbox/region_row1"]
+[node name="fatal_forest" type="Button" parent="parent_vbox/region_vbox/region_row1"]
 margin_left = 58.0
 margin_right = 106.0
 margin_bottom = 48.0
@@ -72,7 +72,7 @@ theme = ExtResource( 14 )
 icon = ExtResource( 4 )
 expand_icon = true
 
-[node name="grove" type="Button" parent="parent_vbox/region_vbox/region_row1"]
+[node name="gruesome_grove" type="Button" parent="parent_vbox/region_vbox/region_row1"]
 margin_left = 116.0
 margin_right = 164.0
 margin_bottom = 48.0
@@ -83,7 +83,7 @@ theme = ExtResource( 14 )
 icon = ExtResource( 8 )
 expand_icon = true
 
-[node name="depths" type="Button" parent="parent_vbox/region_vbox/region_row1"]
+[node name="dangerous_depths" type="Button" parent="parent_vbox/region_vbox/region_row1"]
 margin_left = 174.0
 margin_right = 222.0
 margin_bottom = 48.0
@@ -94,7 +94,7 @@ theme = ExtResource( 14 )
 icon = ExtResource( 9 )
 expand_icon = true
 
-[node name="wasteland" type="Button" parent="parent_vbox/region_vbox/region_row1"]
+[node name="wretched_wasteland" type="Button" parent="parent_vbox/region_vbox/region_row1"]
 margin_left = 232.0
 margin_right = 280.0
 margin_bottom = 48.0
@@ -112,7 +112,7 @@ margin_bottom = 101.0
 custom_constants/separation = 10
 alignment = 1
 
-[node name="graveyard" type="Button" parent="parent_vbox/region_vbox/region_row2"]
+[node name="gory_graveyard" type="Button" parent="parent_vbox/region_vbox/region_row2"]
 margin_right = 48.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 48, 48 )
@@ -122,7 +122,7 @@ theme = ExtResource( 14 )
 icon = ExtResource( 3 )
 expand_icon = true
 
-[node name="swamp" type="Button" parent="parent_vbox/region_vbox/region_row2"]
+[node name="satanic_swamp" type="Button" parent="parent_vbox/region_vbox/region_row2"]
 margin_left = 58.0
 margin_right = 106.0
 margin_bottom = 48.0
@@ -133,7 +133,7 @@ theme = ExtResource( 14 )
 icon = ExtResource( 7 )
 expand_icon = true
 
-[node name="peaks" type="Button" parent="parent_vbox/region_vbox/region_row2"]
+[node name="perilous_peaks" type="Button" parent="parent_vbox/region_vbox/region_row2"]
 margin_left = 116.0
 margin_right = 164.0
 margin_bottom = 48.0
@@ -144,7 +144,7 @@ theme = ExtResource( 14 )
 icon = ExtResource( 2 )
 expand_icon = true
 
-[node name="mountain" type="Button" parent="parent_vbox/region_vbox/region_row2"]
+[node name="menacing_mountain" type="Button" parent="parent_vbox/region_vbox/region_row2"]
 margin_left = 174.0
 margin_right = 222.0
 margin_bottom = 48.0
@@ -155,7 +155,7 @@ theme = ExtResource( 14 )
 icon = ExtResource( 10 )
 expand_icon = true
 
-[node name="void" type="Button" parent="parent_vbox/region_vbox/region_row2"]
+[node name="vicious_void" type="Button" parent="parent_vbox/region_vbox/region_row2"]
 margin_left = 232.0
 margin_right = 280.0
 margin_bottom = 48.0
@@ -171,8 +171,20 @@ margin_top = 107.0
 margin_bottom = 111.0
 custom_styles/panel = SubResource( 1 )
 
-[node name="monsters" type="ScrollContainer" parent="parent_vbox"]
+[node name="header" type="Label" parent="parent_vbox"]
 margin_top = 117.0
+margin_right = 360.0
+margin_bottom = 145.0
+theme = ExtResource( 16 )
+align = 1
+
+[node name="sep" parent="parent_vbox" instance=ExtResource( 11 )]
+margin_top = 151.0
+margin_bottom = 155.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="monsters" type="ScrollContainer" parent="parent_vbox"]
+margin_top = 161.0
 margin_right = 360.0
 margin_bottom = 500.0
 mouse_filter = 1
@@ -183,13 +195,6 @@ script = ExtResource( 13 )
 
 [node name="vbox" type="VBoxContainer" parent="parent_vbox/monsters"]
 margin_right = 360.0
-margin_bottom = 383.0
+margin_bottom = 339.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="header" type="Label" parent="parent_vbox/monsters/vbox"]
-visible = false
-margin_right = 360.0
-margin_bottom = 28.0
-theme = ExtResource( 16 )
-align = 1

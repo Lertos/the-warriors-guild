@@ -5,43 +5,43 @@ var player = {
 	'guild_renown': 100,
 	'gold': 200,
 	'map': {
-		'valley': {
+		'verdant_valley': {
 			'current': 4,
 			'max': 10,
 		},
-		'forest': {
+		'fatal_forest': {
 			'current': 1,
 			'max': 10,
 		},
-		'grove': {
+		'gruesome_grove': {
 			'current': 1,
 			'max': 10,
 		},
-		'depths': {
+		'dangerous_depths': {
 			'current': 1,
 			'max': 10,
 		},
-		'wasteland': {
+		'wretched_wasteland': {
 			'current': 1,
 			'max': 10,
 		},
-		'graveyard': {
+		'gory_graveyard': {
 			'current': 1,
 			'max': 10,
 		},
-		'swamp': {
+		'satanic_swamp': {
 			'current': 1,
 			'max': 10,
 		},
-		'peaks': {
+		'perilous_peaks': {
 			'current': 1,
 			'max': 10,
 		},
-		'mountain': {
+		'menacing_mountain': {
 			'current': 1,
 			'max': 10,
 		},
-		'void': {
+		'vicious_void': {
 			'current': 0,
 			'max': 10,
 		},
