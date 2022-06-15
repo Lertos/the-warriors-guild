@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://scripts/screens/screen_heroes.gd" type="Script" id=1]
 [ext_resource path="res://themes/popup.tres" type="StyleBox" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://assets/avatars/avatar (8).png" type="Texture" id=16]
 [ext_resource path="res://themes/buttons/button.tres" type="Theme" id=17]
 [ext_resource path="res://assets/materials/material31.png" type="Texture" id=18]
+[ext_resource path="res://scripts/popups/create_hero_popup.gd" type="Script" id=19]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.717647, 0.686275, 0.588235, 1 )
@@ -230,13 +231,15 @@ margin_bottom = 377.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="CreateHeroPopup" type="Popup" parent="."]
+[node name="create_hero_popup" type="Popup" parent="."]
+visible = true
 margin_top = 6.0
 margin_right = 360.0
 margin_bottom = 506.0
 popup_exclusive = true
+script = ExtResource( 19 )
 
-[node name="margin" type="MarginContainer" parent="CreateHeroPopup"]
+[node name="margin" type="MarginContainer" parent="create_hero_popup"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
@@ -246,7 +249,7 @@ custom_constants/margin_top = 16
 custom_constants/margin_left = 16
 custom_constants/margin_bottom = 16
 
-[node name="panel" type="PanelContainer" parent="CreateHeroPopup/margin"]
+[node name="panel" type="PanelContainer" parent="create_hero_popup/margin"]
 margin_left = 16.0
 margin_top = 16.0
 margin_right = 344.0
@@ -255,7 +258,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = ExtResource( 2 )
 
-[node name="vbox" type="VBoxContainer" parent="CreateHeroPopup/margin/panel"]
+[node name="vbox" type="VBoxContainer" parent="create_hero_popup/margin/panel"]
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 318.0
@@ -264,32 +267,32 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 16
 
-[node name="header" type="Label" parent="CreateHeroPopup/margin/panel/vbox"]
+[node name="header" type="Label" parent="create_hero_popup/margin/panel/vbox"]
 margin_right = 308.0
 margin_bottom = 21.0
 theme = ExtResource( 3 )
 text = "Hire a New Hero"
 align = 1
 
-[node name="sep" parent="CreateHeroPopup/margin/panel/vbox" instance=ExtResource( 6 )]
+[node name="sep" parent="create_hero_popup/margin/panel/vbox" instance=ExtResource( 6 )]
 margin_top = 37.0
 margin_right = 308.0
 margin_bottom = 41.0
 custom_styles/panel = SubResource( 1 )
 
-[node name="name" type="MarginContainer" parent="CreateHeroPopup/margin/panel/vbox"]
+[node name="name" type="MarginContainer" parent="create_hero_popup/margin/panel/vbox"]
 margin_top = 57.0
 margin_right = 308.0
 margin_bottom = 99.0
 custom_constants/margin_right = 32
 custom_constants/margin_left = 32
 
-[node name="vbox" type="VBoxContainer" parent="CreateHeroPopup/margin/panel/vbox/name"]
+[node name="vbox" type="VBoxContainer" parent="create_hero_popup/margin/panel/vbox/name"]
 margin_left = 32.0
 margin_right = 276.0
 margin_bottom = 42.0
 
-[node name="Label" type="Label" parent="CreateHeroPopup/margin/panel/vbox/name/vbox"]
+[node name="label" type="Label" parent="create_hero_popup/margin/panel/vbox/name/vbox"]
 margin_right = 244.0
 margin_bottom = 14.0
 size_flags_horizontal = 3
@@ -297,14 +300,14 @@ theme = ExtResource( 7 )
 text = "Their Name"
 align = 1
 
-[node name="LineEdit" type="LineEdit" parent="CreateHeroPopup/margin/panel/vbox/name/vbox"]
+[node name="name" type="LineEdit" parent="create_hero_popup/margin/panel/vbox/name/vbox"]
 margin_top = 18.0
 margin_right = 244.0
 margin_bottom = 42.0
 size_flags_horizontal = 3
 theme = ExtResource( 7 )
 
-[node name="avatar" type="MarginContainer" parent="CreateHeroPopup/margin/panel/vbox"]
+[node name="avatar" type="MarginContainer" parent="create_hero_popup/margin/panel/vbox"]
 margin_top = 115.0
 margin_right = 308.0
 margin_bottom = 357.0
@@ -312,12 +315,12 @@ size_flags_vertical = 3
 custom_constants/margin_right = 32
 custom_constants/margin_left = 32
 
-[node name="vbox" type="VBoxContainer" parent="CreateHeroPopup/margin/panel/vbox/avatar"]
+[node name="vbox" type="VBoxContainer" parent="create_hero_popup/margin/panel/vbox/avatar"]
 margin_left = 32.0
 margin_right = 276.0
 margin_bottom = 242.0
 
-[node name="Label" type="Label" parent="CreateHeroPopup/margin/panel/vbox/avatar/vbox"]
+[node name="Label" type="Label" parent="create_hero_popup/margin/panel/vbox/avatar/vbox"]
 margin_right = 244.0
 margin_bottom = 14.0
 size_flags_horizontal = 3
@@ -325,18 +328,18 @@ theme = ExtResource( 7 )
 text = "Their Avatar"
 align = 1
 
-[node name="vbox" type="VBoxContainer" parent="CreateHeroPopup/margin/panel/vbox/avatar/vbox"]
+[node name="vbox" type="VBoxContainer" parent="create_hero_popup/margin/panel/vbox/avatar/vbox"]
 margin_top = 18.0
 margin_right = 244.0
 margin_bottom = 170.0
 
-[node name="row1" type="HBoxContainer" parent="CreateHeroPopup/margin/panel/vbox/avatar/vbox/vbox"]
+[node name="row1" type="HBoxContainer" parent="create_hero_popup/margin/panel/vbox/avatar/vbox/vbox"]
 margin_right = 244.0
 margin_bottom = 48.0
 custom_constants/separation = 8
 alignment = 1
 
-[node name="1" type="Button" parent="CreateHeroPopup/margin/panel/vbox/avatar/vbox/vbox/row1"]
+[node name="1" type="Button" parent="create_hero_popup/margin/panel/vbox/avatar/vbox/vbox/row1"]
 margin_left = 14.0
 margin_right = 62.0
 margin_bottom = 48.0
@@ -347,7 +350,7 @@ theme = ExtResource( 8 )
 icon = ExtResource( 9 )
 expand_icon = true
 
-[node name="2" type="Button" parent="CreateHeroPopup/margin/panel/vbox/avatar/vbox/vbox/row1"]
+[node name="2" type="Button" parent="create_hero_popup/margin/panel/vbox/avatar/vbox/vbox/row1"]
 margin_left = 70.0
 margin_right = 118.0
 margin_bottom = 48.0
@@ -358,7 +361,7 @@ theme = ExtResource( 8 )
 icon = ExtResource( 10 )
 expand_icon = true
 
-[node name="3" type="Button" parent="CreateHeroPopup/margin/panel/vbox/avatar/vbox/vbox/row1"]
+[node name="3" type="Button" parent="create_hero_popup/margin/panel/vbox/avatar/vbox/vbox/row1"]
 margin_left = 126.0
 margin_right = 174.0
 margin_bottom = 48.0
@@ -369,7 +372,7 @@ theme = ExtResource( 8 )
 icon = ExtResource( 4 )
 expand_icon = true
 
-[node name="4" type="Button" parent="CreateHeroPopup/margin/panel/vbox/avatar/vbox/vbox/row1"]
+[node name="4" type="Button" parent="create_hero_popup/margin/panel/vbox/avatar/vbox/vbox/row1"]
 margin_left = 182.0
 margin_right = 230.0
 margin_bottom = 48.0
@@ -380,14 +383,14 @@ theme = ExtResource( 8 )
 icon = ExtResource( 5 )
 expand_icon = true
 
-[node name="row2" type="HBoxContainer" parent="CreateHeroPopup/margin/panel/vbox/avatar/vbox/vbox"]
+[node name="row2" type="HBoxContainer" parent="create_hero_popup/margin/panel/vbox/avatar/vbox/vbox"]
 margin_top = 52.0
 margin_right = 244.0
 margin_bottom = 100.0
 custom_constants/separation = 8
 alignment = 1
 
-[node name="5" type="Button" parent="CreateHeroPopup/margin/panel/vbox/avatar/vbox/vbox/row2"]
+[node name="5" type="Button" parent="create_hero_popup/margin/panel/vbox/avatar/vbox/vbox/row2"]
 margin_left = 14.0
 margin_right = 62.0
 margin_bottom = 48.0
@@ -398,7 +401,7 @@ theme = ExtResource( 8 )
 icon = ExtResource( 15 )
 expand_icon = true
 
-[node name="6" type="Button" parent="CreateHeroPopup/margin/panel/vbox/avatar/vbox/vbox/row2"]
+[node name="6" type="Button" parent="create_hero_popup/margin/panel/vbox/avatar/vbox/vbox/row2"]
 margin_left = 70.0
 margin_right = 118.0
 margin_bottom = 48.0
@@ -409,7 +412,7 @@ theme = ExtResource( 8 )
 icon = ExtResource( 12 )
 expand_icon = true
 
-[node name="7" type="Button" parent="CreateHeroPopup/margin/panel/vbox/avatar/vbox/vbox/row2"]
+[node name="7" type="Button" parent="create_hero_popup/margin/panel/vbox/avatar/vbox/vbox/row2"]
 margin_left = 126.0
 margin_right = 174.0
 margin_bottom = 48.0
@@ -420,7 +423,7 @@ theme = ExtResource( 8 )
 icon = ExtResource( 11 )
 expand_icon = true
 
-[node name="8" type="Button" parent="CreateHeroPopup/margin/panel/vbox/avatar/vbox/vbox/row2"]
+[node name="8" type="Button" parent="create_hero_popup/margin/panel/vbox/avatar/vbox/vbox/row2"]
 margin_left = 182.0
 margin_right = 230.0
 margin_bottom = 48.0
@@ -431,14 +434,14 @@ theme = ExtResource( 8 )
 icon = ExtResource( 16 )
 expand_icon = true
 
-[node name="row3" type="HBoxContainer" parent="CreateHeroPopup/margin/panel/vbox/avatar/vbox/vbox"]
+[node name="row3" type="HBoxContainer" parent="create_hero_popup/margin/panel/vbox/avatar/vbox/vbox"]
 margin_top = 104.0
 margin_right = 244.0
 margin_bottom = 152.0
 custom_constants/separation = 8
 alignment = 1
 
-[node name="9" type="Button" parent="CreateHeroPopup/margin/panel/vbox/avatar/vbox/vbox/row3"]
+[node name="9" type="Button" parent="create_hero_popup/margin/panel/vbox/avatar/vbox/vbox/row3"]
 margin_left = 70.0
 margin_right = 118.0
 margin_bottom = 48.0
@@ -449,7 +452,7 @@ theme = ExtResource( 8 )
 icon = ExtResource( 13 )
 expand_icon = true
 
-[node name="10" type="Button" parent="CreateHeroPopup/margin/panel/vbox/avatar/vbox/vbox/row3"]
+[node name="10" type="Button" parent="create_hero_popup/margin/panel/vbox/avatar/vbox/vbox/row3"]
 margin_left = 126.0
 margin_right = 174.0
 margin_bottom = 48.0
@@ -460,27 +463,27 @@ theme = ExtResource( 8 )
 icon = ExtResource( 14 )
 expand_icon = true
 
-[node name="gold_cost" type="MarginContainer" parent="CreateHeroPopup/margin/panel/vbox"]
+[node name="gold_cost" type="MarginContainer" parent="create_hero_popup/margin/panel/vbox"]
 margin_top = 373.0
 margin_right = 308.0
 margin_bottom = 405.0
 custom_constants/margin_right = 64
 custom_constants/margin_left = 64
 
-[node name="hbox" type="HBoxContainer" parent="CreateHeroPopup/margin/panel/vbox/gold_cost"]
+[node name="hbox" type="HBoxContainer" parent="create_hero_popup/margin/panel/vbox/gold_cost"]
 margin_left = 64.0
 margin_right = 244.0
 margin_bottom = 32.0
 theme = ExtResource( 17 )
 alignment = 1
 
-[node name="img" type="TextureRect" parent="CreateHeroPopup/margin/panel/vbox/gold_cost/hbox"]
+[node name="img" type="TextureRect" parent="create_hero_popup/margin/panel/vbox/gold_cost/hbox"]
 margin_left = 56.0
 margin_right = 88.0
 margin_bottom = 32.0
 texture = ExtResource( 18 )
 
-[node name="gold_cost" type="Label" parent="CreateHeroPopup/margin/panel/vbox/gold_cost/hbox"]
+[node name="gold_cost" type="Label" parent="create_hero_popup/margin/panel/vbox/gold_cost/hbox"]
 margin_left = 92.0
 margin_top = 5.0
 margin_right = 124.0
@@ -488,27 +491,27 @@ margin_bottom = 26.0
 theme = ExtResource( 3 )
 text = "100"
 
-[node name="buttons" type="MarginContainer" parent="CreateHeroPopup/margin/panel/vbox"]
+[node name="buttons" type="MarginContainer" parent="create_hero_popup/margin/panel/vbox"]
 margin_top = 421.0
 margin_right = 308.0
 margin_bottom = 446.0
 custom_constants/margin_right = 32
 custom_constants/margin_left = 32
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CreateHeroPopup/margin/panel/vbox/buttons"]
+[node name="hbox" type="HBoxContainer" parent="create_hero_popup/margin/panel/vbox/buttons"]
 margin_left = 32.0
 margin_right = 276.0
 margin_bottom = 25.0
 alignment = 1
 
-[node name="hire_hero" type="Button" parent="CreateHeroPopup/margin/panel/vbox/buttons/HBoxContainer"]
+[node name="hire_hero" type="Button" parent="create_hero_popup/margin/panel/vbox/buttons/hbox"]
 margin_right = 120.0
 margin_bottom = 25.0
 size_flags_horizontal = 3
 theme = ExtResource( 17 )
 text = "HIRE HERO"
 
-[node name="close" type="Button" parent="CreateHeroPopup/margin/panel/vbox/buttons/HBoxContainer"]
+[node name="close" type="Button" parent="create_hero_popup/margin/panel/vbox/buttons/hbox"]
 margin_left = 124.0
 margin_right = 244.0
 margin_bottom = 25.0
@@ -516,5 +519,5 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 text = "CLOSE"
 
-[connection signal="pressed" from="CreateHeroPopup/margin/panel/vbox/buttons/HBoxContainer/hire_hero" to="." method="hire_hero_pressed"]
-[connection signal="pressed" from="CreateHeroPopup/margin/panel/vbox/buttons/HBoxContainer/close" to="." method="close_create_hero_popup"]
+[connection signal="pressed" from="create_hero_popup/margin/panel/vbox/buttons/hbox/hire_hero" to="." method="hire_hero_pressed"]
+[connection signal="pressed" from="create_hero_popup/margin/panel/vbox/buttons/hbox/close" to="." method="close_create_hero_popup"]

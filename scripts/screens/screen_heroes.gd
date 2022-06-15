@@ -21,8 +21,10 @@ func select_hero(index: int):
 
 
 func open_create_hero_popup(index: int):
+	get_node('create_hero_popup/margin/panel/vbox/gold_cost/hbox/gold_cost').text = str(MasterConfig.config['hero_base_cost'][index])
+	
 	get_node('/root/root/PopupBlackout').visible = true
-	get_node('CreateHeroPopup').popup_centered_minsize()
+	get_node('create_hero_popup').popup_centered_minsize()
 
 
 func hire_hero_pressed():

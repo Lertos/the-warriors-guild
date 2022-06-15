@@ -21,4 +21,34 @@ func get_time_from_stamp(time_in_seconds: int):
 	elif seconds != 0:
 		return '%02d' % [seconds]
 	
+
+func change_border_color(node, color_key):
+	var temp_stylebox_normal = node.get_theme().get_stylebox('normal', 'Button').duplicate()
+	var temp_stylebox_hover = node.get_theme().get_stylebox('hover', 'Button').duplicate()
+	var temp_stylebox_pressed = node.get_theme().get_stylebox('pressed', 'Button').duplicate()
 	
+	var color = Global_Colors.colors[color_key]
+
+	temp_stylebox_normal.border_color = color
+	temp_stylebox_hover.border_color = color
+	temp_stylebox_pressed.border_color = color
+	
+	node.add_stylebox_override('normal',temp_stylebox_normal)
+	node.add_stylebox_override('hover',temp_stylebox_hover)
+	node.add_stylebox_override('pressed',temp_stylebox_pressed)
+
+
+func change_background_color(node, color_key):
+	var temp_stylebox_normal = node.get_theme().get_stylebox('normal', 'Button').duplicate()
+	var temp_stylebox_hover = node.get_theme().get_stylebox('hover', 'Button').duplicate()
+	var temp_stylebox_pressed = node.get_theme().get_stylebox('pressed', 'Button').duplicate()
+	
+	var color = Global_Colors.colors[color_key]
+
+	temp_stylebox_normal.bg_color = color
+	temp_stylebox_hover.bg_color = color
+	temp_stylebox_pressed.bg_color = color
+	
+	node.add_stylebox_override('normal',temp_stylebox_normal)
+	node.add_stylebox_override('hover',temp_stylebox_hover)
+	node.add_stylebox_override('pressed',temp_stylebox_pressed)
