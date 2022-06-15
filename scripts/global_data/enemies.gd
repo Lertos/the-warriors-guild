@@ -30,6 +30,7 @@ var enemies = {
 			'id': 'valley_chicken',
 			'name': 'Farm Chicken',
 			'level': 1,
+			'xp_given': 50,
 			'stats': {
 				'atk_stab': 1,
 				'atk_slash': 2,
@@ -64,6 +65,7 @@ var enemies = {
 			'id': 'valley_rabbit',
 			'name': 'Wild Rabbit',
 			'level': 3,
+			'xp_given': 50,
 			'stats': {
 				'atk_stab': 1,
 				'atk_slash': 2,
@@ -86,6 +88,7 @@ var enemies = {
 			'id': 'valley_crab',
 			'name': 'Elusive Crab',
 			'level': 5,
+			'xp_given': 50,
 			'stats': {
 				'atk_stab': 1,
 				'atk_slash': 2,
@@ -108,6 +111,7 @@ var enemies = {
 			'id': 'valley_goat',
 			'name': 'Noisy Goat',
 			'level': 7,
+			'xp_given': 50,
 			'stats': {
 				'atk_stab': 1,
 				'atk_slash': 2,
@@ -130,6 +134,7 @@ var enemies = {
 			'id': 'valley_elemental',
 			'name': 'Earth Elemental',
 			'level': 9,
+			'xp_given': 50,
 			'stats': {
 				'atk_stab': 1,
 				'atk_slash': 2,
@@ -152,6 +157,7 @@ var enemies = {
 			'id': 'valley_cat',
 			'name': 'Rabid Cat',
 			'level': 11,
+			'xp_given': 50,
 			'stats': {
 				'atk_stab': 1,
 				'atk_slash': 2,
@@ -174,6 +180,7 @@ var enemies = {
 			'id': 'valley_slime',
 			'name': 'Earthy Slime',
 			'level': 13,
+			'xp_given': 50,
 			'stats': {
 				'atk_stab': 1,
 				'atk_slash': 2,
@@ -196,6 +203,7 @@ var enemies = {
 			'id': 'valley_snake',
 			'name': 'Giant Python',
 			'level': 15,
+			'xp_given': 50,
 			'stats': {
 				'atk_stab': 1,
 				'atk_slash': 2,
@@ -220,6 +228,7 @@ var enemies = {
 			'id': 'valley_chicken',
 			'name': 'Farm Chicken',
 			'level': 1,
+			'xp_given': 50,
 			'stats': {
 				'atk_stab': 1,
 				'atk_slash': 2,
@@ -254,6 +263,7 @@ var enemies = {
 			'id': 'valley_chicken',
 			'name': 'Farm Chicken',
 			'level': 1,
+			'xp_given': 50,
 			'stats': {
 				'atk_stab': 1,
 				'atk_slash': 2,
