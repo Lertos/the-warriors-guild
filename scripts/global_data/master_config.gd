@@ -7,18 +7,38 @@ var config = {
 	'rarities': {
 		'common': {
 			'order': 0,
+			'stat_multiplier': 1,
+			'cost_multiplier': 1,
+			'max_item_abilities': 2,
+			'chance_of_each_ability': 10,
 		},
 		'uncommon': {
 			'order': 1,
+			'stat_multiplier': 1.03,
+			'cost_multiplier': 1.06,
+			'max_item_abilities': 3,
+			'chance_of_each_ability': 15,
 		},
 		'rare': {
 			'order': 2,
+			'stat_multiplier': 1.06,
+			'cost_multiplier': 1.12,
+			'max_item_abilities': 4,
+			'chance_of_each_ability': 25,
 		},
 		'legendary': {
 			'order': 3,
+			'stat_multiplier': 1.12,
+			'cost_multiplier': 1.24,
+			'max_item_abilities': 5,
+			'chance_of_each_ability': 40,
 		},
 		'mythic': {
 			'order': 4,
+			'stat_multiplier': 1.24,
+			'cost_multiplier': 1.48,
+			'max_item_abilities': 6,
+			'chance_of_each_ability': 60,
 		},
 	},
 	#-----------------------

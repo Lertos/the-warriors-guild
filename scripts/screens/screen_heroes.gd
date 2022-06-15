@@ -7,7 +7,35 @@ var hero_timers = {}
 
 func _ready():
 	load_heroes()
+	create_hero_timer()
 	
+	for child in get_node('parent_vbox/vbox/heroes').get_children():
+		child.get_node('img').connect('pressed', self, 'select_hero', [int(child.name)])
+
+
+func select_hero(index: int):
+	if index in Global_Player.player['heroes']:
+		print('exists')
+	else:
+		open_create_hero_popup(index)
+
+
+func open_create_hero_popup(index: int):
+	get_node('/root/root/PopupBlackout').visible = true
+	get_node('CreateHeroPopup').popup_centered_minsize()
+
+
+func hire_hero_pressed():
+	print('hero hired')
+	close_create_hero_popup()
+
+
+func close_create_hero_popup():
+	get_node('/root/root/PopupBlackout').visible = false
+	get_node('CreateHeroPopup').visible = false
+
+
+func create_hero_timer():
 	var timer = Timer.new()
 	timer.connect('timeout', self, 'update_hero_timers') 
 	add_child(timer)
@@ -70,5 +98,3 @@ func update_hero_timers():
 		else:
 			hero_timers[hero]['time_left'] = new_time
 			path.get_node(str(hero) + '/status').text = Helper.get_time_from_stamp(new_time)
-		
-

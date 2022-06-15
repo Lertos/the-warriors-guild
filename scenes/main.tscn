@@ -159,7 +159,6 @@ expand_icon = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-mouse_filter = 2
 custom_styles/panel = SubResource( 30 )
 
 [node name="Popup" type="Popup" parent="."]
