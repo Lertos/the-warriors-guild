@@ -21,12 +21,10 @@
 [ext_resource path="res://scripts/text_edit_tabbing.gd" type="Script" id=19]
 [ext_resource path="res://scripts/combat.gd" type="Script" id=20]
 [ext_resource path="res://themes/buttons/button.tres" type="Theme" id=21]
+[ext_resource path="res://scenes/popup_blackout.tscn" type="PackedScene" id=22]
 [ext_resource path="res://themes/header.tres" type="StyleBox" id=28]
 
 [sub_resource type="Theme" id=17]
-
-[sub_resource type="StyleBoxFlat" id=30]
-bg_color = Color( 0, 0, 0, 0.780392 )
 
 [node name="root" type="Control"]
 anchor_right = 1.0
@@ -155,13 +153,10 @@ theme = ExtResource( 3 )
 icon = ExtResource( 7 )
 expand_icon = true
 
-[node name="PopupBlackout" type="Panel" parent="."]
+[node name="popup_blackout" parent="." instance=ExtResource( 22 )]
 visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_styles/panel = SubResource( 30 )
 
-[node name="Popup" type="Popup" parent="."]
+[node name="root_popup" type="Popup" parent="."]
 margin_right = 340.0
 margin_bottom = 500.0
 rect_min_size = Vector2( 340, 100 )
@@ -169,7 +164,7 @@ size_flags_vertical = 4
 popup_exclusive = true
 script = ExtResource( 13 )
 
-[node name="container" type="PanelContainer" parent="Popup"]
+[node name="container" type="PanelContainer" parent="root_popup"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -60.0
@@ -177,7 +172,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = ExtResource( 11 )
 
-[node name="parent_vbox" type="VBoxContainer" parent="Popup/container"]
+[node name="parent_vbox" type="VBoxContainer" parent="root_popup/container"]
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 330.0
@@ -185,13 +180,13 @@ margin_bottom = 428.0
 size_flags_vertical = 3
 alignment = 1
 
-[node name="placeholder" type="Control" parent="Popup/container/parent_vbox"]
+[node name="placeholder" type="Control" parent="root_popup/container/parent_vbox"]
 margin_right = 320.0
 margin_bottom = 382.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="bottom" type="HBoxContainer" parent="Popup/container/parent_vbox"]
+[node name="bottom" type="HBoxContainer" parent="root_popup/container/parent_vbox"]
 margin_top = 386.0
 margin_right = 320.0
 margin_bottom = 418.0
@@ -201,9 +196,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 alignment = 1
 
-[node name="close" type="Button" parent="Popup/container/parent_vbox/bottom"]
-margin_left = 128.0
-margin_right = 192.0
+[node name="close" type="Button" parent="root_popup/container/parent_vbox/bottom"]
+margin_left = 129.0
+margin_right = 191.0
 margin_bottom = 32.0
 theme = ExtResource( 3 )
 text = "CLOSE"
@@ -1690,7 +1685,7 @@ theme = ExtResource( 21 )
 text = " D (F7) "
 
 [connection signal="pressed" from="parent/footer/buttons/home" to="parent/footer/buttons" method="home_pressed"]
-[connection signal="pressed" from="Popup/container/parent_vbox/bottom/close" to="Popup" method="close_popup"]
+[connection signal="pressed" from="root_popup/container/parent_vbox/bottom/close" to="root_popup" method="close_popup"]
 [connection signal="text_changed" from="ItemGenerator/container/parent_vbox/top/search_bar" to="ItemGenerator" method="on_search_bar_text_changed"]
 [connection signal="pressed" from="ItemGenerator/container/parent_vbox/top/search" to="ItemGenerator" method="on_search_pressed"]
 [connection signal="pressed" from="ItemGenerator/container/parent_vbox/top/show_all" to="ItemGenerator" method="on_show_all_pressed"]

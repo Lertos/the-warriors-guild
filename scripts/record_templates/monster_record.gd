@@ -1,11 +1,11 @@
 extends Node
 
-signal show_popup(node)
+signal show_root_popup(node)
 
 var scene_popup_monster_info = preload("res://scenes/popup_monster_info.tscn")
 
 func _ready():
-	self.connect('show_popup', get_node('/root/root'), 'show_popup')
+	self.connect('show_root_popup', get_node('/root/root'), 'show_root_popup')
 
 
 func show_info_popup(region_name, index):
@@ -15,4 +15,4 @@ func show_info_popup(region_name, index):
 	inst_popup_monster_info.name = monster['id']
 	inst_popup_monster_info.set_meta('monster', monster)
 
-	emit_signal('show_popup', inst_popup_monster_info)
+	emit_signal('show_root_popup', inst_popup_monster_info)

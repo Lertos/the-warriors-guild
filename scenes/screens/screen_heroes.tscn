@@ -519,5 +519,5 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 text = "CLOSE"
 
-[connection signal="pressed" from="create_hero_popup/margin/panel/vbox/buttons/hbox/hire_hero" to="." method="hire_hero_pressed"]
-[connection signal="pressed" from="create_hero_popup/margin/panel/vbox/buttons/hbox/close" to="." method="close_create_hero_popup"]
+[connection signal="pressed" from="create_hero_popup/margin/panel/vbox/buttons/hbox/hire_hero" to="create_hero_popup" method="hire_hero_pressed"]
+[connection signal="pressed" from="create_hero_popup/margin/panel/vbox/buttons/hbox/close" to="create_hero_popup" method="close_create_hero_popup"]

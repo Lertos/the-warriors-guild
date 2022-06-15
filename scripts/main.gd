@@ -6,6 +6,9 @@ var scene_screen_map = preload("res://scenes/screens/screen_map.tscn")
 var scene_screen_vendors = preload("res://scenes/screens/screen_vendors.tscn")
 var scene_screen_storage = preload("res://scenes/screens/screen_storage.tscn")
 
+var scene_message_popup = preload("res://scenes/message_popup.tscn")
+var scene_popup_blackout = preload("res://scenes/popup_blackout.tscn")
+
 var data_manager
 
 func _ready():
@@ -31,18 +34,41 @@ func _unhandled_input(event):
 		#Show item generator popup
 		if event.pressed and event.scancode == KEY_F2:
 			if get_node('ItemGenerator').visible == true:
-				get_node('/root/root/PopupBlackout').visible = false
+				get_node('/root/root/popup_blackout').visible = false
 				get_node('ItemGenerator').visible = false
 			else:
-				get_node('/root/root/PopupBlackout').visible = true
+				get_node('/root/root/popup_blackout').visible = true
 				get_node('ItemGenerator').popup_centered_minsize()
 
 
-func show_popup(node):
-	self.get_node('Popup/container/parent_vbox/placeholder').add_child(node)
+func show_root_popup(node):
+	self.get_node('root_popup/container/parent_vbox/placeholder').add_child(node)
 	
-	get_node('/root/root/PopupBlackout').visible = true
-	get_node('Popup').popup_centered_minsize()
+	get_node('/root/root/popup_blackout').visible = true
+	get_node('root_popup').popup_centered_minsize()
+
+
+func show_message_popup(text):
+	var current_popup = get_node('message_popup')
+	
+	if current_popup != null:
+		self.remove_child(current_popup)
+		current_popup.queue_free()
+	
+	var new_message_popup = scene_message_popup.instance()
+	var new_popup_blackout = scene_popup_blackout.instance()
+
+	self.add_child(new_popup_blackout)
+	self.add_child(new_message_popup)
+	
+	new_message_popup.set_text(text)
+	new_message_popup.popup_centered_minsize()
+
+	new_message_popup.connect('popup_hide', self, 'hide_popup_blackout', [new_popup_blackout])
+
+
+func hide_popup_blackout(node):
+	node.visible = false
 
 
 func switch_screen(button_name):
