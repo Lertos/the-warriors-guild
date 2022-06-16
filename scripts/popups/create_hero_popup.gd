@@ -1,10 +1,17 @@
 extends Popup
 
+const MAX_NAME_LENGTH = 22
+
 onready var hero_buttons = get_node('margin/panel/vbox/avatar/vbox/vbox')
 onready var name_node = get_node('margin/panel/vbox/name/vbox/name')
 onready var gold_cost_node = get_node('margin/panel/vbox/gold_cost/hbox/gold_cost')
 
 var selected_avatar_index = null
+var number_regex = RegEx.new()
+
+
+func _ready():
+	number_regex.compile("^[a-zA-Z_ ]*$")
 
 
 func load_page(index: int):
@@ -44,13 +51,24 @@ func set_active_avatar(index: int):
 
 
 func failed_validation():
+	var message = ''
+
 	if name_node.text == '':
-		get_node('/root/root').show_message_popup('TESTING')
-		return false
+		message = 'The name field cannot be blank'
+	elif !number_regex.search(name_node.text):
+		message = 'The name field must only contain letters from A-Z. People don\'t have numbers in their names!'
+	elif len(name_node.text) > MAX_NAME_LENGTH:
+		message = 'The hero\'s name can only be upto ' + str(MAX_NAME_LENGTH) + ' characters long'
 	elif selected_avatar_index == null:
-		return false
+		message = 'You must select an avatar for your new hero. We wouldn\'t want them to be faceless!'
 	elif Global_Player.player['gold'] < int(gold_cost_node.text):
-		return false
+		message = 'You do not have enough gold to hire a new hero. They don\'t work for free!'
+		
+	if message != '':
+		get_node('/root/root').show_message_popup(message)
+		return true
+		
+	return false
 
 
 func hire_hero_pressed():
