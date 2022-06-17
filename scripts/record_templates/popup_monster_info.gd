@@ -1,16 +1,16 @@
 extends Node
 
 
-func _ready():
-	var monster = self.get_meta('monster')
+func load_monster_info(monster):
+	var parent_node = get_node('margin/panel')
 	
 	#Add Header Info
-	var header = get_node('vbox/header')
+	var header = parent_node.get_node('vbox/header')
 	header.get_node('vbox/name').text = monster['name']
 	header.get_node('vbox/hbox/level').text = str(monster['level'])
 	
 	#Add Stat Info
-	var stats = get_node('vbox/stats')
+	var stats = parent_node.get_node('vbox/stats')
 	
 	var left_panel = stats.get_node('left_panel/values')
 	
@@ -32,7 +32,9 @@ func _ready():
 	right_panel.get_node('max_hit').text = str(monster['stats']['max_hit'])
 	
 	#Abilities
-	var abilities = get_node('vbox/bottom_panel/abilities/abilities')
+	var abilities = parent_node.get_node('vbox/bottom_panel/abilities/abilities')
+	
+	abilities.bbcode_text = ''
 	
 	for ability in monster['stats']['abilities']:
 		var current_ability = monster['stats']['abilities'][ability]
@@ -44,7 +46,7 @@ func _ready():
 		abilities.bbcode_text += '\n\n'
 	
 	#Add Texture
-	var monster_image = get_node('vbox/header/monster')
+	var monster_image = parent_node.get_node('vbox/header/monster')
 	var animated_tex = AnimatedTexture.new()
 	animated_tex.frames = 2
 	animated_tex.fps = 2
@@ -52,3 +54,7 @@ func _ready():
 	animated_tex.set_frame_texture(1, load('res://assets/monsters/' + monster['id'] + ' (2).png'))
 	
 	monster_image.texture = animated_tex
+
+
+func close_monster_info_popup():
+	emit_signal('popup_hide')

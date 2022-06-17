@@ -82,6 +82,8 @@ func update_monster_record(monster, hbox_name, monster_node_name):
 	var parent_node = path.get_node('margin/vbox')
 	var monster_button = parent_node.get_node('hbox/monster')
 
+	monster_button.connect('pressed', self, 'open_monster_info_popup', [monster])
+
 	if monster_button.disabled == false:
 		parent_node.get_node('info/name').text = monster['name']
 		parent_node.get_node('info/hbox/level').text = 'Level: ' + str(monster['level'])
@@ -90,7 +92,12 @@ func update_monster_record(monster, hbox_name, monster_node_name):
 	else:
 		parent_node.get_node('info/name').visible = false
 		parent_node.get_node('info/hbox/level').text = 'Unlocked by killing the ' + path.get_meta('previous_monster')
-	
+
+
+func open_monster_info_popup(monster):
+	get_node('monster_info_popup').load_monster_info(monster)
+	get_node('/root/root').show_root_popup(get_node('monster_info_popup'))
+
 
 func create_animated_texture(monster_id):
 	var animated_tex = AnimatedTexture.new()

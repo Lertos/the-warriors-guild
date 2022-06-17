@@ -33,12 +33,10 @@ func _unhandled_input(event):
 	if event is InputEventKey:
 		#Show item generator popup
 		if event.pressed and event.scancode == KEY_F2:
-			if get_node('ItemGenerator').visible == true:
-				get_node('/root/root/popup_blackout').visible = false
-				get_node('ItemGenerator').visible = false
+			if get_node('ItemGenerator').visible != true:
+				show_root_popup(get_node('ItemGenerator'))
 			else:
-				get_node('/root/root/popup_blackout').visible = true
-				get_node('ItemGenerator').popup_centered_minsize()
+				get_node('ItemGenerator').visible = false
 
 
 func show_root_popup(node):
