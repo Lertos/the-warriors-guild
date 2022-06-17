@@ -82,5 +82,4 @@ func hire_hero_pressed():
 
 
 func close_create_hero_popup():
-	get_node('/root/root/popup_blackout').visible = false
-	self.visible = false
+	emit_signal('popup_hide')

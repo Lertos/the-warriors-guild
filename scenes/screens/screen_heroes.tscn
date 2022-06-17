@@ -232,7 +232,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="create_hero_popup" type="Popup" parent="."]
-visible = true
 margin_top = 6.0
 margin_right = 360.0
 margin_bottom = 506.0

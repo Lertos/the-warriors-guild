@@ -22,8 +22,7 @@ func select_hero(index: int):
 
 func open_create_hero_popup(index: int):
 	get_node('create_hero_popup').load_page(index)
-	get_node('/root/root/popup_blackout').visible = true
-	get_node('create_hero_popup').popup_centered_minsize()
+	get_node('/root/root').show_root_popup(get_node('create_hero_popup'))
 
 
 func create_hero_timer():

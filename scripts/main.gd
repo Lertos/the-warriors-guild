@@ -42,34 +42,54 @@ func _unhandled_input(event):
 
 
 func show_root_popup(node):
-	self.get_node('root_popup/container/parent_vbox/placeholder').add_child(node)
+	var blackout_node = scene_popup_blackout.instance()
+
+	node.get_parent().add_child(blackout_node)
+	node.get_parent().move_child(blackout_node, 0)
+
+	blackout_node.popup_centered_minsize()
+	node.popup_centered_minsize()
 	
-	get_node('/root/root/popup_blackout').visible = true
-	get_node('root_popup').popup_centered_minsize()
+	node.connect('popup_hide', self, 'remove_blackout_node', [blackout_node, node])
 
 
 func show_message_popup(text):
-	var current_popup = get_node('message_popup')
-	
-	if current_popup != null:
-		self.remove_child(current_popup)
-		current_popup.queue_free()
-	
 	var new_message_popup = scene_message_popup.instance()
-	var new_popup_blackout = scene_popup_blackout.instance()
+	var blackout_node = create_message_popup_blackout(new_message_popup)
 
-	self.add_child(new_popup_blackout)
-	self.add_child(new_message_popup)
-	
 	new_message_popup.set_text(text)
 	new_message_popup.popup_centered_minsize()
 
-	new_message_popup.connect('popup_hide', self, 'hide_popup_blackout', [new_popup_blackout])
+	new_message_popup.connect('popup_hide', self, 'remove_blackout_and_message_node', [blackout_node])
 
 
-func hide_popup_blackout(node):
-	node.visible = false
+func remove_blackout_node(blackout_node, popup_node):
+	if blackout_node != null:
+		popup_node.disconnect('popup_hide', self, 'remove_blackout_node')
+		popup_node.get_parent().remove_child(blackout_node)
+		blackout_node.queue_free()
+	if popup_node != null:
+		popup_node.visible = false
 
+
+func remove_blackout_and_message_node(blackout_node):
+	if blackout_node != null:
+		self.remove_child(blackout_node)
+		blackout_node.queue_free()
+
+
+func create_message_popup_blackout(child_node):
+	var new_popup_blackout = scene_popup_blackout.instance()
+
+	self.add_child(new_popup_blackout)
+	
+	if child_node != null:
+		new_popup_blackout.add_child(child_node)
+		
+	new_popup_blackout.popup_centered_minsize()
+	
+	return new_popup_blackout
+	
 
 func switch_screen(button_name):
 	if button_name == 'home':

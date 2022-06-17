@@ -1,14 +1,20 @@
-[gd_resource type="Theme" load_steps=6 format=2]
+[gd_resource type="Theme" load_steps=8 format=2]
 
-[ext_resource path="res://themes/fonts/normal_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://themes/popup.tres" type="StyleBox" id=1]
 [ext_resource path="res://themes/buttons/sbf_focus.tres" type="StyleBox" id=2]
 [ext_resource path="res://themes/buttons/sbf_hover.tres" type="StyleBox" id=3]
 [ext_resource path="res://themes/buttons/sbf_pressed.tres" type="StyleBox" id=4]
 [ext_resource path="res://themes/buttons/sbf_normal.tres" type="StyleBox" id=5]
 
+[sub_resource type="ViewportTexture" id=1]
+
+[sub_resource type="ViewportTexture" id=2]
+
 [resource]
-Button/fonts/font = ExtResource( 1 )
 Button/styles/focus = ExtResource( 2 )
 Button/styles/hover = ExtResource( 3 )
 Button/styles/normal = ExtResource( 5 )
 Button/styles/pressed = ExtResource( 4 )
+WindowDialog/icons/close = SubResource( 1 )
+WindowDialog/icons/close_highlight = SubResource( 2 )
+WindowDialog/styles/panel = ExtResource( 1 )

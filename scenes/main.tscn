@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://scenes/screens/screen_home.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/icons/icon2.png" type="Texture" id=2]
@@ -12,7 +12,6 @@
 [ext_resource path="res://themes/colors/dark_brown.tres" type="StyleBox" id=10]
 [ext_resource path="res://themes/popup.tres" type="StyleBox" id=11]
 [ext_resource path="res://scripts/game_data.gd" type="Script" id=12]
-[ext_resource path="res://scripts/popups/popup.gd" type="Script" id=13]
 [ext_resource path="res://scripts/button_manager.gd" type="Script" id=14]
 [ext_resource path="res://themes/fonts/font_header.tres" type="Theme" id=15]
 [ext_resource path="res://scripts/popups/item_generator.gd" type="Script" id=16]
@@ -21,7 +20,6 @@
 [ext_resource path="res://scripts/text_edit_tabbing.gd" type="Script" id=19]
 [ext_resource path="res://scripts/combat.gd" type="Script" id=20]
 [ext_resource path="res://themes/buttons/button.tres" type="Theme" id=21]
-[ext_resource path="res://scenes/popup_blackout.tscn" type="PackedScene" id=22]
 [ext_resource path="res://themes/header.tres" type="StyleBox" id=28]
 
 [sub_resource type="Theme" id=17]
@@ -152,56 +150,6 @@ size_flags_vertical = 4
 theme = ExtResource( 3 )
 icon = ExtResource( 7 )
 expand_icon = true
-
-[node name="popup_blackout" parent="." instance=ExtResource( 22 )]
-visible = false
-
-[node name="root_popup" type="Popup" parent="."]
-margin_right = 340.0
-margin_bottom = 500.0
-rect_min_size = Vector2( 340, 100 )
-size_flags_vertical = 4
-popup_exclusive = true
-script = ExtResource( 13 )
-
-[node name="container" type="PanelContainer" parent="root_popup"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_bottom = -60.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_styles/panel = ExtResource( 11 )
-
-[node name="parent_vbox" type="VBoxContainer" parent="root_popup/container"]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 330.0
-margin_bottom = 428.0
-size_flags_vertical = 3
-alignment = 1
-
-[node name="placeholder" type="Control" parent="root_popup/container/parent_vbox"]
-margin_right = 320.0
-margin_bottom = 382.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="bottom" type="HBoxContainer" parent="root_popup/container/parent_vbox"]
-margin_top = 386.0
-margin_right = 320.0
-margin_bottom = 418.0
-rect_min_size = Vector2( 0, 32 )
-mouse_filter = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-alignment = 1
-
-[node name="close" type="Button" parent="root_popup/container/parent_vbox/bottom"]
-margin_left = 129.0
-margin_right = 191.0
-margin_bottom = 32.0
-theme = ExtResource( 3 )
-text = "CLOSE"
 
 [node name="ItemGenerator" type="Popup" parent="."]
 anchor_right = 1.0
@@ -1685,7 +1633,6 @@ theme = ExtResource( 21 )
 text = " D (F7) "
 
 [connection signal="pressed" from="parent/footer/buttons/home" to="parent/footer/buttons" method="home_pressed"]
-[connection signal="pressed" from="root_popup/container/parent_vbox/bottom/close" to="root_popup" method="close_popup"]
 [connection signal="text_changed" from="ItemGenerator/container/parent_vbox/top/search_bar" to="ItemGenerator" method="on_search_bar_text_changed"]
 [connection signal="pressed" from="ItemGenerator/container/parent_vbox/top/search" to="ItemGenerator" method="on_search_pressed"]
 [connection signal="pressed" from="ItemGenerator/container/parent_vbox/top/show_all" to="ItemGenerator" method="on_show_all_pressed"]
