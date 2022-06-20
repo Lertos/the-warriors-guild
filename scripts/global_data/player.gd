@@ -3,7 +3,7 @@ extends Node
 #TODO - make default one
 var player = {
 	'guild_renown': 100,
-	'gold': 200,
+	'gold': 1200,
 	'heroes_unlocked': 2,
 	'map': {
 		'verdant_valley': {
@@ -50,13 +50,45 @@ var player = {
 	'heroes': {
 		0: {
 			'name': 'Jack',
-			'img_path': 'avatar (1)',
+			'avatar_index': '1',
 			'level': 1,
-			'activity': {
-				'type': 'map', #Could also be 'dead' and time-done is when he revives
+			'exp': 0,
+			'current_activity': {
+				'type': 'map',
 				'region': 'valley',
-				'name': 'valley_chicken',
-				'time_done': 219038, #OS TIME
+				'event_key': 'valley_chicken',
+				'time_done': 219038,
+			},
+			'gear': {
+				'helmet': '',
+				'chestplate': '',
+				'boots': '',
+				'gloves': '',
+				'weapon1': '',
+				'weapon2': '',
+				'necklace': '',
+				'ring1': '',
+				'ring2': '',
+			},
+			'talent_bonuses': {
+				# "p_" = percentage, "n_" = flat number
+				'p_gold_from_monsters': '',
+				'n_attack_speed': '',
+				'p_travel_speed': '',
+				'p_food_cost': '',
+				'n_all_stats': '',
+				'n_atk_slash': '',
+				'n_atk_stab': '',
+				'n_atk_crush': '',
+				'n_def_slash': '',
+				'n_def_stab': '',
+				'n_def_crush': '',
+				'n_health': '',
+				'p_dmg_reduc': '',
+				'p_chance_for_double_loot': '',
+				'p_ability_activation_chance': '',
+				'n_heal_additional_health': '',
+				'p_exp_from_monsters': '',
 			}
 		}
 	},
