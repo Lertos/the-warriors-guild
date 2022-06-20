@@ -63,6 +63,14 @@ func failed_validation():
 		message = 'You must select an avatar for your new hero. We wouldn\'t want them to be faceless!'
 	elif Global_Player.player['gold'] < int(gold_cost_node.text):
 		message = 'You do not have enough gold to hire a new hero. They don\'t work for free!'
+	
+	var heroes = Global_Player.player['heroes']
+	
+	for hero in heroes:
+		if name_node.text.to_upper() == heroes[hero]['name'].to_upper():
+			message = 'One of your heroes already has the given name. We like our heroes to feel special, right?'
+		elif str(selected_avatar_index) == str(heroes[hero]['avatar_index']):
+			message = 'One of your heroes already has the selected avatar. They certainly don\'t have a twin sibling!'
 		
 	if message != '':
 		get_node('/root/root').show_message_popup(message)
