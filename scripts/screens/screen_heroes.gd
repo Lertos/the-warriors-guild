@@ -50,7 +50,7 @@ func load_heroes():
 
 
 func load_hero_info(hero_record, hero_info, index):
-	var hero_icon = load('res://assets/avatars/' + hero_info['img_path'] + '.png')
+	var hero_icon = load('res://assets/avatars/avatar (' + hero_info['avatar_index'] + ').png')
 	var current_status
 	
 	print(OS.get_unix_time())
