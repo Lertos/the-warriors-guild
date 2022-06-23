@@ -94,6 +94,7 @@ func close_create_hero_popup():
 	
 
 func create_new_hero():
+	var new_hero_index = len(Global_Player.player['heroes'])
 	var dict = {}
 	
 	dict['name'] = name_node.text
@@ -138,8 +139,6 @@ func create_new_hero():
 	dict['talent_bonuses']['p_ability_activation_chance'] = 0
 	dict['talent_bonuses']['n_heal_additional_health'] = 0
 	dict['talent_bonuses']['p_exp_from_monsters'] = 0
-
-	var new_hero_index = len(Global_Player.player['heroes'])
 	
 	Global_Player.player['heroes'][new_hero_index] = dict
 	

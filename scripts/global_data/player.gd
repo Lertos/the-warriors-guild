@@ -5,6 +5,39 @@ var player = {
 	'guild_renown': 100,
 	'gold': 24000,
 	'heroes_unlocked': 2,
+	
+	#-----------------------
+	# BASE STATS
+	#-----------------------
+	'base_stats': {
+		'health': '',
+		'stab_atk': '',
+		'slash_atk': '',
+		'crush_atk': '',
+		'stab_def': '',
+		'slash_def': '',
+		'crush_def': '',
+		'dmg_reduc': '',
+	},
+	
+	#-----------------------
+	# GEAR
+	#-----------------------
+	'gear': {
+		'helmet': '',
+		'chestplate': '',
+		'boots': '',
+		'gloves': '',
+		'weapon1': '',
+		'weapon2': '',
+		'necklace': '',
+		'ring1': '',
+		'ring2': '',
+	},
+	
+	#-----------------------
+	# MAP
+	#-----------------------
 	'map': {
 		'verdant_valley': {
 			'current': 4,
@@ -31,15 +64,15 @@ var player = {
 			'max': 10,
 		},
 		'satanic_swamp': {
-			'current': 1,
+			'current': 0,
 			'max': 10,
 		},
 		'perilous_peaks': {
-			'current': 1,
+			'current': 0,
 			'max': 10,
 		},
 		'menacing_mountain': {
-			'current': 1,
+			'current': 0,
 			'max': 10,
 		},
 		'vicious_void': {
@@ -47,15 +80,31 @@ var player = {
 			'max': 10,
 		},
 	},
+	
+	#-----------------------
+	# HEROES
+	#-----------------------
 	'heroes': {
 	
 	},
+	
+	#-----------------------
+	# MOUNTS
+	#-----------------------
 	'mounts': {
 		
 	},
+	
+	#-----------------------
+	# FARMING
+	#-----------------------
 	'farming': {
 		'plots_unlocked': 4,
 	},
+	
+	#-----------------------
+	# STORAGE
+	#-----------------------
 	'storage': {
 		'material': {
 			'unlocked': 8,
