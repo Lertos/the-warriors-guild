@@ -6,6 +6,10 @@ var hero_timers = {}
 
 
 func _ready():
+	load_screen()
+
+
+func load_screen():
 	load_heroes()
 	create_hero_timer()
 	
@@ -41,6 +45,7 @@ func load_heroes():
 		
 		if index < len(hero_info):
 			load_hero_info(hero_record, hero_info[index], index)
+			hero_record.get_node('img').text = ''
 		else:
 			if index < heroes_unlocked:
 				hero_record.get_node('img').text = '+'
@@ -50,13 +55,13 @@ func load_heroes():
 
 
 func load_hero_info(hero_record, hero_info, index):
-	var hero_icon = load('res://assets/avatars/avatar (' + hero_info['avatar_index'] + ').png')
+	var hero_icon = load('res://assets/avatars/avatar (' + str(hero_info['avatar_index']) + ').png')
 	var current_status
 	
 	print(OS.get_unix_time())
 	
 	var current_time = OS.get_unix_time()
-	var time_done = hero_info['activity']['time_done']
+	var time_done = hero_info['current_activity']['time_done']
 	
 	if time_done == 0:
 		current_status = 'IDLE'
