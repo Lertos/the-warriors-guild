@@ -8,6 +8,30 @@ var config = {
 		3: 100000,
 		4: 1000000,
 	},
+	
+	#-----------------------
+	# HERO TALENTS
+	#-----------------------
+	'talent_bonuses': {
+		'p_gold_from_monsters': 'Bonus Gold From Monsters',
+		'n_attack_speed': 'Bonus Attack Speed',
+		'p_travel_speed': 'Bonus Travel Speed',
+		'p_food_cost': 'Bonus Food Cost Savings',
+		'n_all_stats': 'Bonus To All Stats',
+		'n_atk_slash': 'Bonus SLASH ATK',
+		'n_atk_stab': 'Bonus STAB ATK',
+		'n_atk_crush': 'Bonus CRUSH ATK',
+		'n_def_slash': 'Bonus SLASH DEF',
+		'n_def_stab': 'Bonus STAB DEF',
+		'n_def_crush': 'Bonus CRUSH DEF',
+		'n_health': 'Bonus Health',
+		'p_dmg_reduc': 'Bonus DMG REDUC',
+		'p_chance_for_double_loot': 'Bonus Chance For Double Loot',
+		'p_ability_activation_chance': 'Bonus Chance for Ability Activation',
+		'n_heal_additional_health': 'Bonus Health Back After Fighting',
+		'p_exp_from_monsters': 'Bonus EXP From Monsters',
+	},
+	
 	#-----------------------
 	# RARITIES
 	#-----------------------
@@ -48,6 +72,7 @@ var config = {
 			'chance_of_each_ability': 60,
 		},
 	},
+	
 	#-----------------------
 	# ABILITIES
 	#-----------------------
@@ -136,6 +161,7 @@ var config = {
 				}
 			}
 		},
+		
 		#-----------------------
 		# PASSIVE
 		#-----------------------
@@ -226,6 +252,7 @@ var config = {
 				}
 			}
 		},
+		
 		#-----------------------
 		# ACTIVE
 		#-----------------------

@@ -110,38 +110,17 @@ func create_new_hero():
 	
 	# empty string means wearing nothing
 	dict['gear'] = {}
-	dict['gear']['helmet'] = ''
-	dict['gear']['chestplate'] = ''
-	dict['gear']['boots'] = ''
-	dict['gear']['gloves'] = ''
-	dict['gear']['weapon1'] = ''
-	dict['gear']['weapon2'] = ''
-	dict['gear']['necklace'] = ''
-	dict['gear']['ring1'] = ''
-	dict['gear']['ring2'] = ''
+	
+	for key in Global_Player.player['gear']:
+		dict['gear'][key] = ''
 
 	# "p_" = percentage, "n_" = flat number
 	dict['talent_bonuses'] = {}
-	dict['talent_bonuses']['p_gold_from_monsters'] = 0
-	dict['talent_bonuses']['n_attack_speed'] = 0
-	dict['talent_bonuses']['p_travel_speed'] = 0
-	dict['talent_bonuses']['p_food_cost'] = 0
-	dict['talent_bonuses']['n_all_stats'] = 0
-	dict['talent_bonuses']['n_atk_slash'] = 0
-	dict['talent_bonuses']['n_atk_stab'] = 0
-	dict['talent_bonuses']['n_atk_crush'] = 0
-	dict['talent_bonuses']['n_def_slash'] = 0
-	dict['talent_bonuses']['n_def_stab'] = 0
-	dict['talent_bonuses']['n_def_crush'] = 0
-	dict['talent_bonuses']['n_health'] = 0
-	dict['talent_bonuses']['p_dmg_reduc'] = 0
-	dict['talent_bonuses']['p_chance_for_double_loot'] = 0
-	dict['talent_bonuses']['p_ability_activation_chance'] = 0
-	dict['talent_bonuses']['n_heal_additional_health'] = 0
-	dict['talent_bonuses']['p_exp_from_monsters'] = 0
+	
+	for key in MasterConfig.config['talent_bonuses']:
+		dict['talent_bonuses'][key] = 0
 	
 	Global_Player.player['heroes'][new_hero_index] = dict
 	
 	get_node('/root/root').save_data('player')
-	
 	get_parent().load_screen()
