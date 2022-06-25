@@ -42,17 +42,15 @@ func load_monsters(region_name):
 		if index >= unlocked_enemy_count:
 			inst_monster_record.get_node('margin/vbox/hbox/monster').disabled = true
 			inst_monster_record.get_node('margin/vbox/hbox/attack').disabled = true
-			inst_monster_record.set_meta('previous_monster', monster_list[index-1]['name'])
+			
+			if index == unlocked_enemy_count:
+				inst_monster_record.set_meta('previous_monster', monster_list[index-1]['name'])
 		
 		inst_monster_record.set('custom_styles/panel', unlocked_bg_color)
 		inst_monster_record.set_meta('region_name', region_name)
 		inst_monster_record.set_meta('index', index)
 
 		update_monster_record(monster_list[index], hbox.name, inst_monster_record.name)
-		
-		if index >= unlocked_enemy_count:
-			add_filler_record(index, inst_monster_record, hbox)
-			break
 
 
 func add_filler_record(index, monster_record, hbox):
@@ -85,13 +83,17 @@ func update_monster_record(monster, hbox_name, monster_node_name):
 	monster_button.connect('pressed', self, 'open_monster_info_popup', [monster])
 
 	if monster_button.disabled == false:
+		monster_button.icon = create_animated_texture(monster['id'], 'unlocked')
+		
 		parent_node.get_node('info/name').text = monster['name']
 		parent_node.get_node('info/hbox/level').text = 'Level: ' + str(monster['level'])
-		
-		monster_button.icon = create_animated_texture(monster['id'])
 	else:
+		monster_button.icon = create_animated_texture(monster['id'], 'locked')
+		
 		parent_node.get_node('info/name').visible = false
-		parent_node.get_node('info/hbox/level').text = 'Unlocked by killing the ' + path.get_meta('previous_monster')
+		
+		if path.has_meta('previous_monster'):
+			parent_node.get_node('info/hbox/level').text = 'Unlocked by killing the ' + path.get_meta('previous_monster')
 
 
 func open_monster_info_popup(monster):
@@ -99,13 +101,21 @@ func open_monster_info_popup(monster):
 	get_node('/root/root').show_root_popup(get_node('monster_info_popup'))
 
 
-func create_animated_texture(monster_id):
+func create_animated_texture(monster_id, is_locked: String):
 	var animated_tex = AnimatedTexture.new()
 	
 	animated_tex.frames = 2
 	animated_tex.fps = 2
-	animated_tex.set_frame_texture(0, load('res://assets/monsters/' + monster_id + ' (1).png'))
-	animated_tex.set_frame_texture(1, load('res://assets/monsters/' + monster_id + ' (2).png'))
+	
+	var frame1 = load('res://assets/monsters/' + monster_id + ' (1).png')
+	var frame2 = load('res://assets/monsters/' + monster_id + ' (2).png')
+
+	if is_locked == 'locked':
+		animated_tex.set_frame_texture(0, Helper.get_blackened_image(frame1))
+		animated_tex.set_frame_texture(1, Helper.get_blackened_image(frame2))
+	elif is_locked == 'unlocked':
+		animated_tex.set_frame_texture(0, frame1)
+		animated_tex.set_frame_texture(1, frame2)
 	
 	return animated_tex
 	
