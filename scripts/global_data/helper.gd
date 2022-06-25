@@ -64,3 +64,22 @@ func reset_background_color(node):
 	node.add_stylebox_override('normal', null)
 	node.add_stylebox_override('hover', null)
 	node.add_stylebox_override('pressed', null)
+	
+	
+func get_blackened_image(given_image) -> ImageTexture:
+	var image = given_image.get_data()
+
+	image.lock()
+
+	for row in image.get_height():
+		for column in image.get_width():
+			if image.get_pixel(column, row).a != 0:
+				image.set_pixel(column, row, ColorN("black"))
+
+	image.unlock()
+
+	var texture = ImageTexture.new()
+	
+	texture.create_from_image(image, 0) #keeps the image pixelates; it's the image flags
+	
+	return texture
