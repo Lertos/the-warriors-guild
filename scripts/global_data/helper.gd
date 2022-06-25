@@ -80,6 +80,6 @@ func get_blackened_image(given_image) -> ImageTexture:
 
 	var texture = ImageTexture.new()
 	
-	texture.create_from_image(image, 0) #keeps the image pixelates; it's the image flags
+	texture.create_from_image(image, 0) #keeps the image pixelated; it's the image flags
 	
 	return texture
