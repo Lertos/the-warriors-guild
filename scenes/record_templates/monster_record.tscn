@@ -1,6 +1,5 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://scripts/record_templates/monster_button.gd" type="Script" id=2]
 [ext_resource path="res://assets/icons/icon12.png" type="Texture" id=3]
 [ext_resource path="res://assets/icons/icon8.png" type="Texture" id=4]
 [ext_resource path="res://themes/item_base.tres" type="Theme" id=5]
@@ -55,7 +54,6 @@ size_flags_horizontal = 4
 theme = ExtResource( 5 )
 icon = ExtResource( 3 )
 expand_icon = true
-script = ExtResource( 2 )
 
 [node name="attack" type="Button" parent="margin/vbox/hbox"]
 margin_left = 166.0
@@ -95,6 +93,3 @@ size_flags_horizontal = 3
 theme = ExtResource( 6 )
 align = 1
 autowrap = true
-
-[connection signal="monster_info_requested" from="margin/vbox/hbox/monster" to="." method="show_info_popup"]
-[connection signal="pressed" from="margin/vbox/hbox/monster" to="margin/vbox/hbox/monster" method="_on_monster_pressed"]
