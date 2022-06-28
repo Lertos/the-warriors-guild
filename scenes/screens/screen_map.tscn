@@ -670,6 +670,7 @@ visible = false
 margin_right = 48.0
 margin_bottom = 83.0
 custom_constants/separation = 0
+alignment = 1
 
 [node name="img" type="Button" parent="monster_attack_popup/margin/panel/vbox/heroes/0"]
 margin_right = 48.0
@@ -691,6 +692,7 @@ align = 1
 margin_top = 69.0
 margin_right = 48.0
 margin_bottom = 83.0
+alignment = 1
 
 [node name="label" type="Label" parent="monster_attack_popup/margin/panel/vbox/heroes/0/hbox"]
 margin_right = 30.0
@@ -711,6 +713,7 @@ visible = false
 margin_right = 48.0
 margin_bottom = 83.0
 custom_constants/separation = 0
+alignment = 1
 
 [node name="img" type="Button" parent="monster_attack_popup/margin/panel/vbox/heroes/1"]
 margin_right = 48.0
@@ -732,6 +735,7 @@ align = 1
 margin_top = 69.0
 margin_right = 48.0
 margin_bottom = 83.0
+alignment = 1
 
 [node name="label" type="Label" parent="monster_attack_popup/margin/panel/vbox/heroes/1/hbox"]
 margin_right = 30.0
@@ -752,6 +756,7 @@ visible = false
 margin_right = 48.0
 margin_bottom = 83.0
 custom_constants/separation = 0
+alignment = 1
 
 [node name="img" type="Button" parent="monster_attack_popup/margin/panel/vbox/heroes/2"]
 margin_right = 48.0
@@ -773,6 +778,7 @@ align = 1
 margin_top = 69.0
 margin_right = 48.0
 margin_bottom = 83.0
+alignment = 1
 
 [node name="label" type="Label" parent="monster_attack_popup/margin/panel/vbox/heroes/2/hbox"]
 margin_right = 30.0
@@ -793,6 +799,7 @@ visible = false
 margin_right = 48.0
 margin_bottom = 83.0
 custom_constants/separation = 0
+alignment = 1
 
 [node name="img" type="Button" parent="monster_attack_popup/margin/panel/vbox/heroes/3"]
 margin_right = 48.0
@@ -814,6 +821,7 @@ align = 1
 margin_top = 69.0
 margin_right = 48.0
 margin_bottom = 83.0
+alignment = 1
 
 [node name="label" type="Label" parent="monster_attack_popup/margin/panel/vbox/heroes/3/hbox"]
 margin_right = 30.0
@@ -834,6 +842,7 @@ visible = false
 margin_right = 48.0
 margin_bottom = 83.0
 custom_constants/separation = 0
+alignment = 1
 
 [node name="img" type="Button" parent="monster_attack_popup/margin/panel/vbox/heroes/4"]
 margin_right = 48.0
@@ -855,6 +864,7 @@ align = 1
 margin_top = 69.0
 margin_right = 48.0
 margin_bottom = 83.0
+alignment = 1
 
 [node name="label" type="Label" parent="monster_attack_popup/margin/panel/vbox/heroes/4/hbox"]
 margin_right = 30.0
