@@ -1,28 +1,5 @@
 extends Node
 
-"""
-'stats': {
-				'atk_stab': 0,
-				'atk_slash': 0,
-				'atk_crush': 0,
-				'def_stab': 0,
-				'def_slash': 0,
-				'def_crush': 0,
-				'health': 0,
-				'atk_speed': 0,
-				'dmg_reduc': 0,
-				'min_hit': 0,
-				'max_hit': 0,
-				'abilities': {
-					0: {
-						'name': 'Fire Breath',
-						'description': 'Each round take 2% of your maximum HP as damage',
-						'chance': '60'
-					}
-				}
-			},
-"""
-
 
 var enemies = {
 	'verdant_valley': {
@@ -39,23 +16,23 @@ var enemies = {
 				'def_slash': 5,
 				'def_crush': 6,
 				'health': 100,
-				'atk_speed': 1.2,
-				'dmg_reduc': 4.5,
-				'min_hit': 23,
-				'max_hit': 87,
-				'main_stat': 'atk_crush',
-				'abilities': {
-					0: {
-						'name': 'Fire Breath',
-						'description': 'Take 15% additional damage from the monster hit',
-						'chance': '60'
-					},
-					1: {
-						'name': 'Rooster Bark',
-						'description': 'You lose your turn',
-						'chance': '20'
-					},
-				}
+				'atk_speed': 2.2,
+				'dmg_reduc': 2.5,
+				'min_hit': 5,
+				'max_hit': 10,
+			},
+			'main_stat': 'atk_crush',
+			'abilities': {
+				0: {
+					'name': 'Fire Breath',
+					'description': 'Take 15% additional damage from the monster hit',
+					'chance': '60'
+				},
+				1: {
+					'name': 'Rooster Bark',
+					'description': 'You lose your turn',
+					'chance': '20'
+				},
 			},
 			'drops': {
 				#TODO
@@ -78,10 +55,10 @@ var enemies = {
 				'dmg_reduc': 4.5,
 				'min_hit': 23,
 				'max_hit': 87,
-				'main_stat': 'atk_crush',
-				'abilities': {
+			},
+			'main_stat': 'atk_crush',
+			'abilities': {
 
-				}
 			},
 		},
 		2: {
@@ -101,10 +78,10 @@ var enemies = {
 				'dmg_reduc': 4.5,
 				'min_hit': 23,
 				'max_hit': 87,
-				'main_stat': 'atk_crush',
-				'abilities': {
+			},
+			'main_stat': 'atk_crush',
+			'abilities': {
 
-				}
 			},
 		},
 		3: {
@@ -124,10 +101,10 @@ var enemies = {
 				'dmg_reduc': 4.5,
 				'min_hit': 23,
 				'max_hit': 87,
-				'main_stat': 'atk_crush',
-				'abilities': {
+			},
+			'main_stat': 'atk_crush',
+			'abilities': {
 
-				}
 			},
 		},
 		4: {
@@ -147,10 +124,10 @@ var enemies = {
 				'dmg_reduc': 4.5,
 				'min_hit': 23,
 				'max_hit': 87,
-				'main_stat': 'atk_crush',
-				'abilities': {
+			},
+			'main_stat': 'atk_crush',
+			'abilities': {
 
-				}
 			},
 		},
 		5: {
@@ -170,10 +147,10 @@ var enemies = {
 				'dmg_reduc': 4.5,
 				'min_hit': 23,
 				'max_hit': 87,
-				'main_stat': 'atk_crush',
-				'abilities': {
+			},
+			'main_stat': 'atk_crush',
+			'abilities': {
 
-				}
 			},
 		},
 		6: {
@@ -193,10 +170,10 @@ var enemies = {
 				'dmg_reduc': 4.5,
 				'min_hit': 23,
 				'max_hit': 87,
-				'main_stat': 'atk_crush',
-				'abilities': {
+			},
+			'main_stat': 'atk_crush',
+			'abilities': {
 
-				}
 			},
 		},
 		7: {
@@ -216,10 +193,10 @@ var enemies = {
 				'dmg_reduc': 4.5,
 				'min_hit': 23,
 				'max_hit': 87,
-				'main_stat': 'atk_crush',
-				'abilities': {
-					
-				}
+			},
+			'main_stat': 'atk_crush',
+			'abilities': {
+				
 			},
 		},
 	},
@@ -241,19 +218,10 @@ var enemies = {
 				'dmg_reduc': 4.5,
 				'min_hit': 23,
 				'max_hit': 87,
-				'main_stat': 'atk_crush',
-				'abilities': {
-					0: {
-						'name': 'Fire Breath',
-						'description': 'Take 15% additional damage from the monster hit',
-						'chance': '60'
-					},
-					1: {
-						'name': 'Rooster Bark',
-						'description': 'You lose your turn',
-						'chance': '20'
-					},
-				}
+			},
+			'main_stat': 'atk_crush',
+			'abilities': {
+
 			},
 			'drops': {
 				#TODO
@@ -276,19 +244,10 @@ var enemies = {
 				'dmg_reduc': 4.5,
 				'min_hit': 23,
 				'max_hit': 87,
-				'main_stat': 'atk_crush',
-				'abilities': {
-					0: {
-						'name': 'Fire Breath',
-						'description': 'Take 15% additional damage from the monster hit',
-						'chance': '60'
-					},
-					1: {
-						'name': 'Rooster Bark',
-						'description': 'You lose your turn',
-						'chance': '20'
-					},
-				}
+			},
+			'main_stat': 'atk_crush',
+			'abilities': {
+				
 			},
 			'drops': {
 				#TODO
