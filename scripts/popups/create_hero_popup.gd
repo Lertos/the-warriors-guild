@@ -1,6 +1,6 @@
 extends Popup
 
-const MAX_NAME_LENGTH = 22
+const MAX_NAME_LENGTH = 12
 
 onready var hero_buttons = get_node('margin/panel/vbox/avatar/vbox/vbox')
 onready var name_node = get_node('margin/panel/vbox/name/vbox/name')
