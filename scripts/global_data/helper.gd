@@ -83,3 +83,28 @@ func get_blackened_image(given_image) -> ImageTexture:
 	texture.create_from_image(image, 0) #keeps the image pixelated; it's the image flags
 	
 	return texture
+
+
+func get_hero_total_stats(hero_info: Dictionary) -> Dictionary:
+	#BASE STATS
+	var stats = {}
+	
+	stats = Global_Player.player['base_stats']
+	
+	#HERO GEAR STATS
+	stats = get_hero_total_gear_stats(stats, hero_info)
+	
+	#HERO TALENT BONUSES
+	stats = get_hero_total_talent_stats(stats, hero_info)
+	
+	return stats
+	
+	
+func get_hero_total_gear_stats(stats, hero_info: Dictionary) -> Dictionary:
+	#TODO: Actually calculate the gear stats
+	return stats
+
+
+func get_hero_total_talent_stats(stats, hero_info: Dictionary) -> Dictionary:
+	#TODO: Actually calculate the talent stats
+	return stats
