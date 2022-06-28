@@ -7,17 +7,17 @@ var player = {
 	'heroes_unlocked': 2,
 	
 	#-----------------------
-	# BASE STATS
+	# BASE STATS - HEROES USE THIS AS THEIR BASE STATS
 	#-----------------------
 	'base_stats': {
-		'health': '',
-		'stab_atk': '',
-		'slash_atk': '',
-		'crush_atk': '',
-		'stab_def': '',
-		'slash_def': '',
-		'crush_def': '',
-		'dmg_reduc': '',
+		'health': 10,
+		'stab_atk': 1.2,
+		'slash_atk': 1,
+		'crush_atk': 2,
+		'stab_def': 3,
+		'slash_def': 4,
+		'crush_def': 5,
+		'dmg_reduc': 6,
 	},
 	
 	#-----------------------
