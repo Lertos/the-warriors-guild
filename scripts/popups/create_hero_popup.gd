@@ -111,7 +111,7 @@ func create_new_hero():
 	# empty string means wearing nothing
 	dict['gear'] = {}
 	
-	for key in Global_Player.player['gear']:
+	for key in MasterConfig.config['gear_types']:
 		dict['gear'][key] = ''
 
 	# "p_" = percentage, "n_" = flat number

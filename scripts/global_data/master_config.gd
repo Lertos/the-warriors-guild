@@ -10,6 +10,21 @@ var config = {
 	},
 	
 	#-----------------------
+	# GEAR TYPES
+	#-----------------------
+	'gear_types': {
+		'helmet': '',
+		'chestplate': '',
+		'boots': '',
+		'gloves': '',
+		'weapon1': '',
+		'weapon2': '',
+		'necklace': '',
+		'ring1': '',
+		'ring2': '',
+	},
+	
+	#-----------------------
 	# HERO TALENTS
 	#-----------------------
 	'talent_bonuses': {
