@@ -1254,7 +1254,7 @@ margin_bottom = 48.0
 rect_min_size = Vector2( 48, 48 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = ExtResource( 21 )
+theme = ExtResource( 23 )
 expand_icon = true
 
 [node name="name" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel/enemy"]

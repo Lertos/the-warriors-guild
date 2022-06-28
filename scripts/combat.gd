@@ -4,116 +4,87 @@ const MAX_TURNS_BEFORE_DRAW = 20
 
 var rng = RandomNumberGenerator.new()
 
-var player_won = false
+var hero_won
 
-var player_speed
+var hero_speed
 var opponent_speed
 
-var max_player_hp
+var max_hero_hp
 var max_opponent_hp
 
-var current_player
-var test_player = {
-	'name': 'Lob Rowe',
-	'attack_type': 'stab', 
-	'atk_stab': 9,
-	'atk_slash': 6,
-	'atk_crush': 10,
-	'def_stab': 13,
-	'def_slash': 15,
-	'def_crush': 4,
-	'health': 30,
-	'max_health': 30,
-	'atk_speed': 2.4,
-	'dmg_reduc': 3,
-	'min_hit': 3,
-	'max_hit': 12,
-}
-
+var current_hero
 var current_opponent
-var test_opponent = {
-	'name': 'Plump Chicken',
-	'attack_type': 'crush',
-	'atk_stab': 4,
-	'atk_slash': 2,
-	'atk_crush': 6,
-	'def_stab': 6,
-	'def_slash': 7,
-	'def_crush': 8,
-	'health': 24,
-	'atk_speed': 2.7,
-	'dmg_reduc': 1,
-	'min_hit': 1,
-	'max_hit': 8,
-	'main_stat': 'atk_crush',
-}
 
 
-func _ready():
+func reset_values(hero, opponent):
 	rng.randomize()
 	
-	current_player = test_player.duplicate()
-	current_opponent = test_opponent.duplicate()
+	hero_won = false
 	
-	current_player['main_stat'] = get_players_main_stat(current_player)
+	current_hero = hero.duplicate()
+	current_opponent = opponent.duplicate()
 	
-	#TODO: Get list of player and opponent abilities to quickly reference them
+	current_hero['stats'] = Helper.get_hero_total_stats(current_hero)
+	current_hero['main_stat'] = get_heros_main_stat(current_hero)
 	
-	max_player_hp = current_player['max_health']
-	max_opponent_hp = current_opponent['health']
+	#TODO: Get list of hero and opponent abilities to quickly reference them
 	
-	print('Player starts with |- ' + str(current_player['health']) + ' -| health')
-	print('Opponent starts with |- ' + str(current_opponent['health']) + ' -| health \n')
+	#TODO: Update this with actual max health and current health
+	max_hero_hp = current_hero['stats']['health']
+	max_opponent_hp = current_opponent['stats']['health']
 	
-	start_combat(current_player, current_opponent)
-	
-	
-func start_combat(player, opponent):
-	player_speed = player['atk_speed']
-	opponent_speed = opponent['atk_speed']
-	
-	while player['health'] > 0 && opponent['health'] > 0:
-		var attacker = get_attacker(player, opponent)
-		var defender = get_defender(player, opponent)
+	print('Hero starts with |- ' + str(current_hero['stats']['health']) + ' -| health')
+	print('Opponent starts with |- ' + str(current_opponent['stats']['health']) + ' -| health \n')
 
-		before_turn(player)
-		before_turn(opponent)
+	
+func start_combat(hero, opponent):
+	reset_values(hero, opponent)
+	
+	hero_speed = current_hero['stats']['atk_speed']
+	opponent_speed = current_opponent['stats']['atk_speed']
+	
+	while current_hero['stats']['health'] > 0 && current_opponent['stats']['health'] > 0:
+		var attacker = get_attacker(current_hero, current_opponent)
+		var defender = get_defender(current_hero, current_opponent)
+
+		before_turn(current_hero)
+		before_turn(current_opponent)
 		
 		start_turn(attacker, defender)
 		
-		end_turn(opponent)
-		end_turn(player)
+		end_turn(current_opponent)
+		end_turn(current_hero)
 		
 		print('\n---End Turn---\n')
 	
-	if player['health'] <= 0:
-		print('Player LOST...')
+	if current_hero['stats']['health'] <= 0:
+		print(current_hero['name'] + ' LOST...')
 	else:
-		print('Player WON!')
+		print(current_hero['name'] + ' WON!')
 	
 
-func get_attacker(player, opponent):
-	if player_speed < opponent_speed:
-		opponent_speed -= player_speed
+func get_attacker(hero, opponent):
+	if hero_speed < opponent_speed:
+		opponent_speed -= hero_speed
 		print('Opponent Speed: ' + str(opponent_speed))
-		player_speed = 0
-		return player
+		hero_speed = 0
+		return hero
 	else:
-		player_speed -= opponent_speed
-		print('Player Speed: ' + str(player_speed))
+		hero_speed -= opponent_speed
+		print('hero Speed: ' + str(hero_speed))
 		opponent_speed = 0
 		return opponent
 	
 
-func get_defender(player, opponent):
-	if player_speed == 0:
-		player_speed = player['atk_speed']
-		print('Player Speed: ' + str(player_speed))
+func get_defender(hero, opponent):
+	if hero_speed == 0:
+		hero_speed = hero['stats']['atk_speed']
+		print('hero Speed: ' + str(hero_speed))
 		return opponent
 	else:
-		opponent_speed = opponent['atk_speed']
+		opponent_speed = opponent['stats']['atk_speed']
 		print('Opponent Speed: ' + str(opponent_speed))
-		return player
+		return hero
 
 
 #Checks for abilities, and effects that happen before the round starts
@@ -125,8 +96,8 @@ func start_turn(attacker, defender):
 	
 	var attacker_stat = attacker['main_stat']
 	
-	var attack_value = attacker[attacker_stat]
-	var defend_value = defender[attacker_stat]
+	var attack_value = attacker['stats'][attacker_stat]
+	var defend_value = defender['stats'][attacker_stat]
 	
 	if does_attack_hit(attack_value, defend_value):
 		deal_damage(attacker, defender)
@@ -138,8 +109,9 @@ func end_turn(entity):
 	pass
 
 
-func get_players_main_stat(entity):
+func get_heros_main_stat(entity):
 	#TODO: Get this from the weapon type of the given hero's equipped weapon
+	#TODO: If no weapon equipped, use "atk_crush"
 	return 'atk_stab'
 
 
@@ -151,18 +123,18 @@ func does_attack_hit(attack_value, defend_value):
 
 
 func deal_damage(attacker, defender):
-	var damage = rng.randi_range(attacker['min_hit'], attacker['max_hit'])
+	var damage = rng.randi_range(attacker['stats']['min_hit'], attacker['stats']['max_hit'])
 	damage += get_bonus_damage(attacker, defender)
 	
 	print('BASE DAMAGE: ' + str(damage))
 	
-	var reduced_damage = damage - (damage * (defender['dmg_reduc']/100))
+	var reduced_damage = damage - (damage * (defender['stats']['dmg_reduc']/100))
 
 	print(attacker['name'] +  ' does ' + str(reduced_damage) + ' damage')
 	
-	defender['health'] -= reduced_damage
+	defender['stats']['health'] -= reduced_damage
 	
-	print(defender['name'] + ' resulting HP: ' + str(defender['health']))
+	print(defender['name'] + ' resulting HP: ' + str(defender['stats']['health']))
 
 
 #Check for on-hit abilities, returning the total additional damage
