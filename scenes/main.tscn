@@ -32,7 +32,7 @@ script = ExtResource( 9 )
 [node name="game_data" type="Node" parent="."]
 script = ExtResource( 12 )
 
-[node name="TESTING_COMBAT" type="Node" parent="."]
+[node name="combat_manager" type="Node" parent="."]
 script = ExtResource( 20 )
 
 [node name="parent" type="VBoxContainer" parent="."]
