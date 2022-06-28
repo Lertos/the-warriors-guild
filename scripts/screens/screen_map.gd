@@ -78,9 +78,12 @@ func update_region_header(region_name):
 func update_monster_record(monster, hbox_name, monster_node_name):
 	var path = record_list_node.get_node(hbox_name + '/' + monster_node_name)
 	var parent_node = path.get_node('margin/vbox')
+	
 	var monster_button = parent_node.get_node('hbox/monster')
+	var attack_button = parent_node.get_node('hbox/attack')
 
 	monster_button.connect('pressed', self, 'open_monster_info_popup', [monster])
+	attack_button.connect('pressed', self, 'open_monster_attack_popup', [monster])
 
 	if monster_button.disabled == false:
 		monster_button.icon = create_animated_texture(monster['id'], 'unlocked')
@@ -99,6 +102,11 @@ func update_monster_record(monster, hbox_name, monster_node_name):
 func open_monster_info_popup(monster):
 	get_node('monster_info_popup').load_monster_info(monster)
 	get_node('/root/root').show_root_popup(get_node('monster_info_popup'))
+	
+	
+func open_monster_attack_popup(monster):
+	get_node('monster_attack_popup').load_monster_info(monster)
+	get_node('/root/root').show_root_popup(get_node('monster_attack_popup'))
 
 
 func create_animated_texture(monster_id, is_locked: String):
