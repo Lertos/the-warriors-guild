@@ -38,27 +38,34 @@ var vendors = {
 		'renown_needed': 0,
 	},
 	5: {
+		'id': 'enchanter',
+		'name': 'Enchanter',
+		'img': 'vendor7',
+		'locked': false,
+		'renown_needed': 0,
+	},
+	6: {
 		'id': 'carpenter',
 		'name': 'Carpenter',
 		'img': 'vendor5',
 		'locked': true,
 		'renown_needed': 500,
 	},
-	6: {
+	7: {
 		'id': 'alchemist',
 		'name': 'Alchemist',
 		'img': 'vendor1',
 		'locked': true,
 		'renown_needed': 1000,
 	},
-	7: {
+	8: {
 		'id': 'captain',
 		'name': 'Captain',
 		'img': 'vendor3',
 		'locked': true,
 		'renown_needed': 1500,
 	},
-	8: {
+	9: {
 		'id': 'blacksmith',
 		'name': 'Blacksmith',
 		'img': 'vendor4',
