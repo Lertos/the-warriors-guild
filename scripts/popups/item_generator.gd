@@ -328,7 +328,7 @@ func fill_ability_item_list():
 			if level_key == 0:
 				item_list.add_item(ability_dict[key]['name'])
 			else:
-				item_list.add_item(ability_dict[key]['name'] + ' ' + get_roman_numeral(level_key))
+				item_list.add_item(ability_dict[key]['name'] + ' ' + Helper.get_roman_numeral(level_key))
 				
 			item_list.set_item_metadata(current_index, {'id': key})
 			current_index += 1
@@ -356,16 +356,3 @@ func fill_potion_effect_item_list():
 	effect_list.add_item('Effect4 I')
 	
 	effect_list.sort_items_by_text()
-
-
-func get_roman_numeral(level: int):
-	if level == 1:
-		return 'I'
-	elif level == 2:
-		return 'II'
-	elif level == 3:
-		return 'III'
-	elif level == 4:
-		return 'IV'
-	elif level == 5:
-		return 'V'
