@@ -64,6 +64,8 @@ func change_current_hero(index: String) -> Dictionary:
 	hero_node.get_node('atk_slash').text = '2'
 	hero_node.get_node('atk_crush').text = '3'
 	
+	hero_node.get_node(Helper.get_hero_main_stat(hero_info)).add_color_override("font_color", Global_Colors.colors['stat_highlight'])
+	
 	#Assign the current hero info to the attack button
 	parent_node.get_node('buttons/hbox/attack').set_meta('hero_info', hero_info)
 	
@@ -95,6 +97,8 @@ func change_current_enemy(monster_info):
 	
 	for stat_key in monster_info['stats']:
 		enemy_node.get_node(stat_key).text = str(monster_info['stats'][stat_key])
+	
+	enemy_node.get_node(monster_info['main_stat']).add_color_override("font_color", Global_Colors.colors['stat_highlight'])
 	
 
 func get_monster_animated_texture(monster_info) -> AnimatedTexture:
