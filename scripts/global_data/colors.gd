@@ -10,6 +10,7 @@ var colors = {
 	#OTHER
 	'locked': Color("#392b27"),
 	'selected': Color("#effa5a"),
+	'stat_highlight': Color("#db55ed"),
 }
 
 """
