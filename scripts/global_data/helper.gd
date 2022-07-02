@@ -116,3 +116,33 @@ func get_hero_total_gear_stats(stats, hero_info: Dictionary) -> Dictionary:
 func get_hero_total_talent_stats(stats, hero_info: Dictionary) -> Dictionary:
 	#TODO: Actually calculate the talent stats
 	return stats
+	
+
+func get_monster_abilities(monster_info: Dictionary) -> Array:
+	var item_list = []
+	
+	for ability_key in monster_info['abilities']:
+		var display_name = MasterConfig.config['abilities'][ability_key]['name']
+		var ability_level = monster_info['abilities'][ability_key]
+		
+		if ability_level == 0:
+			item_list.append(display_name)
+		else:
+			item_list.append(display_name + ' ' + get_roman_numeral(ability_level))
+	
+	item_list.sort()
+	
+	return item_list
+
+
+func get_roman_numeral(level: int):
+	if level == 1:
+		return 'I'
+	elif level == 2:
+		return 'II'
+	elif level == 3:
+		return 'III'
+	elif level == 4:
+		return 'IV'
+	elif level == 5:
+		return 'V'
