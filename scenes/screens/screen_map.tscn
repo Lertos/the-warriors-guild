@@ -989,16 +989,15 @@ custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "--"
 align = 1
 
-[node name="def_stab" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/left_panel"]
+[node name="spacer4" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/left_panel"]
 margin_top = 136.0
 margin_right = 92.0
 margin_bottom = 150.0
 theme = ExtResource( 18 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
-text = "--"
 align = 1
 
-[node name="def_slash" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/left_panel"]
+[node name="def_stab" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/left_panel"]
 margin_top = 150.0
 margin_right = 92.0
 margin_bottom = 164.0
@@ -1007,7 +1006,7 @@ custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "--"
 align = 1
 
-[node name="def_crush" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/left_panel"]
+[node name="def_slash" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/left_panel"]
 margin_top = 164.0
 margin_right = 92.0
 margin_bottom = 178.0
@@ -1016,24 +1015,24 @@ custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "--"
 align = 1
 
-[node name="spacer2" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/left_panel"]
+[node name="def_crush" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/left_panel"]
 margin_top = 178.0
 margin_right = 92.0
 margin_bottom = 192.0
 theme = ExtResource( 18 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
+text = "--"
 align = 1
 
-[node name="health" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/left_panel"]
+[node name="spacer2" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/left_panel"]
 margin_top = 192.0
 margin_right = 92.0
 margin_bottom = 206.0
 theme = ExtResource( 18 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
-text = "--"
 align = 1
 
-[node name="dmg_reduc" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/left_panel"]
+[node name="health" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/left_panel"]
 margin_top = 206.0
 margin_right = 92.0
 margin_bottom = 220.0
@@ -1042,24 +1041,24 @@ custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "--"
 align = 1
 
-[node name="spacer" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/left_panel"]
+[node name="dmg_reduc" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/left_panel"]
 margin_top = 220.0
 margin_right = 92.0
 margin_bottom = 234.0
 theme = ExtResource( 18 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
+text = "--"
 align = 1
 
-[node name="atk_speed" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/left_panel"]
+[node name="spacer" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/left_panel"]
 margin_top = 234.0
 margin_right = 92.0
 margin_bottom = 248.0
 theme = ExtResource( 18 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
-text = "--"
 align = 1
 
-[node name="min_hit" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/left_panel"]
+[node name="atk_speed" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/left_panel"]
 margin_top = 248.0
 margin_right = 92.0
 margin_bottom = 262.0
@@ -1068,10 +1067,19 @@ custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "--"
 align = 1
 
-[node name="max_hit" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/left_panel"]
+[node name="min_hit" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/left_panel"]
 margin_top = 262.0
 margin_right = 92.0
 margin_bottom = 276.0
+theme = ExtResource( 18 )
+custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
+text = "--"
+align = 1
+
+[node name="max_hit" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/left_panel"]
+margin_top = 276.0
+margin_right = 92.0
+margin_bottom = 290.0
 theme = ExtResource( 18 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "--"
@@ -1160,80 +1168,87 @@ theme = ExtResource( 18 )
 text = "Crush ATK"
 align = 1
 
-[node name="def_stab" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/mid_panel"]
+[node name="spacer4" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/mid_panel"]
 margin_top = 136.0
 margin_right = 92.0
 margin_bottom = 150.0
+theme = ExtResource( 18 )
+align = 1
+
+[node name="def_stab" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/mid_panel"]
+margin_top = 150.0
+margin_right = 92.0
+margin_bottom = 164.0
 theme = ExtResource( 18 )
 text = "Stab DEF"
 align = 1
 
 [node name="def_slash" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/mid_panel"]
-margin_top = 150.0
+margin_top = 164.0
 margin_right = 92.0
-margin_bottom = 164.0
+margin_bottom = 178.0
 theme = ExtResource( 18 )
 text = "Slash DEF"
 align = 1
 
 [node name="def_crush" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/mid_panel"]
-margin_top = 164.0
+margin_top = 178.0
 margin_right = 92.0
-margin_bottom = 178.0
+margin_bottom = 192.0
 theme = ExtResource( 18 )
 text = "Crush DEF"
 align = 1
 
 [node name="spacer" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/mid_panel"]
-margin_top = 178.0
+margin_top = 192.0
 margin_right = 92.0
-margin_bottom = 192.0
+margin_bottom = 206.0
 theme = ExtResource( 18 )
 align = 1
 
 [node name="health" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/mid_panel"]
-margin_top = 192.0
+margin_top = 206.0
 margin_right = 92.0
-margin_bottom = 206.0
+margin_bottom = 220.0
 theme = ExtResource( 18 )
 text = "Health"
 align = 1
 
 [node name="dmg_reduc" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/mid_panel"]
-margin_top = 206.0
+margin_top = 220.0
 margin_right = 92.0
-margin_bottom = 220.0
+margin_bottom = 234.0
 theme = ExtResource( 18 )
 text = "DMG Reduc"
 align = 1
 
 [node name="spacer2" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/mid_panel"]
-margin_top = 220.0
+margin_top = 234.0
 margin_right = 92.0
-margin_bottom = 234.0
+margin_bottom = 248.0
 theme = ExtResource( 18 )
 align = 1
 
 [node name="atk_speed" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/mid_panel"]
-margin_top = 234.0
+margin_top = 248.0
 margin_right = 92.0
-margin_bottom = 248.0
+margin_bottom = 262.0
 theme = ExtResource( 18 )
 text = "ATK Speed"
 align = 1
 
 [node name="min_hit" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/mid_panel"]
-margin_top = 248.0
+margin_top = 262.0
 margin_right = 92.0
-margin_bottom = 262.0
+margin_bottom = 276.0
 theme = ExtResource( 18 )
 text = "Min Hit"
 align = 1
 
 [node name="max_hit" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/mid_panel"]
-margin_top = 262.0
+margin_top = 276.0
 margin_right = 92.0
-margin_bottom = 276.0
+margin_bottom = 290.0
 theme = ExtResource( 18 )
 text = "Max Hit"
 align = 1
@@ -1328,16 +1343,15 @@ custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "--"
 align = 1
 
-[node name="def_stab" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
+[node name="spacer4" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
 margin_top = 136.0
 margin_right = 92.0
 margin_bottom = 150.0
 theme = ExtResource( 18 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
-text = "--"
 align = 1
 
-[node name="def_slash" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
+[node name="def_stab" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
 margin_top = 150.0
 margin_right = 92.0
 margin_bottom = 164.0
@@ -1346,7 +1360,7 @@ custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "--"
 align = 1
 
-[node name="def_crush" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
+[node name="def_slash" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
 margin_top = 164.0
 margin_right = 92.0
 margin_bottom = 178.0
@@ -1355,24 +1369,24 @@ custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "--"
 align = 1
 
-[node name="spacer2" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
+[node name="def_crush" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
 margin_top = 178.0
 margin_right = 92.0
 margin_bottom = 192.0
 theme = ExtResource( 18 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
+text = "--"
 align = 1
 
-[node name="health" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
+[node name="spacer2" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
 margin_top = 192.0
 margin_right = 92.0
 margin_bottom = 206.0
 theme = ExtResource( 18 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
-text = "--"
 align = 1
 
-[node name="dmg_reduc" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
+[node name="health" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
 margin_top = 206.0
 margin_right = 92.0
 margin_bottom = 220.0
@@ -1381,24 +1395,24 @@ custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "--"
 align = 1
 
-[node name="spacer" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
+[node name="dmg_reduc" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
 margin_top = 220.0
 margin_right = 92.0
 margin_bottom = 234.0
 theme = ExtResource( 18 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
+text = "--"
 align = 1
 
-[node name="atk_speed" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
+[node name="spacer" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
 margin_top = 234.0
 margin_right = 92.0
 margin_bottom = 248.0
 theme = ExtResource( 18 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
-text = "--"
 align = 1
 
-[node name="min_hit" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
+[node name="atk_speed" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
 margin_top = 248.0
 margin_right = 92.0
 margin_bottom = 262.0
@@ -1407,10 +1421,19 @@ custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "--"
 align = 1
 
-[node name="max_hit" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
+[node name="min_hit" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
 margin_top = 262.0
 margin_right = 92.0
 margin_bottom = 276.0
+theme = ExtResource( 18 )
+custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
+text = "--"
+align = 1
+
+[node name="max_hit" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
+margin_top = 276.0
+margin_right = 92.0
+margin_bottom = 290.0
 theme = ExtResource( 18 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "--"
