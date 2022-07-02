@@ -99,9 +99,11 @@ func create_new_hero():
 	
 	dict['name'] = name_node.text
 	dict['avatar_index'] = selected_avatar_index
+	#TODO: Change from level 1 to "hero_starting_level" once the captain upgrades are in effect
 	dict['level'] = 1
 	dict['exp'] = 0
-	
+	dict['current_health'] = Global_Player.player['base_stats']['health'] * dict['level']
+
 	dict['current_activity'] = {}
 	dict['current_activity']['type'] = ''
 	dict['current_activity']['region'] = ''
