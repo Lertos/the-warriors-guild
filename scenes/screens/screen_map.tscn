@@ -207,7 +207,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="monster_info_popup" type="Popup" parent="."]
-visible = true
 margin_top = 6.0
 margin_right = 360.0
 margin_bottom = 506.0
@@ -558,13 +557,12 @@ size_flags_vertical = 3
 custom_constants/separation = 0
 alignment = 1
 
-[node name="abilities" type="RichTextLabel" parent="monster_info_popup/margin/panel/vbox/bottom_panel/abilities"]
+[node name="abilities" type="Label" parent="monster_info_popup/margin/panel/vbox/bottom_panel/abilities"]
 margin_top = 43.0
 margin_right = 308.0
-margin_bottom = 58.0
+margin_bottom = 57.0
 theme = ExtResource( 18 )
-bbcode_enabled = true
-fit_content_height = true
+custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
 [node name="buttons" type="MarginContainer" parent="monster_info_popup/margin/panel/vbox"]
 margin_top = 425.0

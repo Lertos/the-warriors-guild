@@ -23,16 +23,8 @@ var enemies = {
 			},
 			'main_stat': 'atk_crush',
 			'abilities': {
-				0: {
-					'name': 'Fire Breath',
-					'description': 'Take 15% additional damage from the monster hit',
-					'chance': '60'
-				},
-				1: {
-					'name': 'Rooster Bark',
-					'description': 'You lose your turn',
-					'chance': '20'
-				},
+				'poisonous': 1,
+				'patience': 0,
 			},
 			'drops': {
 				#TODO
@@ -58,7 +50,8 @@ var enemies = {
 			},
 			'main_stat': 'atk_crush',
 			'abilities': {
-
+				'venomous': 1,
+				'berserk': 0,
 			},
 		},
 		2: {
