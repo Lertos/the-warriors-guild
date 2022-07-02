@@ -644,6 +644,7 @@ custom_constants/separation = 8
 [node name="header" type="Label" parent="monster_attack_popup/margin/panel/vbox"]
 margin_right = 308.0
 margin_bottom = 17.0
+custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "Available Heroes"
 align = 1
 
@@ -706,6 +707,7 @@ margin_left = 34.0
 margin_right = 34.0
 margin_bottom = 14.0
 theme = ExtResource( 18 )
+custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 align = 1
 
 [node name="1" type="VBoxContainer" parent="monster_attack_popup/margin/panel/vbox/heroes"]
@@ -749,6 +751,7 @@ margin_left = 34.0
 margin_right = 34.0
 margin_bottom = 14.0
 theme = ExtResource( 18 )
+custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 align = 1
 
 [node name="2" type="VBoxContainer" parent="monster_attack_popup/margin/panel/vbox/heroes"]
@@ -792,6 +795,7 @@ margin_left = 34.0
 margin_right = 34.0
 margin_bottom = 14.0
 theme = ExtResource( 18 )
+custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 align = 1
 
 [node name="3" type="VBoxContainer" parent="monster_attack_popup/margin/panel/vbox/heroes"]
@@ -835,6 +839,7 @@ margin_left = 34.0
 margin_right = 34.0
 margin_bottom = 14.0
 theme = ExtResource( 18 )
+custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 align = 1
 
 [node name="4" type="VBoxContainer" parent="monster_attack_popup/margin/panel/vbox/heroes"]
@@ -878,6 +883,7 @@ margin_left = 34.0
 margin_right = 34.0
 margin_bottom = 14.0
 theme = ExtResource( 18 )
+custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 align = 1
 
 [node name="separator" parent="monster_attack_popup/margin/panel/vbox" instance=ExtResource( 11 )]
@@ -936,7 +942,6 @@ margin_left = 23.0
 margin_right = 53.0
 margin_bottom = 14.0
 theme = ExtResource( 18 )
-custom_colors/font_color = Color( 0, 1, 0, 1 )
 text = "Lvl: "
 align = 1
 
@@ -945,7 +950,7 @@ margin_left = 57.0
 margin_right = 69.0
 margin_bottom = 14.0
 theme = ExtResource( 18 )
-custom_colors/font_color = Color( 0, 1, 0, 1 )
+custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "--"
 align = 1
 
@@ -1276,7 +1281,6 @@ margin_left = 23.0
 margin_right = 53.0
 margin_bottom = 14.0
 theme = ExtResource( 18 )
-custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "Lvl: "
 align = 1
 
@@ -1285,7 +1289,7 @@ margin_left = 57.0
 margin_right = 69.0
 margin_bottom = 14.0
 theme = ExtResource( 18 )
-custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "--"
 align = 1
 
