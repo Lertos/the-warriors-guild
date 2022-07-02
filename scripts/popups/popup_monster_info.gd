@@ -11,27 +11,14 @@ func load_monster_info(region_name, monster_index):
 	header.get_node('vbox/hbox/level').text = str(monster_info['level'])
 	
 	#Add Stat Info
-	var stats = parent_node.get_node('vbox/stats')
+	var stats_panel = parent_node.get_node('vbox/stats/stats_panel/values')
 	
-	var left_panel = stats.get_node('left_panel/values')
-	
-	left_panel.get_node('atk_stab').text = str(monster_info['stats']['atk_stab'])
-	left_panel.get_node('atk_slash').text = str(monster_info['stats']['atk_slash'])
-	left_panel.get_node('atk_crush').text = str(monster_info['stats']['atk_crush'])
-	
-	left_panel.get_node('health').text = str(monster_info['stats']['health'])
-	left_panel.get_node('atk_speed').text = str(monster_info['stats']['atk_speed']) + 's'
-	left_panel.get_node('dmg_reduc').text = str(monster_info['stats']['dmg_reduc']) + '%'
-	
-	var right_panel = stats.get_node('right_panel/values')
-	
-	right_panel.get_node('def_stab').text = str(monster_info['stats']['def_stab'])
-	right_panel.get_node('def_slash').text = str(monster_info['stats']['def_slash'])
-	right_panel.get_node('def_crush').text = str(monster_info['stats']['def_crush'])
-	
-	right_panel.get_node('min_hit').text = str(monster_info['stats']['min_hit'])
-	right_panel.get_node('max_hit').text = str(monster_info['stats']['max_hit'])
-	
+	for key in monster_info['stats']:
+		stats_panel.get_node(key).text = str(monster_info['stats'][key])
+
+	#Add coloring for main stat
+	stats_panel.get_node(monster_info['main_stat']).add_color_override("font_color", Global_Colors.colors['stat_highlight'])
+
 	#Abilities
 	var abilities = parent_node.get_node('vbox/bottom_panel/abilities/abilities')
 	
