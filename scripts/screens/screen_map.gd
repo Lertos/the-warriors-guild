@@ -50,12 +50,12 @@ func load_monsters(region_name):
 		inst_monster_record.set_meta('region_name', region_name)
 		inst_monster_record.set_meta('index', index)
 
-		update_monster_record(monster_list[index], hbox.name, inst_monster_record.name)
+		update_monster_record(region_name, index, hbox.name, inst_monster_record.name)
 
 
 func add_filler_record(index, monster_record, hbox):
 	if index % 2 == 0:
-		var filler_record = monster_record.duplicate()
+		var filler_record = monster_record.duplicate(true)
 		
 		filler_record.get_node('margin/vbox').visible = false
 		filler_record.set('custom_styles/panel', filler_bg_color)
@@ -75,23 +75,24 @@ func update_region_header(region_name):
 	get_node('parent_vbox/header').text = header
 
 
-func update_monster_record(monster, hbox_name, monster_node_name):
+func update_monster_record(region_name, monster_index, hbox_name, monster_node_name):
 	var path = record_list_node.get_node(hbox_name + '/' + monster_node_name)
 	var parent_node = path.get_node('margin/vbox')
+	var monster_info = Global_Enemies.enemies[region_name][monster_index]
 	
 	var monster_button = parent_node.get_node('hbox/monster')
 	var attack_button = parent_node.get_node('hbox/attack')
 
-	monster_button.connect('pressed', self, 'open_monster_info_popup', [monster])
-	attack_button.connect('pressed', self, 'open_monster_attack_popup', [monster])
+	monster_button.connect('pressed', self, 'open_monster_info_popup', [region_name, monster_index])
+	attack_button.connect('pressed', self, 'open_monster_attack_popup', [region_name, monster_index])
 
 	if monster_button.disabled == false:
-		monster_button.icon = create_animated_texture(monster['id'], 'unlocked')
+		monster_button.icon = create_animated_texture(monster_info['id'], 'unlocked')
 		
-		parent_node.get_node('info/name').text = monster['name']
-		parent_node.get_node('info/hbox/level').text = 'Level: ' + str(monster['level'])
+		parent_node.get_node('info/name').text = monster_info['name']
+		parent_node.get_node('info/hbox/level').text = 'Level: ' + str(monster_info['level'])
 	else:
-		monster_button.icon = create_animated_texture(monster['id'], 'locked')
+		monster_button.icon = create_animated_texture(monster_info['id'], 'locked')
 		
 		parent_node.get_node('info/name').visible = false
 		
@@ -99,13 +100,13 @@ func update_monster_record(monster, hbox_name, monster_node_name):
 			parent_node.get_node('info/hbox/level').text = 'Unlocked by killing the ' + path.get_meta('previous_monster')
 
 
-func open_monster_info_popup(monster):
-	get_node('monster_info_popup').load_monster_info(monster)
+func open_monster_info_popup(region_name, monster_index):
+	get_node('monster_info_popup').load_monster_info(region_name, monster_index)
 	get_node('/root/root').show_root_popup(get_node('monster_info_popup'))
 	
 	
-func open_monster_attack_popup(monster):
-	get_node('monster_attack_popup').load_monster_info(monster)
+func open_monster_attack_popup(region_name, monster_index):
+	get_node('monster_attack_popup').load_monster_info(region_name, monster_index)
 	get_node('/root/root').show_root_popup(get_node('monster_attack_popup'))
 
 
