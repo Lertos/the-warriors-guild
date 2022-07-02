@@ -32,16 +32,10 @@ func add_stat_info(monster_info):
 func add_ability_info(monster_info):
 	var abilities = parent_node.get_node('vbox/bottom_panel/abilities/abilities')
 	
-	abilities.bbcode_text = ''
+	abilities.text = ''
 	
-	for ability in monster_info['abilities']:
-		var current_ability = monster_info['abilities'][ability]
-
-		abilities.bbcode_text += '([color=yellow]' + str(current_ability['chance']) + '%[/color]) '
-		abilities.bbcode_text += '[color=red]' + str(current_ability['name']) + '[/color] '
-		abilities.bbcode_text += str(current_ability['description'])
-		
-		abilities.bbcode_text += '\n\n'
+	for ability in Helper.get_monster_abilities(monster_info):
+		abilities.text += '- ' + ability + '\n'
 
 
 func add_monster_img(monster_id):
