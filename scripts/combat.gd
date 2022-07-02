@@ -21,17 +21,19 @@ func reset_values(hero, opponent):
 	
 	hero_won = false
 	
-	current_hero = hero.duplicate()
-	current_opponent = opponent.duplicate()
+	current_hero = hero.duplicate(true)
+	current_opponent = opponent.duplicate(true)
 	
 	current_hero['stats'] = Helper.get_hero_total_stats(current_hero)
 	current_hero['main_stat'] = get_heros_main_stat(current_hero)
 	
 	#TODO: Get list of hero and opponent abilities to quickly reference them
 	
-	#TODO: Update this with actual max health and current health
 	max_hero_hp = current_hero['stats']['health']
 	max_opponent_hp = current_opponent['stats']['health']
+	
+	#Set the current health in the player stats now that we know the max health
+	current_hero['stats']['health'] = current_hero['current_health']
 	
 	print('Hero starts with |- ' + str(current_hero['stats']['health']) + ' -| health')
 	print('Opponent starts with |- ' + str(current_opponent['stats']['health']) + ' -| health \n')
@@ -61,17 +63,27 @@ func start_combat(hero, opponent):
 		print(current_hero['name'] + ' LOST...')
 	else:
 		print(current_hero['name'] + ' WON!')
-	
+		
+	#Save the new current health points of the player
+	save_hero_new_health(current_hero['name'])
+
+
+func save_hero_new_health(hero_name):
+	for hero_key in Global_Player.player['heroes']:
+		if Global_Player.player['heroes'][hero_key]['name'].to_upper() == hero_name.to_upper():
+			Global_Player.player['heroes'][hero_key]['current_health'] = current_hero['stats']['health']
+			get_node('/root/root').save_data('player')
+
 
 func get_attacker(hero, opponent):
 	if hero_speed < opponent_speed:
 		opponent_speed -= hero_speed
-		print('Opponent Speed: ' + str(opponent_speed))
+		#print('Opponent Speed: ' + str(opponent_speed))
 		hero_speed = 0
 		return hero
 	else:
 		hero_speed -= opponent_speed
-		print('hero Speed: ' + str(hero_speed))
+		#print('hero Speed: ' + str(hero_speed))
 		opponent_speed = 0
 		return opponent
 	
@@ -79,18 +91,19 @@ func get_attacker(hero, opponent):
 func get_defender(hero, opponent):
 	if hero_speed == 0:
 		hero_speed = hero['stats']['atk_speed']
-		print('hero Speed: ' + str(hero_speed))
+		#print('hero Speed: ' + str(hero_speed))
 		return opponent
 	else:
 		opponent_speed = opponent['stats']['atk_speed']
-		print('Opponent Speed: ' + str(opponent_speed))
+		#print('Opponent Speed: ' + str(opponent_speed))
 		return hero
 
 
 #Checks for abilities, and effects that happen before the round starts
 func before_turn(entity):
 	pass
-	
+
+
 func start_turn(attacker, defender):
 	print('\n---Start Turn---\n')
 	
