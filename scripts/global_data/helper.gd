@@ -85,6 +85,14 @@ func get_blackened_image(given_image) -> ImageTexture:
 	return texture
 
 
+func get_hero_main_stat(hero_info: Dictionary) -> String:
+	if hero_info['gear']['weapon1'] != '':
+		#TODO: Get the main stat from item dictionary based on the item_id
+		return ''
+	else:
+		return MasterConfig.config['default_attack_style']
+
+
 func get_hero_total_stats(hero_info: Dictionary) -> Dictionary:
 	#BASE STATS
 	var stats = {}
