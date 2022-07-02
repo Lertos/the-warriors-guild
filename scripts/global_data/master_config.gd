@@ -1,6 +1,8 @@
 extends Node
 
 var config = {
+	'default_attack_style': 'atk_crush',
+	
 	'hero_base_cost': {
 		0: 100,
 		1: 1000,
