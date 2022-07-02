@@ -10,13 +10,13 @@ var player = {
 	# BASE STATS - HEROES USE THIS AS THEIR BASE STATS
 	#-----------------------
 	'base_stats': {
-		'atk_stab': 1.2,
-		'atk_slash': 1,
-		'atk_crush': 2,
-		'def_stab': 3,
-		'def_slash': 4,
-		'def_crush': 5,
-		'health': 100,
+		'atk_stab': 10,
+		'atk_slash': 10,
+		'atk_crush': 10,
+		'def_stab': 10,
+		'def_slash': 10,
+		'def_crush': 10,
+		'health': 30,
 		'atk_speed': 3.0,
 		'dmg_reduc': 0,
 		'min_hit': 2,
