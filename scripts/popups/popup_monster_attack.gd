@@ -3,7 +3,8 @@ extends Node
 onready var parent_node = get_node('margin/panel/vbox')
 
 
-func load_monster_info(monster_info):
+func load_monster_info(region_name, monster_index):
+	var monster_info = Global_Enemies.enemies[region_name][monster_index].duplicate(true)
 	var hero_list = get_hero_list()
 	var hero_list_length = len(hero_list)
 	var current_hero_info = {}
@@ -12,14 +13,14 @@ func load_monster_info(monster_info):
 	
 	#Populate the hero panel
 	if hero_list_length > 0:
-		var first_hero_index = get_first_hero_in_line(hero_list)
-		current_hero_info = change_current_hero(first_hero_index)
+		change_current_hero(get_first_hero_in_line(hero_list))
 	
 	#Populate the monster panel
 	change_current_enemy(monster_info)
 	
-	#Assign the current hero info to the attack button
-	parent_node.get_node('buttons/hbox/attack').connect('pressed', self, 'start_fight', [current_hero_info, monster_info])
+	#Assign the monster info to the attack button
+	parent_node.get_node('buttons/hbox/attack').disconnect('pressed', self, 'start_fight')
+	parent_node.get_node('buttons/hbox/attack').connect('pressed', self, 'start_fight', [monster_info])
 
 
 func get_hero_list() -> Dictionary:
@@ -41,13 +42,19 @@ func populate_hero_list(hero_list: Dictionary):
 		hero_list_node.get_node('no_heroes_msg').visible = true
 	else:
 		for key in hero_list:
-			update_hero_node(hero_list_node.get_node(str(key)), hero_list[key])
+			var node = hero_list_node.get_node(str(key))
+			
+			update_hero_node(node, hero_list[key])
+			
+			if node.name != 'hero':
+				node.get_node('img').connect('pressed', self, 'change_current_hero', [str(node.name)])
+				node.visible = true
 
 
 func change_current_hero(index: String) -> Dictionary:
 	var hero_info = Global_Player.player['heroes'][int(index)]
 	var hero_node = parent_node.get_node('stats/left_panel')
-	
+
 	update_hero_node(hero_node.get_node('hero'), hero_info)
 	
 	#TODO: Replace with stat grab from helper script with for loop on returned dict for all stats
@@ -56,6 +63,9 @@ func change_current_hero(index: String) -> Dictionary:
 	hero_node.get_node('atk_stab').text = '1'
 	hero_node.get_node('atk_slash').text = '2'
 	hero_node.get_node('atk_crush').text = '3'
+	
+	#Assign the current hero info to the attack button
+	parent_node.get_node('buttons/hbox/attack').set_meta('hero_info', hero_info)
 	
 	return hero_info
 	
@@ -74,10 +84,6 @@ func update_hero_node(node, hero_info):
 	node.get_node('img').icon = load('res://assets/avatars/avatar (' + str(hero_info['avatar_index']) + ').png')
 	node.get_node('name').text = hero_info['name']
 	node.get_node('hbox/level').text = str(hero_info['level'])
-	
-	if node.name != 'hero':
-		node.get_node('img').connect('pressed', self, 'change_current_hero', [str(node.name)])
-		node.visible = true
 
 
 func change_current_enemy(monster_info):
@@ -104,11 +110,17 @@ func get_monster_animated_texture(monster_info) -> AnimatedTexture:
 
 #TODO: This will instead be "set hero on adventure" rather than an instant fight - move this logic to hero screen
 #	after testing and then when a hero is "DONE", they will click the hero button and then the attack will happen
-func start_fight(hero_info, monster_info):
-	if hero_info == {}:
-		print('nope')
+func start_fight(monster_info):
+	if !parent_node.get_node('buttons/hbox/attack').has_meta('hero_info'):
+		print('A hero has not been selected yet')
 		return
-		
+	
+	var hero_info = parent_node.get_node('buttons/hbox/attack').get_meta('hero_info')
+
+	if hero_info['current_health'] <= 0:
+		print('Health is too low')
+		return
+	
 	get_node('/root/root/combat_manager').start_combat(hero_info, monster_info)
 
 
