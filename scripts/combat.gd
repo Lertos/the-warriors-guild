@@ -1,6 +1,8 @@
 extends Node
 
+#TODO: Implement this max turns below
 const MAX_TURNS_BEFORE_DRAW = 20
+const MAX_CRIT_DAMAGE_PERCENT_MULTIPLIER = 1.25
 
 var rng = RandomNumberGenerator.new()
 
@@ -25,7 +27,7 @@ func reset_values(hero, opponent):
 	current_opponent = opponent.duplicate(true)
 	
 	current_hero['stats'] = Helper.get_hero_total_stats(current_hero)
-	current_hero['main_stat'] = get_heros_main_stat(current_hero)
+	current_hero['main_stat'] = Helper.get_hero_main_stat(current_hero)
 	
 	#TODO: Get list of hero and opponent abilities to quickly reference them
 	
@@ -112,37 +114,50 @@ func start_turn(attacker, defender):
 	var attack_value = attacker['stats'][attacker_stat]
 	var defend_value = defender['stats'][attacker_stat]
 	
-	if does_attack_hit(attack_value, defend_value):
-		deal_damage(attacker, defender)
-	else:
-		print(attacker['name'] + ' missed their attack!')
+	#Gets the multiplier between 0 (miss), max-min + % damage, 1.25 (higher crit)
+	var damage_multiplier = get_damage_multiplier(attack_value, defend_value)
+	
+	deal_damage(damage_multiplier, attacker, defender)
 
 
 func end_turn(entity):
 	pass
 
 
-func get_heros_main_stat(entity):
-	#TODO: Get this from the weapon type of the given hero's equipped weapon
-	#TODO: If no weapon equipped, use "atk_crush"
-	return 'atk_stab'
+func get_damage_multiplier(attack_value, defend_value) -> float:
+	var attack_roll = rng.randi_range(0, attack_value)
+	var miss_value = defend_value * 0.15
+	var multiplier = 1.0
+	
+	#If attack roll is below X% of defense value, roll for a miss
+	if attack_roll < miss_value:
+		multiplier = 0.0
+	#If attack roll is above the defense value, roll for additional damage above 100%
+	elif attack_roll > defend_value:
+		print('+++ CRITICAL HIT +++')
+		multiplier = min(float(attack_roll) / float(defend_value), MAX_CRIT_DAMAGE_PERCENT_MULTIPLIER)
+
+	return multiplier
 
 
-func does_attack_hit(attack_value, defend_value):
-	var attack_roll = rng.randi_range(0, attack_value * 1.25) 
-	var defend_roll = rng.randi_range(0, defend_value)
-
-	return attack_roll > defend_roll
-
-
-func deal_damage(attacker, defender):
+func deal_damage(damage_multiplier: float, attacker, defender):
 	var damage = rng.randi_range(attacker['stats']['min_hit'], attacker['stats']['max_hit'])
+	
+	damage *= damage_multiplier
+	
+	if damage == 0.0:
+		print(attacker['name'] + ' missed their attack!')
+		return
+	
 	damage += get_bonus_damage(attacker, defender)
+	damage = stepify(damage, 0.01)
 	
 	print('BASE DAMAGE: ' + str(damage))
 	
 	var reduced_damage = damage - (damage * (defender['stats']['dmg_reduc']/100))
-
+	
+	reduced_damage = stepify(reduced_damage, 0.01)
+	
 	print(attacker['name'] +  ' does ' + str(reduced_damage) + ' damage')
 	
 	defender['stats']['health'] -= reduced_damage
