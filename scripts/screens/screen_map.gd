@@ -28,6 +28,8 @@ func load_monsters(region_name):
 	var hbox
 	
 	update_region_header(region_name)
+	update_selected_region_button(region_name)
+	
 	clear_list()
 	
 	for index in range(0, len(monster_list)):
@@ -73,6 +75,15 @@ func update_region_header(region_name):
 	header = header.replace('_', ' ')
 	
 	get_node('parent_vbox/header').text = header
+
+
+func update_selected_region_button(region_name):
+	for region_hbox in get_node('parent_vbox/region_vbox').get_children():
+		for region_button in region_hbox.get_children():
+			if region_button.name == region_name:
+				Helper.change_border_color(region_button, 'selected')
+			else:
+				Helper.reset_border_color(region_button)
 
 
 func update_monster_record(region_name, monster_index, hbox_name, monster_node_name):
