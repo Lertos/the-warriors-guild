@@ -58,11 +58,10 @@ func change_current_hero(index: String) -> Dictionary:
 	update_hero_node(hero_node.get_node('hero'), hero_info)
 	
 	#TODO: Replace with stat grab from helper script with for loop on returned dict for all stats
-	#for stat_key in Helper.get_hero_total_stats():
-		
-	hero_node.get_node('atk_stab').text = '1'
-	hero_node.get_node('atk_slash').text = '2'
-	hero_node.get_node('atk_crush').text = '3'
+	var hero_total_stats = Helper.get_hero_total_stats(hero_info)
+	
+	for stat in hero_total_stats:
+		hero_node.get_node(stat).text = str(hero_total_stats[stat])
 	
 	hero_node.get_node(Helper.get_hero_main_stat(hero_info)).add_color_override("font_color", Global_Colors.colors['stat_highlight'])
 	

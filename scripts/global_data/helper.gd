@@ -87,8 +87,7 @@ func get_blackened_image(given_image) -> ImageTexture:
 
 func get_hero_main_stat(hero_info: Dictionary) -> String:
 	if hero_info['gear']['weapon1'] != '':
-		#TODO: Get the main stat from item dictionary based on the item_id
-		return ''
+		return Global_Items.items[hero_info['gear']['weapon1']]['main_stat']
 	else:
 		return MasterConfig.config['default_attack_style']
 
@@ -109,7 +108,27 @@ func get_hero_total_stats(hero_info: Dictionary) -> Dictionary:
 	
 	
 func get_hero_total_gear_stats(stats, hero_info: Dictionary) -> Dictionary:
-	#TODO: Actually calculate the gear stats
+	for gear_type in hero_info['gear']:
+		var item_id = hero_info['gear'][gear_type]
+		
+		if item_id == '':
+			continue
+		if !(item_id in Global_Items.items):
+			continue
+		
+		var item_info = Global_Items.items[item_id]
+		
+		for stat in Global_Player.player['base_stats']:
+			if stat in item_info:
+				if stat == 'atk_speed':
+					stats[stat] = float(item_info[stat])
+				elif item_info[stat].is_valid_integer():
+					print('hey')
+					stats[stat] += int(item_info[stat])
+				elif item_info[stat].is_valid_float():
+					print('hey2')
+					stats[stat] += float(item_info[stat])
+			
 	return stats
 
 
