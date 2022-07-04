@@ -577,7 +577,7 @@ margin_bottom = 24.0
 size_flags_horizontal = 3
 theme = ExtResource( 17 )
 
-[node name="stab_atk" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/weapon/vbox"]
+[node name="atk_stab" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/weapon/vbox"]
 margin_top = 140.0
 margin_right = 260.0
 margin_bottom = 164.0
@@ -585,7 +585,7 @@ size_flags_horizontal = 5
 custom_constants/separation = 8
 alignment = 1
 
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/weapon/vbox/stab_atk"]
+[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/weapon/vbox/atk_stab"]
 margin_right = 65.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
@@ -594,7 +594,7 @@ text = "Stab ATK"
 align = 2
 valign = 1
 
-[node name="stab_atk" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/weapon/vbox/stab_atk"]
+[node name="atk_stab" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/weapon/vbox/atk_stab"]
 margin_left = 73.0
 margin_right = 260.0
 margin_bottom = 24.0
@@ -603,7 +603,7 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 clear_button_enabled = true
 
-[node name="slash_atk" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/weapon/vbox"]
+[node name="atk_slash" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/weapon/vbox"]
 margin_top = 168.0
 margin_right = 260.0
 margin_bottom = 192.0
@@ -611,7 +611,7 @@ size_flags_horizontal = 5
 custom_constants/separation = 8
 alignment = 1
 
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/weapon/vbox/slash_atk"]
+[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/weapon/vbox/atk_slash"]
 margin_right = 72.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
@@ -620,7 +620,7 @@ text = "Slash ATK"
 align = 2
 valign = 1
 
-[node name="slash_atk" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/weapon/vbox/slash_atk"]
+[node name="atk_slash" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/weapon/vbox/atk_slash"]
 margin_left = 80.0
 margin_right = 260.0
 margin_bottom = 24.0
@@ -629,7 +629,7 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 clear_button_enabled = true
 
-[node name="crush_atk" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/weapon/vbox"]
+[node name="atk_crush" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/weapon/vbox"]
 margin_top = 196.0
 margin_right = 260.0
 margin_bottom = 220.0
@@ -637,7 +637,7 @@ size_flags_horizontal = 5
 custom_constants/separation = 8
 alignment = 1
 
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/weapon/vbox/crush_atk"]
+[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/weapon/vbox/atk_crush"]
 margin_right = 75.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
@@ -646,7 +646,7 @@ text = "Crush ATK"
 align = 2
 valign = 1
 
-[node name="crush_atk" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/weapon/vbox/crush_atk"]
+[node name="atk_crush" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/weapon/vbox/atk_crush"]
 margin_left = 83.0
 margin_right = 260.0
 margin_bottom = 24.0
@@ -750,7 +750,7 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 clear_button_enabled = true
 
-[node name="stab_atk" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox"]
+[node name="atk_stab" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox"]
 margin_top = 28.0
 margin_right = 260.0
 margin_bottom = 52.0
@@ -758,7 +758,7 @@ size_flags_horizontal = 5
 custom_constants/separation = 8
 alignment = 1
 
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/stab_atk"]
+[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/atk_stab"]
 margin_right = 65.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
@@ -767,7 +767,7 @@ text = "Stab ATK"
 align = 2
 valign = 1
 
-[node name="stab_atk" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/stab_atk"]
+[node name="atk_stab" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/atk_stab"]
 margin_left = 73.0
 margin_right = 260.0
 margin_bottom = 24.0
@@ -776,7 +776,7 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 clear_button_enabled = true
 
-[node name="slash_atk" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox"]
+[node name="atk_slash" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox"]
 margin_top = 56.0
 margin_right = 260.0
 margin_bottom = 80.0
@@ -784,7 +784,7 @@ size_flags_horizontal = 5
 custom_constants/separation = 8
 alignment = 1
 
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/slash_atk"]
+[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/atk_slash"]
 margin_right = 72.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
@@ -793,7 +793,7 @@ text = "Slash ATK"
 align = 2
 valign = 1
 
-[node name="slash_atk" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/slash_atk"]
+[node name="atk_slash" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/atk_slash"]
 margin_left = 80.0
 margin_right = 260.0
 margin_bottom = 24.0
@@ -802,7 +802,7 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 clear_button_enabled = true
 
-[node name="crush_atk" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox"]
+[node name="atk_crush" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox"]
 margin_top = 84.0
 margin_right = 260.0
 margin_bottom = 108.0
@@ -810,7 +810,7 @@ size_flags_horizontal = 5
 custom_constants/separation = 8
 alignment = 1
 
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/crush_atk"]
+[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/atk_crush"]
 margin_right = 75.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
@@ -819,7 +819,7 @@ text = "Crush ATK"
 align = 2
 valign = 1
 
-[node name="crush_atk" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/crush_atk"]
+[node name="atk_crush" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/atk_crush"]
 margin_left = 83.0
 margin_right = 260.0
 margin_bottom = 24.0
@@ -828,7 +828,7 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 clear_button_enabled = true
 
-[node name="stab_def" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox"]
+[node name="def_stab" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox"]
 margin_top = 112.0
 margin_right = 260.0
 margin_bottom = 136.0
@@ -836,7 +836,7 @@ size_flags_horizontal = 5
 custom_constants/separation = 8
 alignment = 1
 
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/stab_def"]
+[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/def_stab"]
 margin_right = 65.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
@@ -845,7 +845,7 @@ text = "Stab DEF"
 align = 2
 valign = 1
 
-[node name="stab_def" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/stab_def"]
+[node name="def_stab" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/def_stab"]
 margin_left = 73.0
 margin_right = 260.0
 margin_bottom = 24.0
@@ -854,7 +854,7 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 clear_button_enabled = true
 
-[node name="slash_def" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox"]
+[node name="def_slash" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox"]
 margin_top = 140.0
 margin_right = 260.0
 margin_bottom = 164.0
@@ -862,7 +862,7 @@ size_flags_horizontal = 5
 custom_constants/separation = 8
 alignment = 1
 
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/slash_def"]
+[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/def_slash"]
 margin_right = 72.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
@@ -871,7 +871,7 @@ text = "Slash DEF"
 align = 2
 valign = 1
 
-[node name="slash_def" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/slash_def"]
+[node name="def_slash" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/def_slash"]
 margin_left = 80.0
 margin_right = 260.0
 margin_bottom = 24.0
@@ -976,7 +976,7 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 clear_button_enabled = true
 
-[node name="stab_atk" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox"]
+[node name="atk_stab" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox"]
 margin_top = 28.0
 margin_right = 260.0
 margin_bottom = 52.0
@@ -984,7 +984,7 @@ size_flags_horizontal = 5
 custom_constants/separation = 8
 alignment = 1
 
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox/stab_atk"]
+[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox/atk_stab"]
 margin_right = 65.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
@@ -993,7 +993,7 @@ text = "Stab ATK"
 align = 2
 valign = 1
 
-[node name="stab_atk" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox/stab_atk"]
+[node name="atk_stab" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox/atk_stab"]
 margin_left = 73.0
 margin_right = 260.0
 margin_bottom = 24.0
@@ -1002,7 +1002,7 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 clear_button_enabled = true
 
-[node name="slash_atk" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox"]
+[node name="atk_slash" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox"]
 margin_top = 56.0
 margin_right = 260.0
 margin_bottom = 80.0
@@ -1010,7 +1010,7 @@ size_flags_horizontal = 5
 custom_constants/separation = 8
 alignment = 1
 
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox/slash_atk"]
+[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox/atk_slash"]
 margin_right = 72.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
@@ -1019,7 +1019,7 @@ text = "Slash ATK"
 align = 2
 valign = 1
 
-[node name="slash_atk" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox/slash_atk"]
+[node name="atk_slash" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox/atk_slash"]
 margin_left = 80.0
 margin_right = 260.0
 margin_bottom = 24.0
@@ -1028,7 +1028,7 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 clear_button_enabled = true
 
-[node name="crush_atk" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox"]
+[node name="atk_crush" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox"]
 margin_top = 84.0
 margin_right = 260.0
 margin_bottom = 108.0
@@ -1036,7 +1036,7 @@ size_flags_horizontal = 5
 custom_constants/separation = 8
 alignment = 1
 
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox/crush_atk"]
+[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox/atk_crush"]
 margin_right = 75.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
@@ -1045,7 +1045,7 @@ text = "Crush ATK"
 align = 2
 valign = 1
 
-[node name="crush_atk" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox/crush_atk"]
+[node name="atk_crush" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox/atk_crush"]
 margin_left = 83.0
 margin_right = 260.0
 margin_bottom = 24.0
@@ -1054,7 +1054,7 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 clear_button_enabled = true
 
-[node name="stab_def" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox"]
+[node name="def_stab" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox"]
 margin_top = 112.0
 margin_right = 260.0
 margin_bottom = 136.0
@@ -1062,7 +1062,7 @@ size_flags_horizontal = 5
 custom_constants/separation = 8
 alignment = 1
 
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox/stab_def"]
+[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox/def_stab"]
 margin_right = 65.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
@@ -1071,7 +1071,7 @@ text = "Stab DEF"
 align = 2
 valign = 1
 
-[node name="stab_def" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox/stab_def"]
+[node name="def_stab" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox/def_stab"]
 margin_left = 73.0
 margin_right = 260.0
 margin_bottom = 24.0
@@ -1080,7 +1080,7 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 clear_button_enabled = true
 
-[node name="slash_def" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox"]
+[node name="def_slash" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox"]
 margin_top = 140.0
 margin_right = 260.0
 margin_bottom = 164.0
@@ -1088,7 +1088,7 @@ size_flags_horizontal = 5
 custom_constants/separation = 8
 alignment = 1
 
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox/slash_def"]
+[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox/def_slash"]
 margin_right = 72.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
@@ -1097,7 +1097,7 @@ text = "Slash DEF"
 align = 2
 valign = 1
 
-[node name="slash_def" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox/slash_def"]
+[node name="def_slash" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox/def_slash"]
 margin_left = 80.0
 margin_right = 260.0
 margin_bottom = 24.0
@@ -1106,7 +1106,7 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 clear_button_enabled = true
 
-[node name="crush_def" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox"]
+[node name="def_crush" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox"]
 margin_top = 168.0
 margin_right = 260.0
 margin_bottom = 192.0
@@ -1114,7 +1114,7 @@ size_flags_horizontal = 5
 custom_constants/separation = 8
 alignment = 1
 
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox/crush_def"]
+[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox/def_crush"]
 margin_right = 75.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
@@ -1123,7 +1123,7 @@ text = "Crush DEF"
 align = 2
 valign = 1
 
-[node name="crush_def" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox/crush_def"]
+[node name="def_crush" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox/def_crush"]
 margin_left = 83.0
 margin_right = 260.0
 margin_bottom = 24.0
@@ -1475,7 +1475,7 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 clear_button_enabled = true
 
-[node name="stab_def" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox"]
+[node name="def_stab" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox"]
 margin_top = 112.0
 margin_right = 260.0
 margin_bottom = 136.0
@@ -1483,7 +1483,7 @@ size_flags_horizontal = 5
 custom_constants/separation = 8
 alignment = 1
 
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox/stab_def"]
+[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox/def_stab"]
 margin_right = 65.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
@@ -1492,7 +1492,7 @@ text = "Stab DEF"
 align = 2
 valign = 1
 
-[node name="stab_def" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox/stab_def"]
+[node name="def_stab" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox/def_stab"]
 margin_left = 73.0
 margin_right = 260.0
 margin_bottom = 24.0
@@ -1501,7 +1501,7 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 clear_button_enabled = true
 
-[node name="slash_def" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox"]
+[node name="def_slash" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox"]
 margin_top = 140.0
 margin_right = 260.0
 margin_bottom = 164.0
@@ -1509,7 +1509,7 @@ size_flags_horizontal = 5
 custom_constants/separation = 8
 alignment = 1
 
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox/slash_def"]
+[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox/def_slash"]
 margin_right = 72.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
@@ -1518,7 +1518,7 @@ text = "Slash DEF"
 align = 2
 valign = 1
 
-[node name="slash_def" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox/slash_def"]
+[node name="def_slash" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox/def_slash"]
 margin_left = 80.0
 margin_right = 260.0
 margin_bottom = 24.0
@@ -1527,7 +1527,7 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 clear_button_enabled = true
 
-[node name="crush_def" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox"]
+[node name="def_crush" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox"]
 margin_top = 168.0
 margin_right = 260.0
 margin_bottom = 192.0
@@ -1535,7 +1535,7 @@ size_flags_horizontal = 5
 custom_constants/separation = 8
 alignment = 1
 
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox/crush_def"]
+[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox/def_crush"]
 margin_right = 75.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
@@ -1544,7 +1544,7 @@ text = "Crush DEF"
 align = 2
 valign = 1
 
-[node name="crush_def" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox/crush_def"]
+[node name="def_crush" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox/def_crush"]
 margin_left = 83.0
 margin_right = 260.0
 margin_bottom = 24.0
