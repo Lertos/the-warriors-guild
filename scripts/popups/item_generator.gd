@@ -259,14 +259,14 @@ func add_type_fields(item_dict, type):
 		item_dict['max_hit'] = node.get_node('max_hit/max_hit').text
 		item_dict['dmg_reduc'] = node.get_node('dmg_reduc/dmg_reduc').text
 	if type == 'weapon' or type == 'armor' or type == 'jewelry':
-		item_dict['stab_atk'] = node.get_node('stab_atk/stab_atk').text
-		item_dict['slash_atk'] = node.get_node('slash_atk/slash_atk').text
-		item_dict['crush_atk'] = node.get_node('crush_atk/crush_atk').text
+		item_dict['atk_stab'] = node.get_node('atk_stab/atk_stab').text
+		item_dict['atk_slash'] = node.get_node('atk_slash/atk_slash').text
+		item_dict['atk_crush'] = node.get_node('atk_crush/atk_crush').text
 	if type == 'armor' or type == 'jewelry' or type == 'mount':
 		item_dict['health'] = node.get_node('health/health').text
-		item_dict['stab_def'] = node.get_node('stab_def/stab_def').text
-		item_dict['slash_def'] = node.get_node('slash_def/slash_def').text
-		item_dict['crush_def'] = node.get_node('crush_def/crush_def').text
+		item_dict['def_stab'] = node.get_node('def_stab/def_stab').text
+		item_dict['def_slash'] = node.get_node('def_slash/def_slash').text
+		item_dict['def_crush'] = node.get_node('def_crush/def_crush').text
 		item_dict['dmg_reduc'] = node.get_node('dmg_reduc/dmg_reduc').text
 	if type == 'mount':
 		item_dict['travel_time'] = node.get_node('travel_time/travel_time').text
