@@ -433,9 +433,9 @@ margin_bottom = 190.0
 
 [node name="weapon" type="MarginContainer" parent="ItemGenerator/container/parent_vbox/vbox"]
 visible = false
-margin_top = 166.0
+margin_top = 198.0
 margin_right = 324.0
-margin_bottom = 490.0
+margin_bottom = 522.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_right = 32
@@ -553,10 +553,34 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 clear_button_enabled = true
 
-[node name="stab_atk" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/weapon/vbox"]
+[node name="main_stat" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/weapon/vbox"]
 margin_top = 112.0
 margin_right = 260.0
 margin_bottom = 136.0
+size_flags_horizontal = 5
+custom_constants/separation = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/weapon/vbox/main_stat"]
+margin_right = 67.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
+theme = ExtResource( 17 )
+text = "Main Stat"
+align = 2
+valign = 1
+
+[node name="main_stat" type="OptionButton" parent="ItemGenerator/container/parent_vbox/vbox/weapon/vbox/main_stat"]
+margin_left = 75.0
+margin_right = 260.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+theme = ExtResource( 17 )
+
+[node name="stab_atk" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/weapon/vbox"]
+margin_top = 140.0
+margin_right = 260.0
+margin_bottom = 164.0
 size_flags_horizontal = 5
 custom_constants/separation = 8
 alignment = 1
@@ -580,9 +604,9 @@ theme = ExtResource( 17 )
 clear_button_enabled = true
 
 [node name="slash_atk" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/weapon/vbox"]
-margin_top = 140.0
+margin_top = 168.0
 margin_right = 260.0
-margin_bottom = 164.0
+margin_bottom = 192.0
 size_flags_horizontal = 5
 custom_constants/separation = 8
 alignment = 1
@@ -606,9 +630,9 @@ theme = ExtResource( 17 )
 clear_button_enabled = true
 
 [node name="crush_atk" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/weapon/vbox"]
-margin_top = 168.0
+margin_top = 196.0
 margin_right = 260.0
-margin_bottom = 192.0
+margin_bottom = 220.0
 size_flags_horizontal = 5
 custom_constants/separation = 8
 alignment = 1
@@ -632,9 +656,9 @@ theme = ExtResource( 17 )
 clear_button_enabled = true
 
 [node name="dmg_reduc" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/weapon/vbox"]
-margin_top = 196.0
+margin_top = 224.0
 margin_right = 260.0
-margin_bottom = 220.0
+margin_bottom = 248.0
 size_flags_horizontal = 5
 custom_constants/separation = 8
 alignment = 1
@@ -658,26 +682,26 @@ theme = ExtResource( 17 )
 clear_button_enabled = true
 
 [node name="abilities" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/weapon/vbox"]
-margin_top = 224.0
+margin_top = 252.0
 margin_right = 260.0
-margin_bottom = 324.0
+margin_bottom = 312.0
 size_flags_horizontal = 5
 custom_constants/separation = 8
 alignment = 1
 
 [node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/weapon/vbox/abilities"]
-margin_right = 84.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 0, 100 )
+margin_right = 60.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 0, 60 )
 theme = ExtResource( 17 )
 text = "Abilities"
 valign = 1
 
 [node name="abilities" type="ItemList" parent="ItemGenerator/container/parent_vbox/vbox/weapon/vbox/abilities"]
-margin_left = 92.0
+margin_left = 68.0
 margin_right = 260.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 160, 100 )
+margin_bottom = 60.0
+rect_min_size = Vector2( 160, 60 )
 size_flags_horizontal = 3
 theme = ExtResource( 17 )
 select_mode = 1
@@ -1557,34 +1581,34 @@ clear_button_enabled = true
 
 [node name="search_list" type="ScrollContainer" parent="ItemGenerator/container/parent_vbox"]
 visible = false
-margin_top = 48.0
+margin_top = 312.0
 margin_right = 324.0
-margin_bottom = 554.0
+margin_bottom = 570.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="vbox" type="VBoxContainer" parent="ItemGenerator/container/parent_vbox/search_list"]
 margin_right = 324.0
-margin_bottom = 506.0
+margin_bottom = 258.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="vbox" type="VBoxContainer" parent="ItemGenerator/container/parent_vbox/search_list/vbox"]
 margin_right = 324.0
-margin_bottom = 477.0
+margin_bottom = 233.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="hbox" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/search_list/vbox"]
-margin_top = 481.0
+margin_top = 237.0
 margin_right = 324.0
-margin_bottom = 506.0
+margin_bottom = 258.0
 alignment = 1
 
 [node name="close" type="Button" parent="ItemGenerator/container/parent_vbox/search_list/vbox/hbox"]
-margin_left = 132.0
-margin_right = 192.0
-margin_bottom = 25.0
+margin_left = 117.0
+margin_right = 207.0
+margin_bottom = 21.0
 theme = ExtResource( 21 )
 text = "Close (F5)"
 
@@ -1605,14 +1629,14 @@ custom_constants/separation = 10
 alignment = 1
 
 [node name="save" type="Button" parent="ItemGenerator/container/parent_vbox/bottom"]
-margin_left = 41.0
-margin_right = 117.0
+margin_left = 56.0
+margin_right = 121.0
 margin_bottom = 32.0
 theme = ExtResource( 21 )
 text = " S (F5) "
 
 [node name="update" type="Button" parent="ItemGenerator/container/parent_vbox/bottom"]
-margin_left = 127.0
+margin_left = 131.0
 margin_right = 157.0
 margin_bottom = 32.0
 theme = ExtResource( 21 )
@@ -1620,14 +1644,14 @@ text = " U "
 
 [node name="clear" type="Button" parent="ItemGenerator/container/parent_vbox/bottom"]
 margin_left = 167.0
-margin_right = 197.0
+margin_right = 193.0
 margin_bottom = 32.0
 theme = ExtResource( 21 )
 text = " C "
 
 [node name="delete" type="Button" parent="ItemGenerator/container/parent_vbox/bottom"]
-margin_left = 207.0
-margin_right = 283.0
+margin_left = 203.0
+margin_right = 268.0
 margin_bottom = 32.0
 theme = ExtResource( 21 )
 text = " D (F7) "

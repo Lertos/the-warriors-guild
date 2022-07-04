@@ -20,6 +20,7 @@ func _ready():
 	fill_type_dropdown()
 	fill_rarity_dropdown()
 	
+	fill_main_stat_list()
 	fill_ability_item_list()
 	fill_potion_types_item_list()
 	fill_potion_effect_item_list()
@@ -249,6 +250,9 @@ func add_type_fields(item_dict, type):
 	var node = parent.get_node(type + '/vbox')
 
 	if type == 'weapon':
+		var main_stat_index = node.get_node('main_stat/main_stat').get_selected_id()
+		
+		item_dict['main_stat'] = node.get_node('main_stat/main_stat').get_item_text(main_stat_index)
 		item_dict['health'] = node.get_node('health/health').text
 		item_dict['atk_speed'] = node.get_node('atk_speed/atk_speed').text
 		item_dict['min_hit'] = node.get_node('min_hit/min_hit').text
@@ -289,13 +293,18 @@ func are_fields_incorrect(item_dict):
 			return true
 		
 		#Check for numbers in pure alpha fields
-		if (key == 'name' or key == 'img_path'):
+		if key == 'name':
 			if number_regex.search(item_dict[key]):
 				print('==ERROR: The ' + key + ' field has a number in it')
 				return true
+		#Check for numbers in pure alpha fields
+		elif key == 'atk_speed' or key == 'dmg_reduc':
+			if !item_dict[key].is_valid_float():
+				print('==ERROR: The ' + key + ' field is not a valid float')
+				return true
 		#Check for fields that should be only integers
 		else:
-			if key != 'desc' and !item_dict[key].is_valid_integer():
+			if key != 'desc' and key != 'img_path' and key != 'main_stat' and !item_dict[key].is_valid_integer():
 				print('==ERROR: The ' + key + ' field is not a valid integer')
 				return true
 			
@@ -314,7 +323,15 @@ func fill_rarity_dropdown():
 	
 	for key in MasterConfig.config['rarities']:
 		rarity_dropdown.add_item(key, MasterConfig.config['rarities'][key]['order'])
+
+
+func fill_main_stat_list():
+	var main_stat_dropdown = get_node('container/parent_vbox/vbox/weapon/vbox/main_stat/main_stat')
 	
+	main_stat_dropdown.add_item('atk_stab')
+	main_stat_dropdown.add_item('atk_slash')
+	main_stat_dropdown.add_item('atk_crush')
+
 
 func fill_ability_item_list():
 	var item_list = get_node('container/parent_vbox/vbox/weapon/vbox/abilities/abilities')
