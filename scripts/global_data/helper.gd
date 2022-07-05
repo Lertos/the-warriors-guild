@@ -123,10 +123,8 @@ func get_hero_total_gear_stats(stats, hero_info: Dictionary) -> Dictionary:
 				if stat == 'atk_speed':
 					stats[stat] = float(item_info[stat])
 				elif item_info[stat].is_valid_integer():
-					print('hey')
 					stats[stat] += int(item_info[stat])
 				elif item_info[stat].is_valid_float():
-					print('hey2')
 					stats[stat] += float(item_info[stat])
 			
 	return stats
