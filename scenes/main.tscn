@@ -37,6 +37,7 @@ script = ExtResource( 12 )
 script = ExtResource( 20 )
 
 [node name="parent" type="VBoxContainer" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
@@ -153,6 +154,7 @@ icon = ExtResource( 7 )
 expand_icon = true
 
 [node name="ItemGenerator" type="Popup" parent="."]
+visible = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
@@ -190,35 +192,74 @@ custom_constants/separation = 10
 alignment = 1
 
 [node name="search_bar" type="LineEdit" parent="ItemGenerator/container/parent_vbox/top"]
-margin_right = 202.0
+margin_right = 218.0
 margin_bottom = 32.0
 size_flags_horizontal = 3
 theme = ExtResource( 18 )
 virtual_keyboard_enabled = false
 
 [node name="search" type="Button" parent="ItemGenerator/container/parent_vbox/top"]
-margin_left = 212.0
-margin_right = 286.0
+margin_left = 228.0
+margin_right = 278.0
 margin_bottom = 32.0
-theme = ExtResource( 3 )
-text = " F (F6) "
+theme = ExtResource( 21 )
+text = " Find "
 
 [node name="show_all" type="Button" parent="ItemGenerator/container/parent_vbox/top"]
-margin_left = 296.0
+margin_left = 288.0
 margin_right = 324.0
 margin_bottom = 32.0
-theme = ExtResource( 3 )
-text = "All"
+theme = ExtResource( 21 )
+text = " All "
 
-[node name="separator" parent="ItemGenerator/container/parent_vbox" instance=ExtResource( 6 )]
+[node name="bottom" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox"]
 margin_top = 38.0
 margin_right = 324.0
-margin_bottom = 42.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 0, 32 )
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+custom_constants/separation = 10
+alignment = 1
+
+[node name="save" type="Button" parent="ItemGenerator/container/parent_vbox/bottom"]
+margin_left = 17.0
+margin_right = 73.0
+margin_bottom = 32.0
+theme = ExtResource( 21 )
+text = " Save "
+
+[node name="update" type="Button" parent="ItemGenerator/container/parent_vbox/bottom"]
+margin_left = 83.0
+margin_right = 157.0
+margin_bottom = 32.0
+theme = ExtResource( 21 )
+text = " Update "
+
+[node name="clear" type="Button" parent="ItemGenerator/container/parent_vbox/bottom"]
+margin_left = 167.0
+margin_right = 227.0
+margin_bottom = 32.0
+theme = ExtResource( 21 )
+text = " Clear "
+
+[node name="delete" type="Button" parent="ItemGenerator/container/parent_vbox/bottom"]
+margin_left = 237.0
+margin_right = 306.0
+margin_bottom = 32.0
+theme = ExtResource( 21 )
+text = " Delete "
+
+[node name="separator" parent="ItemGenerator/container/parent_vbox" instance=ExtResource( 6 )]
+margin_top = 76.0
+margin_right = 324.0
+margin_bottom = 80.0
 
 [node name="vbox" type="VBoxContainer" parent="ItemGenerator/container/parent_vbox"]
-margin_top = 48.0
+margin_top = 86.0
 margin_right = 324.0
-margin_bottom = 570.0
+margin_bottom = 618.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 8
@@ -1613,50 +1654,6 @@ margin_bottom = 21.0
 theme = ExtResource( 21 )
 text = "Close (F5)"
 
-[node name="separator2" parent="ItemGenerator/container/parent_vbox" instance=ExtResource( 6 )]
-margin_top = 576.0
-margin_right = 324.0
-margin_bottom = 580.0
-
-[node name="bottom" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox"]
-margin_top = 586.0
-margin_right = 324.0
-margin_bottom = 618.0
-rect_min_size = Vector2( 0, 32 )
-mouse_filter = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-custom_constants/separation = 10
-alignment = 1
-
-[node name="save" type="Button" parent="ItemGenerator/container/parent_vbox/bottom"]
-margin_left = 56.0
-margin_right = 121.0
-margin_bottom = 32.0
-theme = ExtResource( 21 )
-text = " S (F5) "
-
-[node name="update" type="Button" parent="ItemGenerator/container/parent_vbox/bottom"]
-margin_left = 131.0
-margin_right = 157.0
-margin_bottom = 32.0
-theme = ExtResource( 21 )
-text = " U "
-
-[node name="clear" type="Button" parent="ItemGenerator/container/parent_vbox/bottom"]
-margin_left = 167.0
-margin_right = 193.0
-margin_bottom = 32.0
-theme = ExtResource( 21 )
-text = " C "
-
-[node name="delete" type="Button" parent="ItemGenerator/container/parent_vbox/bottom"]
-margin_left = 203.0
-margin_right = 268.0
-margin_bottom = 32.0
-theme = ExtResource( 21 )
-text = " D (F7) "
-
 [node name="MonsterGenerator" type="Popup" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -2276,13 +2273,13 @@ select_mode = 2
 [connection signal="text_changed" from="ItemGenerator/container/parent_vbox/top/search_bar" to="ItemGenerator" method="on_search_bar_text_changed"]
 [connection signal="pressed" from="ItemGenerator/container/parent_vbox/top/search" to="ItemGenerator" method="on_search_pressed"]
 [connection signal="pressed" from="ItemGenerator/container/parent_vbox/top/show_all" to="ItemGenerator" method="on_show_all_pressed"]
-[connection signal="item_selected" from="ItemGenerator/container/parent_vbox/vbox/line1/type/type" to="ItemGenerator" method="on_type_selected"]
-[connection signal="item_selected" from="ItemGenerator/container/parent_vbox/vbox/consumable/vbox/type/type" to="ItemGenerator" method="on_potion_type_selected"]
-[connection signal="pressed" from="ItemGenerator/container/parent_vbox/search_list/vbox/hbox/close" to="ItemGenerator" method="on_close_pressed"]
 [connection signal="pressed" from="ItemGenerator/container/parent_vbox/bottom/save" to="ItemGenerator" method="on_save_pressed"]
 [connection signal="pressed" from="ItemGenerator/container/parent_vbox/bottom/update" to="ItemGenerator" method="on_update_pressed"]
 [connection signal="pressed" from="ItemGenerator/container/parent_vbox/bottom/clear" to="ItemGenerator" method="on_clear_pressed"]
 [connection signal="pressed" from="ItemGenerator/container/parent_vbox/bottom/delete" to="ItemGenerator" method="on_delete_pressed"]
+[connection signal="item_selected" from="ItemGenerator/container/parent_vbox/vbox/line1/type/type" to="ItemGenerator" method="on_type_selected"]
+[connection signal="item_selected" from="ItemGenerator/container/parent_vbox/vbox/consumable/vbox/type/type" to="ItemGenerator" method="on_potion_type_selected"]
+[connection signal="pressed" from="ItemGenerator/container/parent_vbox/search_list/vbox/hbox/close" to="ItemGenerator" method="on_close_pressed"]
 [connection signal="pressed" from="MonsterGenerator/container/parent_vbox/buttons/show_all" to="MonsterGenerator" method="on_search_pressed"]
 [connection signal="pressed" from="MonsterGenerator/container/parent_vbox/buttons/save" to="MonsterGenerator" method="on_save_pressed"]
 [connection signal="pressed" from="MonsterGenerator/container/parent_vbox/buttons/update" to="MonsterGenerator" method="on_update_pressed"]
