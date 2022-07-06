@@ -2,7 +2,8 @@ extends Node
 
 var file_paths = {
 	'player': 'user://player_data.dat',
-	'items': 'user://item_data.dat'
+	'items': 'user://item_data.dat',
+	'enemies': 'user://enemy_data.dat',
 }
 
 func initial_load():
@@ -44,6 +45,8 @@ func get_data_container(file_key):
 		return Global_Player.player
 	elif file_key == 'items':
 		return Global_Items.items
+	elif file_key == 'enemies':
+		return Global_Enemies.enemies
 		
 
 func set_container_data(file_key, data):
@@ -51,3 +54,5 @@ func set_container_data(file_key, data):
 		Global_Player.player = data
 	elif file_key == 'items':
 		Global_Items.items = data
+	elif file_key == 'enemies':
+		Global_Enemies.enemies = data

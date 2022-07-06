@@ -37,6 +37,12 @@ func _unhandled_input(event):
 				show_root_popup(get_node('ItemGenerator'))
 			else:
 				get_node('ItemGenerator').visible = false
+		#Show monster generator popup
+		if event.pressed and event.scancode == KEY_F3:
+			if get_node('MonsterGenerator').visible != true:
+				show_root_popup(get_node('MonsterGenerator'))
+			else:
+				get_node('MonsterGenerator').visible = false
 
 
 func show_root_popup(node):

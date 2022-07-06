@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://scenes/screens/screen_home.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/icons/icon2.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://themes/colors/dark_brown.tres" type="StyleBox" id=10]
 [ext_resource path="res://themes/popup.tres" type="StyleBox" id=11]
 [ext_resource path="res://scripts/game_data.gd" type="Script" id=12]
+[ext_resource path="res://scripts/popups/monster_generator.gd" type="Script" id=13]
 [ext_resource path="res://scripts/ui/button_manager.gd" type="Script" id=14]
 [ext_resource path="res://themes/fonts/font_header.tres" type="Theme" id=15]
 [ext_resource path="res://scripts/popups/item_generator.gd" type="Script" id=16]
@@ -1656,6 +1657,621 @@ margin_bottom = 32.0
 theme = ExtResource( 21 )
 text = " D (F7) "
 
+[node name="MonsterGenerator" type="Popup" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_right = -8.0
+rect_min_size = Vector2( 340, 100 )
+size_flags_horizontal = 3
+size_flags_vertical = 2
+popup_exclusive = true
+script = ExtResource( 13 )
+
+[node name="container" type="PanelContainer" parent="MonsterGenerator"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 11 )
+
+[node name="parent_vbox" type="VBoxContainer" parent="MonsterGenerator/container"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 334.0
+margin_bottom = 628.0
+size_flags_vertical = 3
+custom_constants/separation = 6
+alignment = 1
+
+[node name="buttons" type="HBoxContainer" parent="MonsterGenerator/container/parent_vbox"]
+margin_right = 324.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 0, 32 )
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+custom_constants/separation = 10
+alignment = 1
+
+[node name="show_all" type="Button" parent="MonsterGenerator/container/parent_vbox/buttons"]
+margin_left = 12.0
+margin_right = 52.0
+margin_bottom = 32.0
+theme = ExtResource( 21 )
+text = "Find"
+
+[node name="save" type="Button" parent="MonsterGenerator/container/parent_vbox/buttons"]
+margin_left = 62.0
+margin_right = 108.0
+margin_bottom = 32.0
+theme = ExtResource( 21 )
+text = "Save"
+
+[node name="update" type="Button" parent="MonsterGenerator/container/parent_vbox/buttons"]
+margin_left = 247.0
+margin_right = 311.0
+margin_bottom = 32.0
+theme = ExtResource( 21 )
+text = "Update"
+
+[node name="clear" type="Button" parent="MonsterGenerator/container/parent_vbox/buttons"]
+margin_left = 118.0
+margin_right = 168.0
+margin_bottom = 32.0
+theme = ExtResource( 21 )
+text = "Clear"
+
+[node name="delete" type="Button" parent="MonsterGenerator/container/parent_vbox/buttons"]
+margin_left = 178.0
+margin_right = 237.0
+margin_bottom = 32.0
+theme = ExtResource( 21 )
+text = "Delete"
+
+[node name="separator" parent="MonsterGenerator/container/parent_vbox" instance=ExtResource( 6 )]
+margin_top = 38.0
+margin_right = 324.0
+margin_bottom = 42.0
+
+[node name="vbox" type="VBoxContainer" parent="MonsterGenerator/container/parent_vbox"]
+margin_top = 48.0
+margin_right = 324.0
+margin_bottom = 618.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 8
+
+[node name="vbox" type="VBoxContainer" parent="MonsterGenerator/container/parent_vbox/vbox"]
+margin_right = 324.0
+margin_bottom = 570.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="line1" type="HBoxContainer" parent="MonsterGenerator/container/parent_vbox/vbox/vbox"]
+margin_right = 324.0
+margin_bottom = 24.0
+
+[node name="id" type="HBoxContainer" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/line1"]
+margin_right = 160.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/line1/id"]
+margin_right = 17.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
+theme = ExtResource( 17 )
+text = "ID"
+align = 2
+valign = 1
+
+[node name="id" type="LineEdit" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/line1/id"]
+margin_left = 21.0
+margin_right = 160.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+theme = ExtResource( 17 )
+clear_button_enabled = true
+
+[node name="name" type="HBoxContainer" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/line1"]
+margin_left = 164.0
+margin_right = 324.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/line1/name"]
+margin_right = 36.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
+theme = ExtResource( 17 )
+text = "Name"
+align = 2
+valign = 1
+
+[node name="name" type="LineEdit" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/line1/name"]
+margin_left = 40.0
+margin_right = 160.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+theme = ExtResource( 17 )
+clear_button_enabled = true
+
+[node name="line2" type="HBoxContainer" parent="MonsterGenerator/container/parent_vbox/vbox/vbox"]
+margin_top = 28.0
+margin_right = 324.0
+margin_bottom = 52.0
+size_flags_horizontal = 3
+
+[node name="level" type="HBoxContainer" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/line2"]
+margin_right = 160.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/line2/level"]
+margin_right = 40.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
+theme = ExtResource( 17 )
+text = "Level"
+align = 2
+valign = 1
+
+[node name="level" type="LineEdit" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/line2/level"]
+margin_left = 44.0
+margin_right = 160.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+theme = ExtResource( 17 )
+clear_button_enabled = true
+
+[node name="xp_given" type="HBoxContainer" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/line2"]
+margin_left = 164.0
+margin_right = 324.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/line2/xp_given"]
+margin_right = 27.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
+theme = ExtResource( 17 )
+text = "Exp"
+align = 2
+valign = 1
+
+[node name="xp_given" type="LineEdit" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/line2/xp_given"]
+margin_left = 31.0
+margin_right = 160.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+theme = ExtResource( 17 )
+clear_button_enabled = true
+
+[node name="line3" type="HBoxContainer" parent="MonsterGenerator/container/parent_vbox/vbox/vbox"]
+margin_top = 56.0
+margin_right = 324.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+
+[node name="index" type="HBoxContainer" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/line3"]
+margin_right = 160.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/line3/index"]
+margin_right = 44.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
+theme = ExtResource( 17 )
+text = "Index"
+align = 2
+valign = 1
+
+[node name="index" type="LineEdit" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/line3/index"]
+margin_left = 48.0
+margin_right = 160.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+theme = ExtResource( 17 )
+clear_button_enabled = true
+
+[node name="region" type="HBoxContainer" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/line3"]
+margin_left = 164.0
+margin_right = 324.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+custom_constants/separation = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/line3/region"]
+margin_right = 49.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
+theme = ExtResource( 17 )
+text = "Region"
+align = 2
+valign = 1
+
+[node name="region" type="OptionButton" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/line3/region"]
+margin_left = 57.0
+margin_right = 160.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+theme = ExtResource( 17 )
+clip_text = true
+
+[node name="separator3" parent="MonsterGenerator/container/parent_vbox/vbox/vbox" instance=ExtResource( 6 )]
+margin_top = 84.0
+margin_right = 324.0
+margin_bottom = 88.0
+
+[node name="health" type="HBoxContainer" parent="MonsterGenerator/container/parent_vbox/vbox/vbox"]
+margin_top = 92.0
+margin_right = 324.0
+margin_bottom = 116.0
+size_flags_horizontal = 5
+custom_constants/separation = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/health"]
+margin_right = 120.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 120, 24 )
+theme = ExtResource( 17 )
+text = "Health"
+align = 2
+valign = 1
+
+[node name="health" type="LineEdit" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/health"]
+margin_left = 128.0
+margin_right = 324.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 160, 0 )
+size_flags_horizontal = 3
+theme = ExtResource( 17 )
+clear_button_enabled = true
+
+[node name="atk_speed" type="HBoxContainer" parent="MonsterGenerator/container/parent_vbox/vbox/vbox"]
+margin_top = 120.0
+margin_right = 324.0
+margin_bottom = 144.0
+size_flags_horizontal = 5
+custom_constants/separation = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/atk_speed"]
+margin_right = 58.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
+theme = ExtResource( 17 )
+text = "ATK SPD"
+align = 2
+valign = 1
+
+[node name="atk_speed" type="LineEdit" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/atk_speed"]
+margin_left = 66.0
+margin_right = 324.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 160, 0 )
+size_flags_horizontal = 3
+theme = ExtResource( 17 )
+clear_button_enabled = true
+
+[node name="min_hit" type="HBoxContainer" parent="MonsterGenerator/container/parent_vbox/vbox/vbox"]
+margin_top = 148.0
+margin_right = 324.0
+margin_bottom = 172.0
+size_flags_horizontal = 5
+custom_constants/separation = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/min_hit"]
+margin_right = 46.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
+theme = ExtResource( 17 )
+text = "Min Hit"
+align = 2
+valign = 1
+
+[node name="min_hit" type="LineEdit" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/min_hit"]
+margin_left = 54.0
+margin_right = 324.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 160, 0 )
+size_flags_horizontal = 3
+theme = ExtResource( 17 )
+clear_button_enabled = true
+
+[node name="max_hit" type="HBoxContainer" parent="MonsterGenerator/container/parent_vbox/vbox/vbox"]
+margin_top = 176.0
+margin_right = 324.0
+margin_bottom = 200.0
+size_flags_horizontal = 5
+custom_constants/separation = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/max_hit"]
+margin_right = 51.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
+theme = ExtResource( 17 )
+text = "Max Hit"
+align = 2
+valign = 1
+
+[node name="max_hit" type="LineEdit" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/max_hit"]
+margin_left = 59.0
+margin_right = 324.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 160, 0 )
+size_flags_horizontal = 3
+theme = ExtResource( 17 )
+clear_button_enabled = true
+
+[node name="main_stat" type="HBoxContainer" parent="MonsterGenerator/container/parent_vbox/vbox/vbox"]
+margin_top = 204.0
+margin_right = 324.0
+margin_bottom = 228.0
+size_flags_horizontal = 5
+custom_constants/separation = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/main_stat"]
+margin_right = 67.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
+theme = ExtResource( 17 )
+text = "Main Stat"
+align = 2
+valign = 1
+
+[node name="main_stat" type="OptionButton" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/main_stat"]
+margin_left = 75.0
+margin_right = 324.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+theme = ExtResource( 17 )
+
+[node name="atk_stab" type="HBoxContainer" parent="MonsterGenerator/container/parent_vbox/vbox/vbox"]
+margin_top = 232.0
+margin_right = 324.0
+margin_bottom = 256.0
+size_flags_horizontal = 5
+custom_constants/separation = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/atk_stab"]
+margin_right = 65.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
+theme = ExtResource( 17 )
+text = "Stab ATK"
+align = 2
+valign = 1
+
+[node name="atk_stab" type="LineEdit" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/atk_stab"]
+margin_left = 73.0
+margin_right = 324.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 160, 0 )
+size_flags_horizontal = 3
+theme = ExtResource( 17 )
+clear_button_enabled = true
+
+[node name="atk_slash" type="HBoxContainer" parent="MonsterGenerator/container/parent_vbox/vbox/vbox"]
+margin_top = 260.0
+margin_right = 324.0
+margin_bottom = 284.0
+size_flags_horizontal = 5
+custom_constants/separation = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/atk_slash"]
+margin_right = 72.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
+theme = ExtResource( 17 )
+text = "Slash ATK"
+align = 2
+valign = 1
+
+[node name="atk_slash" type="LineEdit" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/atk_slash"]
+margin_left = 80.0
+margin_right = 324.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 160, 0 )
+size_flags_horizontal = 3
+theme = ExtResource( 17 )
+clear_button_enabled = true
+
+[node name="atk_crush" type="HBoxContainer" parent="MonsterGenerator/container/parent_vbox/vbox/vbox"]
+margin_top = 288.0
+margin_right = 324.0
+margin_bottom = 312.0
+size_flags_horizontal = 5
+custom_constants/separation = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/atk_crush"]
+margin_right = 75.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
+theme = ExtResource( 17 )
+text = "Crush ATK"
+align = 2
+valign = 1
+
+[node name="atk_crush" type="LineEdit" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/atk_crush"]
+margin_left = 83.0
+margin_right = 324.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 160, 0 )
+size_flags_horizontal = 3
+theme = ExtResource( 17 )
+clear_button_enabled = true
+
+[node name="def_stab" type="HBoxContainer" parent="MonsterGenerator/container/parent_vbox/vbox/vbox"]
+margin_top = 316.0
+margin_right = 324.0
+margin_bottom = 340.0
+size_flags_horizontal = 5
+custom_constants/separation = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/def_stab"]
+margin_right = 75.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
+theme = ExtResource( 17 )
+text = "Crush DEF"
+align = 2
+valign = 1
+
+[node name="def_stab" type="LineEdit" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/def_stab"]
+margin_left = 83.0
+margin_right = 324.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 160, 0 )
+size_flags_horizontal = 3
+theme = ExtResource( 17 )
+clear_button_enabled = true
+
+[node name="def_slash" type="HBoxContainer" parent="MonsterGenerator/container/parent_vbox/vbox/vbox"]
+margin_top = 344.0
+margin_right = 324.0
+margin_bottom = 368.0
+size_flags_horizontal = 5
+custom_constants/separation = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/def_slash"]
+margin_right = 75.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
+theme = ExtResource( 17 )
+text = "Crush DEF"
+align = 2
+valign = 1
+
+[node name="def_slash" type="LineEdit" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/def_slash"]
+margin_left = 83.0
+margin_right = 324.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 160, 0 )
+size_flags_horizontal = 3
+theme = ExtResource( 17 )
+clear_button_enabled = true
+
+[node name="def_crush" type="HBoxContainer" parent="MonsterGenerator/container/parent_vbox/vbox/vbox"]
+margin_top = 372.0
+margin_right = 324.0
+margin_bottom = 396.0
+size_flags_horizontal = 5
+custom_constants/separation = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/def_crush"]
+margin_right = 75.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
+theme = ExtResource( 17 )
+text = "Crush DEF"
+align = 2
+valign = 1
+
+[node name="def_crush" type="LineEdit" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/def_crush"]
+margin_left = 83.0
+margin_right = 324.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 160, 0 )
+size_flags_horizontal = 3
+theme = ExtResource( 17 )
+clear_button_enabled = true
+
+[node name="dmg_reduc" type="HBoxContainer" parent="MonsterGenerator/container/parent_vbox/vbox/vbox"]
+margin_top = 400.0
+margin_right = 324.0
+margin_bottom = 424.0
+size_flags_horizontal = 5
+custom_constants/separation = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/dmg_reduc"]
+margin_right = 76.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
+theme = ExtResource( 17 )
+text = "DMG Reduc"
+align = 2
+valign = 1
+
+[node name="dmg_reduc" type="LineEdit" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/dmg_reduc"]
+margin_left = 84.0
+margin_right = 324.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 160, 0 )
+size_flags_horizontal = 3
+theme = ExtResource( 17 )
+clear_button_enabled = true
+
+[node name="abilities" type="HBoxContainer" parent="MonsterGenerator/container/parent_vbox/vbox/vbox"]
+margin_top = 428.0
+margin_right = 324.0
+margin_bottom = 528.0
+size_flags_horizontal = 5
+custom_constants/separation = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/abilities"]
+margin_right = 60.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 100 )
+theme = ExtResource( 17 )
+text = "Abilities"
+align = 2
+valign = 1
+
+[node name="abilities" type="ItemList" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/abilities"]
+margin_left = 68.0
+margin_right = 324.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 160, 100 )
+size_flags_horizontal = 3
+theme = ExtResource( 17 )
+select_mode = 1
+
+[node name="search_list" type="ScrollContainer" parent="MonsterGenerator/container/parent_vbox"]
+visible = false
+margin_top = 602.0
+margin_right = 324.0
+margin_bottom = 618.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="vbox" type="VBoxContainer" parent="MonsterGenerator/container/parent_vbox/search_list"]
+margin_right = 324.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="close" type="Button" parent="MonsterGenerator/container/parent_vbox/search_list/vbox"]
+margin_left = 127.0
+margin_right = 185.0
+margin_bottom = 25.0
+size_flags_horizontal = 4
+theme = ExtResource( 3 )
+text = "Close"
+
+[node name="tree" type="Tree" parent="MonsterGenerator/container/parent_vbox/search_list/vbox"]
+margin_top = 29.0
+margin_right = 312.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+select_mode = 2
+
 [connection signal="pressed" from="parent/footer/buttons/home" to="parent/footer/buttons" method="home_pressed"]
 [connection signal="text_changed" from="ItemGenerator/container/parent_vbox/top/search_bar" to="ItemGenerator" method="on_search_bar_text_changed"]
 [connection signal="pressed" from="ItemGenerator/container/parent_vbox/top/search" to="ItemGenerator" method="on_search_pressed"]
@@ -1667,3 +2283,10 @@ text = " D (F7) "
 [connection signal="pressed" from="ItemGenerator/container/parent_vbox/bottom/update" to="ItemGenerator" method="on_update_pressed"]
 [connection signal="pressed" from="ItemGenerator/container/parent_vbox/bottom/clear" to="ItemGenerator" method="on_clear_pressed"]
 [connection signal="pressed" from="ItemGenerator/container/parent_vbox/bottom/delete" to="ItemGenerator" method="on_delete_pressed"]
+[connection signal="pressed" from="MonsterGenerator/container/parent_vbox/buttons/show_all" to="MonsterGenerator" method="on_search_pressed"]
+[connection signal="pressed" from="MonsterGenerator/container/parent_vbox/buttons/save" to="MonsterGenerator" method="on_save_pressed"]
+[connection signal="pressed" from="MonsterGenerator/container/parent_vbox/buttons/update" to="MonsterGenerator" method="on_update_pressed"]
+[connection signal="pressed" from="MonsterGenerator/container/parent_vbox/buttons/clear" to="MonsterGenerator" method="on_clear_pressed"]
+[connection signal="pressed" from="MonsterGenerator/container/parent_vbox/buttons/delete" to="MonsterGenerator" method="on_delete_pressed"]
+[connection signal="pressed" from="MonsterGenerator/container/parent_vbox/search_list/vbox/close" to="MonsterGenerator" method="on_close_pressed"]
+[connection signal="item_activated" from="MonsterGenerator/container/parent_vbox/search_list/vbox/tree" to="MonsterGenerator" method="on_monster_double_clicked"]
