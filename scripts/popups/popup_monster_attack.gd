@@ -115,13 +115,13 @@ func get_monster_animated_texture(monster_info) -> AnimatedTexture:
 #	after testing and then when a hero is "DONE", they will click the hero button and then the attack will happen
 func start_fight(monster_info):
 	if !parent_node.get_node('buttons/hbox/attack').has_meta('hero_info'):
-		print('A hero has not been selected yet')
+		get_node('/root/root').show_message_popup('A hero has not been selected yet')
 		return
 	
 	var hero_info = parent_node.get_node('buttons/hbox/attack').get_meta('hero_info')
 
 	if hero_info['current_health'] <= 0:
-		print('Health is too low')
+		get_node('/root/root').show_message_popup('That heroes health is too low to fight')
 		return
 	
 	get_node('/root/root/combat_manager').start_combat(hero_info, monster_info)
