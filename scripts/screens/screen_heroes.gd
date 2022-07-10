@@ -112,6 +112,7 @@ func load_hero_talents_section(index, hero_info):
 	var descriptions = MasterConfig.config['talent_bonuses']
 	
 	undo_spent_points()
+	reload_all_talent_values(amounts_node, buttons_node, descriptions_node)
 	
 	for talent in hero_info['talent_bonuses']:
 		var current_bonus = hero_info['talent_bonuses'][talent]
@@ -137,6 +138,14 @@ func load_hero_talents_section(index, hero_info):
 		new_amount.name = talent
 		new_button.connect('pressed', self, 'increase_talent', [int(index), talent])
 		new_description.text = description
+
+
+func reload_all_talent_values(amounts, buttons, descriptions):
+	for node in [amounts, buttons, descriptions]:
+		for child in node.get_children():
+			if child.name != 'default':
+				node.remove_child(child)
+				child.queue_free()
 
 
 func increase_talent(index: int, talent):
