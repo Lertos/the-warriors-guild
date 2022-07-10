@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://scripts/screens/screen_heroes.gd" type="Script" id=1]
 [ext_resource path="res://themes/popup.tres" type="StyleBox" id=2]
@@ -19,6 +19,8 @@
 [ext_resource path="res://themes/buttons/button.tres" type="Theme" id=17]
 [ext_resource path="res://assets/materials/material31.png" type="Texture" id=18]
 [ext_resource path="res://scripts/popups/create_hero_popup.gd" type="Script" id=19]
+[ext_resource path="res://assets/icons/icon17.png" type="Texture" id=20]
+[ext_resource path="res://themes/scrollbar.tres" type="Theme" id=21]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.717647, 0.686275, 0.588235, 1 )
@@ -217,16 +219,174 @@ margin_top = 113.0
 margin_bottom = 117.0
 custom_styles/panel = SubResource( 1 )
 
-[node name="heroes" type="ScrollContainer" parent="parent_vbox"]
+[node name="margin" type="MarginContainer" parent="parent_vbox"]
 margin_top = 123.0
 margin_right = 360.0
 margin_bottom = 500.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 8
+custom_constants/margin_left = 8
+
+[node name="stats" type="ScrollContainer" parent="parent_vbox/margin"]
+visible = false
+margin_left = 8.0
+margin_right = 352.0
+margin_bottom = 377.0
 mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 21 )
+scroll_horizontal_enabled = false
+
+[node name="vbox" type="VBoxContainer" parent="parent_vbox/margin/stats"]
+margin_right = 344.0
+margin_bottom = 377.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="gear" type="ScrollContainer" parent="parent_vbox/margin"]
+visible = false
+margin_left = 8.0
+margin_right = 352.0
+margin_bottom = 377.0
+mouse_filter = 1
+size_flags_horizontal = 3
 size_flags_vertical = 3
 scroll_horizontal_enabled = false
 
-[node name="vbox" type="VBoxContainer" parent="parent_vbox/heroes"]
-margin_right = 360.0
+[node name="vbox" type="VBoxContainer" parent="parent_vbox/margin/gear"]
+margin_right = 344.0
+margin_bottom = 377.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="talents" type="ScrollContainer" parent="parent_vbox/margin"]
+margin_left = 8.0
+margin_right = 352.0
+margin_bottom = 377.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 21 )
+scroll_horizontal_enabled = false
+
+[node name="vbox" type="VBoxContainer" parent="parent_vbox/margin/talents"]
+margin_right = 344.0
+margin_bottom = 377.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="vbox" type="VBoxContainer" parent="parent_vbox/margin/talents/vbox"]
+margin_right = 344.0
+margin_bottom = 42.0
+
+[node name="talent_points" type="HBoxContainer" parent="parent_vbox/margin/talents/vbox/vbox"]
+margin_right = 344.0
+margin_bottom = 17.0
+custom_constants/separation = 8
+alignment = 1
+
+[node name="amount" type="Label" parent="parent_vbox/margin/talents/vbox/vbox/talent_points"]
+margin_left = 68.0
+margin_right = 78.0
+margin_bottom = 17.0
+custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
+text = "4"
+
+[node name="label" type="Label" parent="parent_vbox/margin/talents/vbox/vbox/talent_points"]
+margin_left = 86.0
+margin_right = 275.0
+margin_bottom = 17.0
+text = "Available Talent Points"
+
+[node name="buttons" type="HBoxContainer" parent="parent_vbox/margin/talents/vbox/vbox"]
+margin_top = 21.0
+margin_right = 344.0
+margin_bottom = 42.0
+alignment = 1
+
+[node name="confirm" type="Button" parent="parent_vbox/margin/talents/vbox/vbox/buttons"]
+margin_left = 27.0
+margin_right = 151.0
+margin_bottom = 21.0
+theme = ExtResource( 17 )
+text = "Confirm Points"
+
+[node name="undo" type="Button" parent="parent_vbox/margin/talents/vbox/vbox/buttons"]
+margin_left = 155.0
+margin_right = 201.0
+margin_bottom = 21.0
+theme = ExtResource( 17 )
+text = "Undo"
+
+[node name="reset" type="Button" parent="parent_vbox/margin/talents/vbox/vbox/buttons"]
+margin_left = 205.0
+margin_right = 316.0
+margin_bottom = 21.0
+theme = ExtResource( 17 )
+text = "Reset Points"
+
+[node name="sep3" parent="parent_vbox/margin/talents/vbox" instance=ExtResource( 6 )]
+margin_top = 46.0
+margin_right = 344.0
+margin_bottom = 50.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="hbox" type="HBoxContainer" parent="parent_vbox/margin/talents/vbox"]
+margin_top = 54.0
+margin_right = 344.0
+margin_bottom = 54.0
+custom_constants/separation = 8
+
+[node name="amounts" type="VBoxContainer" parent="parent_vbox/margin/talents/vbox/hbox"]
+alignment = 1
+
+[node name="default" type="Label" parent="parent_vbox/margin/talents/vbox/hbox/amounts"]
+visible = false
+margin_bottom = 32.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
+valign = 1
+
+[node name="buttons" type="VBoxContainer" parent="parent_vbox/margin/talents/vbox/hbox"]
+margin_left = 8.0
+margin_right = 8.0
+
+[node name="default" type="Button" parent="parent_vbox/margin/talents/vbox/hbox/buttons"]
+visible = false
+margin_right = 32.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+theme = ExtResource( 17 )
+icon = ExtResource( 20 )
+expand_icon = true
+
+[node name="descriptions" type="VBoxContainer" parent="parent_vbox/margin/talents/vbox/hbox"]
+margin_left = 16.0
+margin_right = 16.0
+alignment = 1
+
+[node name="default" type="Label" parent="parent_vbox/margin/talents/vbox/hbox/descriptions"]
+visible = false
+margin_bottom = 17.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+valign = 1
+
+[node name="mount" type="ScrollContainer" parent="parent_vbox/margin"]
+visible = false
+margin_left = 8.0
+margin_right = 352.0
+margin_bottom = 377.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+
+[node name="vbox" type="VBoxContainer" parent="parent_vbox/margin/mount"]
+margin_right = 344.0
 margin_bottom = 377.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -518,5 +678,8 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 text = "CLOSE"
 
+[connection signal="pressed" from="parent_vbox/margin/talents/vbox/vbox/buttons/confirm" to="." method="confirm_spent_points"]
+[connection signal="pressed" from="parent_vbox/margin/talents/vbox/vbox/buttons/undo" to="." method="undo_spent_points"]
+[connection signal="pressed" from="parent_vbox/margin/talents/vbox/vbox/buttons/reset" to="." method="reset_total_points"]
 [connection signal="pressed" from="create_hero_popup/margin/panel/vbox/buttons/hbox/hire_hero" to="create_hero_popup" method="hire_hero_pressed"]
 [connection signal="pressed" from="create_hero_popup/margin/panel/vbox/buttons/hbox/close" to="create_hero_popup" method="close_create_hero_popup"]
