@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://scripts/screens/screen_vendors.gd" type="Script" id=1]
+[ext_resource path="res://scripts/screens/vendors/screen_vendors.gd" type="Script" id=1]
 
 [node name="screen_vendors" type="MarginContainer"]
 margin_right = 360.0

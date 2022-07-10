@@ -1,6 +1,6 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
-[ext_resource path="res://scripts/screens/screen_heroes.gd" type="Script" id=1]
+[ext_resource path="res://scripts/screens/heroes/screen_heroes.gd" type="Script" id=1]
 [ext_resource path="res://themes/popup.tres" type="StyleBox" id=2]
 [ext_resource path="res://themes/fonts/font_title.tres" type="Theme" id=3]
 [ext_resource path="res://assets/avatars/avatar (3).png" type="Texture" id=4]
@@ -21,6 +21,7 @@
 [ext_resource path="res://scripts/popups/create_hero_popup.gd" type="Script" id=19]
 [ext_resource path="res://assets/icons/icon17.png" type="Texture" id=20]
 [ext_resource path="res://themes/scrollbar.tres" type="Theme" id=21]
+[ext_resource path="res://scripts/screens/heroes/section_talents.gd" type="Script" id=22]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.717647, 0.686275, 0.588235, 1 )
@@ -270,6 +271,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 21 )
 scroll_horizontal_enabled = false
+script = ExtResource( 22 )
 
 [node name="vbox" type="VBoxContainer" parent="parent_vbox/margin/talents"]
 margin_right = 344.0
@@ -678,8 +680,8 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 text = "CLOSE"
 
-[connection signal="pressed" from="parent_vbox/margin/talents/vbox/vbox/buttons/confirm" to="." method="confirm_spent_points"]
-[connection signal="pressed" from="parent_vbox/margin/talents/vbox/vbox/buttons/undo" to="." method="undo_spent_points"]
-[connection signal="pressed" from="parent_vbox/margin/talents/vbox/vbox/buttons/reset" to="." method="reset_total_points"]
+[connection signal="pressed" from="parent_vbox/margin/talents/vbox/vbox/buttons/confirm" to="parent_vbox/margin/talents" method="confirm_spent_points"]
+[connection signal="pressed" from="parent_vbox/margin/talents/vbox/vbox/buttons/undo" to="parent_vbox/margin/talents" method="undo_spent_points"]
+[connection signal="pressed" from="parent_vbox/margin/talents/vbox/vbox/buttons/reset" to="parent_vbox/margin/talents" method="reset_total_points"]
 [connection signal="pressed" from="create_hero_popup/margin/panel/vbox/buttons/hbox/hire_hero" to="create_hero_popup" method="hire_hero_pressed"]
 [connection signal="pressed" from="create_hero_popup/margin/panel/vbox/buttons/hbox/close" to="create_hero_popup" method="close_create_hero_popup"]
