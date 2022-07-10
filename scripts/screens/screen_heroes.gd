@@ -177,7 +177,22 @@ func confirm_spent_points():
 
 
 func undo_spent_points():
-	#TODO: Loop through each dict key and subtract those points from the amounts labels, then add points back
+	var amounts_node = get_node('parent_vbox/margin/talents/vbox/hbox/amounts')
+	var total_spent = 0
+	
+	for key in spent_points:
+		var node = amounts_node.get_node(key)
+		var points_to_subtract = int(spent_points[key])
+		
+		total_spent += points_to_subtract
+		
+		if node != null:
+			node.text = str(int(node.text) - points_to_subtract)
+
+	var available_points = get_node('parent_vbox/margin/talents/vbox/vbox/talent_points/amount')
+	var current_points = int(available_points.text)
+	
+	available_points.text = str(current_points + total_spent)
 	spent_points.clear()
 	
 	
