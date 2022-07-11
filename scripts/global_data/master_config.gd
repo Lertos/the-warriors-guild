@@ -26,29 +26,6 @@ var config = {
 	},
 	
 	#-----------------------
-	# HERO TALENTS
-	#-----------------------
-	'talent_bonuses': {
-		'p_gold_from_monsters': 'Gold From Monsters',
-		'n_attack_speed': 'Attack Speed',
-		'p_travel_speed': 'Travel Speed',
-		'p_food_cost': 'Food Cost Savings',
-		'n_all_stats': 'To All Stats',
-		'n_atk_slash': 'Slash ATK',
-		'n_atk_stab': 'Stab ATK',
-		'n_atk_crush': 'Crush ATK',
-		'n_def_slash': 'Slash DEF',
-		'n_def_stab': 'Stab DEF',
-		'n_def_crush': 'Crush DEF',
-		'n_health': 'Health',
-		'p_dmg_reduc': 'DMG REDUC',
-		'p_chance_for_double_loot': 'Chance For Double Loot',
-		'p_ability_activation_chance': 'Chance for Ability Activation',
-		'n_heal_additional_health': 'Health Back After Fighting',
-		'p_exp_from_monsters': 'EXP From Monsters',
-	},
-	
-	#-----------------------
 	# RARITIES
 	#-----------------------
 	'rarities': {
