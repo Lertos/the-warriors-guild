@@ -93,15 +93,11 @@ func get_hero_main_stat(hero_info: Dictionary) -> String:
 
 
 func get_hero_total_stats(hero_info: Dictionary) -> Dictionary:
-	#BASE STATS
 	var stats = {}
 	
 	stats = Global_Player.player['base_stats'].duplicate(true)
 	
-	#HERO GEAR STATS
 	stats = get_hero_total_gear_stats(stats, hero_info)
-	
-	#HERO TALENT BONUSES
 	stats = get_hero_total_talent_stats(stats, hero_info)
 	
 	return stats

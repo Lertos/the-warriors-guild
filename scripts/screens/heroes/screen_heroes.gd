@@ -12,6 +12,7 @@ func _ready():
 func load_screen():
 	load_heroes()
 	create_hero_timer()
+	connect_section_buttons()
 	
 	for child in get_node('parent_vbox/vbox/heroes').get_children():
 		child.get_node('img').connect('pressed', self, 'select_hero', [int(child.name)])
@@ -25,7 +26,23 @@ func select_hero(index: int):
 
 
 func load_hero_sections(index: int, hero_info):
+	get_node('parent_vbox/margin/stats').load_hero_stats_section(index, hero_info)
 	get_node('parent_vbox/margin/talents').load_hero_talents_section(index, hero_info)
+	
+	switch_sections('stats')
+
+
+func connect_section_buttons():
+	for node in get_node('parent_vbox/buttons').get_children():
+		node.connect('pressed', self, 'switch_sections', [node.name])
+	
+
+func switch_sections(key: String):
+	for node in get_node('parent_vbox/margin').get_children():
+		if node.name == key:
+			node.visible = true
+		else:
+			node.visible = false
 
 
 func open_create_hero_popup(index: int):
