@@ -25,8 +25,7 @@ func select_hero(index: int):
 
 
 func load_hero_sections(index: int, hero_info):
-	#get_node('parent_vbox/margin/talents').load_hero_talents_section(index, hero_info)
-	pass
+	get_node('parent_vbox/margin/talents').load_hero_talents_section(index, hero_info)
 
 
 func open_create_hero_popup(index: int):

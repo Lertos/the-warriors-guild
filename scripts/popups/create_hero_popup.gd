@@ -115,6 +115,12 @@ func create_new_hero():
 	
 	for key in MasterConfig.config['gear_types']:
 		dict['gear'][key] = ''
+
+	# "p_" = percentage, "n_" = flat number
+	dict['talent_bonuses'] = {}
+	
+	for key in MasterConfig.config['talent_bonuses']:
+		dict['talent_bonuses'][key] = 0
 	
 	Global_Player.player['heroes'][new_hero_index] = dict
 	
