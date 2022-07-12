@@ -86,8 +86,8 @@ func get_blackened_image(given_image) -> ImageTexture:
 
 
 func get_hero_main_stat(hero_info: Dictionary) -> String:
-	if hero_info['gear']['weapon1'] != '':
-		return Global_Items.items[hero_info['gear']['weapon1']]['main_stat']
+	if hero_info['gear']['weapon'] != '':
+		return Global_Items.items[hero_info['gear']['weapon']]['main_stat']
 	else:
 		return MasterConfig.config['default_attack_style']
 
