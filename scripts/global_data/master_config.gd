@@ -21,8 +21,7 @@ var config = {
 		'gloves': '',
 		'weapon': '',
 		'necklace': '',
-		'ring1': '',
-		'ring2': '',
+		'ring': '',
 	},
 	
 	#-----------------------
