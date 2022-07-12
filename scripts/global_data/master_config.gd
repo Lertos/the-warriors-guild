@@ -443,5 +443,113 @@ var config = {
 				}
 			}
 		},
+		
+		#-----------------------
+		# JEWELRY
+		#-----------------------
+		'gold_find': {
+			'name': 'Gold Find',
+			'description': 'Increase the gold received from monsters by <x>%',
+			'type': 'jewerly',
+			'levels': {
+				1: {
+					'can_get_natural': false,
+					'drop_weight': -1,
+					'ability_chance': 50,
+					'x': 0,
+				},
+			}
+		},
+		'saturation': {
+			'name': 'Saturation',
+			'description': 'Reduces the food cost when traveling by <x>%',
+			'type': 'jewerly',
+			'levels': {
+				1: {
+					'can_get_natural': false,
+					'drop_weight': -1,
+					'ability_chance': 50,
+					'x': 0,
+				},
+			}
+		},
+		'insightfulness': {
+			'name': 'Insightfulness',
+			'description': 'Increase the experience received from monsters by <x>%',
+			'type': 'jewerly',
+			'levels': {
+				1: {
+					'can_get_natural': false,
+					'drop_weight': -1,
+					'ability_chance': 50,
+					'x': 0,
+				},
+			}
+		},
+		'quick_footed': {
+			'name': 'Quick-footed',
+			'description': 'Reduces the travel time of a hero by <x>%',
+			'type': 'jewerly',
+			'levels': {
+				1: {
+					'can_get_natural': false,
+					'drop_weight': -1,
+					'ability_chance': 50,
+					'x': 0,
+				},
+			}
+		},
+		'economical': {
+			'name': 'Economical',
+			'description': 'Increase the chance of receiving double drops from monsters by <x>%',
+			'type': 'jewerly',
+			'levels': {
+				1: {
+					'can_get_natural': false,
+					'drop_weight': -1,
+					'ability_chance': 50,
+					'x': 0,
+				},
+			}
+		},
+		'seer': {
+			'name': 'Seer',
+			'description': 'Has a <x>% chance to stop the activation of an enemies ability during combat',
+			'type': 'jewerly',
+			'levels': {
+				1: {
+					'can_get_natural': false,
+					'drop_weight': -1,
+					'ability_chance': 50,
+					'x': 0,
+				},
+			}
+		},
+		'preservation': {
+			'name': 'Preservation',
+			'description': 'Increases healing after a fight by <x>%',
+			'type': 'jewerly',
+			'levels': {
+				1: {
+					'can_get_natural': false,
+					'drop_weight': -1,
+					'ability_chance': 50,
+					'x': 0,
+				},
+			}
+		},
+		'arcane': {
+			'name': 'Arcane',
+			'description': 'Increases the chance for higher rarity weapons from monsters by <x>%',
+			'type': 'jewerly',
+			'levels': {
+				1: {
+					'can_get_natural': false,
+					'drop_weight': -1,
+					'ability_chance': 50,
+					'x': 0,
+				},
+			}
+		},
 	}
 }
