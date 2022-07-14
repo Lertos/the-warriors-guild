@@ -35,7 +35,8 @@ func reset_values(hero, opponent):
 	max_opponent_hp = current_opponent['stats']['health']
 	
 	#Set the current health in the player stats now that we know the max health
-	current_hero['stats']['health'] = current_hero['current_health']
+	#TODO: UNCOMMENT THIS SO CURRENT HEALTH IS USED. FOR TESTING ITS EASIER IF THEY ALWAYS START AT 100% HP!
+	#current_hero['stats']['health'] = current_hero['current_health']
 	
 	print('Hero starts with |- ' + str(current_hero['stats']['health']) + ' -| health')
 	print('Opponent starts with |- ' + str(current_opponent['stats']['health']) + ' -| health \n')
