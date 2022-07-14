@@ -1653,6 +1653,7 @@ theme = ExtResource( 21 )
 text = "Close (F5)"
 
 [node name="MonsterGenerator" type="Popup" parent="."]
+visible = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
@@ -1704,22 +1705,22 @@ theme = ExtResource( 21 )
 text = "Save"
 
 [node name="update" type="Button" parent="MonsterGenerator/container/parent_vbox/buttons"]
-margin_left = 247.0
-margin_right = 311.0
+margin_left = 118.0
+margin_right = 182.0
 margin_bottom = 32.0
 theme = ExtResource( 21 )
 text = "Update"
 
 [node name="clear" type="Button" parent="MonsterGenerator/container/parent_vbox/buttons"]
-margin_left = 118.0
-margin_right = 168.0
+margin_left = 192.0
+margin_right = 242.0
 margin_bottom = 32.0
 theme = ExtResource( 21 )
 text = "Clear"
 
 [node name="delete" type="Button" parent="MonsterGenerator/container/parent_vbox/buttons"]
-margin_left = 178.0
-margin_right = 237.0
+margin_left = 252.0
+margin_right = 311.0
 margin_bottom = 32.0
 theme = ExtResource( 21 )
 text = "Delete"
@@ -2116,16 +2117,16 @@ custom_constants/separation = 8
 alignment = 1
 
 [node name="Label" type="Label" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/def_stab"]
-margin_right = 75.0
+margin_right = 65.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
 theme = ExtResource( 17 )
-text = "Crush DEF"
+text = "Stab DEF"
 align = 2
 valign = 1
 
 [node name="def_stab" type="LineEdit" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/def_stab"]
-margin_left = 83.0
+margin_left = 73.0
 margin_right = 324.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 160, 0 )
@@ -2142,16 +2143,16 @@ custom_constants/separation = 8
 alignment = 1
 
 [node name="Label" type="Label" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/def_slash"]
-margin_right = 75.0
+margin_right = 72.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
 theme = ExtResource( 17 )
-text = "Crush DEF"
+text = "Slash DEF"
 align = 2
 valign = 1
 
 [node name="def_slash" type="LineEdit" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/def_slash"]
-margin_left = 83.0
+margin_left = 80.0
 margin_right = 324.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 160, 0 )
