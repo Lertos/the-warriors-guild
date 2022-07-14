@@ -132,8 +132,16 @@ func load_fields(monster_info):
 	parent.get_node('line2/xp_given/xp_given').text = str(monster_info['xp_given'])
 	parent.get_node('line3/index/index').text = str(monster_info['index'])
 	
+	var main_stat_node = parent.get_node('main_stat/main_stat')
+	
+	for index in range(0, main_stat_node.get_item_count()):
+		if monster_info['main_stat'] == main_stat_node.get_item_text(index):
+			main_stat_node.select(index)
+	
 	for stat_key in monster_info['stats']:
 		parent.get_node(stat_key + '/' + stat_key).text = str(monster_info['stats'][stat_key])
+
+	#TODO: Add abilities
 
 
 func clear_search_list_items():
@@ -203,10 +211,17 @@ func add_fields(monster_dict):
 	monster_dict['level'] = parent.get_node('line2/level/level').text
 	monster_dict['xp_given'] = parent.get_node('line2/xp_given/xp_given').text
 	
+	var main_stat_node = parent.get_node('main_stat/main_stat')
+	var main_stat = main_stat_node.get_item_text(main_stat_node.get_selected_id())
+
+	monster_dict['main_stat'] = main_stat
+	
 	monster_dict['stats'] = {}
 	
 	for stat_key in Global_Player.player['base_stats']:
 		monster_dict['stats'][stat_key] = parent.get_node(stat_key + '/' + stat_key).text
+		
+	#TODO: Add abilities
 
 
 func are_fields_empty(dict):
