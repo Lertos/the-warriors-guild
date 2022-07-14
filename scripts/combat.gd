@@ -31,8 +31,8 @@ func reset_values(hero, opponent):
 	
 	#TODO: Get list of hero and opponent abilities to quickly reference them
 	
-	max_hero_hp = current_hero['stats']['health']
-	max_opponent_hp = current_opponent['stats']['health']
+	max_hero_hp = float(current_hero['stats']['health'])
+	max_opponent_hp = float(current_opponent['stats']['health'])
 	
 	#Set the current health in the player stats now that we know the max health
 	#TODO: UNCOMMENT THIS SO CURRENT HEALTH IS USED. FOR TESTING ITS EASIER IF THEY ALWAYS START AT 100% HP!
@@ -45,10 +45,10 @@ func reset_values(hero, opponent):
 func start_combat(hero, opponent):
 	reset_values(hero, opponent)
 	
-	hero_speed = current_hero['stats']['atk_speed']
-	opponent_speed = current_opponent['stats']['atk_speed']
+	hero_speed = float(current_hero['stats']['atk_speed'])
+	opponent_speed = float(current_opponent['stats']['atk_speed'])
 	
-	while current_hero['stats']['health'] > 0 && current_opponent['stats']['health'] > 0:
+	while float(current_hero['stats']['health']) > 0 && float(current_opponent['stats']['health']) > 0:
 		var attacker = get_attacker(current_hero, current_opponent)
 		var defender = get_defender(current_hero, current_opponent)
 
@@ -59,8 +59,6 @@ func start_combat(hero, opponent):
 		
 		end_turn(current_opponent)
 		end_turn(current_hero)
-		
-		print('\n---End Turn---\n')
 	
 	if current_hero['stats']['health'] <= 0:
 		print(current_hero['name'] + ' LOST...')
@@ -74,7 +72,7 @@ func start_combat(hero, opponent):
 func save_hero_new_health(hero_name):
 	for hero_key in Global_Player.player['heroes']:
 		if Global_Player.player['heroes'][hero_key]['name'].to_upper() == hero_name.to_upper():
-			Global_Player.player['heroes'][hero_key]['current_health'] = current_hero['stats']['health']
+			Global_Player.player['heroes'][hero_key]['current_health'] = float(current_hero['stats']['health'])
 			get_node('/root/root').save_data('player')
 
 
@@ -93,11 +91,11 @@ func get_attacker(hero, opponent):
 
 func get_defender(hero, opponent):
 	if hero_speed == 0:
-		hero_speed = hero['stats']['atk_speed']
+		hero_speed = float(hero['stats']['atk_speed'])
 		#print('hero Speed: ' + str(hero_speed))
 		return opponent
 	else:
-		opponent_speed = opponent['stats']['atk_speed']
+		opponent_speed = float(opponent['stats']['atk_speed'])
 		#print('Opponent Speed: ' + str(opponent_speed))
 		return hero
 
@@ -112,8 +110,8 @@ func start_turn(attacker, defender):
 	
 	var attacker_stat = attacker['main_stat']
 	
-	var attack_value = attacker['stats'][attacker_stat]
-	var defend_value = defender['stats'][attacker_stat]
+	var attack_value = int(attacker['stats'][attacker_stat])
+	var defend_value = int(defender['stats'][attacker_stat])
 	
 	#Gets the multiplier between 0 (miss), max-min + % damage, 1.25 (higher crit)
 	var damage_multiplier = get_damage_multiplier(attack_value, defend_value)
@@ -125,7 +123,7 @@ func end_turn(entity):
 	pass
 
 
-func get_damage_multiplier(attack_value, defend_value) -> float:
+func get_damage_multiplier(attack_value: int, defend_value: int) -> float:
 	var attack_roll = rng.randi_range(0, attack_value)
 	var miss_value = defend_value * 0.15
 	var multiplier = 1.0
@@ -142,7 +140,7 @@ func get_damage_multiplier(attack_value, defend_value) -> float:
 
 
 func deal_damage(damage_multiplier: float, attacker, defender):
-	var damage = rng.randi_range(attacker['stats']['min_hit'], attacker['stats']['max_hit'])
+	var damage = rng.randi_range(int(attacker['stats']['min_hit']), int(attacker['stats']['max_hit']))
 	
 	damage *= damage_multiplier
 	
@@ -153,15 +151,15 @@ func deal_damage(damage_multiplier: float, attacker, defender):
 	damage += get_bonus_damage(attacker, defender)
 	damage = stepify(damage, 0.01)
 	
-	print('BASE DAMAGE: ' + str(damage))
+	#print('BASE DAMAGE: ' + str(damage))
 	
-	var reduced_damage = damage - (damage * (defender['stats']['dmg_reduc']/100))
+	var reduced_damage = damage - (damage * (float(defender['stats']['dmg_reduc'])/100))
 	
 	reduced_damage = stepify(reduced_damage, 0.01)
 	
 	print(attacker['name'] +  ' does ' + str(reduced_damage) + ' damage')
 	
-	defender['stats']['health'] -= reduced_damage
+	defender['stats']['health'] = float(defender['stats']['health']) - reduced_damage
 	
 	print(defender['name'] + ' resulting HP: ' + str(defender['stats']['health']))
 
