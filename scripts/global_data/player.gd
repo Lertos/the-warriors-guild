@@ -10,17 +10,17 @@ var player = {
 	# BASE STATS - HEROES USE THIS AS THEIR BASE STATS
 	#-----------------------
 	'base_stats': {
-		'atk_stab': 10,
-		'atk_slash': 10,
-		'atk_crush': 10,
-		'def_stab': 10,
-		'def_slash': 10,
-		'def_crush': 10,
-		'health': 30,
+		'atk_stab': 50,
+		'atk_slash': 50,
+		'atk_crush': 50,
+		'def_stab': 50,
+		'def_slash': 50,
+		'def_crush': 50,
+		'health': 100,
 		'atk_speed': 3.0,
 		'dmg_reduc': 0,
-		'min_hit': 2,
-		'max_hit': 6,
+		'min_hit': 6,
+		'max_hit': 12,
 	},
 	
 	#-----------------------
@@ -28,43 +28,43 @@ var player = {
 	#-----------------------
 	'map': {
 		'verdant_valley': {
-			'current': 4,
+			'current': 10,
 			'max': 10,
 		},
 		'fatal_forest': {
-			'current': 1,
+			'current': 10,
 			'max': 10,
 		},
 		'gruesome_grove': {
-			'current': 1,
+			'current': 10,
 			'max': 10,
 		},
 		'dangerous_depths': {
-			'current': 1,
+			'current': 10,
 			'max': 10,
 		},
 		'wretched_wasteland': {
-			'current': 1,
+			'current': 10,
 			'max': 10,
 		},
 		'gory_graveyard': {
-			'current': 1,
+			'current': 10,
 			'max': 10,
 		},
 		'satanic_swamp': {
-			'current': 0,
+			'current': 10,
 			'max': 10,
 		},
 		'perilous_peaks': {
-			'current': 0,
+			'current': 10,
 			'max': 10,
 		},
 		'menacing_mountain': {
-			'current': 0,
+			'current': 10,
 			'max': 10,
 		},
 		'vicious_void': {
-			'current': 0,
+			'current': 10,
 			'max': 10,
 		},
 	},
