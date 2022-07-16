@@ -9,7 +9,8 @@ var colors = {
 	'mythic': Color("#9173d3"),
 	#OTHER
 	'locked': Color("#392b27"),
-	'selected': Color("#effa5a"),
+	'selected': Color("#ff4a26"),
+	'yellow_highlight': Color("#effa5a"),
 	'stat_highlight': Color("#db55ed"),
 }
 
