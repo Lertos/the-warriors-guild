@@ -52,7 +52,10 @@ func load_monsters(region_name):
 		inst_monster_record.set_meta('region_name', region_name)
 		inst_monster_record.set_meta('index', index)
 
-		update_monster_record(region_name, index, hbox.name, inst_monster_record.name)
+		if index == len(monster_list) - 1:
+			update_monster_record(region_name, index, hbox.name, inst_monster_record.name, true)
+		else:
+			update_monster_record(region_name, index, hbox.name, inst_monster_record.name, false)
 
 
 func add_filler_record(index, monster_record, hbox):
@@ -86,7 +89,7 @@ func update_selected_region_button(region_name):
 				Helper.reset_border_color(region_button)
 
 
-func update_monster_record(region_name, monster_index, hbox_name, monster_node_name):
+func update_monster_record(region_name, monster_index, hbox_name, monster_node_name, is_boss: bool):
 	var path = record_list_node.get_node(hbox_name + '/' + monster_node_name)
 	var parent_node = path.get_node('margin/vbox')
 	var monster_info = Global_Enemies.enemies[region_name][monster_index]
@@ -101,14 +104,22 @@ func update_monster_record(region_name, monster_index, hbox_name, monster_node_n
 		monster_button.icon = create_animated_texture(monster_info['id'], 'unlocked')
 		
 		parent_node.get_node('info/name').text = monster_info['name']
-		parent_node.get_node('info/hbox/level').text = 'Level: ' + str(monster_info['level'])
+		
+		if is_boss:
+			parent_node.get_node('info/boss').visible = true
+
+		parent_node.get_node('info/hbox/health').text = str(monster_info['stats']['health'])
+		parent_node.get_node('info/hbox/xp_given').text = str(monster_info['xp_given'])
 	else:
 		monster_button.icon = create_animated_texture(monster_info['id'], 'locked')
 		
 		parent_node.get_node('info/name').visible = false
+		parent_node.get_node('info/hbox/health').visible = false
+		parent_node.get_node('info/hbox/xp_given').visible = false
 		
 		if path.has_meta('previous_monster'):
-			parent_node.get_node('info/hbox/level').text = 'Unlocked by killing the ' + path.get_meta('previous_monster')
+			parent_node.get_node('info/kill_message').visible = true
+			parent_node.get_node('info/kill_message').text = 'Unlocked by killing the ' + path.get_meta('previous_monster')
 
 
 func open_monster_info_popup(region_name, monster_index):
