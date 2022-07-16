@@ -205,6 +205,7 @@ margin_right = 360.0
 margin_bottom = 339.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_constants/separation = 6
 
 [node name="monster_info_popup" type="Popup" parent="."]
 margin_top = 6.0
