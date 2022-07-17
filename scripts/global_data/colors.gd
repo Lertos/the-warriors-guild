@@ -1,6 +1,8 @@
 extends Node 
 
 var colors = {
+	#THEME COLORS
+	'theme_border': Color("#584742"),
 	#RARITIES
 	'common': Color("#d7d7d7"),
 	'uncommon': Color("#6ab417"),
