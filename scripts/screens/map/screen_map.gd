@@ -48,11 +48,14 @@ func load_monsters(region_name):
 			if index == unlocked_enemy_count:
 				inst_monster_record.set_meta('previous_monster', monster_list[index-1]['name'])
 		
-		inst_monster_record.set('custom_styles/panel', unlocked_bg_color)
 		inst_monster_record.set_meta('region_name', region_name)
 		inst_monster_record.set_meta('index', index)
 		
-		Helper.change_panel_background_color(inst_monster_record, region_name)
+		inst_monster_record.set('custom_styles/panel', unlocked_bg_color)
+		inst_monster_record.get_node('margin/inner_box').set('custom_styles/panel', unlocked_bg_color)
+		
+		Helper.change_panel_background_color(inst_monster_record, 'theme_border')
+		Helper.change_panel_background_color(inst_monster_record.get_node('margin/inner_box'), region_name)
 
 		if index == len(monster_list) - 1:
 			update_monster_record(region_name, index, hbox.name, inst_monster_record.name, true)
@@ -88,12 +91,12 @@ func update_selected_region_button(region_name):
 			if region_button.name == region_name:
 				Helper.change_border_color(region_button, 'selected')
 			else:
-				Helper.reset_border_color(region_button)
+				Helper.reset_button_custom_colors(region_button)
 
 
 func update_monster_record(region_name, monster_index, hbox_name, monster_node_name, is_boss: bool):
 	var path = record_list_node.get_node(hbox_name + '/' + monster_node_name)
-	var parent_node = path.get_node('margin/vbox')
+	var parent_node = path.get_node('margin/inner_box/vbox')
 	var monster_info = Global_Enemies.enemies[region_name][monster_index]
 	
 	var monster_button = parent_node.get_node('hbox/monster')

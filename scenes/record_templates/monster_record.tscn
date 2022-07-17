@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/icons/icon16.png" type="Texture" id=1]
 [ext_resource path="res://assets/icons/icon19.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://themes/fonts/font_title.tres" type="Theme" id=7]
 
 [sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
 
 [node name="container" type="PanelContainer"]
 margin_right = 336.0
@@ -25,31 +27,36 @@ rect_min_size = Vector2( 0, 72 )
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/margin_right = 6
+custom_constants/margin_right = 3
 custom_constants/margin_top = 3
-custom_constants/margin_left = 6
+custom_constants/margin_left = 3
 custom_constants/margin_bottom = 3
 
-[node name="vbox" type="VBoxContainer" parent="margin"]
-margin_left = 6.0
+[node name="inner_box" type="PanelContainer" parent="margin"]
+margin_left = 3.0
 margin_top = 3.0
-margin_right = 330.0
+margin_right = 333.0
 margin_bottom = 119.0
+custom_styles/panel = SubResource( 3 )
+
+[node name="vbox" type="VBoxContainer" parent="margin/inner_box"]
+margin_right = 330.0
+margin_bottom = 116.0
 rect_min_size = Vector2( 0, 107 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 8
 
-[node name="hbox" type="HBoxContainer" parent="margin/vbox"]
-margin_right = 324.0
+[node name="hbox" type="HBoxContainer" parent="margin/inner_box/vbox"]
+margin_right = 330.0
 margin_bottom = 64.0
 size_flags_vertical = 3
 custom_constants/separation = 8
 alignment = 1
 
-[node name="monster" type="Button" parent="margin/vbox/hbox"]
-margin_left = 94.0
-margin_right = 158.0
+[node name="monster" type="Button" parent="margin/inner_box/vbox/hbox"]
+margin_left = 97.0
+margin_right = 161.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_horizontal = 4
@@ -58,9 +65,9 @@ theme = ExtResource( 5 )
 icon = ExtResource( 3 )
 expand_icon = true
 
-[node name="attack" type="Button" parent="margin/vbox/hbox"]
-margin_left = 166.0
-margin_right = 230.0
+[node name="attack" type="Button" parent="margin/inner_box/vbox/hbox"]
+margin_left = 169.0
+margin_right = 233.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_horizontal = 4
@@ -69,22 +76,22 @@ theme = ExtResource( 5 )
 icon = ExtResource( 4 )
 expand_icon = true
 
-[node name="info" type="VBoxContainer" parent="margin/vbox"]
+[node name="info" type="VBoxContainer" parent="margin/inner_box/vbox"]
 margin_top = 72.0
-margin_right = 324.0
+margin_right = 330.0
 margin_bottom = 116.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 custom_constants/separation = 0
 alignment = 1
 
-[node name="name" type="Label" parent="margin/vbox/info"]
-margin_right = 324.0
+[node name="name" type="Label" parent="margin/inner_box/vbox/info"]
+margin_right = 330.0
 margin_bottom = 21.0
 theme = ExtResource( 7 )
 align = 1
 
-[node name="boss" type="Label" parent="margin/vbox/info"]
+[node name="boss" type="Label" parent="margin/inner_box/vbox/info"]
 visible = false
 margin_top = 21.0
 margin_right = 324.0
@@ -94,7 +101,7 @@ custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "REGION BOSS"
 align = 1
 
-[node name="kill_message" type="Label" parent="margin/vbox/info"]
+[node name="kill_message" type="Label" parent="margin/inner_box/vbox/info"]
 visible = false
 margin_top = 21.0
 margin_right = 324.0
@@ -104,25 +111,25 @@ custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
 align = 1
 autowrap = true
 
-[node name="hbox" type="HBoxContainer" parent="margin/vbox/info"]
+[node name="hbox" type="HBoxContainer" parent="margin/inner_box/vbox/info"]
 margin_top = 21.0
-margin_right = 324.0
+margin_right = 330.0
 margin_bottom = 44.0
 size_flags_horizontal = 5
 size_flags_vertical = 4
 alignment = 1
 
-[node name="health" type="Button" parent="margin/vbox/info/hbox"]
-margin_left = 132.0
-margin_right = 160.0
+[node name="health" type="Button" parent="margin/inner_box/vbox/info/hbox"]
+margin_left = 135.0
+margin_right = 163.0
 margin_bottom = 23.0
 button_mask = 0
 icon = ExtResource( 1 )
 flat = true
 
-[node name="xp_given" type="Button" parent="margin/vbox/info/hbox"]
-margin_left = 164.0
-margin_right = 192.0
+[node name="xp_given" type="Button" parent="margin/inner_box/vbox/info/hbox"]
+margin_left = 167.0
+margin_right = 195.0
 margin_bottom = 23.0
 rect_min_size = Vector2( 16, 16 )
 button_mask = 0

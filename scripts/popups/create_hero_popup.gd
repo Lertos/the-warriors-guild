@@ -32,7 +32,7 @@ func reset_screen():
 func reset_active_avatar():
 	for row in hero_buttons.get_children():
 		for hero in row.get_children():
-			Helper.reset_border_color(hero)
+			Helper.reset_button_custom_colors(hero)
 
 
 func set_gold_cost(index: int):

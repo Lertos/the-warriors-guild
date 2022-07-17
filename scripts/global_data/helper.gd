@@ -35,12 +35,6 @@ func change_border_color(node, color_key):
 	node.add_stylebox_override('normal',temp_stylebox_normal)
 	node.add_stylebox_override('hover',temp_stylebox_hover)
 	node.add_stylebox_override('pressed',temp_stylebox_pressed)
-	
-	
-func reset_border_color(node):
-	node.add_stylebox_override('normal', null)
-	node.add_stylebox_override('hover', null)
-	node.add_stylebox_override('pressed', null)
 
 
 func change_button_background_color(node, color_key):
@@ -56,13 +50,22 @@ func change_button_background_color(node, color_key):
 	node.add_stylebox_override('normal',temp_stylebox_normal)
 	node.add_stylebox_override('hover',temp_stylebox_hover)
 	node.add_stylebox_override('pressed',temp_stylebox_pressed)
-	
-	
-func reset_button_background_color(node):
+
+
+func reset_button_custom_colors(node):
 	node.add_stylebox_override('normal', null)
 	node.add_stylebox_override('hover', null)
 	node.add_stylebox_override('pressed', null)
+
+
+func change_panel_border_color(node, color_key):
+	var color = Global_Colors.colors[color_key]
+	var temp_stylebox_panel = node.get_stylebox('panel').duplicate()
+
+	temp_stylebox_panel.border_color = color
 	
+	node.add_stylebox_override('panel',temp_stylebox_panel)
+
 
 func change_panel_background_color(node, color_key):
 	var color = Global_Colors.colors[color_key]
@@ -72,8 +75,8 @@ func change_panel_background_color(node, color_key):
 	
 	node.add_stylebox_override('panel',temp_stylebox_panel)
 
-	
-func reset_panel_background_color(node):
+
+func reset_panel_custom_colors(node):
 	node.add_stylebox_override('panel', null)
 	
 	
