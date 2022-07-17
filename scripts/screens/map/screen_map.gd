@@ -51,6 +51,8 @@ func load_monsters(region_name):
 		inst_monster_record.set('custom_styles/panel', unlocked_bg_color)
 		inst_monster_record.set_meta('region_name', region_name)
 		inst_monster_record.set_meta('index', index)
+		
+		Helper.change_panel_background_color(inst_monster_record, region_name)
 
 		if index == len(monster_list) - 1:
 			update_monster_record(region_name, index, hbox.name, inst_monster_record.name, true)
