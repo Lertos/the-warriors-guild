@@ -23,12 +23,11 @@ func get_time_from_stamp(time_in_seconds: int):
 	
 
 func change_border_color(node, color_key):
+	var color = Global_Colors.colors[color_key]
 	var temp_stylebox_normal = node.get_theme().get_stylebox('normal', 'Button').duplicate()
 	var temp_stylebox_hover = node.get_theme().get_stylebox('hover', 'Button').duplicate()
 	var temp_stylebox_pressed = node.get_theme().get_stylebox('pressed', 'Button').duplicate()
 	
-	var color = Global_Colors.colors[color_key]
-
 	temp_stylebox_normal.border_color = color
 	temp_stylebox_hover.border_color = color
 	temp_stylebox_pressed.border_color = color
@@ -44,13 +43,12 @@ func reset_border_color(node):
 	node.add_stylebox_override('pressed', null)
 
 
-func change_background_color(node, color_key):
+func change_button_background_color(node, color_key):
+	var color = Global_Colors.colors[color_key]
 	var temp_stylebox_normal = node.get_theme().get_stylebox('normal', 'Button').duplicate()
 	var temp_stylebox_hover = node.get_theme().get_stylebox('hover', 'Button').duplicate()
 	var temp_stylebox_pressed = node.get_theme().get_stylebox('pressed', 'Button').duplicate()
 	
-	var color = Global_Colors.colors[color_key]
-
 	temp_stylebox_normal.bg_color = color
 	temp_stylebox_hover.bg_color = color
 	temp_stylebox_pressed.bg_color = color
@@ -60,10 +58,23 @@ func change_background_color(node, color_key):
 	node.add_stylebox_override('pressed',temp_stylebox_pressed)
 	
 	
-func reset_background_color(node):
+func reset_button_background_color(node):
 	node.add_stylebox_override('normal', null)
 	node.add_stylebox_override('hover', null)
 	node.add_stylebox_override('pressed', null)
+	
+
+func change_panel_background_color(node, color_key):
+	var color = Global_Colors.colors[color_key]
+	var temp_stylebox_panel = node.get_stylebox('panel').duplicate()
+
+	temp_stylebox_panel.bg_color = color
+	
+	node.add_stylebox_override('panel',temp_stylebox_panel)
+
+	
+func reset_panel_background_color(node):
+	node.add_stylebox_override('panel', null)
 	
 	
 func get_blackened_image(given_image) -> ImageTexture:
