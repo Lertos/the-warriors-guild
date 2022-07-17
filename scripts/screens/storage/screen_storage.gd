@@ -52,7 +52,7 @@ func load_items(storage_type):
 			else:
 				#Locked slots
 				if (index) >= unlocked_slots:
-					Helper.change_background_color(inst_item_record.get_node('rarity'), 'locked')
+					Helper.change_button_background_color(inst_item_record.get_node('rarity'), 'locked')
 					inst_item_record.get_node('rarity/item').texture = locked_texture
 
 
