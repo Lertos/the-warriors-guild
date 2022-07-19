@@ -1,13 +1,13 @@
 [gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://scenes/screens/screen_home.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/icons/icon2.png" type="Texture" id=2]
+[ext_resource path="res://assets/icons/home_screen/heroes.png" type="Texture" id=2]
 [ext_resource path="res://themes/item_base.tres" type="Theme" id=3]
-[ext_resource path="res://assets/icons/icon4.png" type="Texture" id=4]
-[ext_resource path="res://assets/icons/icon1.png" type="Texture" id=5]
+[ext_resource path="res://assets/icons/home_screen/storage.png" type="Texture" id=4]
+[ext_resource path="res://assets/icons/home_screen/map.png" type="Texture" id=5]
 [ext_resource path="res://ui/separator.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/icons/icon5.png" type="Texture" id=7]
-[ext_resource path="res://assets/icons/icon3.png" type="Texture" id=8]
+[ext_resource path="res://assets/icons/home_screen/vendors.png" type="Texture" id=7]
+[ext_resource path="res://assets/icons/home_screen/home.png" type="Texture" id=8]
 [ext_resource path="res://scripts/main.gd" type="Script" id=9]
 [ext_resource path="res://themes/colors/dark_brown.tres" type="StyleBox" id=10]
 [ext_resource path="res://themes/popup.tres" type="StyleBox" id=11]
@@ -101,10 +101,10 @@ rect_min_size = Vector2( 64, 64 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource( 3 )
-icon = ExtResource( 5 )
+icon = ExtResource( 8 )
 expand_icon = true
 
-[node name="heroes" type="Button" parent="parent/footer/buttons"]
+[node name="map" type="Button" parent="parent/footer/buttons"]
 margin_left = 77.0
 margin_top = 6.0
 margin_right = 141.0
@@ -113,10 +113,10 @@ rect_min_size = Vector2( 64, 64 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource( 3 )
-icon = ExtResource( 2 )
+icon = ExtResource( 5 )
 expand_icon = true
 
-[node name="map" type="Button" parent="parent/footer/buttons"]
+[node name="heroes" type="Button" parent="parent/footer/buttons"]
 margin_left = 148.0
 margin_top = 6.0
 margin_right = 212.0
@@ -125,7 +125,7 @@ rect_min_size = Vector2( 64, 64 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource( 3 )
-icon = ExtResource( 8 )
+icon = ExtResource( 2 )
 expand_icon = true
 
 [node name="vendors" type="Button" parent="parent/footer/buttons"]
@@ -137,7 +137,7 @@ rect_min_size = Vector2( 64, 64 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource( 3 )
-icon = ExtResource( 4 )
+icon = ExtResource( 7 )
 expand_icon = true
 
 [node name="storage" type="Button" parent="parent/footer/buttons"]
@@ -149,7 +149,7 @@ rect_min_size = Vector2( 64, 64 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource( 3 )
-icon = ExtResource( 7 )
+icon = ExtResource( 4 )
 expand_icon = true
 
 [node name="ItemGenerator" type="Popup" parent="."]

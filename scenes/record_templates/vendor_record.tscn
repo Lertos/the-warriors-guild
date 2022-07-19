@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://assets/icons/icon18.png" type="Texture" id=1]
+[ext_resource path="res://assets/icons/upgrade.png" type="Texture" id=1]
 [ext_resource path="res://scripts/record_templates/vendor_record.gd" type="Script" id=2]
 [ext_resource path="res://themes/record_box.tres" type="StyleBox" id=3]
 [ext_resource path="res://themes/buttons/button.tres" type="Theme" id=4]

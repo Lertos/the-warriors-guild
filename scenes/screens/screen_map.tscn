@@ -21,7 +21,7 @@
 [ext_resource path="res://themes/fonts/font_title.tres" type="Theme" id=19]
 [ext_resource path="res://themes/popup.tres" type="StyleBox" id=20]
 [ext_resource path="res://themes/buttons/button.tres" type="Theme" id=21]
-[ext_resource path="res://assets/icons/icon19.png" type="Texture" id=22]
+[ext_resource path="res://assets/icons/xp.png" type="Texture" id=22]
 [ext_resource path="res://themes/buttons/button_standalone.tres" type="Theme" id=23]
 [ext_resource path="res://scripts/popups/popup_monster_attack.gd" type="Script" id=24]
 

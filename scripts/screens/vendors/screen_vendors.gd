@@ -1,7 +1,7 @@
 extends Node
 
 var scene_vendor_record = preload("res://scenes/record_templates/vendor_record.tscn")
-var locked_texture = load('res://assets/icons/icon12.png')
+var locked_texture = load('res://assets/icons/locked.png')
 
 
 func _ready():

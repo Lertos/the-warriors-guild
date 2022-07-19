@@ -1,6 +1,6 @@
 extends MarginContainer
 
-var locked_texture = load('res://assets/icons/icon12.png')
+var locked_texture = load('res://assets/icons/locked.png')
 
 var hero_timers = {}
 

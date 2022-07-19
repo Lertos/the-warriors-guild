@@ -3,7 +3,7 @@ extends MarginContainer
 var scene_monster_record = preload("res://scenes/record_templates/monster_record.tscn")
 var unlocked_bg_color = preload("res://themes/record_box.tres")
 var filler_bg_color = preload("res://themes/background_box.tres")
-var locked_texture = load('res://assets/icons/icon12.png')
+var locked_texture = load('res://assets/icons/locked.png')
 
 onready var record_list_node = get_node('parent_vbox/monsters/vbox')
 
