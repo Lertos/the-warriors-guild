@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://assets/regions/wretched_wasteland.png" type="Texture" id=1]
 [ext_resource path="res://assets/regions/perilous_peaks.png" type="Texture" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://themes/fonts/font_title.tres" type="Theme" id=19]
 [ext_resource path="res://themes/popup.tres" type="StyleBox" id=20]
 [ext_resource path="res://themes/buttons/button.tres" type="Theme" id=21]
+[ext_resource path="res://assets/icons/icon19.png" type="Texture" id=22]
 [ext_resource path="res://themes/buttons/button_standalone.tres" type="Theme" id=23]
 [ext_resource path="res://scripts/popups/popup_monster_attack.gd" type="Script" id=24]
 
@@ -269,13 +270,13 @@ margin_top = 25.0
 margin_right = 52.0
 margin_bottom = 39.0
 
-[node name="label" type="Label" parent="monster_info_popup/margin/panel/vbox/header/vbox/hbox"]
+[node name="label" type="TextureRect" parent="monster_info_popup/margin/panel/vbox/header/vbox/hbox"]
 margin_right = 48.0
 margin_bottom = 14.0
 theme = ExtResource( 18 )
-text = "Level: "
+texture = ExtResource( 22 )
 
-[node name="level" type="Label" parent="monster_info_popup/margin/panel/vbox/header/vbox/hbox"]
+[node name="xp_given" type="Label" parent="monster_info_popup/margin/panel/vbox/header/vbox/hbox"]
 margin_left = 52.0
 margin_right = 52.0
 margin_bottom = 14.0
@@ -1271,15 +1272,14 @@ margin_right = 92.0
 margin_bottom = 80.0
 alignment = 1
 
-[node name="label" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel/enemy/hbox"]
+[node name="label" type="TextureRect" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel/enemy/hbox"]
 margin_left = 23.0
 margin_right = 53.0
 margin_bottom = 14.0
 theme = ExtResource( 18 )
-text = "Lvl: "
-align = 1
+texture = ExtResource( 22 )
 
-[node name="level" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel/enemy/hbox"]
+[node name="xp_given" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel/enemy/hbox"]
 margin_left = 57.0
 margin_right = 69.0
 margin_bottom = 14.0

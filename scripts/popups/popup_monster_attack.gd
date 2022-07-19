@@ -92,7 +92,7 @@ func change_current_enemy(monster_info):
 	
 	enemy_node.get_node('enemy/img').icon = get_monster_animated_texture(monster_info)
 	enemy_node.get_node('enemy/name').text = monster_info['name']
-	enemy_node.get_node('enemy/hbox/level').text = str(monster_info['level'])
+	enemy_node.get_node('enemy/hbox/xp_given').text = str(monster_info['xp_given'])
 	
 	for stat_key in monster_info['stats']:
 		enemy_node.get_node(stat_key).text = str(monster_info['stats'][stat_key])

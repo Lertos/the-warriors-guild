@@ -128,7 +128,6 @@ func get_monster_info(region_name, monster_id):
 func load_fields(monster_info):
 	parent.get_node('line1/id/id').text = monster_info['id']
 	parent.get_node('line1/name/name').text = monster_info['name']
-	parent.get_node('line2/level/level').text = str(monster_info['level'])
 	parent.get_node('line2/xp_given/xp_given').text = str(monster_info['xp_given'])
 	parent.get_node('line3/index/index').text = str(monster_info['index'])
 	
@@ -208,7 +207,6 @@ func save_monster(all_monsters, region_name, monster_dict):
 func add_fields(monster_dict):
 	monster_dict['id'] = parent.get_node('line1/id/id').text
 	monster_dict['name'] = parent.get_node('line1/name/name').text
-	monster_dict['level'] = parent.get_node('line2/level/level').text
 	monster_dict['xp_given'] = parent.get_node('line2/xp_given/xp_given').text
 	
 	var main_stat_node = parent.get_node('main_stat/main_stat')

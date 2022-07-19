@@ -16,7 +16,7 @@ func add_header_info(monster_info):
 	var header = parent_node.get_node('vbox/header')
 	
 	header.get_node('vbox/name').text = monster_info['name']
-	header.get_node('vbox/hbox/level').text = str(monster_info['level'])
+	header.get_node('vbox/hbox/xp_given').text = str(monster_info['xp_given'])
 
 
 func add_stat_info(monster_info):

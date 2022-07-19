@@ -1798,28 +1798,6 @@ margin_right = 324.0
 margin_bottom = 52.0
 size_flags_horizontal = 3
 
-[node name="level" type="HBoxContainer" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/line2"]
-margin_right = 160.0
-margin_bottom = 24.0
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/line2/level"]
-margin_right = 40.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 0, 24 )
-theme = ExtResource( 17 )
-text = "Level"
-align = 2
-valign = 1
-
-[node name="level" type="LineEdit" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/line2/level"]
-margin_left = 44.0
-margin_right = 160.0
-margin_bottom = 24.0
-size_flags_horizontal = 3
-theme = ExtResource( 17 )
-clear_button_enabled = true
-
 [node name="xp_given" type="HBoxContainer" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/line2"]
 margin_left = 164.0
 margin_right = 324.0
