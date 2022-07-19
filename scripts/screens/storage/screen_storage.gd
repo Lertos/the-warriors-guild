@@ -75,6 +75,9 @@ func update_item_record(item_record, item):
 
 	
 func switch_sub_type(type_name):
+	#Reset scrollbar to initial spot 
+	get_node('parent_vbox/storage').scroll_vertical = 0
+	
 	load_items(type_name)
 	
 	

@@ -30,6 +30,9 @@ func load_monsters(region_name):
 	update_region_header(region_name)
 	update_selected_region_button(region_name)
 	
+	#Reset scrollbar to initial spot 
+	get_node('parent_vbox/monsters').scroll_vertical = 0
+	
 	clear_list()
 	
 	for index in range(0, len(monster_list)):

@@ -38,6 +38,9 @@ func connect_section_buttons():
 	
 
 func switch_sections(key: String):
+	#Reset scrollbar to initial spot 
+	get_node('parent_vbox/margin/' + key).scroll_vertical = 0
+	
 	for node in get_node('parent_vbox/margin').get_children():
 		if node.name == key:
 			node.visible = true
