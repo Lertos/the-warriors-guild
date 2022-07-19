@@ -104,7 +104,7 @@ theme = ExtResource( 3 )
 icon = ExtResource( 8 )
 expand_icon = true
 
-[node name="map" type="Button" parent="parent/footer/buttons"]
+[node name="heroes" type="Button" parent="parent/footer/buttons"]
 margin_left = 77.0
 margin_top = 6.0
 margin_right = 141.0
@@ -113,10 +113,10 @@ rect_min_size = Vector2( 64, 64 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource( 3 )
-icon = ExtResource( 5 )
+icon = ExtResource( 2 )
 expand_icon = true
 
-[node name="heroes" type="Button" parent="parent/footer/buttons"]
+[node name="map" type="Button" parent="parent/footer/buttons"]
 margin_left = 148.0
 margin_top = 6.0
 margin_right = 212.0
@@ -125,7 +125,7 @@ rect_min_size = Vector2( 64, 64 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource( 3 )
-icon = ExtResource( 2 )
+icon = ExtResource( 5 )
 expand_icon = true
 
 [node name="vendors" type="Button" parent="parent/footer/buttons"]
