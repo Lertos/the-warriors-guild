@@ -26,6 +26,15 @@ func select_hero(index: int):
 
 
 func load_hero_sections(index: int, hero_info):
+	var hero_buttons = get_node('parent_vbox/vbox/heroes')
+	
+	#Remove all coloring from each button to reset the selected button
+	for node in hero_buttons.get_children():
+		Helper.reset_button_custom_colors(node.get_node('img'))
+	
+	#Change the border color to show which hero is selected
+	Helper.change_border_color(hero_buttons.get_node(str(index) + '/img'), 'selected')
+	
 	get_node('parent_vbox/margin/stats').load_hero_stats_section(index, hero_info)
 	get_node('parent_vbox/margin/talents').load_hero_talents_section(index, hero_info)
 	
@@ -38,6 +47,15 @@ func connect_section_buttons():
 	
 
 func switch_sections(key: String):
+	var section_buttons = get_node('parent_vbox/buttons')
+	
+	#Remove all coloring from each button to reset the selected button
+	for node in section_buttons.get_children():
+		Helper.reset_button_custom_colors(node)
+	
+	#Change the border color to show which section is selected
+	Helper.change_border_color(section_buttons.get_node(key), 'selected')
+	
 	#Reset scrollbar to initial spot 
 	get_node('parent_vbox/margin/' + key).scroll_vertical = 0
 	

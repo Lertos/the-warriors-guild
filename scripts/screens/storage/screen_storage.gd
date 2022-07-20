@@ -55,6 +55,19 @@ func load_items(storage_type):
 					Helper.change_button_background_color(inst_item_record.get_node('rarity'), 'locked')
 					inst_item_record.get_node('rarity/item').texture = locked_texture
 
+	add_selected_border(storage_type)
+
+
+func add_selected_border(storage_type):
+	var type_buttons = get_node('parent_vbox/types_vbox/types')
+	
+	#Remove all coloring from each button to reset the selected button
+	for node in type_buttons.get_children():
+		Helper.reset_button_custom_colors(node)
+	
+	#Change the border color to show which section is selected
+	Helper.change_border_color(type_buttons.get_node(storage_type), 'selected')
+
 
 func create_hbox():
 	var hbox = HBoxContainer.new()
