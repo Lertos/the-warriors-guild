@@ -15,7 +15,6 @@
 [ext_resource path="res://scripts/ui/scrollbar.gd" type="Script" id=13]
 [ext_resource path="res://themes/buttons/button_region.tres" type="Theme" id=14]
 [ext_resource path="res://themes/scrollbar.tres" type="Theme" id=15]
-[ext_resource path="res://themes/fonts/font_header_smaller.tres" type="Theme" id=16]
 [ext_resource path="res://scripts/popups/popup_monster_info.gd" type="Script" id=17]
 [ext_resource path="res://themes/fonts/font_normal.tres" type="Theme" id=18]
 [ext_resource path="res://themes/fonts/font_title.tres" type="Theme" id=19]
@@ -24,6 +23,7 @@
 [ext_resource path="res://assets/icons/xp.png" type="Texture" id=22]
 [ext_resource path="res://themes/buttons/button_standalone.tres" type="Theme" id=23]
 [ext_resource path="res://scripts/popups/popup_monster_attack.gd" type="Script" id=24]
+[ext_resource path="res://assets/icons/back_button.png" type="Texture" id=25]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.717647, 0.686275, 0.588235, 1 )
@@ -37,7 +37,8 @@ custom_constants/margin_top = 6
 custom_constants/margin_bottom = 6
 script = ExtResource( 12 )
 
-[node name="parent_vbox" type="VBoxContainer" parent="."]
+[node name="monster_vbox" type="VBoxContainer" parent="."]
+visible = false
 margin_top = 6.0
 margin_right = 360.0
 margin_bottom = 506.0
@@ -45,7 +46,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 6
 
-[node name="region_vbox" type="VBoxContainer" parent="parent_vbox"]
+[node name="region_vbox" type="VBoxContainer" parent="monster_vbox"]
 margin_left = 40.0
 margin_right = 320.0
 margin_bottom = 101.0
@@ -53,13 +54,13 @@ size_flags_horizontal = 4
 custom_constants/separation = 5
 alignment = 1
 
-[node name="region_row1" type="HBoxContainer" parent="parent_vbox/region_vbox"]
+[node name="region_row1" type="HBoxContainer" parent="monster_vbox/region_vbox"]
 margin_right = 280.0
 margin_bottom = 48.0
 custom_constants/separation = 10
 alignment = 1
 
-[node name="verdant_valley" type="Button" parent="parent_vbox/region_vbox/region_row1"]
+[node name="verdant_valley" type="Button" parent="monster_vbox/region_vbox/region_row1"]
 margin_right = 48.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 48, 48 )
@@ -69,7 +70,7 @@ theme = ExtResource( 14 )
 icon = ExtResource( 5 )
 expand_icon = true
 
-[node name="fatal_forest" type="Button" parent="parent_vbox/region_vbox/region_row1"]
+[node name="fatal_forest" type="Button" parent="monster_vbox/region_vbox/region_row1"]
 margin_left = 58.0
 margin_right = 106.0
 margin_bottom = 48.0
@@ -80,7 +81,7 @@ theme = ExtResource( 14 )
 icon = ExtResource( 4 )
 expand_icon = true
 
-[node name="gruesome_grove" type="Button" parent="parent_vbox/region_vbox/region_row1"]
+[node name="gruesome_grove" type="Button" parent="monster_vbox/region_vbox/region_row1"]
 margin_left = 116.0
 margin_right = 164.0
 margin_bottom = 48.0
@@ -91,7 +92,7 @@ theme = ExtResource( 14 )
 icon = ExtResource( 8 )
 expand_icon = true
 
-[node name="dangerous_depths" type="Button" parent="parent_vbox/region_vbox/region_row1"]
+[node name="dangerous_depths" type="Button" parent="monster_vbox/region_vbox/region_row1"]
 margin_left = 174.0
 margin_right = 222.0
 margin_bottom = 48.0
@@ -102,7 +103,7 @@ theme = ExtResource( 14 )
 icon = ExtResource( 9 )
 expand_icon = true
 
-[node name="wretched_wasteland" type="Button" parent="parent_vbox/region_vbox/region_row1"]
+[node name="wretched_wasteland" type="Button" parent="monster_vbox/region_vbox/region_row1"]
 margin_left = 232.0
 margin_right = 280.0
 margin_bottom = 48.0
@@ -113,14 +114,14 @@ theme = ExtResource( 14 )
 icon = ExtResource( 1 )
 expand_icon = true
 
-[node name="region_row2" type="HBoxContainer" parent="parent_vbox/region_vbox"]
+[node name="region_row2" type="HBoxContainer" parent="monster_vbox/region_vbox"]
 margin_top = 53.0
 margin_right = 280.0
 margin_bottom = 101.0
 custom_constants/separation = 10
 alignment = 1
 
-[node name="gory_graveyard" type="Button" parent="parent_vbox/region_vbox/region_row2"]
+[node name="gory_graveyard" type="Button" parent="monster_vbox/region_vbox/region_row2"]
 margin_right = 48.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 48, 48 )
@@ -130,7 +131,7 @@ theme = ExtResource( 14 )
 icon = ExtResource( 3 )
 expand_icon = true
 
-[node name="satanic_swamp" type="Button" parent="parent_vbox/region_vbox/region_row2"]
+[node name="satanic_swamp" type="Button" parent="monster_vbox/region_vbox/region_row2"]
 margin_left = 58.0
 margin_right = 106.0
 margin_bottom = 48.0
@@ -141,7 +142,7 @@ theme = ExtResource( 14 )
 icon = ExtResource( 7 )
 expand_icon = true
 
-[node name="perilous_peaks" type="Button" parent="parent_vbox/region_vbox/region_row2"]
+[node name="perilous_peaks" type="Button" parent="monster_vbox/region_vbox/region_row2"]
 margin_left = 116.0
 margin_right = 164.0
 margin_bottom = 48.0
@@ -152,7 +153,7 @@ theme = ExtResource( 14 )
 icon = ExtResource( 2 )
 expand_icon = true
 
-[node name="menacing_mountain" type="Button" parent="parent_vbox/region_vbox/region_row2"]
+[node name="menacing_mountain" type="Button" parent="monster_vbox/region_vbox/region_row2"]
 margin_left = 174.0
 margin_right = 222.0
 margin_bottom = 48.0
@@ -163,7 +164,7 @@ theme = ExtResource( 14 )
 icon = ExtResource( 10 )
 expand_icon = true
 
-[node name="vicious_void" type="Button" parent="parent_vbox/region_vbox/region_row2"]
+[node name="vicious_void" type="Button" parent="monster_vbox/region_vbox/region_row2"]
 margin_left = 232.0
 margin_right = 280.0
 margin_bottom = 48.0
@@ -174,25 +175,76 @@ theme = ExtResource( 14 )
 icon = ExtResource( 6 )
 expand_icon = true
 
-[node name="sep_bottom" parent="parent_vbox" instance=ExtResource( 11 )]
+[node name="sep" parent="monster_vbox" instance=ExtResource( 11 )]
 margin_top = 107.0
 margin_bottom = 111.0
 custom_styles/panel = SubResource( 1 )
 
-[node name="header" type="Label" parent="parent_vbox"]
+[node name="header" type="Label" parent="monster_vbox"]
 margin_top = 117.0
 margin_right = 360.0
-margin_bottom = 145.0
-theme = ExtResource( 16 )
+margin_bottom = 138.0
+theme = ExtResource( 19 )
 align = 1
 
-[node name="sep" parent="parent_vbox" instance=ExtResource( 11 )]
-margin_top = 151.0
-margin_bottom = 155.0
+[node name="sep3" parent="monster_vbox" instance=ExtResource( 11 )]
+margin_top = 144.0
+margin_bottom = 148.0
 custom_styles/panel = SubResource( 1 )
 
-[node name="monsters" type="ScrollContainer" parent="parent_vbox"]
-margin_top = 161.0
+[node name="monsters" type="ScrollContainer" parent="monster_vbox"]
+margin_top = 154.0
+margin_right = 360.0
+margin_bottom = 448.0
+mouse_filter = 1
+size_flags_vertical = 3
+theme = ExtResource( 15 )
+scroll_horizontal_enabled = false
+script = ExtResource( 13 )
+
+[node name="vbox" type="VBoxContainer" parent="monster_vbox/monsters"]
+margin_right = 360.0
+margin_bottom = 294.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 6
+
+[node name="sep2" parent="monster_vbox" instance=ExtResource( 11 )]
+margin_top = 454.0
+margin_bottom = 458.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="reselect_hero" type="Button" parent="monster_vbox"]
+margin_left = 161.0
+margin_top = 464.0
+margin_right = 199.0
+margin_bottom = 500.0
+size_flags_horizontal = 4
+theme = ExtResource( 21 )
+icon = ExtResource( 25 )
+
+[node name="hero_vbox" type="VBoxContainer" parent="."]
+margin_top = 6.0
+margin_right = 360.0
+margin_bottom = 506.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 6
+
+[node name="header" type="Label" parent="hero_vbox"]
+margin_right = 360.0
+margin_bottom = 21.0
+theme = ExtResource( 19 )
+text = "Available Heroes"
+align = 1
+
+[node name="sep" parent="hero_vbox" instance=ExtResource( 11 )]
+margin_top = 27.0
+margin_bottom = 31.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="heroes" type="ScrollContainer" parent="hero_vbox"]
+margin_top = 37.0
 margin_right = 360.0
 margin_bottom = 500.0
 mouse_filter = 1
@@ -201,9 +253,9 @@ theme = ExtResource( 15 )
 scroll_horizontal_enabled = false
 script = ExtResource( 13 )
 
-[node name="vbox" type="VBoxContainer" parent="parent_vbox/monsters"]
+[node name="vbox" type="VBoxContainer" parent="hero_vbox/heroes"]
 margin_right = 360.0
-margin_bottom = 339.0
+margin_bottom = 463.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 6
@@ -245,52 +297,53 @@ size_flags_vertical = 3
 custom_constants/separation = 8
 
 [node name="header" type="HBoxContainer" parent="monster_info_popup/margin/panel/vbox"]
-margin_left = 124.0
-margin_right = 184.0
-margin_bottom = 39.0
+margin_left = 140.0
+margin_right = 168.0
+margin_bottom = 41.0
 rect_min_size = Vector2( 0, 38 )
 size_flags_horizontal = 4
 custom_constants/separation = 8
 
 [node name="monster" type="TextureRect" parent="monster_info_popup/margin/panel/vbox/header"]
-margin_bottom = 39.0
+margin_bottom = 41.0
 
 [node name="vbox" type="VBoxContainer" parent="monster_info_popup/margin/panel/vbox/header"]
 margin_left = 8.0
-margin_right = 60.0
-margin_bottom = 39.0
+margin_right = 28.0
+margin_bottom = 41.0
 
 [node name="name" type="Label" parent="monster_info_popup/margin/panel/vbox/header/vbox"]
-margin_right = 52.0
+margin_right = 20.0
 margin_bottom = 21.0
 theme = ExtResource( 19 )
 
 [node name="hbox" type="HBoxContainer" parent="monster_info_popup/margin/panel/vbox/header/vbox"]
 margin_top = 25.0
-margin_right = 52.0
-margin_bottom = 39.0
+margin_right = 20.0
+margin_bottom = 41.0
 
 [node name="label" type="TextureRect" parent="monster_info_popup/margin/panel/vbox/header/vbox/hbox"]
-margin_right = 48.0
-margin_bottom = 14.0
+margin_right = 16.0
+margin_bottom = 16.0
 theme = ExtResource( 18 )
 texture = ExtResource( 22 )
 
 [node name="xp_given" type="Label" parent="monster_info_popup/margin/panel/vbox/header/vbox/hbox"]
-margin_left = 52.0
-margin_right = 52.0
-margin_bottom = 14.0
+margin_left = 20.0
+margin_top = 1.0
+margin_right = 20.0
+margin_bottom = 15.0
 theme = ExtResource( 18 )
 
 [node name="separator" parent="monster_info_popup/margin/panel/vbox" instance=ExtResource( 11 )]
-margin_top = 47.0
+margin_top = 49.0
 margin_right = 308.0
-margin_bottom = 51.0
+margin_bottom = 53.0
 
 [node name="stats" type="HBoxContainer" parent="monster_info_popup/margin/panel/vbox"]
-margin_top = 59.0
+margin_top = 61.0
 margin_right = 308.0
-margin_bottom = 255.0
+margin_bottom = 257.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 16
@@ -525,25 +578,25 @@ theme = ExtResource( 18 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
 [node name="separator3" parent="monster_info_popup/margin/panel/vbox" instance=ExtResource( 11 )]
-margin_top = 263.0
+margin_top = 265.0
 margin_right = 308.0
-margin_bottom = 267.0
+margin_bottom = 269.0
 
 [node name="abilities_header" type="Label" parent="monster_info_popup/margin/panel/vbox"]
-margin_top = 275.0
+margin_top = 277.0
 margin_right = 308.0
-margin_bottom = 296.0
+margin_bottom = 298.0
 theme = ExtResource( 19 )
 text = "Abilities"
 align = 1
 
 [node name="separator2" parent="monster_info_popup/margin/panel/vbox" instance=ExtResource( 11 )]
-margin_top = 304.0
+margin_top = 306.0
 margin_right = 308.0
-margin_bottom = 308.0
+margin_bottom = 310.0
 
 [node name="bottom_panel" type="HBoxContainer" parent="monster_info_popup/margin/panel/vbox"]
-margin_top = 316.0
+margin_top = 318.0
 margin_right = 308.0
 margin_bottom = 417.0
 size_flags_horizontal = 3
@@ -553,16 +606,16 @@ alignment = 1
 
 [node name="abilities" type="VBoxContainer" parent="monster_info_popup/margin/panel/vbox/bottom_panel"]
 margin_right = 308.0
-margin_bottom = 101.0
+margin_bottom = 99.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 0
 alignment = 1
 
 [node name="abilities" type="Label" parent="monster_info_popup/margin/panel/vbox/bottom_panel/abilities"]
-margin_top = 43.0
+margin_top = 42.0
 margin_right = 308.0
-margin_bottom = 57.0
+margin_bottom = 56.0
 theme = ExtResource( 18 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
@@ -1244,7 +1297,7 @@ custom_constants/separation = 0
 
 [node name="enemy" type="VBoxContainer" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
 margin_right = 92.0
-margin_bottom = 80.0
+margin_bottom = 82.0
 custom_constants/separation = 2
 alignment = 1
 
@@ -1269,151 +1322,152 @@ align = 1
 [node name="hbox" type="HBoxContainer" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel/enemy"]
 margin_top = 66.0
 margin_right = 92.0
-margin_bottom = 80.0
+margin_bottom = 82.0
 alignment = 1
 
 [node name="label" type="TextureRect" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel/enemy/hbox"]
-margin_left = 23.0
-margin_right = 53.0
-margin_bottom = 14.0
+margin_left = 30.0
+margin_right = 46.0
+margin_bottom = 16.0
 theme = ExtResource( 18 )
 texture = ExtResource( 22 )
 
 [node name="xp_given" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel/enemy/hbox"]
-margin_left = 57.0
-margin_right = 69.0
-margin_bottom = 14.0
+margin_left = 50.0
+margin_top = 1.0
+margin_right = 62.0
+margin_bottom = 15.0
 theme = ExtResource( 18 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "--"
 align = 1
 
 [node name="spacer3" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
-margin_top = 80.0
+margin_top = 82.0
 margin_right = 92.0
-margin_bottom = 94.0
+margin_bottom = 96.0
 theme = ExtResource( 18 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 align = 1
 
 [node name="atk_stab" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
-margin_top = 94.0
+margin_top = 96.0
 margin_right = 92.0
-margin_bottom = 108.0
+margin_bottom = 110.0
 theme = ExtResource( 18 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "--"
 align = 1
 
 [node name="atk_slash" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
-margin_top = 108.0
+margin_top = 110.0
 margin_right = 92.0
-margin_bottom = 122.0
+margin_bottom = 124.0
 theme = ExtResource( 18 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "--"
 align = 1
 
 [node name="atk_crush" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
-margin_top = 122.0
+margin_top = 124.0
 margin_right = 92.0
-margin_bottom = 136.0
+margin_bottom = 138.0
 theme = ExtResource( 18 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "--"
 align = 1
 
 [node name="spacer4" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
-margin_top = 136.0
+margin_top = 138.0
 margin_right = 92.0
-margin_bottom = 150.0
+margin_bottom = 152.0
 theme = ExtResource( 18 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 align = 1
 
 [node name="def_stab" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
-margin_top = 150.0
+margin_top = 152.0
 margin_right = 92.0
-margin_bottom = 164.0
+margin_bottom = 166.0
 theme = ExtResource( 18 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "--"
 align = 1
 
 [node name="def_slash" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
-margin_top = 164.0
+margin_top = 166.0
 margin_right = 92.0
-margin_bottom = 178.0
+margin_bottom = 180.0
 theme = ExtResource( 18 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "--"
 align = 1
 
 [node name="def_crush" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
-margin_top = 178.0
+margin_top = 180.0
 margin_right = 92.0
-margin_bottom = 192.0
+margin_bottom = 194.0
 theme = ExtResource( 18 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "--"
 align = 1
 
 [node name="spacer2" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
-margin_top = 192.0
+margin_top = 194.0
 margin_right = 92.0
-margin_bottom = 206.0
+margin_bottom = 208.0
 theme = ExtResource( 18 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 align = 1
 
 [node name="health" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
-margin_top = 206.0
+margin_top = 208.0
 margin_right = 92.0
-margin_bottom = 220.0
+margin_bottom = 222.0
 theme = ExtResource( 18 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "--"
 align = 1
 
 [node name="dmg_reduc" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
-margin_top = 220.0
+margin_top = 222.0
 margin_right = 92.0
-margin_bottom = 234.0
+margin_bottom = 236.0
 theme = ExtResource( 18 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "--"
 align = 1
 
 [node name="spacer" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
-margin_top = 234.0
+margin_top = 236.0
 margin_right = 92.0
-margin_bottom = 248.0
+margin_bottom = 250.0
 theme = ExtResource( 18 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 align = 1
 
 [node name="atk_speed" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
-margin_top = 248.0
+margin_top = 250.0
 margin_right = 92.0
-margin_bottom = 262.0
+margin_bottom = 264.0
 theme = ExtResource( 18 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "--"
 align = 1
 
 [node name="min_hit" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
-margin_top = 262.0
+margin_top = 264.0
 margin_right = 92.0
-margin_bottom = 276.0
+margin_bottom = 278.0
 theme = ExtResource( 18 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "--"
 align = 1
 
 [node name="max_hit" type="Label" parent="monster_attack_popup/margin/panel/vbox/stats/right_panel"]
-margin_top = 276.0
+margin_top = 278.0
 margin_right = 92.0
-margin_bottom = 290.0
+margin_bottom = 292.0
 theme = ExtResource( 18 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "--"
@@ -1447,5 +1501,6 @@ size_flags_horizontal = 3
 theme = ExtResource( 21 )
 text = "CLOSE"
 
+[connection signal="pressed" from="monster_vbox/reselect_hero" to="." method="switch_views"]
 [connection signal="pressed" from="monster_info_popup/margin/panel/vbox/buttons/hbox/close" to="monster_info_popup" method="close_monster_info_popup"]
 [connection signal="pressed" from="monster_attack_popup/margin/panel/vbox/buttons/hbox/close" to="monster_attack_popup" method="close_monster_attack_popup"]

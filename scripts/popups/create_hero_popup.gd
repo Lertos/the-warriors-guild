@@ -122,6 +122,14 @@ func create_new_hero():
 	for key in MasterConfig.config['talent_bonuses']:
 		dict['talent_bonuses'][key] = 0
 	
+	dict['regions'] = {}
+		
+	for key in MasterConfig.config['regions']:
+		dict['regions'][key] = 0
+	
+	#Making sure they have the starting location
+	dict['regions']['verdant_valley'] = 1
+	
 	Global_Player.player['heroes'][new_hero_index] = dict
 	
 	get_node('/root/root').save_data('player')

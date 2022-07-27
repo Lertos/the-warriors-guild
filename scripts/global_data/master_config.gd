@@ -44,6 +44,22 @@ var config = {
 	},
 	
 	#-----------------------
+	# REGIONS
+	#-----------------------
+	'regions': {
+		'verdant_valley': 8,
+		'fatal_forest': 8,
+		'gruesome_grove': 8,
+		'dangerous_depths': 8,
+		'wretched_wasteland': 8,
+		'gory_graveyard': 8,
+		'satanic_swamp': 8,
+		'perilous_peaks': 8,
+		'menacing_mountain': 8,
+		'vicious_void': 8,
+	},
+	
+	#-----------------------
 	# RARITIES
 	#-----------------------
 	'rarities': {

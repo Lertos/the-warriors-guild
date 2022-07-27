@@ -1,28 +1,53 @@
 extends MarginContainer
 
 var scene_monster_record = preload("res://scenes/record_templates/monster_record.tscn")
+var scene_hero_record = preload("res://scenes/record_templates/hero_record.tscn")
 var unlocked_bg_color = preload("res://themes/record_box.tres")
 var filler_bg_color = preload("res://themes/background_box.tres")
 var locked_texture = load('res://assets/icons/locked.png')
 
-onready var record_list_node = get_node('parent_vbox/monsters/vbox')
+onready var record_list_node = get_node('monster_vbox/monsters/vbox')
+onready var hero_list_node = get_node('hero_vbox/heroes/vbox')
+
+var current_selected_hero = null
 
 
 func _ready():
-	var map_info = Global_Player.player['map']
+	load_heroes()
+	
 
-	for region_row in get_node('parent_vbox/region_vbox').get_children():
+func load_heroes():
+	var hero_list = Global_Player.player['heroes']
+	
+	for key in hero_list:
+		var inst_hero_record = scene_hero_record.instance()
+		
+		hero_list_node.add_child(inst_hero_record)
+		
+		inst_hero_record.name = str(key)
+		inst_hero_record.update_hero_info(hero_list[key])
+		
+		inst_hero_record.get_node('margin/hbox/choose').connect('pressed', self, 'load_map_for_hero', [int(key)])
+
+
+func load_map_for_hero(hero_index: int):
+	var hero_info = Global_Player.player['heroes'][hero_index]
+
+	for region_row in get_node('monster_vbox/region_vbox').get_children():
 		for region_button in region_row.get_children():
-			if map_info[region_button.name]['current'] == 0:
+			if hero_info['regions'][region_button.name] == 0:
 				region_button.icon = locked_texture
 			else:
-				region_button.connect('pressed', self, 'load_monsters', [region_button.name])
+				region_button.connect('pressed', self, 'load_monsters', [hero_index, region_button.name])
 	
-	load_monsters('verdant_valley')
+	current_selected_hero = hero_index
+	
+	switch_views()
+	load_monsters(hero_index, 'verdant_valley')
 
 
-func load_monsters(region_name):
-	var unlocked_enemy_count = Global_Player.player['map'][region_name]['current']
+func load_monsters(hero_index: int, region_name: String):
+	var unlocked_enemy_count = Global_Player.player['heroes'][hero_index]['regions'][region_name]
 	var monster_list = Global_Enemies.enemies[region_name]
 
 	var hbox
@@ -31,7 +56,7 @@ func load_monsters(region_name):
 	update_selected_region_button(region_name)
 	
 	#Reset scrollbar to initial spot 
-	get_node('parent_vbox/monsters').scroll_vertical = 0
+	get_node('monster_vbox/monsters').scroll_vertical = 0
 	
 	clear_list()
 	
@@ -45,8 +70,8 @@ func load_monsters(region_name):
 		
 		#Check if player has unlocked the enemy yet
 		if index >= unlocked_enemy_count:
-			inst_monster_record.get_node('margin/vbox/hbox/monster').disabled = true
-			inst_monster_record.get_node('margin/vbox/hbox/attack').disabled = true
+			inst_monster_record.get_node('margin/inner_box/vbox/hbox/monster').disabled = true
+			inst_monster_record.get_node('margin/inner_box/vbox/hbox/attack').disabled = true
 			
 			if index == unlocked_enemy_count:
 				inst_monster_record.set_meta('previous_monster', monster_list[index-1]['name'])
@@ -64,6 +89,15 @@ func load_monsters(region_name):
 			update_monster_record(region_name, index, hbox.name, inst_monster_record.name, true)
 		else:
 			update_monster_record(region_name, index, hbox.name, inst_monster_record.name, false)
+
+
+func switch_views():
+	if get_node('monster_vbox').visible:
+		get_node('monster_vbox').visible = false
+		get_node('hero_vbox').visible = true
+	else:
+		get_node('monster_vbox').visible = true
+		get_node('hero_vbox').visible = false
 
 
 func add_filler_record(index, monster_record, hbox):
@@ -85,11 +119,11 @@ func update_region_header(region_name):
 
 	header = header.replace('_', ' ')
 	
-	get_node('parent_vbox/header').text = header
+	get_node('monster_vbox/header').text = header
 
 
 func update_selected_region_button(region_name):
-	for region_hbox in get_node('parent_vbox/region_vbox').get_children():
+	for region_hbox in get_node('monster_vbox/region_vbox').get_children():
 		for region_button in region_hbox.get_children():
 			if region_button.name == region_name:
 				Helper.change_border_color(region_button, 'selected')
