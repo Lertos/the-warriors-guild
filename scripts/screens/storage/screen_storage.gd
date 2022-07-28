@@ -21,6 +21,8 @@ func _ready():
 func load_items(storage_type):
 	clear_item_slots()
 	
+	get_node('parent_vbox/header').text = Helper.get_header_text(storage_type)
+	
 	var storage_info = Global_Player.player['storage'][storage_type]
 	var unlocked_slots = storage_info['unlocked']
 	var max_slots = storage_info['max']
