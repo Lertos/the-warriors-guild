@@ -9,7 +9,7 @@ var locked_texture = load('res://assets/icons/locked.png')
 onready var record_list_node = get_node('monster_vbox/monsters/vbox')
 onready var hero_list_node = get_node('hero_vbox/heroes/vbox')
 
-var current_selected_hero = null
+var selected_hero_index = null
 
 
 func _ready():
@@ -40,7 +40,7 @@ func load_map_for_hero(hero_index: int):
 			else:
 				region_button.connect('pressed', self, 'load_monsters', [hero_index, region_button.name])
 	
-	current_selected_hero = hero_index
+	selected_hero_index = hero_index
 	
 	switch_views()
 	load_monsters(hero_index, 'verdant_valley')
@@ -50,8 +50,6 @@ func load_monsters(hero_index: int, region_name: String):
 	var unlocked_enemy_count = Global_Player.player['heroes'][hero_index]['regions'][region_name]
 	var monster_list = Global_Enemies.enemies[region_name]
 
-	var hbox
-	
 	update_region_header(region_name)
 	update_selected_region_button(region_name)
 	
@@ -61,17 +59,13 @@ func load_monsters(hero_index: int, region_name: String):
 	clear_list()
 	
 	for index in range(0, len(monster_list)):
-		if index % 2 == 0:
-			hbox = HBoxContainer.new()
-			record_list_node.add_child(hbox)
-		
 		var inst_monster_record = scene_monster_record.instance()
-		hbox.add_child(inst_monster_record)
+		
+		record_list_node.add_child(inst_monster_record)
 		
 		#Check if player has unlocked the enemy yet
 		if index >= unlocked_enemy_count:
-			inst_monster_record.get_node('margin/inner_box/vbox/hbox/monster').disabled = true
-			inst_monster_record.get_node('margin/inner_box/vbox/hbox/attack').disabled = true
+			inst_monster_record.get_node('margin/inner_box/hbox/monster').disabled = true
 			
 			if index == unlocked_enemy_count:
 				inst_monster_record.set_meta('previous_monster', monster_list[index-1]['name'])
@@ -86,9 +80,9 @@ func load_monsters(hero_index: int, region_name: String):
 		Helper.change_panel_background_color(inst_monster_record.get_node('margin/inner_box'), region_name)
 
 		if index == len(monster_list) - 1:
-			update_monster_record(region_name, index, hbox.name, inst_monster_record.name, true)
+			update_monster_record(region_name, index, inst_monster_record.name, true)
 		else:
-			update_monster_record(region_name, index, hbox.name, inst_monster_record.name, false)
+			update_monster_record(region_name, index, inst_monster_record.name, false)
 
 
 func switch_views():
@@ -98,16 +92,6 @@ func switch_views():
 	else:
 		get_node('monster_vbox').visible = true
 		get_node('hero_vbox').visible = false
-
-
-func add_filler_record(index, monster_record, hbox):
-	if index % 2 == 0:
-		var filler_record = monster_record.duplicate(true)
-		
-		filler_record.get_node('margin/vbox').visible = false
-		filler_record.set('custom_styles/panel', filler_bg_color)
-		
-		hbox.add_child(filler_record)
 
 
 func update_region_header(region_name):
@@ -131,46 +115,41 @@ func update_selected_region_button(region_name):
 				Helper.reset_button_custom_colors(region_button)
 
 
-func update_monster_record(region_name, monster_index, hbox_name, monster_node_name, is_boss: bool):
-	var path = record_list_node.get_node(hbox_name + '/' + monster_node_name)
-	var parent_node = path.get_node('margin/inner_box/vbox')
+func update_monster_record(region_name, monster_index, monster_node_name, is_boss: bool):
+	var path = record_list_node.get_node(monster_node_name)
+	var parent_node = path.get_node('margin/inner_box/hbox/vbox')
 	var monster_info = Global_Enemies.enemies[region_name][monster_index]
 	
-	var monster_button = parent_node.get_node('hbox/monster')
-	var attack_button = parent_node.get_node('hbox/attack')
+	var monster_button = parent_node.get_parent().get_node('monster')
 
-	monster_button.connect('pressed', self, 'open_monster_info_popup', [region_name, monster_index])
-	attack_button.connect('pressed', self, 'open_monster_attack_popup', [region_name, monster_index])
+	monster_button.connect('pressed', self, 'open_monster_attack_popup', [region_name, monster_index])
 
 	if monster_button.disabled == false:
 		monster_button.icon = create_animated_texture(monster_info['id'], 'unlocked')
 		
-		parent_node.get_node('info/name').text = monster_info['name']
-		
 		if is_boss:
-			parent_node.get_node('info/boss').visible = true
+			parent_node.get_node('hbox/boss').visible = true
 
-		parent_node.get_node('info/hbox/health').text = str(monster_info['stats']['health'])
-		parent_node.get_node('info/hbox/xp_given').text = str(monster_info['xp_given'])
+		parent_node.get_node('hbox/name').text = monster_info['name']
+		parent_node.get_node('info/hbox/health/health').text = str(monster_info['stats']['health'])
+		#TODO: Fix these two once monsters have these attributes
+		parent_node.get_node('info/hbox/travel_time/travel_time').text = str('3m 12s')
+		parent_node.get_node('info/hbox/food_cost/food_cost').text = str('1337')
 	else:
 		monster_button.icon = create_animated_texture(monster_info['id'], 'locked')
 		
-		parent_node.get_node('info/name').visible = false
+		parent_node.get_node('hbox/name').visible = false
 		parent_node.get_node('info/hbox/health').visible = false
-		parent_node.get_node('info/hbox/xp_given').visible = false
+		parent_node.get_node('info/hbox/travel_time').visible = false
+		parent_node.get_node('info/hbox/food_cost').visible = false
 		
 		if path.has_meta('previous_monster'):
-			parent_node.get_node('info/kill_message').visible = true
-			parent_node.get_node('info/kill_message').text = 'Unlocked by killing the ' + path.get_meta('previous_monster')
+			parent_node.get_node('hbox/kill_message').visible = true
+			parent_node.get_node('hbox/kill_message').text = 'Unlocked by killing the ' + path.get_meta('previous_monster')
 
 
-func open_monster_info_popup(region_name, monster_index):
-	get_node('monster_info_popup').load_monster_info(region_name, monster_index)
-	get_node('/root/root').show_root_popup(get_node('monster_info_popup'))
-	
-	
 func open_monster_attack_popup(region_name, monster_index):
-	get_node('monster_attack_popup').load_monster_info(region_name, monster_index)
+	get_node('monster_attack_popup').load_monster_info(region_name, monster_index, selected_hero_index)
 	get_node('/root/root').show_root_popup(get_node('monster_attack_popup'))
 
 
