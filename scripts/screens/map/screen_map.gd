@@ -50,13 +50,13 @@ func load_monsters(hero_index: int, region_name: String):
 	var unlocked_enemy_count = Global_Player.player['heroes'][hero_index]['regions'][region_name]
 	var monster_list = Global_Enemies.enemies[region_name]
 
-	update_region_header(region_name)
+	get_node('monster_vbox/header').text = Helper.get_header_text(region_name)
+	
 	update_selected_region_button(region_name)
+	clear_list()
 	
 	#Reset scrollbar to initial spot 
 	get_node('monster_vbox/monsters').scroll_vertical = 0
-	
-	clear_list()
 	
 	for index in range(0, len(monster_list)):
 		var inst_monster_record = scene_monster_record.instance()
@@ -92,18 +92,6 @@ func switch_views():
 	else:
 		get_node('monster_vbox').visible = true
 		get_node('hero_vbox').visible = false
-
-
-func update_region_header(region_name):
-	var header = region_name
-	var index_of_underscore = region_name.find('_')
-		
-	header[0] = header[0].to_upper()
-	header[index_of_underscore + 1] = header[index_of_underscore + 1].to_upper()
-
-	header = header.replace('_', ' ')
-	
-	get_node('monster_vbox/header').text = header
 
 
 func update_selected_region_button(region_name):
