@@ -77,9 +77,9 @@ var player = {
 	},
 	
 	#-----------------------
-	# MOUNTS
+	# COMPANIONS
 	#-----------------------
-	'mounts': {
+	'companions': {
 		
 	},
 	

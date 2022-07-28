@@ -455,7 +455,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 7
 valign = 1
 
-[node name="mount" type="ScrollContainer" parent="parent_vbox/margin"]
+[node name="companion" type="ScrollContainer" parent="parent_vbox/margin"]
 visible = false
 margin_left = 8.0
 margin_top = 8.0
@@ -466,7 +466,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 scroll_horizontal_enabled = false
 
-[node name="vbox" type="VBoxContainer" parent="parent_vbox/margin/mount"]
+[node name="vbox" type="VBoxContainer" parent="parent_vbox/margin/companion"]
 margin_right = 344.0
 margin_bottom = 309.0
 size_flags_horizontal = 3
@@ -517,7 +517,7 @@ theme = ExtResource( 17 )
 icon = ExtResource( 26 )
 expand_icon = true
 
-[node name="mount" type="Button" parent="parent_vbox/buttons"]
+[node name="companion" type="Button" parent="parent_vbox/buttons"]
 margin_left = 243.0
 margin_right = 291.0
 margin_bottom = 48.0

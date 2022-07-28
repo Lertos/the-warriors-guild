@@ -9,7 +9,7 @@ const MIN_SEARCH_TEXT_LEN = 3
 var current_type = 'item'
 var number_regex = RegEx.new()
 
-var types = ['item', 'food', 'weapon', 'armor', 'consumable', 'jewelry', 'mount']
+var types = ['item', 'food', 'weapon', 'armor', 'consumable', 'jewelry', 'companion']
 
 
 func _ready():
@@ -262,13 +262,13 @@ func add_type_fields(item_dict, type):
 		item_dict['atk_stab'] = node.get_node('atk_stab/atk_stab').text
 		item_dict['atk_slash'] = node.get_node('atk_slash/atk_slash').text
 		item_dict['atk_crush'] = node.get_node('atk_crush/atk_crush').text
-	if type == 'armor' or type == 'jewelry' or type == 'mount':
+	if type == 'armor' or type == 'jewelry' or type == 'companion':
 		item_dict['health'] = node.get_node('health/health').text
 		item_dict['def_stab'] = node.get_node('def_stab/def_stab').text
 		item_dict['def_slash'] = node.get_node('def_slash/def_slash').text
 		item_dict['def_crush'] = node.get_node('def_crush/def_crush').text
 		item_dict['dmg_reduc'] = node.get_node('dmg_reduc/dmg_reduc').text
-	if type == 'mount':
+	if type == 'companion':
 		item_dict['travel_time'] = node.get_node('travel_time/travel_time').text
 		item_dict['food_cost'] = node.get_node('food_cost/food_cost').text
 		item_dict['gold_bonus'] = node.get_node('gold_bonus/gold_bonus').text

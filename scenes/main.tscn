@@ -1396,7 +1396,7 @@ margin_bottom = 24.0
 size_flags_horizontal = 3
 theme = ExtResource( 17 )
 
-[node name="mount" type="MarginContainer" parent="ItemGenerator/container/parent_vbox/vbox"]
+[node name="companion" type="MarginContainer" parent="ItemGenerator/container/parent_vbox/vbox"]
 visible = false
 margin_top = 166.0
 margin_right = 324.0
@@ -1408,21 +1408,21 @@ custom_constants/margin_top = 0
 custom_constants/margin_left = 32
 custom_constants/margin_bottom = 0
 
-[node name="vbox" type="VBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/mount"]
+[node name="vbox" type="VBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/companion"]
 margin_left = 32.0
 margin_right = 292.0
 margin_bottom = 356.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="travel_time" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox"]
+[node name="travel_time" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/companion/vbox"]
 margin_right = 260.0
 margin_bottom = 24.0
 size_flags_horizontal = 5
 custom_constants/separation = 8
 alignment = 1
 
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox/travel_time"]
+[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/companion/vbox/travel_time"]
 margin_right = 109.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
@@ -1431,7 +1431,7 @@ text = "Travel Time (%)"
 align = 2
 valign = 1
 
-[node name="travel_time" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox/travel_time"]
+[node name="travel_time" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/companion/vbox/travel_time"]
 margin_left = 117.0
 margin_right = 260.0
 margin_bottom = 24.0
@@ -1439,7 +1439,7 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 clear_button_enabled = true
 
-[node name="food_cost" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox"]
+[node name="food_cost" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/companion/vbox"]
 margin_top = 28.0
 margin_right = 260.0
 margin_bottom = 52.0
@@ -1447,7 +1447,7 @@ size_flags_horizontal = 5
 custom_constants/separation = 8
 alignment = 1
 
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox/food_cost"]
+[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/companion/vbox/food_cost"]
 margin_right = 99.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
@@ -1456,7 +1456,7 @@ text = "Food Cost (%)"
 align = 2
 valign = 1
 
-[node name="food_cost" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox/food_cost"]
+[node name="food_cost" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/companion/vbox/food_cost"]
 margin_left = 107.0
 margin_right = 260.0
 margin_bottom = 24.0
@@ -1464,7 +1464,7 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 clear_button_enabled = true
 
-[node name="gold_bonus" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox"]
+[node name="gold_bonus" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/companion/vbox"]
 margin_top = 56.0
 margin_right = 260.0
 margin_bottom = 80.0
@@ -1472,7 +1472,7 @@ size_flags_horizontal = 5
 custom_constants/separation = 8
 alignment = 1
 
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox/gold_bonus"]
+[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/companion/vbox/gold_bonus"]
 margin_right = 106.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
@@ -1481,7 +1481,7 @@ text = "Gold Bonus (%)"
 align = 2
 valign = 1
 
-[node name="gold_bonus" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox/gold_bonus"]
+[node name="gold_bonus" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/companion/vbox/gold_bonus"]
 margin_left = 114.0
 margin_right = 260.0
 margin_bottom = 24.0
@@ -1489,7 +1489,7 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 clear_button_enabled = true
 
-[node name="health" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox"]
+[node name="health" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/companion/vbox"]
 margin_top = 84.0
 margin_right = 260.0
 margin_bottom = 108.0
@@ -1497,7 +1497,7 @@ size_flags_horizontal = 5
 custom_constants/separation = 8
 alignment = 1
 
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox/health"]
+[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/companion/vbox/health"]
 margin_right = 48.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
@@ -1506,7 +1506,7 @@ text = "Health"
 align = 2
 valign = 1
 
-[node name="health" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox/health"]
+[node name="health" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/companion/vbox/health"]
 margin_left = 56.0
 margin_right = 260.0
 margin_bottom = 24.0
@@ -1515,7 +1515,7 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 clear_button_enabled = true
 
-[node name="def_stab" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox"]
+[node name="def_stab" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/companion/vbox"]
 margin_top = 112.0
 margin_right = 260.0
 margin_bottom = 136.0
@@ -1523,7 +1523,7 @@ size_flags_horizontal = 5
 custom_constants/separation = 8
 alignment = 1
 
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox/def_stab"]
+[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/companion/vbox/def_stab"]
 margin_right = 65.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
@@ -1532,7 +1532,7 @@ text = "Stab DEF"
 align = 2
 valign = 1
 
-[node name="def_stab" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox/def_stab"]
+[node name="def_stab" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/companion/vbox/def_stab"]
 margin_left = 73.0
 margin_right = 260.0
 margin_bottom = 24.0
@@ -1541,7 +1541,7 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 clear_button_enabled = true
 
-[node name="def_slash" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox"]
+[node name="def_slash" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/companion/vbox"]
 margin_top = 140.0
 margin_right = 260.0
 margin_bottom = 164.0
@@ -1549,7 +1549,7 @@ size_flags_horizontal = 5
 custom_constants/separation = 8
 alignment = 1
 
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox/def_slash"]
+[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/companion/vbox/def_slash"]
 margin_right = 72.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
@@ -1558,7 +1558,7 @@ text = "Slash DEF"
 align = 2
 valign = 1
 
-[node name="def_slash" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox/def_slash"]
+[node name="def_slash" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/companion/vbox/def_slash"]
 margin_left = 80.0
 margin_right = 260.0
 margin_bottom = 24.0
@@ -1567,7 +1567,7 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 clear_button_enabled = true
 
-[node name="def_crush" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox"]
+[node name="def_crush" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/companion/vbox"]
 margin_top = 168.0
 margin_right = 260.0
 margin_bottom = 192.0
@@ -1575,7 +1575,7 @@ size_flags_horizontal = 5
 custom_constants/separation = 8
 alignment = 1
 
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox/def_crush"]
+[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/companion/vbox/def_crush"]
 margin_right = 75.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
@@ -1584,7 +1584,7 @@ text = "Crush DEF"
 align = 2
 valign = 1
 
-[node name="def_crush" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox/def_crush"]
+[node name="def_crush" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/companion/vbox/def_crush"]
 margin_left = 83.0
 margin_right = 260.0
 margin_bottom = 24.0
@@ -1593,7 +1593,7 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 clear_button_enabled = true
 
-[node name="dmg_reduc" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox"]
+[node name="dmg_reduc" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/companion/vbox"]
 margin_top = 196.0
 margin_right = 260.0
 margin_bottom = 220.0
@@ -1601,7 +1601,7 @@ size_flags_horizontal = 5
 custom_constants/separation = 8
 alignment = 1
 
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox/dmg_reduc"]
+[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/companion/vbox/dmg_reduc"]
 margin_right = 76.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
@@ -1610,7 +1610,7 @@ text = "DMG Reduc"
 align = 2
 valign = 1
 
-[node name="dmg_reduc" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/mount/vbox/dmg_reduc"]
+[node name="dmg_reduc" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/companion/vbox/dmg_reduc"]
 margin_left = 84.0
 margin_right = 260.0
 margin_bottom = 24.0
