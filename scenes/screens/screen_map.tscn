@@ -45,10 +45,44 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 6
 
+[node name="header" type="Label" parent="monster_vbox"]
+margin_right = 360.0
+margin_bottom = 21.0
+theme = ExtResource( 19 )
+align = 1
+
+[node name="sep4" parent="monster_vbox" instance=ExtResource( 11 )]
+margin_top = 337.0
+margin_bottom = 341.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="monsters" type="ScrollContainer" parent="monster_vbox"]
+margin_top = 27.0
+margin_right = 360.0
+margin_bottom = 331.0
+mouse_filter = 1
+size_flags_vertical = 3
+theme = ExtResource( 15 )
+scroll_horizontal_enabled = false
+script = ExtResource( 13 )
+
+[node name="vbox" type="VBoxContainer" parent="monster_vbox/monsters"]
+margin_right = 360.0
+margin_bottom = 304.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 6
+
+[node name="sep3" parent="monster_vbox" instance=ExtResource( 11 )]
+margin_top = 337.0
+margin_bottom = 341.0
+custom_styles/panel = SubResource( 1 )
+
 [node name="region_vbox" type="VBoxContainer" parent="monster_vbox"]
 margin_left = 40.0
+margin_top = 347.0
 margin_right = 320.0
-margin_bottom = 101.0
+margin_bottom = 448.0
 size_flags_horizontal = 4
 custom_constants/separation = 5
 alignment = 1
@@ -174,40 +208,6 @@ theme = ExtResource( 14 )
 icon = ExtResource( 6 )
 expand_icon = true
 
-[node name="sep" parent="monster_vbox" instance=ExtResource( 11 )]
-margin_top = 107.0
-margin_bottom = 111.0
-custom_styles/panel = SubResource( 1 )
-
-[node name="header" type="Label" parent="monster_vbox"]
-margin_top = 117.0
-margin_right = 360.0
-margin_bottom = 138.0
-theme = ExtResource( 19 )
-align = 1
-
-[node name="sep3" parent="monster_vbox" instance=ExtResource( 11 )]
-margin_top = 144.0
-margin_bottom = 148.0
-custom_styles/panel = SubResource( 1 )
-
-[node name="monsters" type="ScrollContainer" parent="monster_vbox"]
-margin_top = 154.0
-margin_right = 360.0
-margin_bottom = 448.0
-mouse_filter = 1
-size_flags_vertical = 3
-theme = ExtResource( 15 )
-scroll_horizontal_enabled = false
-script = ExtResource( 13 )
-
-[node name="vbox" type="VBoxContainer" parent="monster_vbox/monsters"]
-margin_right = 360.0
-margin_bottom = 294.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/separation = 6
-
 [node name="sep2" parent="monster_vbox" instance=ExtResource( 11 )]
 margin_top = 454.0
 margin_bottom = 458.0
@@ -260,7 +260,6 @@ size_flags_vertical = 3
 custom_constants/separation = 6
 
 [node name="monster_attack_popup" type="Popup" parent="."]
-visible = true
 margin_top = 6.0
 margin_right = 360.0
 margin_bottom = 506.0
@@ -280,9 +279,9 @@ custom_constants/margin_bottom = 16
 
 [node name="panel" type="PanelContainer" parent="monster_attack_popup/margin"]
 margin_left = 16.0
-margin_top = 63.0
+margin_top = 239.0
 margin_right = 344.0
-margin_bottom = 436.0
+margin_bottom = 261.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 custom_styles/panel = ExtResource( 20 )

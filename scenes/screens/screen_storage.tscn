@@ -27,10 +27,30 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 6
 
+[node name="storage" type="ScrollContainer" parent="parent_vbox"]
+margin_right = 360.0
+margin_bottom = 436.0
+mouse_filter = 1
+size_flags_vertical = 3
+theme = ExtResource( 10 )
+scroll_horizontal_enabled = false
+
+[node name="vbox" type="VBoxContainer" parent="parent_vbox/storage"]
+margin_right = 360.0
+margin_bottom = 436.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 8
+
+[node name="separator" parent="parent_vbox" instance=ExtResource( 7 )]
+margin_top = 442.0
+margin_bottom = 446.0
+
 [node name="types_vbox" type="VBoxContainer" parent="parent_vbox"]
 margin_left = 40.0
+margin_top = 452.0
 margin_right = 320.0
-margin_bottom = 48.0
+margin_bottom = 500.0
 size_flags_horizontal = 4
 custom_constants/separation = 5
 alignment = 1
@@ -94,23 +114,3 @@ size_flags_vertical = 4
 theme = ExtResource( 8 )
 icon = ExtResource( 1 )
 expand_icon = true
-
-[node name="separator" parent="parent_vbox" instance=ExtResource( 7 )]
-margin_top = 54.0
-margin_bottom = 58.0
-
-[node name="storage" type="ScrollContainer" parent="parent_vbox"]
-margin_top = 64.0
-margin_right = 360.0
-margin_bottom = 500.0
-mouse_filter = 1
-size_flags_vertical = 3
-theme = ExtResource( 10 )
-scroll_horizontal_enabled = false
-
-[node name="vbox" type="VBoxContainer" parent="parent_vbox/storage"]
-margin_right = 360.0
-margin_bottom = 436.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/separation = 8
