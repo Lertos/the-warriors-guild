@@ -277,7 +277,6 @@ size_flags_vertical = 3
 custom_constants/separation = 6
 
 [node name="monster_attack_popup" type="Popup" parent="."]
-visible = true
 margin_top = 6.0
 margin_right = 360.0
 margin_bottom = 506.0
@@ -297,9 +296,9 @@ custom_constants/margin_bottom = 16
 
 [node name="panel" type="PanelContainer" parent="monster_attack_popup/margin"]
 margin_left = 16.0
-margin_top = 37.0
+margin_top = 239.0
 margin_right = 344.0
-margin_bottom = 462.0
+margin_bottom = 261.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 custom_styles/panel = ExtResource( 20 )
