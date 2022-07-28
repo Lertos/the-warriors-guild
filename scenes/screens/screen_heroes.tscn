@@ -55,6 +55,7 @@ custom_constants/separation = 6
 margin_right = 360.0
 margin_bottom = 21.0
 theme = ExtResource( 3 )
+custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
 align = 1
 
 [node name="sep4" parent="parent_vbox" instance=ExtResource( 6 )]
@@ -705,6 +706,7 @@ custom_constants/separation = 16
 margin_right = 308.0
 margin_bottom = 21.0
 theme = ExtResource( 3 )
+custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
 text = "Hire a New Hero"
 align = 1
 

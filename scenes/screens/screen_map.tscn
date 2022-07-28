@@ -49,6 +49,7 @@ custom_constants/separation = 6
 margin_right = 360.0
 margin_bottom = 21.0
 theme = ExtResource( 19 )
+custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
 align = 1
 
 [node name="sep4" parent="monster_vbox" instance=ExtResource( 11 )]
@@ -234,6 +235,7 @@ custom_constants/separation = 6
 margin_right = 360.0
 margin_bottom = 21.0
 theme = ExtResource( 19 )
+custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
 text = "Available Heroes"
 align = 1
 
