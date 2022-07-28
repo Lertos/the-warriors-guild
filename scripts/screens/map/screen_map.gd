@@ -125,9 +125,8 @@ func update_monster_record(region_name, monster_index, monster_node_name, is_bos
 
 		parent_node.get_node('hbox/name').text = monster_info['name']
 		parent_node.get_node('info/hbox/health/health').text = str(monster_info['stats']['health'])
-		#TODO: Fix these two once monsters have these attributes
-		parent_node.get_node('info/hbox/travel_time/travel_time').text = str('3m 12s')
-		parent_node.get_node('info/hbox/food_cost/food_cost').text = str('1337')
+		parent_node.get_node('info/hbox/travel_time/travel_time').text = str(monster_info['travel_time'])
+		parent_node.get_node('info/hbox/food_cost/food_cost').text = str(monster_info['food_cost'])
 	else:
 		monster_button.icon = create_animated_texture(monster_info['id'], 'locked')
 		

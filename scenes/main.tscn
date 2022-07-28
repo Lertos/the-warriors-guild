@@ -1653,6 +1653,7 @@ theme = ExtResource( 21 )
 text = "Close (F5)"
 
 [node name="MonsterGenerator" type="Popup" parent="."]
+visible = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
@@ -1799,23 +1800,68 @@ margin_bottom = 52.0
 size_flags_horizontal = 3
 
 [node name="xp_given" type="HBoxContainer" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/line2"]
-margin_left = 164.0
-margin_right = 324.0
+margin_right = 105.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/line2/xp_given"]
-margin_right = 27.0
+margin_right = 18.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
 theme = ExtResource( 17 )
-text = "Exp"
+text = "XP"
 align = 2
 valign = 1
 
 [node name="xp_given" type="LineEdit" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/line2/xp_given"]
-margin_left = 31.0
-margin_right = 160.0
+margin_left = 22.0
+margin_right = 105.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+theme = ExtResource( 17 )
+clear_button_enabled = true
+
+[node name="food_cost" type="HBoxContainer" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/line2"]
+margin_left = 109.0
+margin_right = 214.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/line2/food_cost"]
+margin_right = 36.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
+theme = ExtResource( 17 )
+text = "Food"
+align = 2
+valign = 1
+
+[node name="food_cost" type="LineEdit" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/line2/food_cost"]
+margin_left = 40.0
+margin_right = 105.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+theme = ExtResource( 17 )
+clear_button_enabled = true
+
+[node name="travel_time" type="HBoxContainer" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/line2"]
+margin_left = 218.0
+margin_right = 324.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/line2/travel_time"]
+margin_right = 31.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
+theme = ExtResource( 17 )
+text = "Time"
+align = 2
+valign = 1
+
+[node name="travel_time" type="LineEdit" parent="MonsterGenerator/container/parent_vbox/vbox/vbox/line2/travel_time"]
+margin_left = 35.0
+margin_right = 106.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 theme = ExtResource( 17 )
