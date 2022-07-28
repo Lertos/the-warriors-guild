@@ -99,6 +99,20 @@ func get_blackened_image(given_image) -> ImageTexture:
 	return texture
 
 
+#Takes text such as "stats" and turns it into "Stats", or "hero_gear" -> "Hero Gear"
+func get_header_text(text: String) -> String:
+	var header = text
+	var index_of_underscore = text.find('_')
+	
+	#TODO: Find each underscore, and change it to capital and then replace ALL _ with spaces
+	header[0] = header[0].to_upper()
+	header[index_of_underscore + 1] = header[index_of_underscore + 1].to_upper()
+
+	header = header.replace('_', ' ')
+	
+	return header
+
+
 func get_hero_main_stat(hero_info: Dictionary) -> String:
 	if hero_info['gear']['weapon'] != '':
 		return Global_Items.items[hero_info['gear']['weapon']]['main_stat']
