@@ -19,6 +19,11 @@ func _ready():
 func load_heroes():
 	var hero_list = Global_Player.player['heroes']
 	
+	#Show the message to players when they have no heroes hired
+	if len(hero_list) == 0:
+		get_node('hero_vbox/no_heroes_msg').visible = true
+	
+	#Load each hero regardless of status
 	for key in hero_list:
 		var inst_hero_record = scene_hero_record.instance()
 		

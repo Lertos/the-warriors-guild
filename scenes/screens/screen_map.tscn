@@ -242,6 +242,18 @@ margin_top = 27.0
 margin_bottom = 31.0
 custom_styles/panel = SubResource( 1 )
 
+[node name="no_heroes_msg" type="Label" parent="hero_vbox"]
+visible = false
+margin_top = 37.0
+margin_right = 360.0
+margin_bottom = 154.0
+theme = ExtResource( 19 )
+text = "You must hire a hero in order to send them on missions. 
+
+Head to the \"Hero\" screen to recruit one."
+align = 1
+autowrap = true
+
 [node name="heroes" type="ScrollContainer" parent="hero_vbox"]
 margin_top = 37.0
 margin_right = 360.0
