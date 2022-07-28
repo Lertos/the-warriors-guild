@@ -37,6 +37,10 @@ func update_enemy_info(monster_info):
 	enemy_node.get_node('enemy/name').text = monster_info['name']
 	enemy_node.get_node('enemy/hbox/current_health').text = str(monster_info['stats']['health'])
 	
+	parent_node.get_node('info/xp_given/xp_given').text = str(monster_info['xp_given'])
+	parent_node.get_node('info/travel_time/travel_time').text = str(monster_info['travel_time'])
+	parent_node.get_node('info/food_cost/food_cost').text = str(monster_info['food_cost'])
+	
 	for stat_key in monster_info['stats']:
 		enemy_node.get_node(stat_key).text = str(monster_info['stats'][stat_key])
 	

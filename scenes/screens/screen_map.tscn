@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://assets/regions/wretched_wasteland.png" type="Texture" id=1]
 [ext_resource path="res://assets/regions/perilous_peaks.png" type="Texture" id=2]
@@ -16,13 +16,16 @@
 [ext_resource path="res://themes/buttons/button_region.tres" type="Theme" id=14]
 [ext_resource path="res://themes/scrollbar.tres" type="Theme" id=15]
 [ext_resource path="res://assets/icons/health.png" type="Texture" id=16]
+[ext_resource path="res://assets/icons/food_cost.png" type="Texture" id=17]
 [ext_resource path="res://themes/fonts/font_normal.tres" type="Theme" id=18]
 [ext_resource path="res://themes/fonts/font_title.tres" type="Theme" id=19]
 [ext_resource path="res://themes/popup.tres" type="StyleBox" id=20]
 [ext_resource path="res://themes/buttons/button.tres" type="Theme" id=21]
+[ext_resource path="res://assets/icons/travel_time.png" type="Texture" id=22]
 [ext_resource path="res://themes/buttons/button_standalone.tres" type="Theme" id=23]
 [ext_resource path="res://scripts/popups/popup_monster_attack.gd" type="Script" id=24]
 [ext_resource path="res://assets/icons/back_button.png" type="Texture" id=25]
+[ext_resource path="res://assets/icons/xp.png" type="Texture" id=26]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.717647, 0.686275, 0.588235, 1 )
@@ -274,6 +277,7 @@ size_flags_vertical = 3
 custom_constants/separation = 6
 
 [node name="monster_attack_popup" type="Popup" parent="."]
+visible = true
 margin_top = 6.0
 margin_right = 360.0
 margin_bottom = 506.0
@@ -293,9 +297,9 @@ custom_constants/margin_bottom = 16
 
 [node name="panel" type="PanelContainer" parent="monster_attack_popup/margin"]
 margin_left = 16.0
-margin_top = 239.0
+margin_top = 37.0
 margin_right = 344.0
-margin_bottom = 261.0
+margin_bottom = 462.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 custom_styles/panel = ExtResource( 20 )
@@ -304,14 +308,98 @@ custom_styles/panel = ExtResource( 20 )
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 318.0
-margin_bottom = 361.0
+margin_bottom = 413.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 8
 
-[node name="stats" type="HBoxContainer" parent="monster_attack_popup/margin/panel/vbox"]
+[node name="info" type="HBoxContainer" parent="monster_attack_popup/margin/panel/vbox"]
 margin_right = 308.0
-margin_bottom = 306.0
+margin_bottom = 32.0
+alignment = 1
+
+[node name="xp_given" type="HBoxContainer" parent="monster_attack_popup/margin/panel/vbox/info"]
+margin_left = 78.0
+margin_right = 126.0
+margin_bottom = 32.0
+alignment = 1
+
+[node name="img" type="TextureRect" parent="monster_attack_popup/margin/panel/vbox/info/xp_given"]
+margin_right = 32.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+theme = ExtResource( 18 )
+texture = ExtResource( 26 )
+expand = true
+
+[node name="xp_given" type="Label" parent="monster_attack_popup/margin/panel/vbox/info/xp_given"]
+margin_left = 36.0
+margin_top = 9.0
+margin_right = 48.0
+margin_bottom = 23.0
+theme = ExtResource( 18 )
+custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
+text = "--"
+align = 1
+
+[node name="travel_time" type="HBoxContainer" parent="monster_attack_popup/margin/panel/vbox/info"]
+margin_left = 130.0
+margin_right = 178.0
+margin_bottom = 32.0
+alignment = 1
+
+[node name="img" type="TextureRect" parent="monster_attack_popup/margin/panel/vbox/info/travel_time"]
+margin_right = 32.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+theme = ExtResource( 18 )
+texture = ExtResource( 22 )
+expand = true
+
+[node name="travel_time" type="Label" parent="monster_attack_popup/margin/panel/vbox/info/travel_time"]
+margin_left = 36.0
+margin_top = 9.0
+margin_right = 48.0
+margin_bottom = 23.0
+theme = ExtResource( 18 )
+custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
+text = "--"
+align = 1
+
+[node name="food_cost" type="HBoxContainer" parent="monster_attack_popup/margin/panel/vbox/info"]
+margin_left = 182.0
+margin_right = 230.0
+margin_bottom = 32.0
+alignment = 1
+
+[node name="img" type="TextureRect" parent="monster_attack_popup/margin/panel/vbox/info/food_cost"]
+margin_right = 32.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+theme = ExtResource( 18 )
+texture = ExtResource( 17 )
+expand = true
+
+[node name="food_cost" type="Label" parent="monster_attack_popup/margin/panel/vbox/info/food_cost"]
+margin_left = 36.0
+margin_top = 9.0
+margin_right = 48.0
+margin_bottom = 23.0
+theme = ExtResource( 18 )
+custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
+text = "--"
+align = 1
+
+[node name="sep" parent="monster_attack_popup/margin/panel/vbox" instance=ExtResource( 11 )]
+margin_top = 40.0
+margin_right = 308.0
+margin_bottom = 44.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="stats" type="HBoxContainer" parent="monster_attack_popup/margin/panel/vbox"]
+margin_top = 52.0
+margin_right = 308.0
+margin_bottom = 358.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 16
@@ -882,9 +970,9 @@ text = "--"
 align = 1
 
 [node name="buttons" type="MarginContainer" parent="monster_attack_popup/margin/panel/vbox"]
-margin_top = 314.0
+margin_top = 366.0
 margin_right = 308.0
-margin_bottom = 351.0
+margin_bottom = 403.0
 custom_constants/margin_right = 8
 custom_constants/margin_top = 8
 custom_constants/margin_left = 8
