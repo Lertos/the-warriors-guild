@@ -49,6 +49,8 @@ func connect_section_buttons():
 func switch_sections(key: String):
 	var section_buttons = get_node('parent_vbox/buttons')
 	
+	get_node('parent_vbox/header').text = Helper.get_header_text(key)
+	
 	#Remove all coloring from each button to reset the selected button
 	for node in section_buttons.get_children():
 		Helper.reset_button_custom_colors(node)

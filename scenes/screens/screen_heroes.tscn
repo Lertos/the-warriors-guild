@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://scripts/screens/heroes/screen_heroes.gd" type="Script" id=1]
 [ext_resource path="res://themes/popup.tres" type="StyleBox" id=2]
@@ -28,6 +28,9 @@
 [ext_resource path="res://assets/icons/heroes_screen/talents.png" type="Texture" id=26]
 [ext_resource path="res://assets/icons/heroes_screen/mount.png" type="Texture" id=27]
 
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.717647, 0.686275, 0.588235, 1 )
+
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.717647, 0.686275, 0.588235, 1 )
 
@@ -48,7 +51,19 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 6
 
+[node name="header" type="Label" parent="parent_vbox"]
+margin_right = 360.0
+margin_bottom = 21.0
+theme = ExtResource( 3 )
+align = 1
+
+[node name="sep4" parent="parent_vbox" instance=ExtResource( 6 )]
+margin_top = 27.0
+margin_bottom = 31.0
+custom_styles/panel = SubResource( 2 )
+
 [node name="margin" type="MarginContainer" parent="parent_vbox"]
+margin_top = 37.0
 margin_right = 360.0
 margin_bottom = 354.0
 size_flags_horizontal = 3
@@ -62,7 +77,7 @@ visible = false
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 352.0
-margin_bottom = 354.0
+margin_bottom = 317.0
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -72,7 +87,7 @@ script = ExtResource( 23 )
 
 [node name="stats" type="HBoxContainer" parent="parent_vbox/margin/stats"]
 margin_right = 344.0
-margin_bottom = 346.0
+margin_bottom = 309.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 16
@@ -311,7 +326,7 @@ visible = false
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 352.0
-margin_bottom = 354.0
+margin_bottom = 317.0
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -319,7 +334,7 @@ scroll_horizontal_enabled = false
 
 [node name="vbox" type="VBoxContainer" parent="parent_vbox/margin/gear"]
 margin_right = 344.0
-margin_bottom = 346.0
+margin_bottom = 309.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -328,7 +343,7 @@ visible = false
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 352.0
-margin_bottom = 354.0
+margin_bottom = 317.0
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -338,7 +353,7 @@ script = ExtResource( 22 )
 
 [node name="vbox" type="VBoxContainer" parent="parent_vbox/margin/talents"]
 margin_right = 344.0
-margin_bottom = 346.0
+margin_bottom = 309.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -445,7 +460,7 @@ visible = false
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 352.0
-margin_bottom = 354.0
+margin_bottom = 317.0
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -453,7 +468,7 @@ scroll_horizontal_enabled = false
 
 [node name="vbox" type="VBoxContainer" parent="parent_vbox/margin/mount"]
 margin_right = 344.0
-margin_bottom = 346.0
+margin_bottom = 309.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
