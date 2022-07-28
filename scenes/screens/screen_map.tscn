@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://assets/regions/wretched_wasteland.png" type="Texture" id=1]
 [ext_resource path="res://assets/regions/perilous_peaks.png" type="Texture" id=2]
@@ -26,6 +26,9 @@
 [ext_resource path="res://scripts/popups/popup_monster_attack.gd" type="Script" id=24]
 [ext_resource path="res://assets/icons/back_button.png" type="Texture" id=25]
 [ext_resource path="res://assets/icons/xp.png" type="Texture" id=26]
+[ext_resource path="res://assets/icons/pouch.png" type="Texture" id=27]
+[ext_resource path="res://assets/icons/attack.png" type="Texture" id=28]
+[ext_resource path="res://assets/icons/abilities.png" type="Texture" id=29]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.717647, 0.686275, 0.588235, 1 )
@@ -297,9 +300,9 @@ custom_constants/margin_bottom = 16
 
 [node name="panel" type="PanelContainer" parent="monster_attack_popup/margin"]
 margin_left = 16.0
-margin_top = 37.0
+margin_top = 24.0
 margin_right = 344.0
-margin_bottom = 462.0
+margin_bottom = 476.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 custom_styles/panel = ExtResource( 20 )
@@ -308,7 +311,7 @@ custom_styles/panel = ExtResource( 20 )
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 318.0
-margin_bottom = 413.0
+margin_bottom = 440.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 8
@@ -972,7 +975,7 @@ align = 1
 [node name="buttons" type="MarginContainer" parent="monster_attack_popup/margin/panel/vbox"]
 margin_top = 366.0
 margin_right = 308.0
-margin_bottom = 403.0
+margin_bottom = 430.0
 custom_constants/margin_right = 8
 custom_constants/margin_top = 8
 custom_constants/margin_left = 8
@@ -982,39 +985,52 @@ custom_constants/margin_bottom = 8
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 300.0
-margin_bottom = 29.0
+margin_bottom = 56.0
 alignment = 1
 
 [node name="attack" type="Button" parent="monster_attack_popup/margin/panel/vbox/buttons/hbox"]
-margin_right = 69.0
-margin_bottom = 21.0
-size_flags_horizontal = 3
+margin_left = 44.0
+margin_right = 92.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme = ExtResource( 21 )
-text = "Attack"
-
-[node name="drops" type="Button" parent="monster_attack_popup/margin/panel/vbox/buttons/hbox"]
-margin_left = 73.0
-margin_right = 143.0
-margin_bottom = 21.0
-size_flags_horizontal = 3
-theme = ExtResource( 21 )
-text = "Drops"
+icon = ExtResource( 28 )
+expand_icon = true
 
 [node name="abilities" type="Button" parent="monster_attack_popup/margin/panel/vbox/buttons/hbox"]
-margin_left = 147.0
-margin_right = 218.0
-margin_bottom = 21.0
-size_flags_horizontal = 3
+margin_left = 96.0
+margin_right = 144.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme = ExtResource( 21 )
-text = "Abilities"
+icon = ExtResource( 29 )
+expand_icon = true
+
+[node name="drops" type="Button" parent="monster_attack_popup/margin/panel/vbox/buttons/hbox"]
+margin_left = 148.0
+margin_right = 196.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource( 21 )
+icon = ExtResource( 27 )
+expand_icon = true
 
 [node name="close" type="Button" parent="monster_attack_popup/margin/panel/vbox/buttons/hbox"]
-margin_left = 222.0
-margin_right = 292.0
-margin_bottom = 21.0
-size_flags_horizontal = 3
+margin_left = 200.0
+margin_right = 248.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme = ExtResource( 21 )
-text = "Close"
+icon = ExtResource( 25 )
+expand_icon = true
 
 [connection signal="pressed" from="monster_vbox/reselect_hero" to="." method="switch_views"]
 [connection signal="pressed" from="monster_attack_popup/margin/panel/vbox/buttons/hbox/close" to="monster_attack_popup" method="close_monster_attack_popup"]
