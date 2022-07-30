@@ -7,7 +7,7 @@ func load_hero_stats_section(index: int, hero_info: Dictionary):
 	var total_stats = Helper.get_hero_total_stats(hero_info)
 	
 	fill_hero_base_info(total_stats, hero_info)
-	fill_stats_panel(total_stats, hero_info)
+	fill_stats_panel(total_stats)
 
 
 func fill_hero_base_info(total_stats, hero_info):
@@ -27,8 +27,18 @@ func fill_hero_base_info(total_stats, hero_info):
 	base_info_node.get_node('info3/max_health').text = str(total_stats['health'])
 
 
-func fill_stats_panel(total_stats, hero_info):
-	var stats_panel = parent_node.get_node('stats_panel/values')
+func fill_stats_panel(total_stats):
+	var left_panel = parent_node.get_node('hbox2/left_panel/values')
+	var right_panel = parent_node.get_node('hbox2/right_panel/values')
 	
-	for key in total_stats:
-		stats_panel.get_node(key).text = str(total_stats[key])
+	fill_stat_nodes(total_stats, left_panel)
+	fill_stat_nodes(total_stats, right_panel)
+
+
+func fill_stat_nodes(total_stats, list_node):
+	for child in list_node.get_children():
+		var stat_key = child.name
+		
+		if !('spacer' in stat_key):
+			if stat_key in total_stats:
+				child.text = str(total_stats[stat_key])
