@@ -34,7 +34,7 @@ func load_items(storage_type):
 	
 	#Create the HBOX row
 	for row in range(0, needed_rows):
-		var hbox = create_hbox()
+		var hbox = Helper.create_hbox(12, HBoxContainer.ALIGN_CENTER)
 		list_node.add_child(hbox)
 		
 		#Create the items inside the HBOX
@@ -69,15 +69,6 @@ func add_selected_border(storage_type):
 	
 	#Change the border color to show which section is selected
 	Helper.change_border_color(type_buttons.get_node(storage_type), 'selected')
-
-
-func create_hbox():
-	var hbox = HBoxContainer.new()
-	
-	hbox.set_alignment(hbox.ALIGN_CENTER)
-	hbox.set('custom_constants/separation', 12)
-	
-	return hbox
 
 
 func update_item_record(item_record, item):

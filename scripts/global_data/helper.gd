@@ -113,6 +113,23 @@ func get_xp_needed_for_next_level(current_level: int) -> int:
 	return current_level * 100
 
 
+#Returns an hbox with needec sutom properties
+func create_hbox(separation: int, alignment: int) -> HBoxContainer:
+	var hbox = HBoxContainer.new()
+	
+	if alignment in [0, 1, 2]:
+		hbox.set_alignment(alignment)
+	else:
+		hbox.set_alignment(HBoxContainer.ALIGN_CENTER)
+	
+	if separation >= 0:
+		hbox.set('custom_constants/separation', separation)
+	else:
+		hbox.set('custom_constants/separation', 0)
+	
+	return hbox
+
+
 #Takes text such as "stats" and turns it into "Stats", or "hero_gear" -> "Hero Gear"
 func get_header_text(text: String) -> String:
 	var header = text
