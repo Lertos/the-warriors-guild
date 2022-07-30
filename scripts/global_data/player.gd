@@ -159,7 +159,7 @@ var player = {
 		},
 		'gear': {
 			'unlocked': 21,
-			'max': 28,
+			'max': 30,
 			'categories': [
 				'weapon',
 				'armor'
@@ -173,7 +173,7 @@ var player = {
 		},
 		'food': {
 			'unlocked': 20,
-			'max': 22,
+			'max': 30,
 			'categories': [
 				'food'
 			],

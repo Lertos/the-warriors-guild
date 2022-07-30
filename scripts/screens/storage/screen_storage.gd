@@ -3,7 +3,7 @@ extends MarginContainer
 var scene_item_record = preload("res://scenes/record_templates/item_record.tscn")
 var locked_texture = load('res://assets/icons/locked.png')
 
-var items_per_row = 4
+var items_per_row = 5
 
 
 func _ready():
@@ -75,7 +75,7 @@ func create_hbox():
 	var hbox = HBoxContainer.new()
 	
 	hbox.set_alignment(hbox.ALIGN_CENTER)
-	hbox.set('custom_constants/separation', 8)
+	hbox.set('custom_constants/separation', 12)
 	
 	return hbox
 
