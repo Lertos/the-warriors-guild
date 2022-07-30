@@ -137,7 +137,7 @@ var config = {
 			'description': 'Slows your opponents attack speed by <x> seconds. They gain back <y> seconds each round',
 			'type': 'effect',
 			'levels': {
-				0: {
+				1: {
 					'can_get_natural': true,
 					'drop_weight': 128,
 					'ability_chance': 50,

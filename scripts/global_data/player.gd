@@ -94,12 +94,10 @@ var player = {
 	# STORAGE
 	#-----------------------
 	'storage': {
+		#Types: crafting, junk
 		'material': {
 			'unlocked': 8,
 			'max': 30,
-			'categories': [
-				'item'
-			],
 			'slots': [
 				{
 					'item_id': 'dul_ingot',
@@ -127,62 +125,47 @@ var player = {
 					'rarity': 'mythic',
 				},
 			],
-			'unlocks': {
-				
-			},
 		},
+		#Types: necklace, ring
 		'jewelry': {
 			'unlocked': 10,
 			'max': 30,
-			'categories': [
-				'jewelry'
-			],
 			'slots': [
 				
 			],
-			'unlocks': {
-				
-			},
 		},
+		#Types: potion
 		'consumable': {
 			'unlocked': 13,
 			'max': 30,
-			'categories': [
-				'consumable'
-			],
 			'slots': [
 			
 			],
-			'unlocks': {
-				
-			},
 		},
+		#Types: weapon, helmet, chestplate, gloves, boots
 		'gear': {
 			'unlocked': 21,
 			'max': 30,
-			'categories': [
-				'weapon',
-				'armor'
-			],
 			'slots': [
-				
+				{
+					'item_id': 'dagger',
+					'unidentified': true,
+					'amount': 1,
+					'rarity': 'legendary',
+					'abilities': {
+						'poisonous': 2,
+						'freezing': 1,
+					},
+				},
 			],
-			'unlocks': {
-				
-			},
 		},
+		#Types: food
 		'food': {
 			'unlocked': 20,
 			'max': 30,
-			'categories': [
-				'food'
-			],
 			'slots': [
 				
 			],
-			'unlocks': {
-				
-			},
 		},
 	},
 }
