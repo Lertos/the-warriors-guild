@@ -1,7 +1,6 @@
 extends MarginContainer
 
-var scene_item_record = preload("res://scenes/record_templates/item_record.tscn")
-var locked_texture = load('res://assets/icons/locked.png')
+onready var list_node = get_node('parent_vbox/storage/vbox')
 
 var items_per_row = 5
 
@@ -19,44 +18,9 @@ func _ready():
 
 
 func load_items(storage_type):
-	clear_item_slots()
-	
 	get_node('parent_vbox/header').text = Helper.get_header_text(storage_type)
 	
-	var storage_info = Global_Player.player['storage'][storage_type]
-	var unlocked_slots = storage_info['unlocked']
-	var max_slots = storage_info['max']
-	var items = storage_info['slots']
-	
-	var needed_rows = ceil(float(max_slots) / items_per_row)
-	
-	var list_node = get_node('parent_vbox/storage/vbox')
-	
-	#Create the HBOX row
-	for row in range(0, needed_rows):
-		var hbox = Helper.create_hbox(12, HBoxContainer.ALIGN_CENTER)
-		list_node.add_child(hbox)
-		
-		#Create the items inside the HBOX
-		for col in range(0, items_per_row):
-			var index = (items_per_row * row) + col
-			var inst_item_record = scene_item_record.instance()
-			inst_item_record.name = str(index)
-			
-			hbox.add_child(inst_item_record)
-
-			#Create the item slot
-			if range(items.size()).has(index):
-				var item = items[index]
-				inst_item_record.set_meta('item', item)
-
-				update_item_record(inst_item_record, item)
-			else:
-				#Locked slots
-				if (index) >= unlocked_slots:
-					Helper.change_button_background_color(inst_item_record.get_node('rarity'), 'locked')
-					inst_item_record.get_node('rarity/item').texture = locked_texture
-
+	ItemHelper.load_items_into_node(list_node, storage_type, items_per_row)
 	add_selected_border(storage_type)
 
 
@@ -70,26 +34,9 @@ func add_selected_border(storage_type):
 	#Change the border color to show which section is selected
 	Helper.change_border_color(type_buttons.get_node(storage_type), 'selected')
 
-
-func update_item_record(item_record, item):
-	var item_data = Global_Items.items[item['item_id']]
-	
-	Helper.change_border_color(item_record.get_node('rarity'), item['rarity'])
-
-	item_record.get_node('rarity/amount').text = str(item['amount'])
-	item_record.get_node('rarity/item').texture = load('res://assets/' + item_data['img_path'] + '.png')
-
 	
 func switch_sub_type(type_name):
 	#Reset scrollbar to initial spot 
 	get_node('parent_vbox/storage').scroll_vertical = 0
 	
 	load_items(type_name)
-	
-	
-func clear_item_slots():
-	var item_list = get_node('parent_vbox/storage/vbox')
-	
-	for child in item_list.get_children():
-		item_list.remove_child(child)
-		child.queue_free()
