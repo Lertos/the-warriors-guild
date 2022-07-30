@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://scripts/screens/heroes/screen_heroes.gd" type="Script" id=1]
 [ext_resource path="res://themes/popup.tres" type="StyleBox" id=2]
@@ -27,6 +27,9 @@
 [ext_resource path="res://assets/icons/heroes_screen/stats.png" type="Texture" id=25]
 [ext_resource path="res://assets/icons/heroes_screen/talents.png" type="Texture" id=26]
 [ext_resource path="res://assets/icons/heroes_screen/mount.png" type="Texture" id=27]
+[ext_resource path="res://assets/icons/health.png" type="Texture" id=28]
+[ext_resource path="res://assets/icons/xp.png" type="Texture" id=29]
+[ext_resource path="res://themes/buttons/button_standalone.tres" type="Theme" id=30]
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.717647, 0.686275, 0.588235, 1 )
@@ -74,7 +77,6 @@ custom_constants/margin_top = 8
 custom_constants/margin_left = 8
 
 [node name="stats" type="ScrollContainer" parent="parent_vbox/margin"]
-visible = false
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 352.0
@@ -94,29 +96,197 @@ size_flags_vertical = 3
 custom_constants/separation = 16
 alignment = 1
 
-[node name="stats_panel" type="HBoxContainer" parent="parent_vbox/margin/stats/stats"]
+[node name="vbox" type="VBoxContainer" parent="parent_vbox/margin/stats/stats"]
 margin_right = 344.0
-margin_bottom = 377.0
+margin_bottom = 309.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="hbox" type="HBoxContainer" parent="parent_vbox/margin/stats/stats/vbox"]
+margin_right = 344.0
+margin_bottom = 66.0
+custom_constants/separation = 0
+alignment = 1
+
+[node name="hero" type="VBoxContainer" parent="parent_vbox/margin/stats/stats/vbox/hbox"]
+margin_right = 172.0
+margin_bottom = 66.0
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="img" type="Button" parent="parent_vbox/margin/stats/stats/vbox/hbox/hero"]
+margin_left = 62.0
+margin_right = 110.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource( 30 )
+expand_icon = true
+
+[node name="spacer" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox/hero"]
+margin_top = 52.0
+margin_right = 172.0
+margin_bottom = 66.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+align = 1
+
+[node name="vbox" type="VBoxContainer" parent="parent_vbox/margin/stats/stats/vbox/hbox"]
+margin_left = 172.0
+margin_right = 344.0
+margin_bottom = 66.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="info1" type="HBoxContainer" parent="parent_vbox/margin/stats/stats/vbox/hbox/vbox"]
+margin_right = 172.0
+margin_bottom = 21.0
+
+[node name="name" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox/vbox/info1"]
+margin_right = 66.0
+margin_bottom = 21.0
+theme = ExtResource( 3 )
+text = "Lertos"
+
+[node name="left_bracket" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox/vbox/info1"]
+margin_left = 70.0
+margin_right = 78.0
+margin_bottom = 21.0
+theme = ExtResource( 3 )
+text = "["
+
+[node name="level" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox/vbox/info1"]
+margin_left = 82.0
+margin_right = 90.0
+margin_bottom = 21.0
+theme = ExtResource( 3 )
+custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
+text = "1"
+
+[node name="right_bracket" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox/vbox/info1"]
+margin_left = 94.0
+margin_right = 102.0
+margin_bottom = 21.0
+theme = ExtResource( 3 )
+text = "]"
+
+[node name="info2" type="HBoxContainer" parent="parent_vbox/margin/stats/stats/vbox/hbox/vbox"]
+margin_top = 25.0
+margin_right = 172.0
+margin_bottom = 41.0
+
+[node name="img" type="TextureRect" parent="parent_vbox/margin/stats/stats/vbox/hbox/vbox/info2"]
+margin_right = 16.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+theme = ExtResource( 7 )
+texture = ExtResource( 29 )
+expand = true
+
+[node name="current_xp" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox/vbox/info2"]
+margin_left = 20.0
+margin_top = 1.0
+margin_right = 44.0
+margin_bottom = 15.0
+theme = ExtResource( 7 )
+custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
+text = "100"
+
+[node name="slash" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox/vbox/info2"]
+margin_left = 48.0
+margin_top = 1.0
+margin_right = 57.0
+margin_bottom = 15.0
+theme = ExtResource( 7 )
+text = "/"
+
+[node name="needed_xp" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox/vbox/info2"]
+margin_left = 61.0
+margin_top = 1.0
+margin_right = 85.0
+margin_bottom = 15.0
+theme = ExtResource( 7 )
+custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
+text = "100"
+
+[node name="info3" type="HBoxContainer" parent="parent_vbox/margin/stats/stats/vbox/hbox/vbox"]
+margin_top = 45.0
+margin_right = 172.0
+margin_bottom = 61.0
+
+[node name="img" type="TextureRect" parent="parent_vbox/margin/stats/stats/vbox/hbox/vbox/info3"]
+margin_right = 16.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+theme = ExtResource( 7 )
+texture = ExtResource( 28 )
+expand = true
+
+[node name="current_health" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox/vbox/info3"]
+margin_left = 20.0
+margin_top = 1.0
+margin_right = 44.0
+margin_bottom = 15.0
+theme = ExtResource( 7 )
+custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
+text = "100"
+
+[node name="slash" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox/vbox/info3"]
+margin_left = 48.0
+margin_top = 1.0
+margin_right = 57.0
+margin_bottom = 15.0
+theme = ExtResource( 7 )
+text = "/"
+
+[node name="max_health" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox/vbox/info3"]
+margin_left = 61.0
+margin_top = 1.0
+margin_right = 85.0
+margin_bottom = 15.0
+theme = ExtResource( 7 )
+custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
+text = "100"
+
+[node name="sep" parent="parent_vbox/margin/stats/stats/vbox" instance=ExtResource( 6 )]
+margin_top = 70.0
+margin_right = 344.0
+margin_bottom = 74.0
+custom_styles/panel = SubResource( 2 )
+
+[node name="spacer" type="Label" parent="parent_vbox/margin/stats/stats/vbox"]
+margin_top = 78.0
+margin_right = 344.0
+margin_bottom = 92.0
+theme = ExtResource( 7 )
+align = 2
+
+[node name="stats_panel" type="HBoxContainer" parent="parent_vbox/margin/stats/stats/vbox"]
+margin_top = 96.0
+margin_right = 344.0
+margin_bottom = 309.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 8
 alignment = 1
 
-[node name="labels" type="VBoxContainer" parent="parent_vbox/margin/stats/stats/stats_panel"]
+[node name="labels" type="VBoxContainer" parent="parent_vbox/margin/stats/stats/vbox/stats_panel"]
 margin_right = 168.0
-margin_bottom = 377.0
+margin_bottom = 213.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 0
 
-[node name="atk_stab" type="Label" parent="parent_vbox/margin/stats/stats/stats_panel/labels"]
+[node name="atk_stab" type="Label" parent="parent_vbox/margin/stats/stats/vbox/stats_panel/labels"]
 margin_right = 168.0
 margin_bottom = 14.0
 theme = ExtResource( 7 )
 text = "Stab ATK"
 align = 2
 
-[node name="atk_slash" type="Label" parent="parent_vbox/margin/stats/stats/stats_panel/labels"]
+[node name="atk_slash" type="Label" parent="parent_vbox/margin/stats/stats/vbox/stats_panel/labels"]
 margin_top = 14.0
 margin_right = 168.0
 margin_bottom = 28.0
@@ -124,7 +294,7 @@ theme = ExtResource( 7 )
 text = "Slash ATK"
 align = 2
 
-[node name="atk_crush" type="Label" parent="parent_vbox/margin/stats/stats/stats_panel/labels"]
+[node name="atk_crush" type="Label" parent="parent_vbox/margin/stats/stats/vbox/stats_panel/labels"]
 margin_top = 28.0
 margin_right = 168.0
 margin_bottom = 42.0
@@ -132,14 +302,14 @@ theme = ExtResource( 7 )
 text = "Crush ATK"
 align = 2
 
-[node name="spacer3" type="Label" parent="parent_vbox/margin/stats/stats/stats_panel/labels"]
+[node name="spacer3" type="Label" parent="parent_vbox/margin/stats/stats/vbox/stats_panel/labels"]
 margin_top = 42.0
 margin_right = 168.0
 margin_bottom = 56.0
 theme = ExtResource( 7 )
 align = 2
 
-[node name="def_stab" type="Label" parent="parent_vbox/margin/stats/stats/stats_panel/labels"]
+[node name="def_stab" type="Label" parent="parent_vbox/margin/stats/stats/vbox/stats_panel/labels"]
 margin_top = 56.0
 margin_right = 168.0
 margin_bottom = 70.0
@@ -147,7 +317,7 @@ theme = ExtResource( 7 )
 text = "Stab DEF"
 align = 2
 
-[node name="def_slash" type="Label" parent="parent_vbox/margin/stats/stats/stats_panel/labels"]
+[node name="def_slash" type="Label" parent="parent_vbox/margin/stats/stats/vbox/stats_panel/labels"]
 margin_top = 70.0
 margin_right = 168.0
 margin_bottom = 84.0
@@ -155,7 +325,7 @@ theme = ExtResource( 7 )
 text = "Slash DEF"
 align = 2
 
-[node name="def_crush" type="Label" parent="parent_vbox/margin/stats/stats/stats_panel/labels"]
+[node name="def_crush" type="Label" parent="parent_vbox/margin/stats/stats/vbox/stats_panel/labels"]
 margin_top = 84.0
 margin_right = 168.0
 margin_bottom = 98.0
@@ -163,22 +333,22 @@ theme = ExtResource( 7 )
 text = "Crush DEF"
 align = 2
 
-[node name="spacer2" type="Label" parent="parent_vbox/margin/stats/stats/stats_panel/labels"]
+[node name="spacer2" type="Label" parent="parent_vbox/margin/stats/stats/vbox/stats_panel/labels"]
 margin_top = 98.0
 margin_right = 168.0
 margin_bottom = 112.0
 theme = ExtResource( 7 )
 align = 2
 
-[node name="health" type="Label" parent="parent_vbox/margin/stats/stats/stats_panel/labels"]
+[node name="health" type="Label" parent="parent_vbox/margin/stats/stats/vbox/stats_panel/labels"]
 margin_top = 112.0
 margin_right = 168.0
 margin_bottom = 126.0
 theme = ExtResource( 7 )
-text = "Health"
+text = "Max Health"
 align = 2
 
-[node name="dmg_reduc" type="Label" parent="parent_vbox/margin/stats/stats/stats_panel/labels"]
+[node name="dmg_reduc" type="Label" parent="parent_vbox/margin/stats/stats/vbox/stats_panel/labels"]
 margin_top = 126.0
 margin_right = 168.0
 margin_bottom = 140.0
@@ -186,14 +356,14 @@ theme = ExtResource( 7 )
 text = "DMG Reduc"
 align = 2
 
-[node name="spacer" type="Label" parent="parent_vbox/margin/stats/stats/stats_panel/labels"]
+[node name="spacer" type="Label" parent="parent_vbox/margin/stats/stats/vbox/stats_panel/labels"]
 margin_top = 140.0
 margin_right = 168.0
 margin_bottom = 154.0
 theme = ExtResource( 7 )
 align = 2
 
-[node name="atk_speed" type="Label" parent="parent_vbox/margin/stats/stats/stats_panel/labels"]
+[node name="atk_speed" type="Label" parent="parent_vbox/margin/stats/stats/vbox/stats_panel/labels"]
 margin_top = 154.0
 margin_right = 168.0
 margin_bottom = 168.0
@@ -201,7 +371,7 @@ theme = ExtResource( 7 )
 text = "ATK Speed"
 align = 2
 
-[node name="min_hit" type="Label" parent="parent_vbox/margin/stats/stats/stats_panel/labels"]
+[node name="min_hit" type="Label" parent="parent_vbox/margin/stats/stats/vbox/stats_panel/labels"]
 margin_top = 168.0
 margin_right = 168.0
 margin_bottom = 182.0
@@ -209,7 +379,7 @@ theme = ExtResource( 7 )
 text = "Min Hit"
 align = 2
 
-[node name="max_hit" type="Label" parent="parent_vbox/margin/stats/stats/stats_panel/labels"]
+[node name="max_hit" type="Label" parent="parent_vbox/margin/stats/stats/vbox/stats_panel/labels"]
 margin_top = 182.0
 margin_right = 168.0
 margin_bottom = 196.0
@@ -217,105 +387,105 @@ theme = ExtResource( 7 )
 text = "Max Hit"
 align = 2
 
-[node name="values" type="VBoxContainer" parent="parent_vbox/margin/stats/stats/stats_panel"]
+[node name="values" type="VBoxContainer" parent="parent_vbox/margin/stats/stats/vbox/stats_panel"]
 margin_left = 176.0
 margin_right = 344.0
-margin_bottom = 377.0
+margin_bottom = 213.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 0
 
-[node name="atk_stab" type="Label" parent="parent_vbox/margin/stats/stats/stats_panel/values"]
+[node name="atk_stab" type="Label" parent="parent_vbox/margin/stats/stats/vbox/stats_panel/values"]
 margin_right = 168.0
 margin_bottom = 14.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="atk_slash" type="Label" parent="parent_vbox/margin/stats/stats/stats_panel/values"]
+[node name="atk_slash" type="Label" parent="parent_vbox/margin/stats/stats/vbox/stats_panel/values"]
 margin_top = 14.0
 margin_right = 168.0
 margin_bottom = 28.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="atk_crush" type="Label" parent="parent_vbox/margin/stats/stats/stats_panel/values"]
+[node name="atk_crush" type="Label" parent="parent_vbox/margin/stats/stats/vbox/stats_panel/values"]
 margin_top = 28.0
 margin_right = 168.0
 margin_bottom = 42.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="spacer3" type="Label" parent="parent_vbox/margin/stats/stats/stats_panel/values"]
+[node name="spacer3" type="Label" parent="parent_vbox/margin/stats/stats/vbox/stats_panel/values"]
 margin_top = 42.0
 margin_right = 168.0
 margin_bottom = 56.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="def_stab" type="Label" parent="parent_vbox/margin/stats/stats/stats_panel/values"]
+[node name="def_stab" type="Label" parent="parent_vbox/margin/stats/stats/vbox/stats_panel/values"]
 margin_top = 56.0
 margin_right = 168.0
 margin_bottom = 70.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="def_slash" type="Label" parent="parent_vbox/margin/stats/stats/stats_panel/values"]
+[node name="def_slash" type="Label" parent="parent_vbox/margin/stats/stats/vbox/stats_panel/values"]
 margin_top = 70.0
 margin_right = 168.0
 margin_bottom = 84.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="def_crush" type="Label" parent="parent_vbox/margin/stats/stats/stats_panel/values"]
+[node name="def_crush" type="Label" parent="parent_vbox/margin/stats/stats/vbox/stats_panel/values"]
 margin_top = 84.0
 margin_right = 168.0
 margin_bottom = 98.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="spacer2" type="Label" parent="parent_vbox/margin/stats/stats/stats_panel/values"]
+[node name="spacer2" type="Label" parent="parent_vbox/margin/stats/stats/vbox/stats_panel/values"]
 margin_top = 98.0
 margin_right = 168.0
 margin_bottom = 112.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="health" type="Label" parent="parent_vbox/margin/stats/stats/stats_panel/values"]
+[node name="health" type="Label" parent="parent_vbox/margin/stats/stats/vbox/stats_panel/values"]
 margin_top = 112.0
 margin_right = 168.0
 margin_bottom = 126.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="dmg_reduc" type="Label" parent="parent_vbox/margin/stats/stats/stats_panel/values"]
+[node name="dmg_reduc" type="Label" parent="parent_vbox/margin/stats/stats/vbox/stats_panel/values"]
 margin_top = 126.0
 margin_right = 168.0
 margin_bottom = 140.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="spacer" type="Label" parent="parent_vbox/margin/stats/stats/stats_panel/values"]
+[node name="spacer" type="Label" parent="parent_vbox/margin/stats/stats/vbox/stats_panel/values"]
 margin_top = 140.0
 margin_right = 168.0
 margin_bottom = 154.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="atk_speed" type="Label" parent="parent_vbox/margin/stats/stats/stats_panel/values"]
+[node name="atk_speed" type="Label" parent="parent_vbox/margin/stats/stats/vbox/stats_panel/values"]
 margin_top = 154.0
 margin_right = 168.0
 margin_bottom = 168.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="min_hit" type="Label" parent="parent_vbox/margin/stats/stats/stats_panel/values"]
+[node name="min_hit" type="Label" parent="parent_vbox/margin/stats/stats/vbox/stats_panel/values"]
 margin_top = 168.0
 margin_right = 168.0
 margin_bottom = 182.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="max_hit" type="Label" parent="parent_vbox/margin/stats/stats/stats_panel/values"]
+[node name="max_hit" type="Label" parent="parent_vbox/margin/stats/stats/vbox/stats_panel/values"]
 margin_top = 182.0
 margin_right = 168.0
 margin_bottom = 196.0
