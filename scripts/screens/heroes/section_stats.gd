@@ -20,11 +20,11 @@ func fill_hero_base_info(total_stats, hero_info):
 	base_info_node.get_node('info1/name').text = str(hero_info['name'])
 	base_info_node.get_node('info1/level').text = str(hero_info['level'])
 	
-	base_info_node.get_node('info2/current_xp').text = str(hero_info['exp'])
-	base_info_node.get_node('info2/needed_xp').text = str(Helper.get_xp_needed_for_next_level(hero_info['level']))
+	base_info_node.get_node('info2/xp/current_xp').text = str(hero_info['exp'])
+	base_info_node.get_node('info2/xp/needed_xp').text = str(Helper.get_xp_needed_for_next_level(hero_info['level']))
 	
-	base_info_node.get_node('info3/current_health').text = str(hero_info['current_health'])
-	base_info_node.get_node('info3/max_health').text = str(total_stats['health'])
+	base_info_node.get_node('info2/health/current_health').text = str(hero_info['current_health'])
+	base_info_node.get_node('info2/health/max_health').text = str(total_stats['health'])
 
 
 func fill_stats_panel(total_stats):
