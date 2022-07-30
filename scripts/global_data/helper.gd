@@ -99,6 +99,14 @@ func get_blackened_image(given_image) -> ImageTexture:
 	return texture
 
 
+#Returns the avatar icon given the number of the avatar
+func get_avatar_texture(avatar_index: int) -> Texture:
+	var full_path = 'res://assets/avatars/avatar (' + str(avatar_index) + ').png'
+	var texture = load(full_path)
+	
+	return texture
+
+
 #Returns the xp needed for the level after the given level passed to the function
 func get_xp_needed_for_next_level(current_level: int) -> int:
 	#TODO: Find out calculation for leveling

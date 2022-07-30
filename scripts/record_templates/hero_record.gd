@@ -4,7 +4,7 @@ extends PanelContainer
 func update_hero_info(hero_info: Dictionary):
 	var parent = get_node('margin/hbox')
 	
-	parent.get_node('hero').icon = load('res://assets/avatars/avatar (' + str(hero_info['avatar_index']) + ').png')
+	parent.get_node('hero').icon = Helper.get_avatar_texture(hero_info['avatar_index'])
 	
 	parent.get_node('info/hbox1/name').text = str(hero_info['name'])
 	parent.get_node('info/hbox1/lvl').text = str(hero_info['level'])

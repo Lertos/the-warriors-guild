@@ -102,7 +102,7 @@ func load_heroes():
 
 
 func load_hero_info(hero_record, hero_info, index):
-	var hero_icon = load('res://assets/avatars/avatar (' + str(hero_info['avatar_index']) + ').png')
+	var hero_icon = Helper.get_avatar_texture(hero_info['avatar_index'])
 	var current_status
 	
 	print(OS.get_unix_time())

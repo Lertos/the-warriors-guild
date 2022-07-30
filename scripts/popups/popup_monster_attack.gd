@@ -20,7 +20,7 @@ func update_hero_info(hero_info):
 	var hero_total_stats = Helper.get_hero_total_stats(hero_info)
 	var hero_main_stat = Helper.get_hero_main_stat(hero_info)
 	
-	hero_node.get_node('hero/img').icon = load('res://assets/avatars/avatar (' + str(hero_info['avatar_index']) + ').png')
+	hero_node.get_node('hero/img').icon = Helper.get_avatar_texture(hero_info['avatar_index'])
 	hero_node.get_node('hero/name').text = hero_info['name']
 	hero_node.get_node('hero/hbox/current_health').text = str(hero_info['current_health'])
 	
