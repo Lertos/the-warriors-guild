@@ -7,7 +7,7 @@ var default_separation = 12
 var default_alignment = HBoxContainer.ALIGN_CENTER
 
 
-func load_items_into_node(list_node: Node, storage_type: String, items_per_row: int):
+func load_items_into_node(list_node: Node, storage_type: String, items_per_row: int, sub_type:= ''):
 	var storage_info = Global_Player.player['storage'][storage_type]
 	var unlocked_slots = storage_info['unlocked']
 	var max_slots = storage_info['max']
@@ -16,6 +16,10 @@ func load_items_into_node(list_node: Node, storage_type: String, items_per_row: 
 	var needed_rows = ceil(float(max_slots) / items_per_row)
 
 	clear_item_slots(list_node)
+	
+	#Check if the item list needs to only show a certain sub-type of a category
+	if sub_type != '':
+		items = get_sub_type_items_only(items, sub_type)
 	
 	#Create the HBOX row
 	for row in range(0, needed_rows):
@@ -41,6 +45,16 @@ func load_items_into_node(list_node: Node, storage_type: String, items_per_row: 
 				if (index) >= unlocked_slots:
 					Helper.change_button_background_color(inst_item_record.get_node('rarity'), 'locked')
 					inst_item_record.get_node('rarity/item').texture = locked_texture
+
+
+func get_sub_type_items_only(item_list: Dictionary, sub_type: String) -> Dictionary:
+	var new_list = []
+	
+	for index in range(item_list.size()):
+		if item_list[index]['type'] == sub_type:
+			new_list.append(item_list[index])
+			
+	return new_list
 
 
 func update_item_record(item_record, item):
