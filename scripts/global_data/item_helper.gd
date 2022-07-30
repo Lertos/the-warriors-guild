@@ -3,7 +3,7 @@ extends Node
 var scene_item_record = preload("res://scenes/record_templates/item_record.tscn")
 var locked_texture = load('res://assets/icons/locked.png')
 
-var default_separation = 12
+var default_separation = 8
 var default_alignment = HBoxContainer.ALIGN_CENTER
 
 
@@ -47,11 +47,13 @@ func load_items_into_node(list_node: Node, storage_type: String, items_per_row: 
 					inst_item_record.get_node('rarity/item').texture = locked_texture
 
 
-func get_sub_type_items_only(item_list: Dictionary, sub_type: String) -> Dictionary:
+func get_sub_type_items_only(item_list: Array, sub_type: String) -> Array:
 	var new_list = []
 	
 	for index in range(item_list.size()):
-		if item_list[index]['type'] == sub_type:
+		var item = Global_Items.items[item_list[index]['item_id']]
+
+		if item['type'] == sub_type:
 			new_list.append(item_list[index])
 			
 	return new_list
