@@ -194,12 +194,12 @@ func get_hero_total_talent_stats(stats, hero_info: Dictionary) -> Dictionary:
 	return stats
 	
 
-func get_monster_abilities(monster_info: Dictionary) -> Array:
+func get_pretty_abilities(info: Dictionary) -> Array:
 	var item_list = []
 	
-	for ability_key in monster_info['abilities']:
+	for ability_key in info['abilities']:
 		var display_name = MasterConfig.config['abilities'][ability_key]['name']
-		var ability_level = monster_info['abilities'][ability_key]
+		var ability_level = info['abilities'][ability_key]
 		
 		if ability_level == 0:
 			item_list.append(display_name)
