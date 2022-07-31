@@ -121,7 +121,7 @@ func update_monster_record(region_name, monster_index, monster_node_name, is_bos
 		monster_button.icon = create_animated_texture(monster_info['id'], 'unlocked')
 		
 		if is_boss:
-			parent_node.get_node('hbox/boss').visible = true
+			parent_node.get_node('hbox/boss_label').visible = true
 
 		parent_node.get_node('hbox/name').text = monster_info['name']
 		parent_node.get_node('info/hbox/health/health').text = str(monster_info['stats']['health'])
