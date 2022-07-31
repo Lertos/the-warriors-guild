@@ -15,7 +15,7 @@ func load_items_into_node(list_node: Node, storage_type: String, items_per_row: 
 	
 	var needed_rows = ceil(float(max_slots) / items_per_row)
 
-	clear_item_slots(list_node)
+	Helper.clear_list(list_node)
 	
 	#Check if the item list needs to only show a certain sub-type of a category
 	if sub_type != '':
@@ -66,9 +66,3 @@ func update_item_record(item_record, item):
 
 	item_record.get_node('rarity/amount').text = str(item['amount'])
 	item_record.get_node('rarity/item').texture = load('res://assets/' + item_data['img_path'] + '.png')
-
-	
-func clear_item_slots(list_node):
-	for child in list_node.get_children():
-		list_node.remove_child(child)
-		child.queue_free()

@@ -42,10 +42,7 @@ func load_hero_talents_section(index, hero_info):
 
 func reload_all_talent_values(amounts, buttons, descriptions):
 	for node in [amounts, buttons, descriptions]:
-		for child in node.get_children():
-			if child.name != 'default':
-				node.remove_child(child)
-				child.queue_free()
+		Helper.clear_list(node, 'default')
 
 
 func increase_talent(index: int, talent):

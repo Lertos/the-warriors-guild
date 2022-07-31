@@ -222,3 +222,13 @@ func get_roman_numeral(level: int):
 		return 'IV'
 	elif level == 5:
 		return 'V'
+		
+
+#Given a node, clear all it's children. Optional parameter to ignore nodes that contain certain text
+func clear_list(node, text_to_ignore := ''):
+	for child in node.get_children():
+		if text_to_ignore in child.name:
+			continue
+			
+		node.remove_child(child)
+		child.queue_free()

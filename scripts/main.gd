@@ -115,8 +115,6 @@ func load_screen(scene_to_load, header_title):
 	
 	header.text = header_title
 	
-	for child in container.get_children():
-		container.remove_child(child)
-		child.queue_free()
+	Helper.clear_list(container)
 		
 	container.add_child(inst_scene)

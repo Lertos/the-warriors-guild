@@ -194,9 +194,7 @@ func load_type_fields(item_dict, type):
 func clear_search_list_items():
 	var search_list_items = get_node('container/parent_vbox/search_list/vbox/vbox')
 	
-	for child in search_list_items.get_children():
-		search_list_items.remove_child(child)
-		child.queue_free()
+	Helper.clear_list(search_list_items)
 
 
 func on_close_pressed():

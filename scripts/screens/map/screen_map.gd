@@ -58,7 +58,7 @@ func load_monsters(hero_index: int, region_name: String):
 	get_node('monster_vbox/header').text = Helper.get_header_text(region_name)
 	
 	update_selected_region_button(region_name)
-	clear_list()
+	Helper.clear_list(record_list_node)
 	
 	#Reset scrollbar to initial spot 
 	get_node('monster_vbox/monsters').scroll_vertical = 0
@@ -163,9 +163,3 @@ func create_animated_texture(monster_id, is_locked: String):
 		animated_tex.set_frame_texture(1, frame2)
 	
 	return animated_tex
-	
-
-func clear_list():
-	for child in record_list_node.get_children():
-		record_list_node.remove_child(child)
-		child.queue_free()
