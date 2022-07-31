@@ -84,7 +84,8 @@ func load_monsters(hero_index: int, region_name: String):
 		Helper.change_panel_background_color(inst_monster_record, 'theme_border')
 		Helper.change_panel_background_color(inst_monster_record.get_node('margin/inner_box'), region_name)
 
-		if index == len(monster_list) - 1:
+		#Determine if this is a boss fight or not
+		if index == len(monster_list) - 1 or region_name == 'vicious_void':
 			update_monster_record(region_name, index, inst_monster_record.name, true)
 		else:
 			update_monster_record(region_name, index, inst_monster_record.name, false)
