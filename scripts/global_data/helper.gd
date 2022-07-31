@@ -199,7 +199,7 @@ func get_pretty_abilities(info: Dictionary) -> Array:
 	
 	for ability_key in info['abilities']:
 		var display_name = MasterConfig.config['abilities'][ability_key]['name']
-		var ability_level = info['abilities'][ability_key]
+		var ability_level = int(info['abilities'][ability_key])
 		
 		if ability_level == 0:
 			item_list.append(display_name)
