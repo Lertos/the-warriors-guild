@@ -25,12 +25,14 @@ var colors = {
 	'selected': Color("#ff4a26"),
 	'yellow_highlight': Color("#effa5a"),
 	'stat_highlight': Color("#db55ed"),
+	'green_button_bg': Color("#29610e"),
 }
 
 """
 
 dark brown 120705
 brown 301712
+pressed brown 41302a
 hover color 503e38
 light brown 584742
 
