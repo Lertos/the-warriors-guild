@@ -1,37 +1,77 @@
 extends Node
 
 onready var parent_node = get_node('margin/panel/vbox')
+onready var section_buttons = parent_node.get_node('buttons/hbox')
 
 
 func load_monster_info(region_name: String, monster_index: int, selected_hero_index: int):
 	var monster_info = Global_Enemies.enemies[region_name][monster_index].duplicate(true)
 	var hero_info = Global_Player.player['heroes'][selected_hero_index]
 	
-	update_hero_info(hero_info)
-	update_enemy_info(monster_info)
+	load_all_sections(hero_info, monster_info)
 	
 	#Assign the hero and monster info to the attack button
-	parent_node.get_node('buttons/hbox/attack').disconnect('pressed', self, 'start_fight')
-	parent_node.get_node('buttons/hbox/attack').connect('pressed', self, 'start_fight', [hero_info, monster_info])
+	section_buttons.get_node('attack').disconnect('pressed', self, 'start_fight')
+	section_buttons.get_node('attack').connect('pressed', self, 'start_fight', [hero_info, monster_info])
+	
+	#Assign the monster info to the stats and drops buttons
+	section_buttons.get_node('stats').disconnect('pressed', self, 'switch_sections')
+	section_buttons.get_node('stats').connect('pressed', self, 'switch_sections', ['stats'])
+	
+	section_buttons.get_node('drops').disconnect('pressed', self, 'switch_sections')
+	section_buttons.get_node('drops').connect('pressed', self, 'switch_sections', ['drops'])
 
 
-func update_hero_info(hero_info):
-	var hero_node = parent_node.get_node('stats/left_panel')
-	var hero_total_stats = Helper.get_hero_total_stats(hero_info)
-	var hero_main_stat = Helper.get_hero_main_stat(hero_info)
+func load_all_sections(hero_info: Dictionary, monster_info: Dictionary):
+	clear_section_button_borders()
+	hide_all_sections()
+		
+	update_hero_base_info(hero_info)
+	update_enemy_base_info(monster_info)
+	
+	update_enemy_stats_section(hero_info, monster_info)
+	update_enemy_drops_section(hero_info, monster_info)
+
+
+func clear_section_button_borders():
+	for node in section_buttons.get_children():
+		Helper.reset_button_custom_colors(node)
+
+
+func switch_sections(key: String):
+	clear_section_button_borders()
+	hide_all_sections()
+
+	parent_node.get_node('header/label').text = 'MONSTER ' + str(key.to_upper())
+	parent_node.get_node('header').visible = true
+	
+	#Change the border color to show which section is selected
+	Helper.change_border_color(section_buttons.get_node(key), 'selected')
+	
+	for node in parent_node.get_children():
+		if key + '_section' == node.name:
+			parent_node.get_node(key + '_section').visible = true
+
+
+func hide_all_sections():
+	parent_node.get_node('header/label').text = ''
+	parent_node.get_node('header').visible = false
+	
+	for node in parent_node.get_children():
+		if '_section' in node.name:
+			node.visible = false
+
+
+func update_hero_base_info(hero_info):
+	var hero_node = parent_node.get_node('base_info/left_panel')
 	
 	hero_node.get_node('hero/img').icon = Helper.get_avatar_texture(hero_info['avatar_index'])
 	hero_node.get_node('hero/name').text = hero_info['name']
 	hero_node.get_node('hero/hbox/current_health').text = str(hero_info['current_health'])
-	
-	for stat_key in hero_total_stats:
-		hero_node.get_node(stat_key).text = str(hero_total_stats[stat_key])
-	
-	hero_node.get_node(hero_main_stat).add_color_override('font_color', Global_Colors.colors['stat_highlight'])
 
 
-func update_enemy_info(monster_info):
-	var enemy_node = parent_node.get_node('stats/right_panel')
+func update_enemy_base_info(monster_info):
+	var enemy_node = parent_node.get_node('base_info/right_panel')
 	
 	enemy_node.get_node('enemy/img').icon = get_monster_animated_texture(monster_info)
 	enemy_node.get_node('enemy/name').text = monster_info['name']
@@ -40,12 +80,55 @@ func update_enemy_info(monster_info):
 	parent_node.get_node('info/xp_given/xp_given').text = str(monster_info['xp_given'])
 	parent_node.get_node('info/travel_time/travel_time').text = str(monster_info['travel_time'])
 	parent_node.get_node('info/food_cost/food_cost').text = str(monster_info['food_cost'])
-	
+
+
+func update_enemy_stats_section(hero_info, monster_info):
+	var values_panel = parent_node.get_node('stats_section/stats/values')
+	var hero_total_stats = Helper.get_hero_total_stats(hero_info)
+	var hero_main_stat = Helper.get_hero_main_stat(hero_info)
+
 	for stat_key in monster_info['stats']:
-		enemy_node.get_node(stat_key).text = str(monster_info['stats'][stat_key])
+		var stat_node = values_panel.get_node(stat_key)
+		var stat_diff = int(hero_total_stats[stat_key]) - int(monster_info['stats'][stat_key])
+		
+		#Show the monsters stat value, coloring it if it's their main stat
+		if stat_key == monster_info['main_stat']:
+			stat_node.bbcode_text = '[color=#db55ed]' + str(monster_info['stats'][stat_key]) + '[/color]'
+		else:
+			stat_node.bbcode_text = '[color=#effa5a]' + str(monster_info['stats'][stat_key]) + '[/color]'
+		
+		#Add the text to show if the hero has more or less than the monster in a stat
+		if stat_diff > 0:
+			stat_node.append_bbcode(' ([color=#29610e]+' + str(stat_diff) + '[/color])')
+		elif stat_diff == 0:
+			stat_node.append_bbcode(' (' + str(stat_diff) + ')')
+		elif stat_diff < 0:
+			stat_node.append_bbcode(' ([color=red]' + str(stat_diff) + '[/color])')
+		
+	update_monster_abilities(monster_info)
+
+
+func update_monster_abilities(monster_info: Dictionary):
+	var ability_panel = parent_node.get_node('stats_section/abilities/labels/abilities')
+	var label_template = ability_panel.get_node('base_label')
 	
-	enemy_node.get_node(monster_info['main_stat']).add_color_override('font_color', Global_Colors.colors['stat_highlight'])
+	var abilities = Helper.get_pretty_abilities(monster_info)
 	
+	Helper.clear_list(ability_panel, 'base_label')
+	
+	for index in range(abilities.size()):
+		var new = label_template.duplicate(true)
+		
+		new.visible = true
+		new.text = abilities[index]
+		new.name = str(index)
+		
+		ability_panel.add_child(new)
+
+
+func update_enemy_drops_section(hero_info, monster_info):
+	pass
+
 
 func get_monster_animated_texture(monster_info) -> AnimatedTexture:
 	var animated_tex = AnimatedTexture.new()
@@ -58,6 +141,10 @@ func get_monster_animated_texture(monster_info) -> AnimatedTexture:
 	return animated_tex
 
 
+func close_monster_attack_popup():
+	emit_signal('popup_hide')
+	
+
 #TODO: This will instead be "set hero on adventure" rather than an instant fight - move this logic to hero screen
 #	after testing and then when a hero is "DONE", they will click the hero button and then the attack will happen
 func start_fight(hero_info, monster_info):
@@ -66,7 +153,3 @@ func start_fight(hero_info, monster_info):
 		return
 	
 	get_node('/root/root/combat_manager').start_combat(hero_info, monster_info)
-
-
-func close_monster_attack_popup():
-	emit_signal('popup_hide')
