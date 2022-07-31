@@ -113,7 +113,7 @@ func get_xp_needed_for_next_level(current_level: int) -> int:
 	return current_level * 100
 
 
-#Returns an hbox with needec sutom properties
+#Returns an hbox with needed custom properties
 func create_hbox(separation: int, alignment: int) -> HBoxContainer:
 	var hbox = HBoxContainer.new()
 	
