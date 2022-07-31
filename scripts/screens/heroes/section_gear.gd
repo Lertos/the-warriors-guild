@@ -5,9 +5,9 @@ var locked_texture = load('res://assets/icons/locked.png')
 
 onready var list_node = get_node('hbox/vbox/items/vbox')
 onready var item_info_parent = get_node('hbox/vbox/hbox')
-onready var label_list = item_info_parent.get_node('stats/hbox/labels')
-onready var value_list = item_info_parent.get_node('stats/hbox/values')
-onready var ability_list = item_info_parent.get_node('base_info/hbox/labels/abilities')
+onready var label_list = item_info_parent.get_node('hbox2/labels')
+onready var value_list = item_info_parent.get_node('hbox2/values')
+onready var ability_list = item_info_parent.get_node('hbox/labels/abilities')
 
 var items_per_row = 4
 
@@ -46,7 +46,7 @@ func load_item_info(item_button: Node):
 		
 		reset_info_panel()
 		
-		item_info_parent.get_node('base_info/hbox/labels/item_name').text = item['name']
+		item_info_parent.get_node('hbox/labels/item_name').text = item['name']
 		
 		load_item_abilities(item_meta)
 		load_item_stats(item)
@@ -93,7 +93,7 @@ func reset_info_panel():
 		for child in node_list.get_children():
 			child.visible = false
 			
-	item_info_parent.get_node('base_info/hbox/labels/item_name').text = ''
+	item_info_parent.get_node('hbox/labels/item_name').text = ''
 
 
 func add_selected_border(slot_type):
