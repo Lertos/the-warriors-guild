@@ -520,6 +520,7 @@ theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
 [node name="gear" type="ScrollContainer" parent="parent_vbox/margin"]
+visible = false
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 352.0
@@ -545,7 +546,7 @@ size_flags_vertical = 3
 scroll_horizontal_enabled = false
 
 [node name="vbox" type="VBoxContainer" parent="parent_vbox/margin/gear/hbox/gear_slots"]
-margin_right = 56.0
+margin_right = 66.0
 margin_bottom = 412.0
 rect_min_size = Vector2( 56, 0 )
 size_flags_horizontal = 3
@@ -740,7 +741,7 @@ autowrap = true
 [node name="abilities" type="VBoxContainer" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox/labels"]
 margin_top = 44.0
 margin_right = 131.0
-margin_bottom = 123.0
+margin_bottom = 149.0
 size_flags_vertical = 3
 custom_constants/separation = 0
 
@@ -751,8 +752,10 @@ margin_bottom = 14.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.858824, 0.333333, 0.929412, 1 )
 text = "Stab ATK"
+align = 1
 
 [node name="equip" type="Button" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox/labels"]
+visible = false
 margin_left = 25.0
 margin_top = 123.0
 margin_right = 105.0

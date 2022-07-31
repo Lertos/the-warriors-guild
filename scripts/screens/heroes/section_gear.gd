@@ -27,7 +27,11 @@ func _ready():
 
 func load_items(storage_type: String, sub_type: String):
 	ItemHelper.load_items_into_node(list_node, storage_type, items_per_row, sub_type)
+	
 	add_selected_border(sub_type)
+	
+	item_info_parent.get_node('hbox/labels/label').visible = false
+	item_info_parent.get_node('hbox/labels/equip').visible = false
 	
 	for hbox in list_node.get_children():
 		for item_slot in hbox.get_children():
@@ -45,6 +49,9 @@ func load_item_info(item_button: Node):
 		var item = Global_Items.items[item_meta['item_id']]
 		
 		reset_info_panel()
+		
+		item_info_parent.get_node('hbox/labels/label').visible = true
+		item_info_parent.get_node('hbox/labels/equip').visible = true
 		
 		item_info_parent.get_node('hbox/labels/item_name').text = item['name']
 		
@@ -91,7 +98,8 @@ func reset_info_panel():
 	
 	for node_list in nodes:
 		for child in node_list.get_children():
-			child.visible = false
+			if child.name != 'spacer':
+				child.visible = false
 			
 	item_info_parent.get_node('hbox/labels/item_name').text = ''
 
