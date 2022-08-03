@@ -544,7 +544,7 @@ var config = {
 			'levels': {
 				0: {
 					'can_get_natural': true,
-					'drop_weight': 128,
+					'drop_weight': 256,
 					'ability_chance': 50,
 					'x': 40,
 					'y': 115,
@@ -560,10 +560,10 @@ var config = {
 			'levels': {
 				0: {
 					'can_get_natural': true,
-					'drop_weight': 128,
+					'drop_weight': 256,
 					'ability_chance': 50,
-					'x': 0,
-					'y': 0,
+					'x': 1,
+					'y': 20,
 				}
 			}
 		},
@@ -572,14 +572,30 @@ var config = {
 			'description': 'When your health falls below <x>% of your max health, regain <y>% of your max health back, but lose <z>% of your defense stats',
 			'type': 'passive',
 			'levels': {
-				0: {
+				1: {
+					'can_get_natural': true,
+					'drop_weight': 256,
+					'ability_chance': 50,
+					'x': 20,
+					'y': 10,
+					'z': 10,
+				},
+				2: {
 					'can_get_natural': true,
 					'drop_weight': 128,
 					'ability_chance': 50,
-					'x': 0,
-					'y': 0,
-					'z': 0,
-				}
+					'x': 25,
+					'y': 15,
+					'z': 10,
+				},
+				3: {
+					'can_get_natural': true,
+					'drop_weight': 64,
+					'ability_chance': 50,
+					'x': 30,
+					'y': 20,
+					'z': 10,
+				},
 			}
 		},
 		'resistance': {
@@ -587,12 +603,30 @@ var config = {
 			'description': 'Reduces the effects of venom and poison by <x>%',
 			'type': 'passive',
 			'levels': {
-				0: {
+				1: {
 					'can_get_natural': true,
 					'drop_weight': 128,
-					'ability_chance': 50,
-					'x': 0,
-				}
+					'ability_chance': 100,
+					'x': 10,
+				},
+				2: {
+					'can_get_natural': true,
+					'drop_weight': 64,
+					'ability_chance': 100,
+					'x': 15,
+				},
+				3: {
+					'can_get_natural': true,
+					'drop_weight': 32,
+					'ability_chance': 100,
+					'x': 20,
+				},
+				4: {
+					'can_get_natural': true,
+					'drop_weight': 16,
+					'ability_chance': 100,
+					'x': 25,
+				},
 			}
 		},
 		'final_stand': {
@@ -603,7 +637,7 @@ var config = {
 				0: {
 					'can_get_natural': true,
 					'drop_weight': 128,
-					'ability_chance': 50,
+					'ability_chance': 60,
 					'x': 15,
 					'y': 30,
 					'z': 75,
@@ -615,13 +649,27 @@ var config = {
 			'description': 'Deal <x>% normal damage, but for each successful hit in a row, deal <y>% additional damage',
 			'type': 'passive',
 			'levels': {
-				0: {
+				1: {
 					'can_get_natural': true,
-					'drop_weight': 128,
+					'drop_weight': 64,
 					'ability_chance': 50,
-					'x': 0,
-					'y': 0,
-				}
+					'x': 90,
+					'y': 5,
+				},
+				2: {
+					'can_get_natural': true,
+					'drop_weight': 32,
+					'ability_chance': 50,
+					'x': 90,
+					'y': 7.5,
+				},
+				3: {
+					'can_get_natural': true,
+					'drop_weight': 16,
+					'ability_chance': 50,
+					'x': 95,
+					'y': 10,
+				},
 			}
 		},
 		
