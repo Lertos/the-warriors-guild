@@ -331,16 +331,37 @@ var config = {
 				1: {
 					'can_get_natural': true,
 					'drop_weight': 128,
-					'ability_chance': 50,
-					'x': 0,
-					'y': 0,
+					'ability_chance': 15,
+					'x': 1,
+					'y': 0.5,
 				},
 				2: {
 					'can_get_natural': true,
-					'drop_weight': 128,
-					'ability_chance': 50,
-					'x': 0,
-					'y': 0,
+					'drop_weight': 64,
+					'ability_chance': 20,
+					'x': 2,
+					'y': 0.5,
+				},
+				3: {
+					'can_get_natural': true,
+					'drop_weight': 32,
+					'ability_chance': 25,
+					'x': 4,
+					'y': 1,
+				},
+				4: {
+					'can_get_natural': true,
+					'drop_weight': 16,
+					'ability_chance': 30,
+					'x': 6,
+					'y': 1.5,
+				},
+				5: {
+					'can_get_natural': true,
+					'drop_weight': 8,
+					'ability_chance': 35,
+					'x': 8,
+					'y': 2,
 				},
 			}
 		},
@@ -352,10 +373,38 @@ var config = {
 				1: {
 					'can_get_natural': true,
 					'drop_weight': 128,
-					'ability_chance': 50,
-					'x': 0,
-					'y': 0,
-				}
+					'ability_chance': 15,
+					'x': 0.2,
+					'y': 0.1,
+				},
+				2: {
+					'can_get_natural': true,
+					'drop_weight': 64,
+					'ability_chance': 20,
+					'x': 0.3,
+					'y': 0.1,
+				},
+				3: {
+					'can_get_natural': true,
+					'drop_weight': 32,
+					'ability_chance': 25,
+					'x': 0.4,
+					'y': 0.1,
+				},
+				4: {
+					'can_get_natural': true,
+					'drop_weight': 16,
+					'ability_chance': 30,
+					'x': 0.5,
+					'y': 0.1,
+				},
+				5: {
+					'can_get_natural': true,
+					'drop_weight': 8,
+					'ability_chance': 35,
+					'x': 0.6,
+					'y': 0.1,
+				},
 			}
 		},
 		'venomous': {
@@ -363,13 +412,41 @@ var config = {
 			'description': 'Deals <x>% of your opponents max health as damage each round, as well as reducing their max health by <y>% each round',
 			'type': 'effect',
 			'levels': {
-				0: {
+				1: {
+					'can_get_natural': true,
+					'drop_weight': 256,
+					'ability_chance': 15,
+					'x': 1,
+					'y': 1,
+				},
+				2: {
 					'can_get_natural': true,
 					'drop_weight': 128,
-					'ability_chance': 50,
-					'x': 0,
-					'y': 0,
-				}
+					'ability_chance': 15,
+					'x': 2,
+					'y': 2,
+				},
+				3: {
+					'can_get_natural': true,
+					'drop_weight': 64,
+					'ability_chance': 20,
+					'x': 3,
+					'y': 3,
+				},
+				4: {
+					'can_get_natural': true,
+					'drop_weight': 32,
+					'ability_chance': 20,
+					'x': 4,
+					'y': 4,
+				},
+				5: {
+					'can_get_natural': true,
+					'drop_weight': 16,
+					'ability_chance': 25,
+					'x': 5,
+					'y': 5,
+				},
 			}
 		},
 		'searing_flames': {
@@ -377,27 +454,83 @@ var config = {
 			'description': 'Deals <x>% of your opponents max health as damage each round that increases by <y>% each round',
 			'type': 'effect',
 			'levels': {
-				0: {
+				1: {
 					'can_get_natural': true,
 					'drop_weight': 128,
-					'ability_chance': 50,
-					'x': 0,
-					'y': 0,
-				}
+					'ability_chance': 10,
+					'x': 0.5,
+					'y': 0.5,
+				},
+				2: {
+					'can_get_natural': true,
+					'drop_weight': 64,
+					'ability_chance': 15,
+					'x': 0.5,
+					'y': 1,
+				},
+				3: {
+					'can_get_natural': true,
+					'drop_weight': 32,
+					'ability_chance': 20,
+					'x': 1,
+					'y': 1,
+				},
+				4: {
+					'can_get_natural': true,
+					'drop_weight': 16,
+					'ability_chance': 25,
+					'x': 1.5,
+					'y': 1,
+				},
+				5: {
+					'can_get_natural': true,
+					'drop_weight': 8,
+					'ability_chance': 30,
+					'x': 1.5,
+					'y': 1.5,
+				},
 			}
 		},
 		'bleeding': {
 			'name': 'Bleeding',
-			'description': 'Deals <x>% of your opponents max health as damage. Each turn it has a <y>% chance to double',
+			'description': 'Deals <x>% of your opponents max health as damage each turn. Every turn it has a <y>% chance to double',
 			'type': 'effect',
 			'levels': {
-				0: {
+				1: {
 					'can_get_natural': true,
 					'drop_weight': 128,
-					'ability_chance': 50,
-					'x': 0,
-					'y': 0,
-				}
+					'ability_chance': 15,
+					'x': 2,
+					'y': 20,
+				},
+				2: {
+					'can_get_natural': true,
+					'drop_weight': 64,
+					'ability_chance': 20,
+					'x': 2,
+					'y': 30,
+				},
+				3: {
+					'can_get_natural': true,
+					'drop_weight': 32,
+					'ability_chance': 25,
+					'x': 2,
+					'y': 40,
+				},
+				4: {
+					'can_get_natural': true,
+					'drop_weight': 16,
+					'ability_chance': 30,
+					'x': 2,
+					'y': 50,
+				},
+				5: {
+					'can_get_natural': true,
+					'drop_weight': 8,
+					'ability_chance': 35,
+					'x': 2,
+					'y': 60,
+				},
 			}
 		},
 		
