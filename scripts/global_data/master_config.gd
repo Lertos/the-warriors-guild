@@ -101,6 +101,218 @@ var config = {
 	},
 	
 	#-----------------------
+	# MODIFIERS
+	#-----------------------
+	'modifiers': {
+				'unprotected': {
+			'drop_weight': 128,
+			'types': ['helmet', 'chestplate', 'gloves', 'boots'],
+			'p_health': -5,
+			'p_all_def': -5,
+		},
+		'armored': {
+			'drop_weight': 128,
+			'types': ['helmet', 'chestplate', 'gloves', 'boots'],
+			'p_health': 2,
+			'p_all_def': 2,
+		},
+		'warding': {
+			'drop_weight': 128,
+			'types': ['helmet', 'chestplate', 'gloves', 'boots'],
+			'p_health': 5,
+			'p_all_def': 5,
+			'p_dmg_reduc': 2,
+		},
+		'terrible': {
+			'drop_weight': 128,
+			'types': ['weapon', 'helmet', 'chestplate', 'gloves', 'boots', 'necklace', 'ring'],
+			'p_health': -5,
+			'p_damage': -5,
+			'p_dmg_reduc': -5,
+		},
+		'awful': {
+			'drop_weight': 128,
+			'types': ['weapon', 'helmet', 'chestplate', 'gloves', 'boots', 'necklace', 'ring'],
+			'p_health': -2,
+			'p_damage': -2,
+			'p_dmg_reduc': -2,
+		},
+		'great': {
+			'drop_weight': 128,
+			'types': ['weapon', 'helmet', 'chestplate', 'gloves', 'boots', 'necklace', 'ring'],
+			'p_health': 2,
+			'p_damage': 2,
+			'p_dmg_reduc': 2,
+		},
+		'superior': {
+			'drop_weight': 128,
+			'types': ['weapon', 'helmet', 'chestplate', 'gloves', 'boots', 'necklace', 'ring'],
+			'p_health': 5,
+			'p_damage': 5,
+			'p_dmg_reduc': 5,
+		},
+		'legendary': {
+			'drop_weight': 128,
+			'types': ['weapon', 'helmet', 'chestplate', 'gloves', 'boots', 'necklace', 'ring'],
+			'p_health': 8,
+			'p_damage': 8,
+			'p_dmg_reduc': 8,
+		},
+		'mythical': {
+			'drop_weight': 128,
+			'types': ['weapon', 'helmet', 'chestplate', 'gloves', 'boots', 'necklace', 'ring'],
+			'p_health': 10,
+			'p_damage': 10,
+			'p_dmg_reduc': 10,
+		},
+		'slow': {
+			'drop_weight': 128,
+			'types': ['weapon'],
+			'p_speed': -8,
+		},
+		'fast': {
+			'drop_weight': 128,
+			'types': ['weapon'],
+			'p_speed': 10,
+		},
+		'hasty': {
+			'drop_weight': 128,
+			'types': ['weapon'],
+			'p_speed': 15,
+		},
+		'weak': {
+			'drop_weight': 128,
+			'types': ['weapon'],
+			'p_damage': -10,
+			'p_max_hit': -5,
+			'p_main_atk': -5,
+		},
+		'strong': {
+			'drop_weight': 128,
+			'types': ['weapon'],
+			'p_damage': 5,
+			'p_max_hit': 2,
+			'p_main_atk': 5,
+		},
+		'hurtful': {
+			'drop_weight': 128,
+			'types': ['weapon'],
+			'p_damage': 8,
+			'p_max_hit': 5,
+			'p_main_atk': 8,
+		},
+		'ruthless': {
+			'drop_weight': 128,
+			'types': ['weapon'],
+			'p_damage': 10,
+			'p_max_hit': 8,
+			'p_main_atk': 10,
+		},
+		'flimsy': {
+			'drop_weight': 128,
+			'types': ['weapon', 'helmet', 'chestplate', 'gloves', 'boots', 'necklace', 'ring'],
+			'p_sell_price': -10,
+		},
+		'shiny': {
+			'drop_weight': 128,
+			'types': ['weapon', 'helmet', 'chestplate', 'gloves', 'boots', 'necklace', 'ring'],
+			'p_sell_price': 10,
+		},
+		'rare': {
+			'drop_weight': 128,
+			'types': ['weapon', 'helmet', 'chestplate', 'gloves', 'boots', 'necklace', 'ring'],
+			'p_sell_price': 20,
+		},
+		'flawed': {
+			'drop_weight': 128,
+			'types': ['weapon'],
+			'p_min_hit': -8,
+			'p_max_hit': -8,
+		},
+		'accurate': {
+			'drop_weight': 128,
+			'types': ['weapon'],
+			'p_min_hit': 8,
+			'p_max_hit': 8,
+			'p_main_atk': 5,
+		},
+		'precise': {
+			'drop_weight': 128,
+			'types': ['weapon'],
+			'p_min_hit': 10,
+			'p_max_hit': 10,
+			'p_main_atk': 8,
+		},
+		'brittle': {
+			'drop_weight': 128,
+			'types': ['helmet', 'chestplate', 'gloves', 'boots', 'necklace', 'ring'],
+			'p_health': -5,
+			'p_speed': 2,
+			'p_dmg_reduc': -2,
+		},
+		'solid': {
+			'drop_weight': 128,
+			'types': ['helmet', 'chestplate', 'gloves', 'boots', 'necklace', 'ring'],
+			'p_health': 5,
+			'p_dmg_reduc': 2,
+		},
+		'tanky': {
+			'drop_weight': 128,
+			'types': ['helmet', 'chestplate', 'gloves', 'boots', 'necklace', 'ring'],
+			'p_health': 10,
+			'p_speed': -5,
+			'p_dmg_reduc': 5,
+		},
+		'sporadic': {
+			'drop_weight': 128,
+			'types': ['weapon'],
+			'p_min_hit': -15,
+			'p_max_hit': 15,
+			'p_sell_price': 5,
+		},
+		'insane': {
+			'drop_weight': 128,
+			'types': ['weapon'],
+			'p_min_hit': -25,
+			'p_max_hit': 25,
+			'p_sell_price': 10,
+		},
+		'sluggish': {
+			'drop_weight': 128,
+			'types': ['weapon', 'necklace', 'ring'],
+			'p_speed': -10,
+			'p_main_atk': -2,
+			'p_all_def': 5,
+		},
+		'nimble': {
+			'drop_weight': 128,
+			'types': ['weapon', 'necklace', 'ring'],
+			'p_speed': 10,
+			'p_main_atk': 2,
+			'p_all_def': -5,
+		},
+		'agile': {
+			'drop_weight': 128,
+			'types': ['weapon', 'necklace', 'ring'],
+			'p_speed': 15,
+			'p_main_atk': 5,
+			'p_all_def': -8,
+		},
+		'risky': {
+			'drop_weight': 128,
+			'types': ['weapon'],
+			'p_main_atk': 20,
+			'p_all_def': -10,
+		},
+		'safe': {
+			'drop_weight': 128,
+			'types': ['weapon'],
+			'p_main_atk': -10,
+			'p_all_def': 20,
+		},
+	},
+	
+	#-----------------------
 	# ABILITIES
 	#-----------------------
 	'abilities': {
