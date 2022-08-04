@@ -105,18 +105,21 @@ var config = {
 	#-----------------------
 	'modifiers': {
 		'unprotected': {
+			'name': 'Unprotected',
 			'drop_weight': 128,
 			'gear_types': ['gear'],
 			'p_health': -5,
 			'p_all_def': -5,
 		},
 		'armored': {
+			'name': 'Armored',
 			'drop_weight': 128,
 			'gear_types': ['gear'],
 			'p_health': 2,
 			'p_all_def': 2,
 		},
 		'warding': {
+			'name': 'Warding',
 			'drop_weight': 128,
 			'gear_types': ['gear'],
 			'p_health': 5,
@@ -124,6 +127,7 @@ var config = {
 			'p_dmg_reduc': 2,
 		},
 		'terrible': {
+			'name': 'Terrible',
 			'drop_weight': 128,
 			'gear_types': ['weapon', 'gear', 'jewelry'],
 			'p_health': -5,
@@ -131,6 +135,7 @@ var config = {
 			'p_dmg_reduc': -5,
 		},
 		'awful': {
+			'name': 'Awful',
 			'drop_weight': 128,
 			'gear_types': ['weapon', 'gear', 'jewelry'],
 			'p_health': -2,
@@ -138,6 +143,7 @@ var config = {
 			'p_dmg_reduc': -2,
 		},
 		'great': {
+			'name': 'Great',
 			'drop_weight': 128,
 			'gear_types': ['weapon', 'gear', 'jewelry'],
 			'p_health': 2,
@@ -145,6 +151,7 @@ var config = {
 			'p_dmg_reduc': 2,
 		},
 		'superior': {
+			'name': 'Superior',
 			'drop_weight': 128,
 			'gear_types': ['weapon', 'gear', 'jewelry'],
 			'p_health': 5,
@@ -152,6 +159,7 @@ var config = {
 			'p_dmg_reduc': 5,
 		},
 		'legendary': {
+			'name': 'Legendary',
 			'drop_weight': 128,
 			'gear_types': ['weapon', 'gear', 'jewelry'],
 			'p_health': 8,
@@ -159,6 +167,7 @@ var config = {
 			'p_dmg_reduc': 8,
 		},
 		'mythical': {
+			'name': 'Mythical',
 			'drop_weight': 128,
 			'gear_types': ['weapon', 'gear', 'jewelry'],
 			'p_health': 10,
@@ -166,21 +175,25 @@ var config = {
 			'p_dmg_reduc': 10,
 		},
 		'slow': {
+			'name': 'Slow',
 			'drop_weight': 128,
 			'gear_types': ['weapon'],
 			'p_speed': -8,
 		},
 		'fast': {
+			'name': 'Fast',
 			'drop_weight': 128,
 			'gear_types': ['weapon'],
 			'p_speed': 10,
 		},
 		'hasty': {
+			'name': 'Hasty',
 			'drop_weight': 128,
 			'gear_types': ['weapon'],
 			'p_speed': 15,
 		},
 		'weak': {
+			'name': 'Weak',
 			'drop_weight': 128,
 			'gear_types': ['weapon'],
 			'p_damage': -10,
@@ -188,6 +201,7 @@ var config = {
 			'p_main_atk': -5,
 		},
 		'strong': {
+			'name': 'Strong',
 			'drop_weight': 128,
 			'gear_types': ['weapon'],
 			'p_damage': 5,
@@ -195,6 +209,7 @@ var config = {
 			'p_main_atk': 5,
 		},
 		'hurtful': {
+			'name': 'Hurtful',
 			'drop_weight': 128,
 			'gear_types': ['weapon'],
 			'p_damage': 8,
@@ -202,6 +217,7 @@ var config = {
 			'p_main_atk': 8,
 		},
 		'ruthless': {
+			'name': 'Ruthless',
 			'drop_weight': 128,
 			'gear_types': ['weapon'],
 			'p_damage': 10,
@@ -209,27 +225,32 @@ var config = {
 			'p_main_atk': 10,
 		},
 		'flimsy': {
+			'name': 'Flimsy',
 			'drop_weight': 128,
 			'gear_types': ['weapon', 'gear', 'jewelry'],
 			'p_sell_price': -10,
 		},
 		'shiny': {
+			'name': 'Shiny',
 			'drop_weight': 128,
 			'gear_types': ['weapon', 'gear', 'jewelry'],
 			'p_sell_price': 10,
 		},
 		'rare': {
+			'name': 'Rare',
 			'drop_weight': 128,
 			'gear_types': ['weapon', 'gear', 'jewelry'],
 			'p_sell_price': 20,
 		},
 		'flawed': {
+			'name': 'Flawed',
 			'drop_weight': 128,
 			'gear_types': ['weapon'],
 			'p_min_hit': -8,
 			'p_max_hit': -8,
 		},
 		'accurate': {
+			'name': 'Accurate',
 			'drop_weight': 128,
 			'gear_types': ['weapon'],
 			'p_min_hit': 8,
@@ -237,6 +258,7 @@ var config = {
 			'p_main_atk': 5,
 		},
 		'precise': {
+			'name': 'Precise',
 			'drop_weight': 128,
 			'gear_types': ['weapon'],
 			'p_min_hit': 10,
@@ -244,6 +266,7 @@ var config = {
 			'p_main_atk': 8,
 		},
 		'brittle': {
+			'name': 'Brittle',
 			'drop_weight': 128,
 			'gear_types': ['gear', 'jewelry'],
 			'p_health': -5,
@@ -251,12 +274,14 @@ var config = {
 			'p_dmg_reduc': -2,
 		},
 		'solid': {
+			'name': 'Solid',
 			'drop_weight': 128,
 			'gear_types': ['gear', 'jewelry'],
 			'p_health': 5,
 			'p_dmg_reduc': 2,
 		},
 		'tanky': {
+			'name': 'Tanky',
 			'drop_weight': 128,
 			'gear_types': ['gear', 'jewelry'],
 			'p_health': 10,
@@ -264,6 +289,7 @@ var config = {
 			'p_dmg_reduc': 5,
 		},
 		'sporadic': {
+			'name': 'Sporadic',
 			'drop_weight': 128,
 			'gear_types': ['weapon'],
 			'p_min_hit': -15,
@@ -271,6 +297,7 @@ var config = {
 			'p_sell_price': 5,
 		},
 		'insane': {
+			'name': 'Insane',
 			'drop_weight': 128,
 			'gear_types': ['weapon'],
 			'p_min_hit': -25,
@@ -278,6 +305,7 @@ var config = {
 			'p_sell_price': 10,
 		},
 		'sluggish': {
+			'name': 'Sluggish',
 			'drop_weight': 128,
 			'gear_types': ['weapon', 'jewelry'],
 			'p_speed': -10,
@@ -285,6 +313,7 @@ var config = {
 			'p_all_def': 5,
 		},
 		'nimble': {
+			'name': 'Nimble',
 			'drop_weight': 128,
 			'gear_types': ['weapon', 'jewelry'],
 			'p_speed': 10,
@@ -292,6 +321,7 @@ var config = {
 			'p_all_def': -5,
 		},
 		'agile': {
+			'name': 'Agile',
 			'drop_weight': 128,
 			'gear_types': ['weapon', 'jewelry'],
 			'p_speed': 15,
@@ -299,12 +329,14 @@ var config = {
 			'p_all_def': -8,
 		},
 		'risky': {
+			'name': 'Risky',
 			'drop_weight': 128,
 			'gear_types': ['weapon'],
 			'p_main_atk': 20,
 			'p_all_def': -10,
 		},
 		'safe': {
+			'name': 'Safe',
 			'drop_weight': 128,
 			'gear_types': ['weapon'],
 			'p_main_atk': -10,
