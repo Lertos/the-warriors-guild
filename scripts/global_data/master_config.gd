@@ -357,7 +357,7 @@ var config = {
 					'y': 1.5,
 				},
 				5: {
-					'can_get_natural': true,
+					'can_get_natural': false,
 					'drop_weight': 8,
 					'ability_chance': 35,
 					'x': 8,
@@ -399,7 +399,7 @@ var config = {
 					'y': 0.1,
 				},
 				5: {
-					'can_get_natural': true,
+					'can_get_natural': false,
 					'drop_weight': 8,
 					'ability_chance': 35,
 					'x': 0.6,
@@ -441,7 +441,7 @@ var config = {
 					'y': 4,
 				},
 				5: {
-					'can_get_natural': true,
+					'can_get_natural': false,
 					'drop_weight': 16,
 					'ability_chance': 25,
 					'x': 5,
@@ -483,7 +483,7 @@ var config = {
 					'y': 1,
 				},
 				5: {
-					'can_get_natural': true,
+					'can_get_natural': false,
 					'drop_weight': 8,
 					'ability_chance': 30,
 					'x': 1.5,
@@ -525,7 +525,7 @@ var config = {
 					'y': 50,
 				},
 				5: {
-					'can_get_natural': true,
+					'can_get_natural': false,
 					'drop_weight': 8,
 					'ability_chance': 35,
 					'x': 2,
@@ -589,7 +589,7 @@ var config = {
 					'z': 10,
 				},
 				3: {
-					'can_get_natural': true,
+					'can_get_natural': false,
 					'drop_weight': 64,
 					'ability_chance': 50,
 					'x': 30,
@@ -622,7 +622,7 @@ var config = {
 					'x': 20,
 				},
 				4: {
-					'can_get_natural': true,
+					'can_get_natural': false,
 					'drop_weight': 16,
 					'ability_chance': 100,
 					'x': 25,
@@ -664,7 +664,7 @@ var config = {
 					'y': 7.5,
 				},
 				3: {
-					'can_get_natural': true,
+					'can_get_natural': false,
 					'drop_weight': 16,
 					'ability_chance': 50,
 					'x': 95,
@@ -706,7 +706,7 @@ var config = {
 					'x': 25,
 				},
 				5: {
-					'can_get_natural': true,
+					'can_get_natural': false,
 					'drop_weight': 8,
 					'ability_chance': 25,
 					'x': 30,
@@ -740,7 +740,7 @@ var config = {
 					'y': 170,
 				},
 				4: {
-					'can_get_natural': true,
+					'can_get_natural': false,
 					'drop_weight': 16,
 					'ability_chance': 25,
 					'x': 170,
@@ -768,7 +768,7 @@ var config = {
 					'y': 3,
 				},
 				3: {
-					'can_get_natural': true,
+					'can_get_natural': false,
 					'drop_weight': 32,
 					'ability_chance': 35,
 					'x': 20,
@@ -796,7 +796,7 @@ var config = {
 					'y': 3,
 				},
 				3: {
-					'can_get_natural': true,
+					'can_get_natural': false,
 					'drop_weight': 32,
 					'ability_chance': 35,
 					'x': 20,
@@ -862,7 +862,7 @@ var config = {
 					'ability_chance': 30,
 				},
 				4: {
-					'can_get_natural': true,
+					'can_get_natural': false,
 					'drop_weight': 32,
 					'ability_chance': 35,
 				},
@@ -925,7 +925,7 @@ var config = {
 					'y': 6,
 				},
 				3: {
-					'can_get_natural': true,
+					'can_get_natural': false,
 					'drop_weight': 32,
 					'ability_chance': 35,
 					'x': 14,
@@ -949,7 +949,7 @@ var config = {
 					'ability_chance': 20,
 				},
 				3: {
-					'can_get_natural': true,
+					'can_get_natural': false,
 					'drop_weight': 32,
 					'ability_chance': 25,
 				},
@@ -975,7 +975,7 @@ var config = {
 					'y': 0.5,
 				},
 				3: {
-					'can_get_natural': true,
+					'can_get_natural': false,
 					'drop_weight': 32,
 					'ability_chance': 40,
 					'x': 3,
@@ -1025,7 +1025,7 @@ var config = {
 					'y': 18,
 				},
 				4: {
-					'can_get_natural': true,
+					'can_get_natural': false,
 					'drop_weight': 16,
 					'ability_chance': 40,
 					'x': 8,
@@ -1051,7 +1051,7 @@ var config = {
 					'x': 8,
 				},
 				3: {
-					'can_get_natural': true,
+					'can_get_natural': false,
 					'drop_weight': 32,
 					'ability_chance': 33,
 					'x': 12,
