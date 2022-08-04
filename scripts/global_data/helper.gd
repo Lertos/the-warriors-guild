@@ -212,6 +212,9 @@ func get_pretty_abilities(info: Dictionary) -> Array:
 
 
 func get_roman_numeral(level: int):
+	if level == -1 or level == 0:
+		return ''
+	
 	if level == 1:
 		return 'I'
 	elif level == 2:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://scenes/screens/screen_home.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/icons/home_screen/heroes.png" type="Texture" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://themes/fonts/font_title.tres" type="Theme" id=18]
 [ext_resource path="res://scripts/ui/text_edit_tabbing.gd" type="Script" id=19]
 [ext_resource path="res://scripts/combat.gd" type="Script" id=20]
+[ext_resource path="res://scripts/item_manager.gd" type="Script" id=21]
 [ext_resource path="res://themes/header.tres" type="StyleBox" id=28]
 
 [sub_resource type="Theme" id=17]
@@ -34,6 +35,9 @@ script = ExtResource( 12 )
 
 [node name="combat_manager" type="Node" parent="."]
 script = ExtResource( 20 )
+
+[node name="item_manager" type="Node" parent="."]
+script = ExtResource( 21 )
 
 [node name="parent" type="VBoxContainer" parent="."]
 anchor_right = 1.0
