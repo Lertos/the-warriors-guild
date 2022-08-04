@@ -104,7 +104,7 @@ var config = {
 	# MODIFIERS
 	#-----------------------
 	'modifiers': {
-				'unprotected': {
+		'unprotected': {
 			'drop_weight': 128,
 			'gear_types': ['gear'],
 			'p_health': -5,
