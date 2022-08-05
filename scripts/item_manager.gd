@@ -1,5 +1,7 @@
 extends Node
 
+const MAX_REROLL_ATTEMPTS = 6
+
 var categories = ['weapon', 'armor', 'jewelry']
 
 var abilities = {}
@@ -16,8 +18,24 @@ func _ready():
 	fill_list_and_get_total(MasterConfig.config['abilities'], abilities)
 	fill_list_and_get_total(MasterConfig.config['modifiers'], modifiers)
 	
-	for i in range(0, 20):
-		roll_for_ability('jewelry')
+	#DEBUGGING PURPOSES
+	debug_output('abilities', 'jewelry', 3, 5)
+	debug_output('modifiers', 'jewelry', 3, 5)
+
+
+func debug_output(type: String, gear_type: String, amount: int, times_to_roll: int):
+	var list
+	
+	for i in range(0, times_to_roll):
+		if type == 'abilities':
+			list = roll_for_abilities(gear_type, amount)
+		elif type == 'modifiers':
+			list = roll_for_modifiers(gear_type, amount)
+		
+		for index in range(0, list.size()):
+			print(get_display_name(list[index]))
+	
+		print('\n')
 
 
 func create_drop_rate_lists():
@@ -76,37 +94,69 @@ func append_drop_weight_and_name(local_list: Dictionary, drop_weight: int, key: 
 		local_list['levels'].append(level)
 	
 	
-func roll_for_ability(gear_type: String):
+func roll_for_abilities(gear_type: String, amount: int):
 	var list_to_roll_in = abilities[gear_type]
+	var ability_list = []
 	
-	roll_the_list(list_to_roll_in)
+	for i in range(0, amount):
+		var ability = roll_the_list(list_to_roll_in, ability_list)
+		
+		if ability != []:
+			ability_list.append(ability)
+			
+	return ability_list
 	
 
-func roll_the_list(list: Dictionary):
+func roll_for_modifiers(gear_type: String, amount: int):
+	var list_to_roll_in = modifiers[gear_type]
+	var modifier_list = []
+	
+	for i in range(0, amount):
+		var modifier = roll_the_list(list_to_roll_in, modifier_list)
+		
+		if modifier != []:
+			modifier_list.append(modifier)
+			
+	return modifier_list
+
+
+func roll_the_list(list: Dictionary, current_list: Array):
 	var drop_rates = list['drop_rates']
 	var keys = list['keys']
 	var levels = list['levels']
 	var total_drop_weight = list['total_drop_weight']
 	
-	var rand_int = rng.randi_range(0, total_drop_weight)
-	
-	for index in range(0, drop_rates.size()):
-		if rand_int <= drop_rates[index]:
-			#TODO: Fix so it actually returns the ability and the number
-			var chance
-			
-			if index == 0:
-				chance = (float(drop_rates[index]) / float(total_drop_weight))
-				chance *= 100
-			else:
-				chance = (float(drop_rates[index] - drop_rates[index-1]) / float(total_drop_weight))
-				chance *= 100
-			
-			var key = Helper.get_header_text(keys[index])
-			
-			if levels.size() > 0:
-				if levels[index] > 0:
-					key += ' ' + Helper.get_roman_numeral(levels[index])
+	for roll in range(0, MAX_REROLL_ATTEMPTS):
+		var rand_int = rng.randi_range(0, total_drop_weight)
+		
+		for index in range(0, drop_rates.size()):
+			if rand_int <= drop_rates[index]:
+				if list_has_key(current_list, keys[index]):
+					continue
 				
-			print(key + ' --- ' + str(chance) + '% chance')
-			break
+				if levels.size() > 0:
+					return [ keys[index], levels[index] ]
+				else:
+					return [ keys[index], -1 ]
+
+
+func list_has_key(list, key):
+	for index in range(0, list.size()):
+		if list[index][0] == key:
+			return true
+	return false
+	
+	
+func get_display_name(tuple: Array):
+	var name = ''
+	
+	if tuple.size() == 2:
+		name += Helper.get_header_text(tuple[0])
+		
+		var roman_numeral = Helper.get_roman_numeral(tuple[1])
+		
+		if roman_numeral != '':
+			name += ' ' + roman_numeral
+			
+	return name
+
