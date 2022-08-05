@@ -1261,14 +1261,14 @@ margin_bottom = 24.0
 size_flags_horizontal = 3
 theme = ExtResource( 17 )
 
-[node name="health" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/consumable/vbox"]
+[node name="hp_given" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/consumable/vbox"]
 visible = false
 margin_top = 28.0
 margin_right = 260.0
 margin_bottom = 52.0
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/consumable/vbox/health"]
+[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/consumable/vbox/hp_given"]
 margin_right = 52.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
@@ -1277,30 +1277,7 @@ text = "HP Restored"
 align = 2
 valign = 1
 
-[node name="health" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/consumable/vbox/health"]
-margin_left = 56.0
-margin_right = 260.0
-margin_bottom = 24.0
-size_flags_horizontal = 3
-theme = ExtResource( 17 )
-
-[node name="gold" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/consumable/vbox"]
-visible = false
-margin_top = 28.0
-margin_right = 260.0
-margin_bottom = 52.0
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/consumable/vbox/gold"]
-margin_right = 52.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 0, 24 )
-theme = ExtResource( 17 )
-text = "Gold Given"
-align = 2
-valign = 1
-
-[node name="gold" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/consumable/vbox/gold"]
+[node name="hp_given" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/consumable/vbox/hp_given"]
 margin_left = 56.0
 margin_right = 260.0
 margin_bottom = 24.0
@@ -1330,7 +1307,6 @@ margin_bottom = 100.0
 rect_min_size = Vector2( 160, 100 )
 size_flags_horizontal = 3
 theme = ExtResource( 17 )
-select_mode = 1
 
 [node name="food" type="MarginContainer" parent="ItemGenerator/container/parent_vbox/vbox"]
 visible = false

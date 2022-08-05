@@ -10,10 +10,19 @@ var current_type = 'item'
 var number_regex = RegEx.new()
 
 var types = ['item', 'food', 'weapon', 'armor', 'consumable', 'jewelry', 'companion']
+var all_stats = [
+	'atk_speed', 'min_hit', 'max_hit', 
+	'atk_stab', 'atk_slash', 'atk_crush', 'def_stab', 'def_slash', 'def_crush', 
+	'health', 'dmg_reduc', 
+	'travel_time', 'food_cost', 'gold_bonus', 
+	'ration_amt'
+]
 
 onready var weapon_abilities = get_node('container/parent_vbox/vbox/weapon/vbox/abilities/abilities')
 onready var armor_abilities = get_node('container/parent_vbox/vbox/armor/vbox/abilities/abilities')
 onready var jewelry_abilities = get_node('container/parent_vbox/vbox/jewelry/vbox/abilities/abilities')
+
+onready var effect_list = get_node('container/parent_vbox/vbox/consumable/vbox/effects/effects')
 
 
 func _ready():
@@ -90,22 +99,18 @@ func on_type_selected(index: int):
 
 func on_potion_type_selected(index: int):
 	var node = get_node('container/parent_vbox/vbox/consumable/vbox')
+	var type_dropdown = node.get_node('type/type')
+	
+	type_dropdown.select(index)
 	
 	if index == 0:
 		node.get_node('effects').visible = true
 		node.get_node('duration').visible = true
-		node.get_node('health').visible = false
-		node.get_node('gold').visible = false
+		node.get_node('hp_given').visible = false
 	elif index == 1:
 		node.get_node('effects').visible = false
 		node.get_node('duration').visible = false
-		node.get_node('health').visible = true
-		node.get_node('gold').visible = false
-	elif index == 2:
-		node.get_node('effects').visible = false
-		node.get_node('duration').visible = false
-		node.get_node('health').visible = false
-		node.get_node('gold').visible = true
+		node.get_node('hp_given').visible = true
 
 
 func on_clear_pressed():
@@ -195,13 +200,11 @@ func load_type_fields(item_dict, type):
 	for key in item_dict:
 		if key == 'name' or key == 'img_path' or key == 'desc' or key == 'buy_price' or key == 'sell_price' or key == 'type' or key == '':
 			continue
+			
 		elif key == 'abilities':
 			if node.get_node('abilities/abilities') != null:
 				var ability_list = node.get_node('abilities/abilities')
 				var abilities = item_dict['abilities']
-				
-				if abilities.size() == 0:
-					continue
 				
 				for list_index in range(0, ability_list.get_item_count()):
 					var item_meta = ability_list.get_item_metadata(list_index)
@@ -209,10 +212,27 @@ func load_type_fields(item_dict, type):
 					if item_meta['id'] in abilities:
 						if item_meta['level'] == abilities[item_meta['id']]:
 							ability_list.select(list_index, false)
-							abilities.erase(item_meta['id'])
+
+		elif key == 'potion_effects':
+			if node.get_node('effects/effects') != null:
+				var effect_list = node.get_node('effects/effects')
+				var effects = item_dict['potion_effects']
+				
+				for list_index in range(0, effect_list.get_item_count()):
+					var item_meta = effect_list.get_item_metadata(list_index)
+					
+					if 'hp_given' in effects:
+						node.get_node('hp_given/hp_given').text = str(effects['hp_given'])
+						
+						on_potion_type_selected(1)
+					
+					elif item_meta['id'] in effects:
+						if item_meta['level'] == effects[item_meta['id']]['level']:
+							effect_list.select(list_index, false)
+							node.get_node('duration/duration').text = str(effects[item_meta['id']]['duration'])
 							
-							if abilities.size() == 0:
-								break
+							on_potion_type_selected(0)
+
 		else:
 			node.get_node(key + '/' + key).text = item_dict[key]
 
@@ -273,39 +293,28 @@ func add_base_fields(item_dict):
 func add_type_fields(item_dict, type):
 	var node = parent.get_node(type + '/vbox')
 
-	if type == 'weapon':
+	for stat_key in all_stats:
+		add_field_to_dict(node, item_dict, stat_key)
+
+	add_main_stat_to_dict(node, item_dict)
+	add_abilities_to_dict(node, item_dict)
+	add_effects_to_dict(node, item_dict)
+
+
+func add_field_to_dict(node: Node, item_dict: Dictionary, stat_key: String):
+	if node.get_node(stat_key + '/' + stat_key) != null:
+		item_dict[stat_key] = node.get_node(stat_key + '/' + stat_key).text
+
+
+func add_main_stat_to_dict(node: Node, item_dict: Dictionary):
+	if node.get_node('main_stat/main_stat') != null:
 		var main_stat_index = node.get_node('main_stat/main_stat').get_selected_id()
+		var main_stat = node.get_node('main_stat/main_stat').get_item_text(main_stat_index)
 		
-		item_dict['main_stat'] = node.get_node('main_stat/main_stat').get_item_text(main_stat_index)
-		item_dict['atk_speed'] = node.get_node('atk_speed/atk_speed').text
-		item_dict['min_hit'] = node.get_node('min_hit/min_hit').text
-		item_dict['max_hit'] = node.get_node('max_hit/max_hit').text
-	if type == 'weapon' or type == 'armor' or type == 'jewelry':
-		item_dict['atk_stab'] = node.get_node('atk_stab/atk_stab').text
-		item_dict['atk_slash'] = node.get_node('atk_slash/atk_slash').text
-		item_dict['atk_crush'] = node.get_node('atk_crush/atk_crush').text
-	if type == 'armor' or type == 'jewelry' or type == 'companion':
-		item_dict['health'] = node.get_node('health/health').text
-		item_dict['def_stab'] = node.get_node('def_stab/def_stab').text
-		item_dict['def_slash'] = node.get_node('def_slash/def_slash').text
-		item_dict['def_crush'] = node.get_node('def_crush/def_crush').text
-		item_dict['dmg_reduc'] = node.get_node('dmg_reduc/dmg_reduc').text
-	if type == 'companion':
-		item_dict['travel_time'] = node.get_node('travel_time/travel_time').text
-		item_dict['food_cost'] = node.get_node('food_cost/food_cost').text
-		item_dict['gold_bonus'] = node.get_node('gold_bonus/gold_bonus').text
-	if type == 'consumable':
-		var type_index = node.get_node('type/type').get_selected_id()
-		
-		if type_index == 0:
-			item_dict['duration'] = node.get_node('duration/duration').text
-		elif type_index == 1:
-			item_dict['health'] = node.get_node('health/health').text
-		elif type_index == 2:
-			item_dict['gold'] = node.get_node('gold/gold').text
-	if type == 'food':
-		item_dict['ration_amt'] = node.get_node('ration_amt/ration_amt').text
-		
+		item_dict['main_stat'] = main_stat
+
+
+func add_abilities_to_dict(node: Node, item_dict: Dictionary):
 	if node.get_node('abilities/abilities') != null:
 		var ability_list = node.get_node('abilities/abilities')
 		var abilities = {}
@@ -313,10 +322,34 @@ func add_type_fields(item_dict, type):
 		for list_index in ability_list.get_selected_items():
 			var item_meta = ability_list.get_item_metadata(list_index)
 			
-			abilities[item_meta['id']] = item_meta['level']
+			abilities[item_meta['id']] = int(item_meta['level'])
 			
 		item_dict['abilities'] = abilities
+		
+
+func add_effects_to_dict(node: Node, item_dict: Dictionary):
+	var effects = {}
 	
+	if node.get_node('effects/effects') != null:
+		#If the consumable gives potion effects
+		if node.get_node('duration').visible:
+			var effect_list = node.get_node('effects/effects')
+			
+			for list_index in effect_list.get_selected_items():
+				var item_meta = effect_list.get_item_metadata(list_index)
+				var effect_key = item_meta['id']
+				
+				effects[effect_key] = {}
+				effects[effect_key]['level'] = int(item_meta['level'])
+				effects[effect_key]['duration'] = int(node.get_node('duration/duration').text)
+	
+		#If the consumable just heals the hero
+		elif node.get_node('hp_given').visible:
+			effects['hp_given'] = int(node.get_node('hp_given/hp_given').text)
+	
+	if effects != {}:
+		item_dict['potion_effects'] = effects
+
 	
 func are_fields_incorrect(item_dict):
 	for key in item_dict:
@@ -395,18 +428,22 @@ func fill_potion_types_item_list():
 	
 	potion_types.add_item('Lasts X Fights')
 	potion_types.add_item('Restore Health')
-	potion_types.add_item('Receive Gold')
 
 
 func fill_potion_effect_item_list():
-	var effect_list = get_node('container/parent_vbox/vbox/consumable/vbox/effects/effects')
+	var effect_dict = MasterConfig.config['potion_effects']
+	var current_index = 0
 	
-	effect_list.add_item('Effect1 I')
-	effect_list.add_item('Effect1 II')
-	effect_list.add_item('Effect1 III')
-	effect_list.add_item('Effect2 I')
-	effect_list.add_item('Effect2 II')
-	effect_list.add_item('Effect3 I')
-	effect_list.add_item('Effect4 I')
+	for key in effect_dict:
+		var effect = effect_dict[key]
+		
+		for level_key in effect:
+			if level_key == 0:
+				effect_list.add_item(Helper.get_header_text(key))
+			else:
+				effect_list.add_item(Helper.get_header_text(key) + ' ' + Helper.get_roman_numeral(level_key))
+				
+			effect_list.set_item_metadata(current_index, {'id': key, 'level': level_key})
+			current_index += 1
 	
 	effect_list.sort_items_by_text()
