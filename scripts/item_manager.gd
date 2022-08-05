@@ -17,7 +17,7 @@ func _ready():
 	fill_list_and_get_total(MasterConfig.config['modifiers'], modifiers)
 	
 	for i in range(0, 20):
-		roll_for_ability('weapon')
+		roll_for_ability('armor')
 
 
 func create_drop_rate_lists():
@@ -29,6 +29,7 @@ func create_drop_rate_lists():
 			
 			list[category]['drop_rates'] = []
 			list[category]['names'] = []
+			list[category]['levels'] = []
 			list[category]['total_drop_weight'] = 0
 
 
@@ -46,9 +47,9 @@ func add_item_to_list(local_list: Dictionary, list_item: Dictionary):
 	if 'levels' in list_item:
 		for level in list_item['levels']:
 			drop_weight = list_item['levels'][level]['drop_weight']
-			name = list_item['name'] + ' ' + Helper.get_roman_numeral(level)
+			name = list_item['name']
 			
-			append_drop_weight_and_name(local_list, drop_weight, name)
+			append_drop_weight_and_name(local_list, drop_weight, name, level)
 	else:
 		drop_weight = list_item['drop_weight']
 		name = list_item['name']
@@ -56,11 +57,14 @@ func add_item_to_list(local_list: Dictionary, list_item: Dictionary):
 		append_drop_weight_and_name(local_list, drop_weight, name)
 
 
-func append_drop_weight_and_name(local_list: Dictionary, drop_weight: int, name: String):
+func append_drop_weight_and_name(local_list: Dictionary, drop_weight: int, name: String, level := -1):
 	local_list['total_drop_weight'] += int(drop_weight)
 	
 	local_list['drop_rates'].append(local_list['total_drop_weight'])
 	local_list['names'].append(name)
+	
+	if level != -1:
+		local_list['levels'].append(level)
 	
 	
 func roll_for_ability(gear_type: String):
@@ -72,6 +76,7 @@ func roll_for_ability(gear_type: String):
 func roll_the_list(list: Dictionary):
 	var drop_rates = list['drop_rates']
 	var names = list['names']
+	var levels = list['levels']
 	var total_drop_weight = list['total_drop_weight']
 	
 	var rand_int = rng.randi_range(0, total_drop_weight)
@@ -87,6 +92,12 @@ func roll_the_list(list: Dictionary):
 			else:
 				chance = (float(drop_rates[index] - drop_rates[index-1]) / float(total_drop_weight))
 				chance *= 100
+			
+			var name = names[index]
+			
+			if levels.size() > 0:
+				if levels[index] > 0:
+					name += ' ' + Helper.get_roman_numeral(levels[index])
 				
-			print(names[index] + ' --- ' + str(chance) + '% chance')
+			print(name + ' --- ' + str(chance) + '% chance')
 			break
