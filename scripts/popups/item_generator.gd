@@ -195,6 +195,24 @@ func load_type_fields(item_dict, type):
 	for key in item_dict:
 		if key == 'name' or key == 'img_path' or key == 'desc' or key == 'buy_price' or key == 'sell_price' or key == 'type' or key == '':
 			continue
+		elif key == 'abilities':
+			if node.get_node('abilities/abilities') != null:
+				var ability_list = node.get_node('abilities/abilities')
+				var abilities = item_dict['abilities']
+				
+				if abilities.size() == 0:
+					continue
+				
+				for list_index in range(0, ability_list.get_item_count()):
+					var item_meta = ability_list.get_item_metadata(list_index)
+					
+					if item_meta['id'] in abilities:
+						if item_meta['level'] == abilities[item_meta['id']]:
+							ability_list.select(list_index, false)
+							abilities.erase(item_meta['id'])
+							
+							if abilities.size() == 0:
+								break
 		else:
 			node.get_node(key + '/' + key).text = item_dict[key]
 
@@ -287,10 +305,25 @@ func add_type_fields(item_dict, type):
 			item_dict['gold'] = node.get_node('gold/gold').text
 	if type == 'food':
 		item_dict['ration_amt'] = node.get_node('ration_amt/ration_amt').text
+		
+	if node.get_node('abilities/abilities') != null:
+		var ability_list = node.get_node('abilities/abilities')
+		var abilities = {}
+		
+		for list_index in ability_list.get_selected_items():
+			var item_meta = ability_list.get_item_metadata(list_index)
+			
+			abilities[item_meta['id']] = item_meta['level']
+			
+		item_dict['abilities'] = abilities
 	
 	
 func are_fields_incorrect(item_dict):
 	for key in item_dict:
+		#Do not check dictionaries
+		if typeof(item_dict[key]) == TYPE_DICTIONARY:
+			continue
+			
 		#Check for empty values
 		if item_dict[key] == '':
 			print('==ERROR: The ' + key + ' field is empty')
