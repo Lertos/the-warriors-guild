@@ -11,6 +11,10 @@ var number_regex = RegEx.new()
 
 var types = ['item', 'food', 'weapon', 'armor', 'consumable', 'jewelry', 'companion']
 
+onready var weapon_abilities = get_node('container/parent_vbox/vbox/weapon/vbox/abilities/abilities')
+onready var armor_abilities = get_node('container/parent_vbox/vbox/armor/vbox/abilities/abilities')
+onready var jewelry_abilities = get_node('container/parent_vbox/vbox/jewelry/vbox/abilities/abilities')
+
 
 func _ready():
 	number_regex.compile("\\d")
@@ -21,7 +25,11 @@ func _ready():
 	fill_rarity_dropdown()
 	
 	fill_main_stat_list()
-	fill_ability_item_list()
+	
+	fill_ability_item_list(weapon_abilities, 'weapon')
+	fill_ability_item_list(armor_abilities, 'armor')
+	fill_ability_item_list(jewelry_abilities, 'jewelry')
+	
 	fill_potion_types_item_list()
 	fill_potion_effect_item_list()
 
@@ -251,11 +259,9 @@ func add_type_fields(item_dict, type):
 		var main_stat_index = node.get_node('main_stat/main_stat').get_selected_id()
 		
 		item_dict['main_stat'] = node.get_node('main_stat/main_stat').get_item_text(main_stat_index)
-		item_dict['health'] = node.get_node('health/health').text
 		item_dict['atk_speed'] = node.get_node('atk_speed/atk_speed').text
 		item_dict['min_hit'] = node.get_node('min_hit/min_hit').text
 		item_dict['max_hit'] = node.get_node('max_hit/max_hit').text
-		item_dict['dmg_reduc'] = node.get_node('dmg_reduc/dmg_reduc').text
 	if type == 'weapon' or type == 'armor' or type == 'jewelry':
 		item_dict['atk_stab'] = node.get_node('atk_stab/atk_stab').text
 		item_dict['atk_slash'] = node.get_node('atk_slash/atk_slash').text
@@ -331,24 +337,24 @@ func fill_main_stat_list():
 	main_stat_dropdown.add_item('atk_crush')
 
 
-func fill_ability_item_list():
-	var item_list = get_node('container/parent_vbox/vbox/weapon/vbox/abilities/abilities')
+func fill_ability_item_list(ability_list, gear_type: String):
 	var ability_dict = MasterConfig.config['abilities']
 	var current_index = 0
 	
 	for key in ability_dict:
 		var ability = ability_dict[key]
 		
-		for level_key in ability['levels']:
-			if level_key == 0:
-				item_list.add_item(ability_dict[key]['name'])
-			else:
-				item_list.add_item(ability_dict[key]['name'] + ' ' + Helper.get_roman_numeral(level_key))
-				
-			item_list.set_item_metadata(current_index, {'id': key})
-			current_index += 1
+		if gear_type in ability['gear_types']:
+			for level_key in ability['levels']:
+				if level_key == 0:
+					ability_list.add_item(ability_dict[key]['name'])
+				else:
+					ability_list.add_item(ability_dict[key]['name'] + ' ' + Helper.get_roman_numeral(level_key))
+					
+				ability_list.set_item_metadata(current_index, {'id': key, 'level': level_key})
+				current_index += 1
 	
-	item_list.sort_items_by_text()
+	ability_list.sort_items_by_text()
 
 
 func fill_potion_types_item_list():
