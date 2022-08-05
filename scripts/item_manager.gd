@@ -17,7 +17,7 @@ func _ready():
 	fill_list_and_get_total(MasterConfig.config['modifiers'], modifiers)
 	
 	for i in range(0, 20):
-		roll_for_ability('armor')
+		roll_for_ability('jewelry')
 
 
 func create_drop_rate_lists():
@@ -28,7 +28,7 @@ func create_drop_rate_lists():
 			list[category] = {}
 			
 			list[category]['drop_rates'] = []
-			list[category]['names'] = []
+			list[category]['keys'] = []
 			list[category]['levels'] = []
 			list[category]['total_drop_weight'] = 0
 
@@ -37,31 +37,40 @@ func fill_list_and_get_total(config_list: Dictionary, local_list: Dictionary):
 	for category in categories:
 		for key in config_list:
 			if config_list[key]['gear_types'].has(category):
-				add_item_to_list(local_list[category], config_list[key])
+				add_item_to_list(local_list[category], config_list[key], key)
 
 
-func add_item_to_list(local_list: Dictionary, list_item: Dictionary):
+func add_item_to_list(local_list: Dictionary, list_item: Dictionary, key: String):
 	var drop_weight
-	var name
 	
 	if 'levels' in list_item:
 		for level in list_item['levels']:
-			drop_weight = list_item['levels'][level]['drop_weight']
-			name = list_item['name']
+			if !can_get_natural(list_item['levels'][level]):
+				continue
 			
-			append_drop_weight_and_name(local_list, drop_weight, name, level)
+			drop_weight = list_item['levels'][level]['drop_weight']
+			
+			append_drop_weight_and_name(local_list, drop_weight, key, level)
 	else:
+		if !can_get_natural(list_item):
+			return
+				
 		drop_weight = list_item['drop_weight']
-		name = list_item['name']
 		
-		append_drop_weight_and_name(local_list, drop_weight, name)
+		append_drop_weight_and_name(local_list, drop_weight, key)
 
 
-func append_drop_weight_and_name(local_list: Dictionary, drop_weight: int, name: String, level := -1):
+func can_get_natural(dict: Dictionary) -> bool:
+	if 'can_get_natural' in dict:
+		return dict['can_get_natural']
+	return true
+
+
+func append_drop_weight_and_name(local_list: Dictionary, drop_weight: int, key: String, level := -1):
 	local_list['total_drop_weight'] += int(drop_weight)
 	
 	local_list['drop_rates'].append(local_list['total_drop_weight'])
-	local_list['names'].append(name)
+	local_list['keys'].append(key)
 	
 	if level != -1:
 		local_list['levels'].append(level)
@@ -75,7 +84,7 @@ func roll_for_ability(gear_type: String):
 
 func roll_the_list(list: Dictionary):
 	var drop_rates = list['drop_rates']
-	var names = list['names']
+	var keys = list['keys']
 	var levels = list['levels']
 	var total_drop_weight = list['total_drop_weight']
 	
@@ -93,11 +102,11 @@ func roll_the_list(list: Dictionary):
 				chance = (float(drop_rates[index] - drop_rates[index-1]) / float(total_drop_weight))
 				chance *= 100
 			
-			var name = names[index]
+			var key = Helper.get_header_text(keys[index])
 			
 			if levels.size() > 0:
 				if levels[index] > 0:
-					name += ' ' + Helper.get_roman_numeral(levels[index])
+					key += ' ' + Helper.get_roman_numeral(levels[index])
 				
-			print(name + ' --- ' + str(chance) + '% chance')
+			print(key + ' --- ' + str(chance) + '% chance')
 			break
