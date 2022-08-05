@@ -99,6 +99,61 @@ var config = {
 			'chance_of_each_ability': 70,
 		},
 	},
+
+	#-----------------------
+	# POTION EFFECTS
+	#-----------------------
+	'potion_effects': {
+		'poison_resistance': {
+			1: 1,
+			2: 3,
+			3: 5,
+			4: 8,
+			5: 12,
+		},
+		'fire_resistance': {
+			1: 1,
+			2: 3,
+			3: 5,
+			4: 8,
+			5: 12,
+		},
+		'attack_speed_buff': {
+			1: 0.1,
+			2: 0.2,
+			3: 0.3,
+			4: 0.5,
+			5: 0.7,
+		},
+		'cold_resistance': {
+			1: 1,
+			2: 3,
+			3: 5,
+			4: 8,
+			5: 12,
+		},
+		'bleed_resistance': {
+			1: 1,
+			2: 3,
+			3: 5,
+			4: 8,
+			5: 12,
+		},
+		'second_chance': {
+			1: 2,
+			2: 4,
+			3: 6,
+			4: 8,
+			5: 10,
+		},
+		'defensive_stance': {
+			1: 1,
+			2: 2,
+			3: 3,
+			4: 4,
+			5: 5,
+		},
+	},
 	
 	#-----------------------
 	# MODIFIERS
@@ -449,35 +504,35 @@ var config = {
 			'levels': {
 				1: {
 					'can_get_natural': true,
-					'drop_weight': 256,
+					'drop_weight': 32,
 					'ability_chance': 15,
 					'x': 1,
 					'y': 1,
 				},
 				2: {
 					'can_get_natural': true,
-					'drop_weight': 128,
+					'drop_weight': 16,
 					'ability_chance': 15,
 					'x': 2,
 					'y': 2,
 				},
 				3: {
 					'can_get_natural': true,
-					'drop_weight': 64,
+					'drop_weight': 8,
 					'ability_chance': 20,
 					'x': 3,
 					'y': 3,
 				},
 				4: {
 					'can_get_natural': true,
-					'drop_weight': 32,
+					'drop_weight': 4,
 					'ability_chance': 20,
 					'x': 4,
 					'y': 4,
 				},
 				5: {
 					'can_get_natural': false,
-					'drop_weight': 16,
+					'drop_weight': 2,
 					'ability_chance': 25,
 					'x': 5,
 					'y': 5,
