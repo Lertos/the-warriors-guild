@@ -107,21 +107,21 @@ var config = {
 		'unprotected': {
 			'name': 'Unprotected',
 			'drop_weight': 128,
-			'gear_types': ['gear'],
+			'gear_types': ['armor'],
 			'p_health': -5,
 			'p_all_def': -5,
 		},
 		'armored': {
 			'name': 'Armored',
 			'drop_weight': 128,
-			'gear_types': ['gear'],
+			'gear_types': ['armor'],
 			'p_health': 2,
 			'p_all_def': 2,
 		},
 		'warding': {
 			'name': 'Warding',
 			'drop_weight': 128,
-			'gear_types': ['gear'],
+			'gear_types': ['armor'],
 			'p_health': 5,
 			'p_all_def': 5,
 			'p_dmg_reduc': 2,
@@ -129,7 +129,7 @@ var config = {
 		'terrible': {
 			'name': 'Terrible',
 			'drop_weight': 128,
-			'gear_types': ['weapon', 'gear', 'jewelry'],
+			'gear_types': ['weapon', 'armor', 'jewelry'],
 			'p_health': -5,
 			'p_damage': -5,
 			'p_dmg_reduc': -5,
@@ -137,7 +137,7 @@ var config = {
 		'awful': {
 			'name': 'Awful',
 			'drop_weight': 128,
-			'gear_types': ['weapon', 'gear', 'jewelry'],
+			'gear_types': ['weapon', 'armor', 'jewelry'],
 			'p_health': -2,
 			'p_damage': -2,
 			'p_dmg_reduc': -2,
@@ -145,7 +145,7 @@ var config = {
 		'great': {
 			'name': 'Great',
 			'drop_weight': 128,
-			'gear_types': ['weapon', 'gear', 'jewelry'],
+			'gear_types': ['weapon', 'armor', 'jewelry'],
 			'p_health': 2,
 			'p_damage': 2,
 			'p_dmg_reduc': 2,
@@ -153,7 +153,7 @@ var config = {
 		'superior': {
 			'name': 'Superior',
 			'drop_weight': 128,
-			'gear_types': ['weapon', 'gear', 'jewelry'],
+			'gear_types': ['weapon', 'armor', 'jewelry'],
 			'p_health': 5,
 			'p_damage': 5,
 			'p_dmg_reduc': 5,
@@ -161,7 +161,7 @@ var config = {
 		'legendary': {
 			'name': 'Legendary',
 			'drop_weight': 128,
-			'gear_types': ['weapon', 'gear', 'jewelry'],
+			'gear_types': ['weapon', 'armor', 'jewelry'],
 			'p_health': 8,
 			'p_damage': 8,
 			'p_dmg_reduc': 8,
@@ -169,7 +169,7 @@ var config = {
 		'mythical': {
 			'name': 'Mythical',
 			'drop_weight': 128,
-			'gear_types': ['weapon', 'gear', 'jewelry'],
+			'gear_types': ['weapon', 'armor', 'jewelry'],
 			'p_health': 10,
 			'p_damage': 10,
 			'p_dmg_reduc': 10,
@@ -227,19 +227,19 @@ var config = {
 		'flimsy': {
 			'name': 'Flimsy',
 			'drop_weight': 128,
-			'gear_types': ['weapon', 'gear', 'jewelry'],
+			'gear_types': ['weapon', 'armor', 'jewelry'],
 			'p_sell_price': -10,
 		},
 		'shiny': {
 			'name': 'Shiny',
 			'drop_weight': 128,
-			'gear_types': ['weapon', 'gear', 'jewelry'],
+			'gear_types': ['weapon', 'armor', 'jewelry'],
 			'p_sell_price': 10,
 		},
 		'rare': {
 			'name': 'Rare',
 			'drop_weight': 128,
-			'gear_types': ['weapon', 'gear', 'jewelry'],
+			'gear_types': ['weapon', 'armor', 'jewelry'],
 			'p_sell_price': 20,
 		},
 		'flawed': {
@@ -268,7 +268,7 @@ var config = {
 		'brittle': {
 			'name': 'Brittle',
 			'drop_weight': 128,
-			'gear_types': ['gear', 'jewelry'],
+			'gear_types': ['armor', 'jewelry'],
 			'p_health': -5,
 			'p_speed': 2,
 			'p_dmg_reduc': -2,
@@ -276,14 +276,14 @@ var config = {
 		'solid': {
 			'name': 'Solid',
 			'drop_weight': 128,
-			'gear_types': ['gear', 'jewelry'],
+			'gear_types': ['armor', 'jewelry'],
 			'p_health': 5,
 			'p_dmg_reduc': 2,
 		},
 		'tanky': {
 			'name': 'Tanky',
 			'drop_weight': 128,
-			'gear_types': ['gear', 'jewelry'],
+			'gear_types': ['armor', 'jewelry'],
 			'p_health': 10,
 			'p_speed': -5,
 			'p_dmg_reduc': 5,
@@ -578,7 +578,7 @@ var config = {
 			'name': 'Berserk',
 			'description': 'While your health is above <x>% health, take <y>% damage. While below <z>%, deal <xx>% damage',
 			'type': 'passive',
-			'gear_types': ['weapon', 'gear', 'jewelry'],
+			'gear_types': ['weapon', 'armor', 'jewelry'],
 			'levels': {
 				0: {
 					'can_get_natural': true,
@@ -595,7 +595,7 @@ var config = {
 			'name': 'Patience',
 			'description': 'If your opponent has higher <def_stat> than your <atk_stat>, lose <x>s attack speed but do <y>% more damage',
 			'type': 'passive',
-			'gear_types': ['gear', 'jewelry'],
+			'gear_types': ['armor', 'jewelry'],
 			'levels': {
 				0: {
 					'can_get_natural': true,
@@ -610,7 +610,7 @@ var config = {
 			'name': 'Living Dead',
 			'description': 'When your health falls below <x>% of your max health, regain <y>% of your max health back, but lose <z>% of your defense stats',
 			'type': 'passive',
-			'gear_types': ['gear', 'jewelry'],
+			'gear_types': ['armor', 'jewelry'],
 			'levels': {
 				1: {
 					'can_get_natural': true,
@@ -642,7 +642,7 @@ var config = {
 			'name': 'Resistance',
 			'description': 'Reduces the effects of venom and poison by <x>%',
 			'type': 'passive',
-			'gear_types': ['gear', 'jewelry'],
+			'gear_types': ['armor', 'jewelry'],
 			'levels': {
 				1: {
 					'can_get_natural': true,
@@ -855,7 +855,7 @@ var config = {
 			'name': 'Heal',
 			'description': 'Heal for <x>% of your max health',
 			'type': 'active',
-			'gear_types': ['gear', 'jewelry'],
+			'gear_types': ['armor', 'jewelry'],
 			'levels': {
 				1: {
 					'can_get_natural': true,
@@ -893,7 +893,7 @@ var config = {
 			'name': 'Cure',
 			'description': 'Cures any poison and venom that you are suffering from',
 			'type': 'active',
-			'gear_types': ['gear', 'jewelry'],
+			'gear_types': ['armor', 'jewelry'],
 			'levels': {
 				1: {
 					'can_get_natural': true,
@@ -959,7 +959,7 @@ var config = {
 			'name': 'Devils Blessing',
 			'description': 'Increase all defensive stats by <x>% for one turn but also lose <y>% of your current health',
 			'type': 'active',
-			'gear_types': ['gear', 'jewelry'],
+			'gear_types': ['armor', 'jewelry'],
 			'levels': {
 				1: {
 					'can_get_natural': true,
@@ -1011,7 +1011,7 @@ var config = {
 			'name': 'Windswept',
 			'description': 'For the next <x> turns gain <y> seconds of additional attack speed',
 			'type': 'active',
-			'gear_types': ['gear', 'jewelry'],
+			'gear_types': ['armor', 'jewelry'],
 			'levels': {
 				1: {
 					'can_get_natural': true,
@@ -1056,7 +1056,7 @@ var config = {
 			'name': 'Blood Deal',
 			'description': 'Sacrifice <x>% of your maximum health to deal <y>% additional damage',
 			'type': 'active',
-			'gear_types': ['weapon', 'gear', 'jewelry'],
+			'gear_types': ['weapon', 'armor', 'jewelry'],
 			'levels': {
 				1: {
 					'can_get_natural': true,
@@ -1092,7 +1092,7 @@ var config = {
 			'name': 'Intimidation',
 			'description': 'If your opponent has less max health, deal <x>% of their current health as additional damage',
 			'type': 'active',
-			'gear_types': ['weapon', 'gear', 'jewelry'],
+			'gear_types': ['weapon', 'armor', 'jewelry'],
 			'levels': {
 				1: {
 					'can_get_natural': true,
