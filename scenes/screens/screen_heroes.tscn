@@ -713,6 +713,13 @@ custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
 align = 1
 autowrap = true
 
+[node name="rarity" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox/labels"]
+margin_right = 131.0
+margin_bottom = 14.0
+theme = ExtResource( 7 )
+align = 1
+autowrap = true
+
 [node name="spacer" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox/labels"]
 margin_top = 14.0
 margin_right = 131.0
@@ -721,12 +728,12 @@ theme = ExtResource( 42 )
 align = 1
 autowrap = true
 
-[node name="label" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox/labels"]
+[node name="ability_header" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox/labels"]
 margin_top = 22.0
 margin_right = 131.0
 margin_bottom = 36.0
 theme = ExtResource( 7 )
-text = "Abilities"
+text = "ABILITIES"
 align = 1
 autowrap = true
 

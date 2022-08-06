@@ -30,7 +30,7 @@ func load_items(storage_type: String, sub_type: String):
 	
 	add_selected_border(sub_type)
 	
-	item_info_parent.get_node('hbox/labels/label').visible = false
+	item_info_parent.get_node('hbox/labels/ability_header').visible = false
 	item_info_parent.get_node('hbox/labels/equip').visible = false
 	
 	for hbox in list_node.get_children():
@@ -50,13 +50,31 @@ func load_item_info(item_button: Node):
 		
 		reset_info_panel()
 		
-		item_info_parent.get_node('hbox/labels/label').visible = true
+		item_info_parent.get_node('hbox/labels/ability_header').visible = true
 		item_info_parent.get_node('hbox/labels/equip').visible = true
 		
 		item_info_parent.get_node('hbox/labels/item_name').text = item['name']
-		
-		load_item_abilities(item_meta)
+				
 		load_item_stats(item)
+		
+		var rarity_label = item_info_parent.get_node('hbox/labels/rarity')
+		
+		if 'rarity' in item_meta:
+			rarity_label.text = Helper.get_header_text(item_meta['rarity'])
+			Helper.change_label_font_color(rarity_label, item_meta['rarity'])
+		else:
+			rarity_label.text = Helper.get_header_text('UNIDENTIFIED')
+			Helper.change_label_font_color(rarity_label, 'unidentified')
+		
+		if 'unidentified' in item_meta:
+			var ability_label = item_info_parent.get_node('hbox/labels/ability_header')
+
+			if item_meta['unidentified']:
+				ability_label.visible = false
+			else:
+				ability_label.visible = true
+				
+				load_item_abilities(item_meta)
 
 
 func load_item_abilities(item_meta: Dictionary):

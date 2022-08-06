@@ -149,13 +149,18 @@ var player = {
 			'slots': [
 				{
 					'item_id': 'dagger',
-					'unidentified': true,
+					'unidentified': false,
 					'amount': 1,
 					'rarity': 'legendary',
 					'abilities': {
 						'poisonous': 2,
 						'freezing': 1,
 					},
+				},
+				{
+					'item_id': 'dagger',
+					'unidentified': true,
+					'amount': 2,
 				},
 			],
 		},

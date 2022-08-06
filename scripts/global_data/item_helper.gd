@@ -62,7 +62,10 @@ func get_sub_type_items_only(item_list: Array, sub_type: String) -> Array:
 func update_item_record(item_record, item):
 	var item_data = Global_Items.items[item['item_id']]
 	
-	Helper.change_border_color(item_record.get_node('rarity'), item['rarity'])
+	if 'rarity' in item:
+		Helper.change_border_color(item_record.get_node('rarity'), item['rarity'])
+	else:
+		Helper.change_border_color(item_record.get_node('rarity'), 'unidentified')
 
 	item_record.get_node('rarity/amount').text = str(item['amount'])
 	item_record.get_node('rarity/item').texture = load('res://assets/' + item_data['img_path'] + '.png')
