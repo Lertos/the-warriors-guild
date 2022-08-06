@@ -30,6 +30,7 @@ func load_items(storage_type: String, sub_type: String):
 	
 	add_selected_border(sub_type)
 	
+	item_info_parent.get_node('hbox/labels/rarity').visible = false
 	item_info_parent.get_node('hbox/labels/ability_header').visible = false
 	item_info_parent.get_node('hbox/labels/equip').visible = false
 	
@@ -50,6 +51,7 @@ func load_item_info(item_button: Node):
 		
 		reset_info_panel()
 		
+		item_info_parent.get_node('hbox/labels/rarity').visible = true
 		item_info_parent.get_node('hbox/labels/ability_header').visible = true
 		item_info_parent.get_node('hbox/labels/equip').visible = true
 		

@@ -729,6 +729,7 @@ align = 1
 autowrap = true
 
 [node name="ability_header" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox/labels"]
+visible = false
 margin_top = 22.0
 margin_right = 131.0
 margin_bottom = 36.0
