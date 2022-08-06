@@ -23,9 +23,13 @@ var colors = {
 	#OTHER
 	'locked': Color("#392b27"),
 	'selected': Color("#ff4a26"),
+	'unidentified': Color("#a84c32"),
 	'yellow_highlight': Color("#effa5a"),
 	'stat_highlight': Color("#db55ed"),
 	'green_button_bg': Color("#29610e"),
+	#BASE COLORS
+	'white': Color("#ffffff"),
+	'black': Color("#000000"),
 }
 
 """
