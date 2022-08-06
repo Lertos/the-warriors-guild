@@ -20,7 +20,11 @@ func get_time_from_stamp(time_in_seconds: int):
 		return '%02d:%02d' % [minutes, seconds]
 	elif seconds != 0:
 		return '%02d' % [seconds]
-	
+
+
+func change_label_font_color(label: Label, color_key: String):
+	label.add_color_override("font_color", Global_Colors.colors[color_key])
+
 
 func change_border_color(node, color_key):
 	var color = Global_Colors.colors[color_key]
