@@ -31,7 +31,6 @@ func _ready():
 	clear_item_info(current_type)
 	
 	fill_type_dropdown()
-	fill_rarity_dropdown()
 	
 	fill_main_stat_list()
 	
@@ -64,7 +63,6 @@ func clear_item_info(type: String):
 	#Clear shared item info
 	parent.get_node('line1/id/id').text = ''
 	parent.get_node('line2/name/name').text = ''
-	parent.get_node('line2/rarity/rarity').select(0)
 	parent.get_node('description/description').text = ''
 	parent.get_node('line3/buy_price/buy_price').text = '-1'
 	parent.get_node('line3/sell_price/sell_price').text = '-1'
@@ -200,7 +198,7 @@ func load_type_fields(item_dict, type):
 	for key in item_dict:
 		if key == 'name' or key == 'img_path' or key == 'desc' or key == 'buy_price' or key == 'sell_price' or key == 'type' or key == '':
 			continue
-			
+
 		elif key == 'abilities':
 			if node.get_node('abilities/abilities') != null:
 				var ability_list = node.get_node('abilities/abilities')
@@ -367,12 +365,12 @@ func are_fields_incorrect(item_dict):
 			if number_regex.search(item_dict[key]):
 				print('==ERROR: The ' + key + ' field has a number in it')
 				return true
-		#Check for numbers in pure alpha fields
+		#Check for fields that should be floats
 		elif key == 'atk_speed' or key == 'dmg_reduc':
 			if !item_dict[key].is_valid_float():
 				print('==ERROR: The ' + key + ' field is not a valid float')
 				return true
-		#Check for fields that should be only integers
+		#Check for fields that should be integers
 		else:
 			if key != 'desc' and key != 'img_path' and key != 'main_stat' and !item_dict[key].is_valid_integer():
 				print('==ERROR: The ' + key + ' field is not a valid integer')
@@ -386,13 +384,6 @@ func fill_type_dropdown():
 	
 	for i in range(0, len(types)):
 		type_dropdown.add_item(types[i], i)
-
-
-func fill_rarity_dropdown():
-	var rarity_dropdown = get_node('container/parent_vbox/vbox/line2/rarity/rarity')
-	
-	for key in MasterConfig.config['rarities']:
-		rarity_dropdown.add_item(key, MasterConfig.config['rarities'][key]['order'])
 
 
 func fill_main_stat_list():

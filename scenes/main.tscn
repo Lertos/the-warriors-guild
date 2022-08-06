@@ -336,28 +336,6 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 clear_button_enabled = true
 
-[node name="rarity" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/line2"]
-margin_left = 166.0
-margin_right = 324.0
-margin_bottom = 24.0
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/line2/rarity"]
-margin_right = 46.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 0, 24 )
-theme = ExtResource( 17 )
-text = "Rarity"
-align = 2
-valign = 1
-
-[node name="rarity" type="OptionButton" parent="ItemGenerator/container/parent_vbox/vbox/line2/rarity"]
-margin_left = 50.0
-margin_right = 158.0
-margin_bottom = 24.0
-size_flags_horizontal = 3
-theme = ExtResource( 17 )
-
 [node name="description" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox"]
 margin_top = 64.0
 margin_right = 324.0
