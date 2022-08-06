@@ -110,13 +110,13 @@ func create_new_hero():
 	dict['current_activity']['event_key'] = ''
 	dict['current_activity']['time_done'] = 0
 	
-	# empty string means wearing nothing
+	#Empty string means wearing nothing
 	dict['gear'] = {}
 	
 	for key in MasterConfig.config['gear_types']:
 		dict['gear'][key] = ''
 
-	# "p_" = percentage, "n_" = flat number
+	#"p_" = percentage, "n_" = flat number
 	dict['talent_bonuses'] = {}
 	
 	for key in MasterConfig.config['talent_bonuses']:
@@ -126,6 +126,9 @@ func create_new_hero():
 		
 	for key in MasterConfig.config['regions']:
 		dict['regions'][key] = 0
+		
+	#Add an empty dict for the active potions of each hero
+	dict['active_potions'] = {}
 	
 	#Making sure they have the starting location
 	dict['regions']['verdant_valley'] = 1
