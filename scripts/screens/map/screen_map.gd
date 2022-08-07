@@ -38,7 +38,7 @@ func load_heroes():
 func load_map_for_hero(hero_index: int):
 	var hero_info = Global_Player.player['heroes'][hero_index]
 
-	for region_row in get_node('monster_vbox/region_vbox').get_children():
+	for region_row in get_node('monster_vbox/hbox/region_vbox').get_children():
 		for region_button in region_row.get_children():
 			if hero_info['regions'][region_button.name] == 0:
 				region_button.icon = locked_texture
@@ -101,7 +101,7 @@ func switch_views():
 
 
 func update_selected_region_button(region_name):
-	for region_hbox in get_node('monster_vbox/region_vbox').get_children():
+	for region_hbox in get_node('monster_vbox/hbox/region_vbox').get_children():
 		for region_button in region_hbox.get_children():
 			if region_button.name == region_name:
 				Helper.change_border_color(region_button, 'selected')

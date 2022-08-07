@@ -62,14 +62,14 @@ custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
 align = 1
 
 [node name="sep4" parent="monster_vbox" instance=ExtResource( 11 )]
-margin_top = 337.0
-margin_bottom = 341.0
+margin_top = 27.0
+margin_bottom = 31.0
 custom_styles/panel = SubResource( 1 )
 
 [node name="monsters" type="ScrollContainer" parent="monster_vbox"]
-margin_top = 27.0
+margin_top = 37.0
 margin_right = 360.0
-margin_bottom = 331.0
+margin_bottom = 383.0
 mouse_filter = 1
 size_flags_vertical = 3
 theme = ExtResource( 15 )
@@ -78,33 +78,53 @@ script = ExtResource( 13 )
 
 [node name="vbox" type="VBoxContainer" parent="monster_vbox/monsters"]
 margin_right = 360.0
-margin_bottom = 304.0
+margin_bottom = 346.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 6
 
 [node name="sep3" parent="monster_vbox" instance=ExtResource( 11 )]
-margin_top = 337.0
-margin_bottom = 341.0
+margin_top = 389.0
+margin_bottom = 393.0
 custom_styles/panel = SubResource( 1 )
 
-[node name="region_vbox" type="VBoxContainer" parent="monster_vbox"]
-margin_left = 40.0
-margin_top = 347.0
-margin_right = 320.0
-margin_bottom = 448.0
+[node name="hbox" type="HBoxContainer" parent="monster_vbox"]
+margin_top = 399.0
+margin_right = 360.0
+margin_bottom = 500.0
+
+[node name="header" type="Label" parent="monster_vbox/hbox"]
+margin_top = 40.0
+margin_bottom = 61.0
+theme = ExtResource( 19 )
+custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
+align = 1
+
+[node name="reselect_hero" type="Button" parent="monster_vbox/hbox"]
+margin_left = 4.0
+margin_right = 42.0
+margin_bottom = 101.0
 size_flags_horizontal = 4
+theme = ExtResource( 21 )
+icon = ExtResource( 25 )
+
+[node name="region_vbox" type="VBoxContainer" parent="monster_vbox/hbox"]
+margin_left = 46.0
+margin_right = 360.0
+margin_bottom = 101.0
+size_flags_horizontal = 3
 custom_constants/separation = 5
 alignment = 1
 
-[node name="region_row1" type="HBoxContainer" parent="monster_vbox/region_vbox"]
-margin_right = 280.0
+[node name="region_row1" type="HBoxContainer" parent="monster_vbox/hbox/region_vbox"]
+margin_right = 314.0
 margin_bottom = 48.0
 custom_constants/separation = 10
 alignment = 1
 
-[node name="verdant_valley" type="Button" parent="monster_vbox/region_vbox/region_row1"]
-margin_right = 48.0
+[node name="verdant_valley" type="Button" parent="monster_vbox/hbox/region_vbox/region_row1"]
+margin_left = 17.0
+margin_right = 65.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 48, 48 )
 size_flags_horizontal = 4
@@ -113,9 +133,9 @@ theme = ExtResource( 14 )
 icon = ExtResource( 5 )
 expand_icon = true
 
-[node name="fatal_forest" type="Button" parent="monster_vbox/region_vbox/region_row1"]
-margin_left = 58.0
-margin_right = 106.0
+[node name="fatal_forest" type="Button" parent="monster_vbox/hbox/region_vbox/region_row1"]
+margin_left = 75.0
+margin_right = 123.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 48, 48 )
 size_flags_horizontal = 4
@@ -124,9 +144,9 @@ theme = ExtResource( 14 )
 icon = ExtResource( 4 )
 expand_icon = true
 
-[node name="gruesome_grove" type="Button" parent="monster_vbox/region_vbox/region_row1"]
-margin_left = 116.0
-margin_right = 164.0
+[node name="gruesome_grove" type="Button" parent="monster_vbox/hbox/region_vbox/region_row1"]
+margin_left = 133.0
+margin_right = 181.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 48, 48 )
 size_flags_horizontal = 4
@@ -135,9 +155,9 @@ theme = ExtResource( 14 )
 icon = ExtResource( 8 )
 expand_icon = true
 
-[node name="dangerous_depths" type="Button" parent="monster_vbox/region_vbox/region_row1"]
-margin_left = 174.0
-margin_right = 222.0
+[node name="dangerous_depths" type="Button" parent="monster_vbox/hbox/region_vbox/region_row1"]
+margin_left = 191.0
+margin_right = 239.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 48, 48 )
 size_flags_horizontal = 4
@@ -146,9 +166,9 @@ theme = ExtResource( 14 )
 icon = ExtResource( 9 )
 expand_icon = true
 
-[node name="wretched_wasteland" type="Button" parent="monster_vbox/region_vbox/region_row1"]
-margin_left = 232.0
-margin_right = 280.0
+[node name="wretched_wasteland" type="Button" parent="monster_vbox/hbox/region_vbox/region_row1"]
+margin_left = 249.0
+margin_right = 297.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 48, 48 )
 size_flags_horizontal = 4
@@ -157,15 +177,16 @@ theme = ExtResource( 14 )
 icon = ExtResource( 1 )
 expand_icon = true
 
-[node name="region_row2" type="HBoxContainer" parent="monster_vbox/region_vbox"]
+[node name="region_row2" type="HBoxContainer" parent="monster_vbox/hbox/region_vbox"]
 margin_top = 53.0
-margin_right = 280.0
+margin_right = 314.0
 margin_bottom = 101.0
 custom_constants/separation = 10
 alignment = 1
 
-[node name="gory_graveyard" type="Button" parent="monster_vbox/region_vbox/region_row2"]
-margin_right = 48.0
+[node name="gory_graveyard" type="Button" parent="monster_vbox/hbox/region_vbox/region_row2"]
+margin_left = 17.0
+margin_right = 65.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 48, 48 )
 size_flags_horizontal = 4
@@ -174,9 +195,9 @@ theme = ExtResource( 14 )
 icon = ExtResource( 3 )
 expand_icon = true
 
-[node name="satanic_swamp" type="Button" parent="monster_vbox/region_vbox/region_row2"]
-margin_left = 58.0
-margin_right = 106.0
+[node name="satanic_swamp" type="Button" parent="monster_vbox/hbox/region_vbox/region_row2"]
+margin_left = 75.0
+margin_right = 123.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 48, 48 )
 size_flags_horizontal = 4
@@ -185,9 +206,9 @@ theme = ExtResource( 14 )
 icon = ExtResource( 7 )
 expand_icon = true
 
-[node name="perilous_peaks" type="Button" parent="monster_vbox/region_vbox/region_row2"]
-margin_left = 116.0
-margin_right = 164.0
+[node name="perilous_peaks" type="Button" parent="monster_vbox/hbox/region_vbox/region_row2"]
+margin_left = 133.0
+margin_right = 181.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 48, 48 )
 size_flags_horizontal = 4
@@ -196,9 +217,9 @@ theme = ExtResource( 14 )
 icon = ExtResource( 2 )
 expand_icon = true
 
-[node name="menacing_mountain" type="Button" parent="monster_vbox/region_vbox/region_row2"]
-margin_left = 174.0
-margin_right = 222.0
+[node name="menacing_mountain" type="Button" parent="monster_vbox/hbox/region_vbox/region_row2"]
+margin_left = 191.0
+margin_right = 239.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 48, 48 )
 size_flags_horizontal = 4
@@ -207,9 +228,9 @@ theme = ExtResource( 14 )
 icon = ExtResource( 10 )
 expand_icon = true
 
-[node name="vicious_void" type="Button" parent="monster_vbox/region_vbox/region_row2"]
-margin_left = 232.0
-margin_right = 280.0
+[node name="vicious_void" type="Button" parent="monster_vbox/hbox/region_vbox/region_row2"]
+margin_left = 249.0
+margin_right = 297.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 48, 48 )
 size_flags_horizontal = 4
@@ -217,20 +238,6 @@ size_flags_vertical = 4
 theme = ExtResource( 14 )
 icon = ExtResource( 6 )
 expand_icon = true
-
-[node name="sep2" parent="monster_vbox" instance=ExtResource( 11 )]
-margin_top = 454.0
-margin_bottom = 458.0
-custom_styles/panel = SubResource( 1 )
-
-[node name="reselect_hero" type="Button" parent="monster_vbox"]
-margin_left = 161.0
-margin_top = 464.0
-margin_right = 199.0
-margin_bottom = 500.0
-size_flags_horizontal = 4
-theme = ExtResource( 21 )
-icon = ExtResource( 25 )
 
 [node name="hero_vbox" type="VBoxContainer" parent="."]
 margin_top = 6.0
@@ -283,7 +290,6 @@ size_flags_vertical = 3
 custom_constants/separation = 6
 
 [node name="monster_attack_popup" type="Popup" parent="."]
-visible = true
 margin_top = 6.0
 margin_right = 360.0
 margin_bottom = 506.0
@@ -303,9 +309,9 @@ custom_constants/margin_bottom = 16
 
 [node name="panel" type="PanelContainer" parent="monster_attack_popup/margin"]
 margin_left = 16.0
-margin_top = 120.0
+margin_top = 239.0
 margin_right = 344.0
-margin_bottom = 380.0
+margin_bottom = 261.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 custom_styles/panel = ExtResource( 20 )
@@ -940,5 +946,5 @@ theme = ExtResource( 21 )
 icon = ExtResource( 25 )
 expand_icon = true
 
-[connection signal="pressed" from="monster_vbox/reselect_hero" to="." method="switch_views"]
+[connection signal="pressed" from="monster_vbox/hbox/reselect_hero" to="." method="switch_views"]
 [connection signal="pressed" from="monster_attack_popup/margin/panel/vbox/buttons/hbox/close" to="monster_attack_popup" method="close_monster_attack_popup"]
