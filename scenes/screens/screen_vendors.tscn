@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/screens/vendors/screen_vendors.gd" type="Script" id=1]
+[ext_resource path="res://ui/separator.tscn" type="PackedScene" id=2]
+[ext_resource path="res://themes/fonts/font_title.tres" type="Theme" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.717647, 0.686275, 0.588235, 1 )
 
 [node name="screen_vendors" type="MarginContainer"]
 margin_right = 360.0
@@ -19,7 +24,21 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 6
 
+[node name="header2" type="Label" parent="parent_vbox"]
+margin_right = 360.0
+margin_bottom = 21.0
+theme = ExtResource( 3 )
+custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
+text = "Vendors"
+align = 1
+
+[node name="sep" parent="parent_vbox" instance=ExtResource( 2 )]
+margin_top = 27.0
+margin_bottom = 31.0
+custom_styles/panel = SubResource( 1 )
+
 [node name="vendors" type="ScrollContainer" parent="parent_vbox"]
+margin_top = 37.0
 margin_right = 360.0
 margin_bottom = 500.0
 mouse_filter = 1
@@ -28,6 +47,6 @@ scroll_horizontal_enabled = false
 
 [node name="vbox" type="VBoxContainer" parent="parent_vbox/vendors"]
 margin_right = 360.0
-margin_bottom = 500.0
+margin_bottom = 463.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
