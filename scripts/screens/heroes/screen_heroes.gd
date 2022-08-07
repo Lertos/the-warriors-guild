@@ -15,7 +15,7 @@ func load_screen():
 	connect_section_buttons()
 	
 	for child in get_node('parent_vbox/vbox/heroes').get_children():
-		child.get_node('img').connect('pressed', self, 'select_hero', [int(child.name)])
+		child.connect('pressed', self, 'select_hero', [int(child.name)])
 
 
 func select_hero(index: int):
@@ -30,10 +30,10 @@ func load_hero_sections(index: int, hero_info):
 	
 	#Remove all coloring from each button to reset the selected button
 	for node in hero_buttons.get_children():
-		Helper.reset_button_custom_colors(node.get_node('img'))
+		Helper.reset_button_custom_colors(node)
 	
 	#Change the border color to show which hero is selected
-	Helper.change_border_color(hero_buttons.get_node(str(index) + '/img'), 'selected')
+	Helper.change_border_color(hero_buttons.get_node(str(index)), 'selected')
 	
 	get_node('parent_vbox/margin/stats').load_hero_stats_section(index, hero_info)
 	get_node('parent_vbox/margin/talents').load_hero_talents_section(index, hero_info)
@@ -89,13 +89,13 @@ func load_heroes():
 		
 		if index < len(hero_info):
 			load_hero_info(hero_record, hero_info[index], index)
-			hero_record.get_node('img').text = ''
+			hero_record.text = ''
 		else:
 			if index < heroes_unlocked:
-				hero_record.get_node('img').text = '+'
+				hero_record.text = '+'
 			else:
-				hero_record.get_node('img').icon = locked_texture
-				hero_record.get_node('img').disabled = true
+				hero_record.icon = locked_texture
+				hero_record.disabled = true
 				
 	if len(hero_info) > 0:
 		load_hero_sections(0, hero_info[0])
@@ -121,8 +121,8 @@ func load_hero_info(hero_record, hero_info, index):
 		hero_timers[index] = {}
 		hero_timers[index]['time_left'] = time_difference
 
-	hero_record.get_node('img').icon = hero_icon
-	hero_record.get_node('status').text = current_status
+	hero_record.icon = hero_icon
+	#hero_record.get_node('status').text = current_status
 	
 
 func update_hero_timers():
@@ -136,7 +136,7 @@ func update_hero_timers():
 
 		if new_time <= 0:
 			hero_timers.erase(hero)
-			path.get_node(str(hero) + '/status').text = 'DONE'
+			#path.get_node(str(hero) + '/status').text = 'DONE'
 		else:
 			hero_timers[hero]['time_left'] = new_time
-			path.get_node(str(hero) + '/status').text = Helper.get_time_from_stamp(new_time)
+			#path.get_node(str(hero) + '/status').text = Helper.get_time_from_stamp(new_time)

@@ -17,11 +17,11 @@ func _ready():
 
 	var buttons = get_node('/root/root/parent/footer/buttons')
 	
-	buttons.get_node('home').connect('pressed', self, 'switch_screen', ['home'])
-	buttons.get_node('heroes').connect('pressed', self, 'switch_screen', ['heroes'])
-	buttons.get_node('map').connect('pressed', self, 'switch_screen', ['map'])
-	buttons.get_node('vendors').connect('pressed', self, 'switch_screen', ['vendors'])
-	buttons.get_node('storage').connect('pressed', self, 'switch_screen', ['storage'])
+	buttons.get_node('home/home').connect('pressed', self, 'switch_screen', ['home'])
+	buttons.get_node('heroes/heroes').connect('pressed', self, 'switch_screen', ['heroes'])
+	buttons.get_node('map/map').connect('pressed', self, 'switch_screen', ['map'])
+	buttons.get_node('vendors/vendors').connect('pressed', self, 'switch_screen', ['vendors'])
+	buttons.get_node('storage/storage').connect('pressed', self, 'switch_screen', ['storage'])
 
 
 #Find the keys in the game_data.gd dictionary at the top
