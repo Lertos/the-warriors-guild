@@ -3,26 +3,27 @@ extends ScrollContainer
 var scene_item_record = preload("res://scenes/record_templates/item_record.tscn")
 var locked_texture = load('res://assets/icons/locked.png')
 
-onready var list_node = get_node('hbox/vbox/items/vbox')
-onready var item_info_parent = get_node('hbox/vbox/hbox')
-onready var label_list = item_info_parent.get_node('hbox2/labels')
-onready var value_list = item_info_parent.get_node('hbox2/values')
-onready var ability_list = item_info_parent.get_node('hbox/labels/abilities')
+onready var list_node = get_node('vbox/inventory/items/items/vbox')
+onready var item_info_parent = get_node('vbox/inventory/item_info/vbox')
+onready var ability_list = item_info_parent.get_node('base_info/abilities')
 
-var items_per_row = 4
+onready var button_parent = get_node('vbox/gear_slots')
+onready var button_group1 = button_parent.get_node('group1')
+onready var button_group2 = button_parent.get_node('group2')
+
+var items_per_row = 2
 
 
 func _ready():
-	var buttons = get_node('hbox/gear_slots/vbox')
+	button_group1.get_node('potion').connect('pressed', self, 'switch_sub_type', ['consumable', 'potion'])
+	button_group1.get_node('weapon').connect('pressed', self, 'switch_sub_type', ['gear', 'weapon'])
+	button_group1.get_node('helmet').connect('pressed', self, 'switch_sub_type', ['gear', 'helmet'])
+	button_group1.get_node('chestplate').connect('pressed', self, 'switch_sub_type', ['gear', 'chestplate'])
 	
-	buttons.get_node('potion').connect('pressed', self, 'switch_sub_type', ['consumable', 'potion'])
-	buttons.get_node('weapon').connect('pressed', self, 'switch_sub_type', ['gear', 'weapon'])
-	buttons.get_node('helmet').connect('pressed', self, 'switch_sub_type', ['gear', 'helmet'])
-	buttons.get_node('chestplate').connect('pressed', self, 'switch_sub_type', ['gear', 'chestplate'])
-	buttons.get_node('gloves').connect('pressed', self, 'switch_sub_type', ['gear', 'gloves'])
-	buttons.get_node('boots').connect('pressed', self, 'switch_sub_type', ['gear', 'boots'])
-	buttons.get_node('necklace').connect('pressed', self, 'switch_sub_type', ['jewelry', 'necklace'])
-	buttons.get_node('ring').connect('pressed', self, 'switch_sub_type', ['jewelry', 'ring'])
+	button_group2.get_node('gloves').connect('pressed', self, 'switch_sub_type', ['gear', 'gloves'])
+	button_group2.get_node('boots').connect('pressed', self, 'switch_sub_type', ['gear', 'boots'])
+	button_group2.get_node('necklace').connect('pressed', self, 'switch_sub_type', ['jewelry', 'necklace'])
+	button_group2.get_node('ring').connect('pressed', self, 'switch_sub_type', ['jewelry', 'ring'])
 
 
 func load_items(storage_type: String, sub_type: String):
@@ -30,9 +31,9 @@ func load_items(storage_type: String, sub_type: String):
 	
 	add_selected_border(sub_type)
 	
-	item_info_parent.get_node('hbox/labels/rarity').visible = false
-	item_info_parent.get_node('hbox/labels/ability_header').visible = false
-	item_info_parent.get_node('hbox/labels/equip').visible = false
+	item_info_parent.get_node('base_info/rarity').visible = false
+	item_info_parent.get_node('base_info/modifier').visible = false
+	item_info_parent.get_node('buttons').visible = false
 	
 	for hbox in list_node.get_children():
 		for item_slot in hbox.get_children():
@@ -51,15 +52,14 @@ func load_item_info(item_button: Node):
 		
 		reset_info_panel()
 		
-		item_info_parent.get_node('hbox/labels/rarity').visible = true
-		item_info_parent.get_node('hbox/labels/ability_header').visible = true
-		item_info_parent.get_node('hbox/labels/equip').visible = true
+		item_info_parent.get_node('base_info/rarity').visible = true
+		item_info_parent.get_node('buttons').visible = true
 		
-		item_info_parent.get_node('hbox/labels/item_name').text = item['name']
-				
-		load_item_stats(item)
+		item_info_parent.get_node('base_info/item_name').text = item['name']
 		
-		var rarity_label = item_info_parent.get_node('hbox/labels/rarity')
+		item_info_parent.get_node('stat_module').build(item)
+		
+		var rarity_label = item_info_parent.get_node('base_info/rarity')
 		
 		if 'rarity' in item_meta:
 			rarity_label.text = Helper.get_header_text(item_meta['rarity'])
@@ -68,15 +68,15 @@ func load_item_info(item_button: Node):
 			rarity_label.text = Helper.get_header_text('UNIDENTIFIED')
 			Helper.change_label_font_color(rarity_label, 'unidentified')
 		
-		if 'unidentified' in item_meta:
-			var ability_label = item_info_parent.get_node('hbox/labels/ability_header')
-
-			if item_meta['unidentified']:
-				ability_label.visible = false
-			else:
-				ability_label.visible = true
-				
+		if 'identified' in item_meta:
+			if item_meta['identified']:
 				load_item_abilities(item_meta)
+		
+		if 'modifier' in item_meta:
+			var modifier_name = MasterConfig.config['modifiers'][item_meta['modifier']]['name']
+			
+			item_info_parent.get_node('base_info/modifier/modifier').text = modifier_name
+			item_info_parent.get_node('base_info/modifier').visible = true
 
 
 func load_item_abilities(item_meta: Dictionary):
@@ -91,53 +91,40 @@ func load_item_abilities(item_meta: Dictionary):
 		new.text = abilities[index]
 		
 		ability_list.add_child(new)
-		
-
-func load_item_stats(item_info: Dictionary):
-	if 'atk_stab' in item_info:
-		label_list.get_node('atk_spacer').visible = true
-		value_list.get_node('atk_spacer').visible = true
-	
-	if 'def_stab' in item_info:
-		label_list.get_node('def_spacer').visible = true
-		value_list.get_node('def_spacer').visible = true
-	
-	for child in value_list.get_children():
-		var stat_key = child.name
-		
-		if !('spacer' in stat_key):
-			if stat_key in item_info:
-				child.text = str(item_info[stat_key])
-				child.visible = true
-				
-				label_list.get_node(stat_key).visible = true
 
 
 func reset_info_panel():
-	var nodes = [label_list, value_list, ability_list]
+	var nodes = [ability_list]
 	
 	for node_list in nodes:
 		for child in node_list.get_children():
 			if child.name != 'spacer':
 				child.visible = false
 			
-	item_info_parent.get_node('hbox/labels/item_name').text = ''
+	item_info_parent.get_node('base_info/item_name').text = ''
+	
+	item_info_parent.get_node('base_info/modifier').visible = false
+	item_info_parent.get_node('stat_module').visible = false
 
 
 func add_selected_border(slot_type):
-	var buttons = get_node('hbox/gear_slots/vbox')
-	
 	#Remove all coloring from each button to reset the selected button
-	for node in buttons.get_children():
+	for node in button_group1.get_children():
+		Helper.reset_button_custom_colors(node)
+		
+	for node in button_group2.get_children():
 		Helper.reset_button_custom_colors(node)
 	
 	#Change the border color to show which section is selected
-	Helper.change_border_color(buttons.get_node(slot_type), 'selected')
+	if button_group1.get_node(slot_type) != null:
+		Helper.change_border_color(button_group1.get_node(slot_type), 'selected')
+	elif button_group2.get_node(slot_type) != null:
+		Helper.change_border_color(button_group2.get_node(slot_type), 'selected')
 
 	
 func switch_sub_type(storage_type: String, sub_type: String):
 	#Reset scrollbar to initial spot 
-	get_node('hbox/vbox/items').scroll_vertical = 0
+	get_node('vbox/inventory/items/items').scroll_vertical = 0
 	
 	reset_info_panel()
 	
