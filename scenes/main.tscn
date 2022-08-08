@@ -789,109 +789,6 @@ margin_bottom = 334.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="health" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox"]
-margin_right = 260.0
-margin_bottom = 24.0
-size_flags_horizontal = 5
-custom_constants/separation = 8
-alignment = 1
-
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/health"]
-margin_right = 48.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 0, 24 )
-theme = ExtResource( 17 )
-text = "Health"
-align = 2
-valign = 1
-
-[node name="health" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/health"]
-margin_left = 56.0
-margin_right = 260.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 160, 0 )
-size_flags_horizontal = 3
-theme = ExtResource( 17 )
-clear_button_enabled = true
-
-[node name="atk_stab" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox"]
-margin_top = 28.0
-margin_right = 260.0
-margin_bottom = 52.0
-size_flags_horizontal = 5
-custom_constants/separation = 8
-alignment = 1
-
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/atk_stab"]
-margin_right = 65.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 0, 24 )
-theme = ExtResource( 17 )
-text = "Stab ATK"
-align = 2
-valign = 1
-
-[node name="atk_stab" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/atk_stab"]
-margin_left = 73.0
-margin_right = 260.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 160, 0 )
-size_flags_horizontal = 3
-theme = ExtResource( 17 )
-clear_button_enabled = true
-
-[node name="atk_slash" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox"]
-margin_top = 56.0
-margin_right = 260.0
-margin_bottom = 80.0
-size_flags_horizontal = 5
-custom_constants/separation = 8
-alignment = 1
-
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/atk_slash"]
-margin_right = 72.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 0, 24 )
-theme = ExtResource( 17 )
-text = "Slash ATK"
-align = 2
-valign = 1
-
-[node name="atk_slash" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/atk_slash"]
-margin_left = 80.0
-margin_right = 260.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 160, 0 )
-size_flags_horizontal = 3
-theme = ExtResource( 17 )
-clear_button_enabled = true
-
-[node name="atk_crush" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox"]
-margin_top = 84.0
-margin_right = 260.0
-margin_bottom = 108.0
-size_flags_horizontal = 5
-custom_constants/separation = 8
-alignment = 1
-
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/atk_crush"]
-margin_right = 75.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 0, 24 )
-theme = ExtResource( 17 )
-text = "Crush ATK"
-align = 2
-valign = 1
-
-[node name="atk_crush" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/atk_crush"]
-margin_left = 83.0
-margin_right = 260.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 160, 0 )
-size_flags_horizontal = 3
-theme = ExtResource( 17 )
-clear_button_enabled = true
-
 [node name="def_stab" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox"]
 margin_top = 112.0
 margin_right = 260.0
@@ -944,7 +841,7 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 clear_button_enabled = true
 
-[node name="crush_def" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox"]
+[node name="def_crush" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox"]
 margin_top = 168.0
 margin_right = 260.0
 margin_bottom = 192.0
@@ -952,7 +849,7 @@ size_flags_horizontal = 5
 custom_constants/separation = 8
 alignment = 1
 
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/crush_def"]
+[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/def_crush"]
 margin_right = 75.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
@@ -961,8 +858,33 @@ text = "Crush DEF"
 align = 2
 valign = 1
 
-[node name="crush_def" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/crush_def"]
+[node name="def_crush" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/def_crush"]
 margin_left = 83.0
+margin_right = 260.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 160, 0 )
+size_flags_horizontal = 3
+theme = ExtResource( 17 )
+clear_button_enabled = true
+
+[node name="health" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox"]
+margin_right = 260.0
+margin_bottom = 24.0
+size_flags_horizontal = 5
+custom_constants/separation = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/health"]
+margin_right = 48.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
+theme = ExtResource( 17 )
+text = "Health"
+align = 2
+valign = 1
+
+[node name="health" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/health"]
+margin_left = 56.0
 margin_right = 260.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 160, 0 )
@@ -1042,109 +964,6 @@ margin_bottom = 334.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="health" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox"]
-margin_right = 260.0
-margin_bottom = 24.0
-size_flags_horizontal = 5
-custom_constants/separation = 8
-alignment = 1
-
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox/health"]
-margin_right = 48.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 0, 24 )
-theme = ExtResource( 17 )
-text = "Health"
-align = 2
-valign = 1
-
-[node name="health" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox/health"]
-margin_left = 56.0
-margin_right = 260.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 160, 0 )
-size_flags_horizontal = 3
-theme = ExtResource( 17 )
-clear_button_enabled = true
-
-[node name="atk_stab" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox"]
-margin_top = 28.0
-margin_right = 260.0
-margin_bottom = 52.0
-size_flags_horizontal = 5
-custom_constants/separation = 8
-alignment = 1
-
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox/atk_stab"]
-margin_right = 65.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 0, 24 )
-theme = ExtResource( 17 )
-text = "Stab ATK"
-align = 2
-valign = 1
-
-[node name="atk_stab" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox/atk_stab"]
-margin_left = 73.0
-margin_right = 260.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 160, 0 )
-size_flags_horizontal = 3
-theme = ExtResource( 17 )
-clear_button_enabled = true
-
-[node name="atk_slash" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox"]
-margin_top = 56.0
-margin_right = 260.0
-margin_bottom = 80.0
-size_flags_horizontal = 5
-custom_constants/separation = 8
-alignment = 1
-
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox/atk_slash"]
-margin_right = 72.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 0, 24 )
-theme = ExtResource( 17 )
-text = "Slash ATK"
-align = 2
-valign = 1
-
-[node name="atk_slash" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox/atk_slash"]
-margin_left = 80.0
-margin_right = 260.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 160, 0 )
-size_flags_horizontal = 3
-theme = ExtResource( 17 )
-clear_button_enabled = true
-
-[node name="atk_crush" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox"]
-margin_top = 84.0
-margin_right = 260.0
-margin_bottom = 108.0
-size_flags_horizontal = 5
-custom_constants/separation = 8
-alignment = 1
-
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox/atk_crush"]
-margin_right = 75.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 0, 24 )
-theme = ExtResource( 17 )
-text = "Crush ATK"
-align = 2
-valign = 1
-
-[node name="atk_crush" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox/atk_crush"]
-margin_left = 83.0
-margin_right = 260.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 160, 0 )
-size_flags_horizontal = 3
-theme = ExtResource( 17 )
-clear_button_enabled = true
-
 [node name="def_stab" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox"]
 margin_top = 112.0
 margin_right = 260.0
@@ -1216,6 +1035,31 @@ valign = 1
 
 [node name="def_crush" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox/def_crush"]
 margin_left = 83.0
+margin_right = 260.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 160, 0 )
+size_flags_horizontal = 3
+theme = ExtResource( 17 )
+clear_button_enabled = true
+
+[node name="health" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox"]
+margin_right = 260.0
+margin_bottom = 24.0
+size_flags_horizontal = 5
+custom_constants/separation = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox/health"]
+margin_right = 48.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
+theme = ExtResource( 17 )
+text = "Health"
+align = 2
+valign = 1
+
+[node name="health" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/jewelry/vbox/health"]
+margin_left = 56.0
 margin_right = 260.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 160, 0 )
@@ -1518,32 +1362,6 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 clear_button_enabled = true
 
-[node name="health" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/companion/vbox"]
-margin_top = 84.0
-margin_right = 260.0
-margin_bottom = 108.0
-size_flags_horizontal = 5
-custom_constants/separation = 8
-alignment = 1
-
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/companion/vbox/health"]
-margin_right = 48.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 0, 24 )
-theme = ExtResource( 17 )
-text = "Health"
-align = 2
-valign = 1
-
-[node name="health" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/companion/vbox/health"]
-margin_left = 56.0
-margin_right = 260.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 160, 0 )
-size_flags_horizontal = 3
-theme = ExtResource( 17 )
-clear_button_enabled = true
-
 [node name="def_stab" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/companion/vbox"]
 margin_top = 112.0
 margin_right = 260.0
@@ -1615,6 +1433,32 @@ valign = 1
 
 [node name="def_crush" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/companion/vbox/def_crush"]
 margin_left = 83.0
+margin_right = 260.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 160, 0 )
+size_flags_horizontal = 3
+theme = ExtResource( 17 )
+clear_button_enabled = true
+
+[node name="health" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/companion/vbox"]
+margin_top = 84.0
+margin_right = 260.0
+margin_bottom = 108.0
+size_flags_horizontal = 5
+custom_constants/separation = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/companion/vbox/health"]
+margin_right = 48.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
+theme = ExtResource( 17 )
+text = "Health"
+align = 2
+valign = 1
+
+[node name="health" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/companion/vbox/health"]
+margin_left = 56.0
 margin_right = 260.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 160, 0 )
