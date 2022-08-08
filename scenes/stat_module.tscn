@@ -1,0 +1,316 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://assets/icons/stat_icons/min_hit.png" type="Texture" id=1]
+[ext_resource path="res://assets/icons/stat_icons/max_hit.png" type="Texture" id=2]
+[ext_resource path="res://assets/icons/stat_icons/atk_speed.png" type="Texture" id=3]
+[ext_resource path="res://scripts/stat_module.gd" type="Script" id=4]
+[ext_resource path="res://assets/icons/stat_icons/atk_stab.png" type="Texture" id=5]
+[ext_resource path="res://assets/icons/stat_icons/atk_slash.png" type="Texture" id=6]
+[ext_resource path="res://assets/icons/stat_icons/atk_crush.png" type="Texture" id=7]
+[ext_resource path="res://assets/icons/stat_icons/def_stab.png" type="Texture" id=8]
+[ext_resource path="res://assets/icons/stat_icons/def_slash.png" type="Texture" id=9]
+[ext_resource path="res://assets/icons/stat_icons/def_crush.png" type="Texture" id=10]
+[ext_resource path="res://assets/icons/stat_icons/health.png" type="Texture" id=11]
+[ext_resource path="res://assets/icons/stat_icons/dmg_reduc.png" type="Texture" id=12]
+[ext_resource path="res://themes/fonts/font_normal.tres" type="Theme" id=13]
+
+[sub_resource type="Theme" id=5]
+
+[node name="stats" type="HBoxContainer"]
+margin_top = 48.0
+margin_right = 165.0
+margin_bottom = 240.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource( 5 )
+custom_constants/separation = 8
+alignment = 1
+script = ExtResource( 4 )
+
+[node name="left_side" type="VBoxContainer" parent="."]
+margin_right = 78.0
+margin_bottom = 192.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="atk_stab" type="HBoxContainer" parent="left_side"]
+margin_right = 78.0
+margin_bottom = 32.0
+alignment = 1
+
+[node name="img" type="TextureRect" parent="left_side/atk_stab"]
+margin_left = 3.0
+margin_right = 35.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+size_flags_horizontal = 8
+theme = ExtResource( 13 )
+texture = ExtResource( 5 )
+expand = true
+
+[node name="atk_stab" type="Label" parent="left_side/atk_stab"]
+margin_left = 39.0
+margin_top = 9.0
+margin_right = 75.0
+margin_bottom = 23.0
+theme = ExtResource( 13 )
+custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
+text = "9999"
+
+[node name="atk_slash" type="HBoxContainer" parent="left_side"]
+margin_top = 32.0
+margin_right = 78.0
+margin_bottom = 64.0
+alignment = 1
+
+[node name="img" type="TextureRect" parent="left_side/atk_slash"]
+margin_left = 3.0
+margin_right = 35.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+size_flags_horizontal = 8
+theme = ExtResource( 13 )
+texture = ExtResource( 6 )
+expand = true
+
+[node name="atk_slash" type="Label" parent="left_side/atk_slash"]
+margin_left = 39.0
+margin_top = 9.0
+margin_right = 75.0
+margin_bottom = 23.0
+theme = ExtResource( 13 )
+custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
+text = "9999"
+
+[node name="atk_crush" type="HBoxContainer" parent="left_side"]
+margin_top = 64.0
+margin_right = 78.0
+margin_bottom = 96.0
+alignment = 1
+
+[node name="img" type="TextureRect" parent="left_side/atk_crush"]
+margin_left = 3.0
+margin_right = 35.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+size_flags_horizontal = 8
+theme = ExtResource( 13 )
+texture = ExtResource( 7 )
+expand = true
+
+[node name="atk_crush" type="Label" parent="left_side/atk_crush"]
+margin_left = 39.0
+margin_top = 9.0
+margin_right = 75.0
+margin_bottom = 23.0
+theme = ExtResource( 13 )
+custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
+text = "9999"
+
+[node name="def_stab" type="HBoxContainer" parent="left_side"]
+margin_top = 96.0
+margin_right = 78.0
+margin_bottom = 128.0
+alignment = 1
+
+[node name="img" type="TextureRect" parent="left_side/def_stab"]
+margin_left = 3.0
+margin_right = 35.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+size_flags_horizontal = 8
+theme = ExtResource( 13 )
+texture = ExtResource( 8 )
+expand = true
+
+[node name="def_stab" type="Label" parent="left_side/def_stab"]
+margin_left = 39.0
+margin_top = 9.0
+margin_right = 75.0
+margin_bottom = 23.0
+theme = ExtResource( 13 )
+custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
+text = "9999"
+
+[node name="def_slash" type="HBoxContainer" parent="left_side"]
+margin_top = 128.0
+margin_right = 78.0
+margin_bottom = 160.0
+alignment = 1
+
+[node name="img" type="TextureRect" parent="left_side/def_slash"]
+margin_left = 3.0
+margin_right = 35.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+size_flags_horizontal = 8
+theme = ExtResource( 13 )
+texture = ExtResource( 9 )
+expand = true
+
+[node name="def_slash" type="Label" parent="left_side/def_slash"]
+margin_left = 39.0
+margin_top = 9.0
+margin_right = 75.0
+margin_bottom = 23.0
+theme = ExtResource( 13 )
+custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
+text = "9999"
+
+[node name="def_crush" type="HBoxContainer" parent="left_side"]
+margin_top = 160.0
+margin_right = 78.0
+margin_bottom = 192.0
+alignment = 1
+
+[node name="img" type="TextureRect" parent="left_side/def_crush"]
+margin_left = 3.0
+margin_right = 35.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+size_flags_horizontal = 8
+theme = ExtResource( 13 )
+texture = ExtResource( 10 )
+expand = true
+
+[node name="def_crush" type="Label" parent="left_side/def_crush"]
+margin_left = 39.0
+margin_top = 9.0
+margin_right = 75.0
+margin_bottom = 23.0
+theme = ExtResource( 13 )
+custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
+text = "9999"
+
+[node name="right_side" type="VBoxContainer" parent="."]
+margin_left = 86.0
+margin_right = 165.0
+margin_bottom = 192.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="health" type="HBoxContainer" parent="right_side"]
+margin_right = 79.0
+margin_bottom = 32.0
+alignment = 1
+
+[node name="img" type="TextureRect" parent="right_side/health"]
+margin_left = 3.0
+margin_right = 35.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+size_flags_horizontal = 8
+theme = ExtResource( 13 )
+texture = ExtResource( 11 )
+expand = true
+
+[node name="health" type="Label" parent="right_side/health"]
+margin_left = 39.0
+margin_top = 9.0
+margin_right = 75.0
+margin_bottom = 23.0
+theme = ExtResource( 13 )
+custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
+text = "9999"
+
+[node name="dmg_reduc" type="HBoxContainer" parent="right_side"]
+margin_top = 32.0
+margin_right = 79.0
+margin_bottom = 64.0
+alignment = 1
+
+[node name="img" type="TextureRect" parent="right_side/dmg_reduc"]
+margin_left = 3.0
+margin_right = 35.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+size_flags_horizontal = 8
+theme = ExtResource( 13 )
+texture = ExtResource( 12 )
+expand = true
+
+[node name="dmg_reduc" type="Label" parent="right_side/dmg_reduc"]
+margin_left = 39.0
+margin_top = 9.0
+margin_right = 75.0
+margin_bottom = 23.0
+theme = ExtResource( 13 )
+custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
+text = "9999"
+
+[node name="atk_speed" type="HBoxContainer" parent="right_side"]
+margin_top = 64.0
+margin_right = 79.0
+margin_bottom = 96.0
+alignment = 1
+
+[node name="img" type="TextureRect" parent="right_side/atk_speed"]
+margin_left = 3.0
+margin_right = 35.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+size_flags_horizontal = 8
+theme = ExtResource( 13 )
+texture = ExtResource( 3 )
+expand = true
+
+[node name="atk_speed" type="Label" parent="right_side/atk_speed"]
+margin_left = 39.0
+margin_top = 9.0
+margin_right = 75.0
+margin_bottom = 23.0
+theme = ExtResource( 13 )
+custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
+text = "9999"
+
+[node name="min_hit" type="HBoxContainer" parent="right_side"]
+margin_top = 96.0
+margin_right = 79.0
+margin_bottom = 128.0
+alignment = 1
+
+[node name="img" type="TextureRect" parent="right_side/min_hit"]
+margin_left = 3.0
+margin_right = 35.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+size_flags_horizontal = 8
+theme = ExtResource( 13 )
+texture = ExtResource( 1 )
+expand = true
+
+[node name="min_hit" type="Label" parent="right_side/min_hit"]
+margin_left = 39.0
+margin_top = 9.0
+margin_right = 75.0
+margin_bottom = 23.0
+theme = ExtResource( 13 )
+custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
+text = "9999"
+
+[node name="max_hit" type="HBoxContainer" parent="right_side"]
+margin_top = 128.0
+margin_right = 79.0
+margin_bottom = 160.0
+alignment = 1
+
+[node name="img" type="TextureRect" parent="right_side/max_hit"]
+margin_left = 3.0
+margin_right = 35.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+size_flags_horizontal = 8
+theme = ExtResource( 13 )
+texture = ExtResource( 2 )
+expand = true
+
+[node name="max_hit" type="Label" parent="right_side/max_hit"]
+margin_left = 39.0
+margin_top = 9.0
+margin_right = 75.0
+margin_bottom = 23.0
+theme = ExtResource( 13 )
+custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
+text = "9999"
