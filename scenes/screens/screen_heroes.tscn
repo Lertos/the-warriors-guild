@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://scripts/screens/heroes/screen_heroes.gd" type="Script" id=1]
 [ext_resource path="res://themes/popup.tres" type="StyleBox" id=2]
@@ -23,10 +23,6 @@
 [ext_resource path="res://themes/scrollbar.tres" type="Theme" id=21]
 [ext_resource path="res://scripts/screens/heroes/section_talents.gd" type="Script" id=22]
 [ext_resource path="res://scripts/screens/heroes/section_stats.gd" type="Script" id=23]
-[ext_resource path="res://assets/icons/heroes_screen/gear.png" type="Texture" id=24]
-[ext_resource path="res://assets/icons/heroes_screen/stats.png" type="Texture" id=25]
-[ext_resource path="res://assets/icons/heroes_screen/talents.png" type="Texture" id=26]
-[ext_resource path="res://assets/icons/heroes_screen/mount.png" type="Texture" id=27]
 [ext_resource path="res://assets/icons/health.png" type="Texture" id=28]
 [ext_resource path="res://assets/icons/xp.png" type="Texture" id=29]
 [ext_resource path="res://themes/buttons/button_standalone.tres" type="Theme" id=30]
@@ -45,6 +41,46 @@
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.717647, 0.686275, 0.588235, 1 )
+
+[sub_resource type="DynamicFontData" id=6]
+font_path = "res://Retro.ttf"
+
+[sub_resource type="DynamicFont" id=7]
+size = 11
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.109804, 0.0431373, 0.0313726, 1 )
+border_width_top = 1
+
+[sub_resource type="StyleBoxFlat" id=8]
+content_margin_left = 9.0
+content_margin_right = 9.0
+bg_color = Color( 0.0235294, 0.00784314, 0.00784314, 1 )
+border_width_top = 2
+border_width_right = 2
+border_color = Color( 0.133333, 0.054902, 0.054902, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+content_margin_left = 9.0
+content_margin_right = 9.0
+bg_color = Color( 0.109804, 0.0431373, 0.0313726, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+
+[sub_resource type="DynamicFont" id=10]
+size = 12
+
+[sub_resource type="Theme" id=11]
+default_font = SubResource( 10 )
+TabContainer/constants/hseparation = 3
+TabContainer/fonts/font = SubResource( 7 )
+TabContainer/styles/panel = SubResource( 12 )
+TabContainer/styles/tab_bg = SubResource( 8 )
+TabContainer/styles/tab_fg = SubResource( 9 )
 
 [sub_resource type="Theme" id=5]
 
@@ -73,6 +109,7 @@ margin_right = 360.0
 margin_bottom = 21.0
 theme = ExtResource( 3 )
 custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
+text = "Hero Info"
 align = 1
 
 [node name="sep4" parent="parent_vbox" instance=ExtResource( 6 )]
@@ -80,22 +117,28 @@ margin_top = 27.0
 margin_bottom = 31.0
 custom_styles/panel = SubResource( 2 )
 
-[node name="margin" type="MarginContainer" parent="parent_vbox"]
+[node name="margin" type="TabContainer" parent="parent_vbox"]
 margin_top = 37.0
 margin_right = 360.0
-margin_bottom = 372.0
+margin_bottom = 436.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = SubResource( 11 )
+tab_align = 0
+
+[node name="stats" type="MarginContainer" parent="parent_vbox/margin"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 25.0
 custom_constants/margin_right = 8
 custom_constants/margin_top = 8
 custom_constants/margin_left = 8
 
-[node name="stats" type="ScrollContainer" parent="parent_vbox/margin"]
-visible = false
+[node name="stats" type="ScrollContainer" parent="parent_vbox/margin/stats"]
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 352.0
-margin_bottom = 335.0
+margin_bottom = 374.0
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -103,40 +146,40 @@ theme = ExtResource( 21 )
 scroll_horizontal_enabled = false
 script = ExtResource( 23 )
 
-[node name="stats" type="HBoxContainer" parent="parent_vbox/margin/stats"]
+[node name="stats" type="HBoxContainer" parent="parent_vbox/margin/stats/stats"]
 margin_right = 344.0
-margin_bottom = 327.0
+margin_bottom = 366.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 16
 alignment = 1
 
-[node name="vbox" type="VBoxContainer" parent="parent_vbox/margin/stats/stats"]
+[node name="vbox" type="VBoxContainer" parent="parent_vbox/margin/stats/stats/stats"]
 margin_right = 344.0
-margin_bottom = 309.0
+margin_bottom = 366.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
-[node name="hbox" type="HBoxContainer" parent="parent_vbox/margin/stats/stats/vbox"]
+[node name="hbox" type="HBoxContainer" parent="parent_vbox/margin/stats/stats/stats/vbox"]
 margin_right = 344.0
 margin_bottom = 48.0
 size_flags_horizontal = 3
 custom_constants/separation = 16
 alignment = 1
 
-[node name="spacer" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox"]
+[node name="spacer" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox"]
 margin_top = 17.0
 margin_bottom = 31.0
 theme = ExtResource( 7 )
 align = 1
 
-[node name="hero" type="VBoxContainer" parent="parent_vbox/margin/stats/stats/vbox/hbox"]
+[node name="hero" type="VBoxContainer" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox"]
 margin_left = 16.0
 margin_right = 64.0
 margin_bottom = 48.0
 
-[node name="img" type="Button" parent="parent_vbox/margin/stats/stats/vbox/hbox/hero"]
+[node name="img" type="Button" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox/hero"]
 margin_right = 48.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 48, 48 )
@@ -145,30 +188,30 @@ size_flags_vertical = 4
 theme = ExtResource( 30 )
 expand_icon = true
 
-[node name="vbox" type="VBoxContainer" parent="parent_vbox/margin/stats/stats/vbox/hbox"]
+[node name="vbox" type="VBoxContainer" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox"]
 margin_left = 80.0
 margin_right = 344.0
 margin_bottom = 48.0
 size_flags_horizontal = 3
 
-[node name="info1" type="HBoxContainer" parent="parent_vbox/margin/stats/stats/vbox/hbox/vbox"]
+[node name="info1" type="HBoxContainer" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox/vbox"]
 margin_right = 264.0
 margin_bottom = 21.0
 
-[node name="name" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox/vbox/info1"]
+[node name="name" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox/vbox/info1"]
 margin_right = 66.0
 margin_bottom = 21.0
 theme = ExtResource( 3 )
 text = "Lertos"
 
-[node name="left_bracket" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox/vbox/info1"]
+[node name="left_bracket" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox/vbox/info1"]
 margin_left = 70.0
 margin_right = 78.0
 margin_bottom = 21.0
 theme = ExtResource( 3 )
 text = "["
 
-[node name="level" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox/vbox/info1"]
+[node name="level" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox/vbox/info1"]
 margin_left = 82.0
 margin_right = 90.0
 margin_bottom = 21.0
@@ -176,24 +219,24 @@ theme = ExtResource( 3 )
 custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
 text = "1"
 
-[node name="right_bracket" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox/vbox/info1"]
+[node name="right_bracket" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox/vbox/info1"]
 margin_left = 94.0
 margin_right = 102.0
 margin_bottom = 21.0
 theme = ExtResource( 3 )
 text = "]"
 
-[node name="info2" type="HBoxContainer" parent="parent_vbox/margin/stats/stats/vbox/hbox/vbox"]
+[node name="info2" type="HBoxContainer" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox/vbox"]
 margin_top = 25.0
 margin_right = 264.0
 margin_bottom = 41.0
 custom_constants/separation = 16
 
-[node name="xp" type="HBoxContainer" parent="parent_vbox/margin/stats/stats/vbox/hbox/vbox/info2"]
+[node name="xp" type="HBoxContainer" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox/vbox/info2"]
 margin_right = 85.0
 margin_bottom = 16.0
 
-[node name="img" type="TextureRect" parent="parent_vbox/margin/stats/stats/vbox/hbox/vbox/info2/xp"]
+[node name="img" type="TextureRect" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox/vbox/info2/xp"]
 margin_right = 16.0
 margin_bottom = 16.0
 rect_min_size = Vector2( 16, 16 )
@@ -201,7 +244,7 @@ theme = ExtResource( 7 )
 texture = ExtResource( 29 )
 expand = true
 
-[node name="current_xp" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox/vbox/info2/xp"]
+[node name="current_xp" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox/vbox/info2/xp"]
 margin_left = 20.0
 margin_top = 1.0
 margin_right = 44.0
@@ -210,7 +253,7 @@ theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
 text = "100"
 
-[node name="slash" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox/vbox/info2/xp"]
+[node name="slash" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox/vbox/info2/xp"]
 margin_left = 48.0
 margin_top = 1.0
 margin_right = 57.0
@@ -218,7 +261,7 @@ margin_bottom = 15.0
 theme = ExtResource( 7 )
 text = "/"
 
-[node name="needed_xp" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox/vbox/info2/xp"]
+[node name="needed_xp" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox/vbox/info2/xp"]
 margin_left = 61.0
 margin_top = 1.0
 margin_right = 85.0
@@ -227,12 +270,12 @@ theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
 text = "100"
 
-[node name="health" type="HBoxContainer" parent="parent_vbox/margin/stats/stats/vbox/hbox/vbox/info2"]
+[node name="health" type="HBoxContainer" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox/vbox/info2"]
 margin_left = 101.0
 margin_right = 186.0
 margin_bottom = 16.0
 
-[node name="img" type="TextureRect" parent="parent_vbox/margin/stats/stats/vbox/hbox/vbox/info2/health"]
+[node name="img" type="TextureRect" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox/vbox/info2/health"]
 margin_right = 16.0
 margin_bottom = 16.0
 rect_min_size = Vector2( 16, 16 )
@@ -240,7 +283,7 @@ theme = ExtResource( 7 )
 texture = ExtResource( 28 )
 expand = true
 
-[node name="current_health" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox/vbox/info2/health"]
+[node name="current_health" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox/vbox/info2/health"]
 margin_left = 20.0
 margin_top = 1.0
 margin_right = 44.0
@@ -249,7 +292,7 @@ theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
 text = "100"
 
-[node name="slash" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox/vbox/info2/health"]
+[node name="slash" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox/vbox/info2/health"]
 margin_left = 48.0
 margin_top = 1.0
 margin_right = 57.0
@@ -257,7 +300,7 @@ margin_bottom = 15.0
 theme = ExtResource( 7 )
 text = "/"
 
-[node name="max_health" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox/vbox/info2/health"]
+[node name="max_health" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox/vbox/info2/health"]
 margin_left = 61.0
 margin_top = 1.0
 margin_right = 85.0
@@ -266,59 +309,59 @@ theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
 text = "100"
 
-[node name="spacer2" type="Label" parent="parent_vbox/margin/stats/stats/vbox"]
+[node name="spacer2" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox"]
 margin_top = 52.0
 margin_right = 344.0
 margin_bottom = 66.0
 theme = ExtResource( 7 )
 align = 2
 
-[node name="sep" parent="parent_vbox/margin/stats/stats/vbox" instance=ExtResource( 6 )]
+[node name="sep" parent="parent_vbox/margin/stats/stats/stats/vbox" instance=ExtResource( 6 )]
 margin_top = 70.0
 margin_right = 344.0
 margin_bottom = 74.0
 custom_styles/panel = SubResource( 2 )
 
-[node name="spacer" type="Label" parent="parent_vbox/margin/stats/stats/vbox"]
+[node name="spacer" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox"]
 margin_top = 78.0
 margin_right = 344.0
 margin_bottom = 92.0
 theme = ExtResource( 7 )
 align = 2
 
-[node name="hbox2" type="HBoxContainer" parent="parent_vbox/margin/stats/stats/vbox"]
+[node name="hbox2" type="HBoxContainer" parent="parent_vbox/margin/stats/stats/stats/vbox"]
 margin_left = 71.0
 margin_top = 96.0
 margin_right = 273.0
-margin_bottom = 309.0
+margin_bottom = 366.0
 size_flags_horizontal = 4
 size_flags_vertical = 3
 custom_constants/separation = 32
 alignment = 1
 
-[node name="left_panel" type="HBoxContainer" parent="parent_vbox/margin/stats/stats/vbox/hbox2"]
+[node name="left_panel" type="HBoxContainer" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox2"]
 margin_right = 83.0
-margin_bottom = 213.0
+margin_bottom = 270.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 8
 alignment = 1
 
-[node name="labels" type="VBoxContainer" parent="parent_vbox/margin/stats/stats/vbox/hbox2/left_panel"]
+[node name="labels" type="VBoxContainer" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox2/left_panel"]
 margin_right = 75.0
-margin_bottom = 213.0
+margin_bottom = 270.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 0
 
-[node name="atk_stab" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox2/left_panel/labels"]
+[node name="atk_stab" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox2/left_panel/labels"]
 margin_right = 75.0
 margin_bottom = 14.0
 theme = ExtResource( 7 )
 text = "Stab ATK"
 align = 2
 
-[node name="atk_slash" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox2/left_panel/labels"]
+[node name="atk_slash" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox2/left_panel/labels"]
 margin_top = 14.0
 margin_right = 75.0
 margin_bottom = 28.0
@@ -326,7 +369,7 @@ theme = ExtResource( 7 )
 text = "Slash ATK"
 align = 2
 
-[node name="atk_crush" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox2/left_panel/labels"]
+[node name="atk_crush" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox2/left_panel/labels"]
 margin_top = 28.0
 margin_right = 75.0
 margin_bottom = 42.0
@@ -334,14 +377,14 @@ theme = ExtResource( 7 )
 text = "Crush ATK"
 align = 2
 
-[node name="spacer3" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox2/left_panel/labels"]
+[node name="spacer3" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox2/left_panel/labels"]
 margin_top = 42.0
 margin_right = 75.0
 margin_bottom = 56.0
 theme = ExtResource( 7 )
 align = 2
 
-[node name="def_stab" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox2/left_panel/labels"]
+[node name="def_stab" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox2/left_panel/labels"]
 margin_top = 56.0
 margin_right = 75.0
 margin_bottom = 70.0
@@ -349,7 +392,7 @@ theme = ExtResource( 7 )
 text = "Stab DEF"
 align = 2
 
-[node name="def_slash" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox2/left_panel/labels"]
+[node name="def_slash" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox2/left_panel/labels"]
 margin_top = 70.0
 margin_right = 75.0
 margin_bottom = 84.0
@@ -357,7 +400,7 @@ theme = ExtResource( 7 )
 text = "Slash DEF"
 align = 2
 
-[node name="def_crush" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox2/left_panel/labels"]
+[node name="def_crush" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox2/left_panel/labels"]
 margin_top = 84.0
 margin_right = 75.0
 margin_bottom = 98.0
@@ -365,79 +408,79 @@ theme = ExtResource( 7 )
 text = "Crush DEF"
 align = 2
 
-[node name="values" type="VBoxContainer" parent="parent_vbox/margin/stats/stats/vbox/hbox2/left_panel"]
+[node name="values" type="VBoxContainer" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox2/left_panel"]
 margin_left = 83.0
 margin_right = 83.0
-margin_bottom = 213.0
+margin_bottom = 270.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 0
 
-[node name="atk_stab" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox2/left_panel/values"]
+[node name="atk_stab" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox2/left_panel/values"]
 margin_bottom = 14.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="atk_slash" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox2/left_panel/values"]
+[node name="atk_slash" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox2/left_panel/values"]
 margin_top = 14.0
 margin_bottom = 28.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="atk_crush" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox2/left_panel/values"]
+[node name="atk_crush" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox2/left_panel/values"]
 margin_top = 28.0
 margin_bottom = 42.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="spacer3" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox2/left_panel/values"]
+[node name="spacer3" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox2/left_panel/values"]
 margin_top = 42.0
 margin_bottom = 56.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="def_stab" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox2/left_panel/values"]
+[node name="def_stab" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox2/left_panel/values"]
 margin_top = 56.0
 margin_bottom = 70.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="def_slash" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox2/left_panel/values"]
+[node name="def_slash" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox2/left_panel/values"]
 margin_top = 70.0
 margin_bottom = 84.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="def_crush" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox2/left_panel/values"]
+[node name="def_crush" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox2/left_panel/values"]
 margin_top = 84.0
 margin_bottom = 98.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="right_panel" type="HBoxContainer" parent="parent_vbox/margin/stats/stats/vbox/hbox2"]
+[node name="right_panel" type="HBoxContainer" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox2"]
 margin_left = 115.0
 margin_right = 202.0
-margin_bottom = 213.0
+margin_bottom = 270.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 8
 alignment = 1
 
-[node name="labels" type="VBoxContainer" parent="parent_vbox/margin/stats/stats/vbox/hbox2/right_panel"]
+[node name="labels" type="VBoxContainer" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox2/right_panel"]
 margin_right = 79.0
-margin_bottom = 213.0
+margin_bottom = 270.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 0
 
-[node name="health" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox2/right_panel/labels"]
+[node name="health" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox2/right_panel/labels"]
 margin_right = 79.0
 margin_bottom = 14.0
 theme = ExtResource( 7 )
 text = "Max Health"
 align = 2
 
-[node name="dmg_reduc" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox2/right_panel/labels"]
+[node name="dmg_reduc" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox2/right_panel/labels"]
 margin_top = 14.0
 margin_right = 79.0
 margin_bottom = 28.0
@@ -445,14 +488,14 @@ theme = ExtResource( 7 )
 text = "DMG Reduc"
 align = 2
 
-[node name="spacer" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox2/right_panel/labels"]
+[node name="spacer" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox2/right_panel/labels"]
 margin_top = 28.0
 margin_right = 79.0
 margin_bottom = 42.0
 theme = ExtResource( 7 )
 align = 2
 
-[node name="atk_speed" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox2/right_panel/labels"]
+[node name="atk_speed" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox2/right_panel/labels"]
 margin_top = 42.0
 margin_right = 79.0
 margin_bottom = 56.0
@@ -460,7 +503,7 @@ theme = ExtResource( 7 )
 text = "ATK Speed"
 align = 2
 
-[node name="min_hit" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox2/right_panel/labels"]
+[node name="min_hit" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox2/right_panel/labels"]
 margin_top = 56.0
 margin_right = 79.0
 margin_bottom = 70.0
@@ -468,7 +511,7 @@ theme = ExtResource( 7 )
 text = "Min Hit"
 align = 2
 
-[node name="max_hit" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox2/right_panel/labels"]
+[node name="max_hit" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox2/right_panel/labels"]
 margin_top = 70.0
 margin_right = 79.0
 margin_bottom = 84.0
@@ -476,55 +519,63 @@ theme = ExtResource( 7 )
 text = "Max Hit"
 align = 2
 
-[node name="values" type="VBoxContainer" parent="parent_vbox/margin/stats/stats/vbox/hbox2/right_panel"]
+[node name="values" type="VBoxContainer" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox2/right_panel"]
 margin_left = 87.0
 margin_right = 87.0
-margin_bottom = 213.0
+margin_bottom = 270.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 0
 
-[node name="health" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox2/right_panel/values"]
+[node name="health" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox2/right_panel/values"]
 margin_bottom = 14.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="dmg_reduc" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox2/right_panel/values"]
+[node name="dmg_reduc" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox2/right_panel/values"]
 margin_top = 14.0
 margin_bottom = 28.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="spacer" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox2/right_panel/values"]
+[node name="spacer" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox2/right_panel/values"]
 margin_top = 28.0
 margin_bottom = 42.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="atk_speed" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox2/right_panel/values"]
+[node name="atk_speed" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox2/right_panel/values"]
 margin_top = 42.0
 margin_bottom = 56.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="min_hit" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox2/right_panel/values"]
+[node name="min_hit" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox2/right_panel/values"]
 margin_top = 56.0
 margin_bottom = 70.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="max_hit" type="Label" parent="parent_vbox/margin/stats/stats/vbox/hbox2/right_panel/values"]
+[node name="max_hit" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox2/right_panel/values"]
 margin_top = 70.0
 margin_bottom = 84.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="gear" type="ScrollContainer" parent="parent_vbox/margin"]
+[node name="gear" type="MarginContainer" parent="parent_vbox/margin"]
 visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 24.0
+custom_constants/margin_right = 8
+custom_constants/margin_top = 8
+custom_constants/margin_left = 8
+
+[node name="gear" type="ScrollContainer" parent="parent_vbox/margin/gear"]
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 352.0
-margin_bottom = 335.0
+margin_bottom = 375.0
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -532,27 +583,27 @@ theme = ExtResource( 21 )
 scroll_horizontal_enabled = false
 script = ExtResource( 40 )
 
-[node name="hbox" type="HBoxContainer" parent="parent_vbox/margin/gear"]
+[node name="hbox" type="HBoxContainer" parent="parent_vbox/margin/gear/gear"]
 margin_right = 344.0
-margin_bottom = 327.0
+margin_bottom = 367.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="gear_slots" type="ScrollContainer" parent="parent_vbox/margin/gear/hbox"]
+[node name="gear_slots" type="ScrollContainer" parent="parent_vbox/margin/gear/gear/hbox"]
 margin_right = 66.0
-margin_bottom = 309.0
+margin_bottom = 365.0
 mouse_filter = 1
 size_flags_vertical = 3
 scroll_horizontal_enabled = false
 
-[node name="vbox" type="VBoxContainer" parent="parent_vbox/margin/gear/hbox/gear_slots"]
+[node name="vbox" type="VBoxContainer" parent="parent_vbox/margin/gear/gear/hbox/gear_slots"]
 margin_right = 66.0
 margin_bottom = 412.0
 rect_min_size = Vector2( 56, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="potion" type="Button" parent="parent_vbox/margin/gear/hbox/gear_slots/vbox"]
+[node name="potion" type="Button" parent="parent_vbox/margin/gear/gear/hbox/gear_slots/vbox"]
 margin_left = 4.0
 margin_right = 52.0
 margin_bottom = 48.0
@@ -563,7 +614,7 @@ theme = ExtResource( 17 )
 icon = ExtResource( 39 )
 expand_icon = true
 
-[node name="weapon" type="Button" parent="parent_vbox/margin/gear/hbox/gear_slots/vbox"]
+[node name="weapon" type="Button" parent="parent_vbox/margin/gear/gear/hbox/gear_slots/vbox"]
 margin_left = 4.0
 margin_top = 52.0
 margin_right = 52.0
@@ -575,7 +626,7 @@ theme = ExtResource( 17 )
 icon = ExtResource( 37 )
 expand_icon = true
 
-[node name="helmet" type="Button" parent="parent_vbox/margin/gear/hbox/gear_slots/vbox"]
+[node name="helmet" type="Button" parent="parent_vbox/margin/gear/gear/hbox/gear_slots/vbox"]
 margin_left = 4.0
 margin_top = 104.0
 margin_right = 52.0
@@ -587,7 +638,7 @@ theme = ExtResource( 17 )
 icon = ExtResource( 32 )
 expand_icon = true
 
-[node name="chestplate" type="Button" parent="parent_vbox/margin/gear/hbox/gear_slots/vbox"]
+[node name="chestplate" type="Button" parent="parent_vbox/margin/gear/gear/hbox/gear_slots/vbox"]
 margin_left = 4.0
 margin_top = 156.0
 margin_right = 52.0
@@ -599,7 +650,7 @@ theme = ExtResource( 17 )
 icon = ExtResource( 33 )
 expand_icon = true
 
-[node name="gloves" type="Button" parent="parent_vbox/margin/gear/hbox/gear_slots/vbox"]
+[node name="gloves" type="Button" parent="parent_vbox/margin/gear/gear/hbox/gear_slots/vbox"]
 margin_left = 4.0
 margin_top = 208.0
 margin_right = 52.0
@@ -611,7 +662,7 @@ theme = ExtResource( 17 )
 icon = ExtResource( 38 )
 expand_icon = true
 
-[node name="boots" type="Button" parent="parent_vbox/margin/gear/hbox/gear_slots/vbox"]
+[node name="boots" type="Button" parent="parent_vbox/margin/gear/gear/hbox/gear_slots/vbox"]
 margin_left = 4.0
 margin_top = 260.0
 margin_right = 52.0
@@ -623,7 +674,7 @@ theme = ExtResource( 17 )
 icon = ExtResource( 34 )
 expand_icon = true
 
-[node name="necklace" type="Button" parent="parent_vbox/margin/gear/hbox/gear_slots/vbox"]
+[node name="necklace" type="Button" parent="parent_vbox/margin/gear/gear/hbox/gear_slots/vbox"]
 margin_left = 4.0
 margin_top = 312.0
 margin_right = 52.0
@@ -635,7 +686,7 @@ theme = ExtResource( 17 )
 icon = ExtResource( 35 )
 expand_icon = true
 
-[node name="ring" type="Button" parent="parent_vbox/margin/gear/hbox/gear_slots/vbox"]
+[node name="ring" type="Button" parent="parent_vbox/margin/gear/gear/hbox/gear_slots/vbox"]
 margin_left = 4.0
 margin_top = 364.0
 margin_right = 52.0
@@ -647,14 +698,14 @@ theme = ExtResource( 17 )
 icon = ExtResource( 36 )
 expand_icon = true
 
-[node name="vbox" type="VBoxContainer" parent="parent_vbox/margin/gear/hbox"]
+[node name="vbox" type="VBoxContainer" parent="parent_vbox/margin/gear/gear/hbox"]
 margin_left = 70.0
-margin_right = 344.0
-margin_bottom = 309.0
+margin_right = 352.0
+margin_bottom = 365.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="parent_vbox/margin/gear/hbox/vbox"]
+[node name="Label" type="Label" parent="parent_vbox/margin/gear/gear/hbox/vbox"]
 visible = false
 margin_right = 274.0
 margin_bottom = 21.0
@@ -662,73 +713,74 @@ theme = ExtResource( 3 )
 text = "Inventory"
 align = 1
 
-[node name="items" type="ScrollContainer" parent="parent_vbox/margin/gear/hbox/vbox"]
-margin_right = 274.0
-margin_bottom = 148.0
+[node name="items" type="ScrollContainer" parent="parent_vbox/margin/gear/gear/hbox/vbox"]
+margin_right = 282.0
+margin_bottom = 176.0
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
 scroll_horizontal_enabled = false
 
-[node name="vbox" type="VBoxContainer" parent="parent_vbox/margin/gear/hbox/vbox/items"]
-margin_right = 274.0
-margin_bottom = 148.0
+[node name="vbox" type="VBoxContainer" parent="parent_vbox/margin/gear/gear/hbox/vbox/items"]
+margin_right = 282.0
+margin_bottom = 176.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
-[node name="sep4" parent="parent_vbox/margin/gear/hbox/vbox" instance=ExtResource( 6 )]
-margin_top = 152.0
-margin_right = 274.0
-margin_bottom = 156.0
+[node name="sep4" parent="parent_vbox/margin/gear/gear/hbox/vbox" instance=ExtResource( 6 )]
+margin_top = 180.0
+margin_right = 282.0
+margin_bottom = 184.0
 custom_styles/panel = SubResource( 2 )
 
-[node name="hbox" type="HBoxContainer" parent="parent_vbox/margin/gear/hbox/vbox"]
-margin_top = 160.0
-margin_right = 274.0
-margin_bottom = 309.0
+[node name="hbox" type="HBoxContainer" parent="parent_vbox/margin/gear/gear/hbox/vbox"]
+margin_top = 188.0
+margin_right = 282.0
+margin_bottom = 365.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="hbox" type="HBoxContainer" parent="parent_vbox/margin/gear/hbox/vbox/hbox"]
-margin_right = 131.0
-margin_bottom = 149.0
+[node name="hbox" type="HBoxContainer" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox"]
+margin_right = 135.0
+margin_bottom = 177.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource( 5 )
 custom_constants/separation = 8
 
-[node name="labels" type="VBoxContainer" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox"]
-margin_right = 131.0
-margin_bottom = 149.0
+[node name="labels" type="VBoxContainer" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox"]
+margin_right = 135.0
+margin_bottom = 177.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 0
 
-[node name="item_name" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox/labels"]
-margin_right = 131.0
+[node name="item_name" type="Label" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox/labels"]
+margin_right = 135.0
 margin_bottom = 14.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
 align = 1
 autowrap = true
 
-[node name="rarity" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox/labels"]
-margin_right = 131.0
-margin_bottom = 14.0
+[node name="rarity" type="Label" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox/labels"]
+margin_top = 14.0
+margin_right = 135.0
+margin_bottom = 28.0
 theme = ExtResource( 7 )
 align = 1
 autowrap = true
 
-[node name="spacer" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox/labels"]
-margin_top = 14.0
-margin_right = 131.0
-margin_bottom = 22.0
+[node name="spacer" type="Label" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox/labels"]
+margin_top = 28.0
+margin_right = 135.0
+margin_bottom = 36.0
 theme = ExtResource( 42 )
 align = 1
 autowrap = true
 
-[node name="ability_header" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox/labels"]
+[node name="ability_header" type="Label" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox/labels"]
 visible = false
 margin_top = 22.0
 margin_right = 131.0
@@ -738,22 +790,22 @@ text = "ABILITIES"
 align = 1
 autowrap = true
 
-[node name="spacer2" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox/labels"]
+[node name="spacer2" type="Label" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox/labels"]
 margin_top = 36.0
-margin_right = 131.0
+margin_right = 135.0
 margin_bottom = 44.0
 theme = ExtResource( 42 )
 align = 1
 autowrap = true
 
-[node name="abilities" type="VBoxContainer" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox/labels"]
+[node name="abilities" type="VBoxContainer" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox/labels"]
 margin_top = 44.0
-margin_right = 131.0
-margin_bottom = 149.0
+margin_right = 135.0
+margin_bottom = 177.0
 size_flags_vertical = 3
 custom_constants/separation = 0
 
-[node name="base_label" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox/labels/abilities"]
+[node name="base_label" type="Label" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox/labels/abilities"]
 visible = false
 margin_right = 126.0
 margin_bottom = 14.0
@@ -762,7 +814,7 @@ custom_colors/font_color = Color( 0.858824, 0.333333, 0.929412, 1 )
 text = "Stab ATK"
 align = 1
 
-[node name="equip" type="Button" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox/labels"]
+[node name="equip" type="Button" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox/labels"]
 visible = false
 margin_left = 25.0
 margin_top = 123.0
@@ -773,31 +825,31 @@ size_flags_horizontal = 4
 theme = ExtResource( 41 )
 text = "Equip"
 
-[node name="separator" parent="parent_vbox/margin/gear/hbox/vbox/hbox" instance=ExtResource( 31 )]
+[node name="separator" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox" instance=ExtResource( 31 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 135.0
-margin_right = 139.0
-margin_bottom = 149.0
+margin_left = 139.0
+margin_right = 143.0
+margin_bottom = 177.0
 
-[node name="hbox2" type="HBoxContainer" parent="parent_vbox/margin/gear/hbox/vbox/hbox"]
-margin_left = 143.0
-margin_right = 274.0
-margin_bottom = 149.0
+[node name="hbox2" type="HBoxContainer" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox"]
+margin_left = 147.0
+margin_right = 282.0
+margin_bottom = 177.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource( 5 )
 custom_constants/separation = 8
 alignment = 1
 
-[node name="labels" type="VBoxContainer" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox2"]
-margin_right = 61.0
-margin_bottom = 149.0
+[node name="labels" type="VBoxContainer" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox2"]
+margin_right = 63.0
+margin_bottom = 177.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 0
 
-[node name="atk_stab" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox2/labels"]
+[node name="atk_stab" type="Label" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox2/labels"]
 visible = false
 margin_right = 76.0
 margin_bottom = 14.0
@@ -805,7 +857,7 @@ theme = ExtResource( 7 )
 text = "Stab ATK"
 align = 2
 
-[node name="atk_slash" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox2/labels"]
+[node name="atk_slash" type="Label" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox2/labels"]
 visible = false
 margin_top = 14.0
 margin_right = 76.0
@@ -814,7 +866,7 @@ theme = ExtResource( 7 )
 text = "Slash ATK"
 align = 2
 
-[node name="atk_crush" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox2/labels"]
+[node name="atk_crush" type="Label" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox2/labels"]
 visible = false
 margin_top = 28.0
 margin_right = 76.0
@@ -823,14 +875,14 @@ theme = ExtResource( 7 )
 text = "Crush ATK"
 align = 2
 
-[node name="atk_spacer" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox2/labels"]
+[node name="atk_spacer" type="Label" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox2/labels"]
 visible = false
 margin_right = 62.0
 margin_bottom = 14.0
 theme = ExtResource( 7 )
 align = 2
 
-[node name="def_stab" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox2/labels"]
+[node name="def_stab" type="Label" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox2/labels"]
 visible = false
 margin_top = 56.0
 margin_right = 76.0
@@ -839,7 +891,7 @@ theme = ExtResource( 7 )
 text = "Stab DEF"
 align = 2
 
-[node name="def_slash" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox2/labels"]
+[node name="def_slash" type="Label" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox2/labels"]
 visible = false
 margin_top = 70.0
 margin_right = 76.0
@@ -848,7 +900,7 @@ theme = ExtResource( 7 )
 text = "Slash DEF"
 align = 2
 
-[node name="def_crush" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox2/labels"]
+[node name="def_crush" type="Label" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox2/labels"]
 visible = false
 margin_top = 84.0
 margin_right = 76.0
@@ -857,14 +909,14 @@ theme = ExtResource( 7 )
 text = "Crush DEF"
 align = 2
 
-[node name="def_spacer" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox2/labels"]
+[node name="def_spacer" type="Label" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox2/labels"]
 visible = false
 margin_right = 62.0
 margin_bottom = 14.0
 theme = ExtResource( 7 )
 align = 2
 
-[node name="health" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox2/labels"]
+[node name="health" type="Label" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox2/labels"]
 visible = false
 margin_top = 112.0
 margin_right = 76.0
@@ -873,7 +925,7 @@ theme = ExtResource( 7 )
 text = "Health"
 align = 2
 
-[node name="dmg_reduc" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox2/labels"]
+[node name="dmg_reduc" type="Label" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox2/labels"]
 visible = false
 margin_top = 126.0
 margin_right = 76.0
@@ -882,7 +934,7 @@ theme = ExtResource( 7 )
 text = "DMG Reduc"
 align = 2
 
-[node name="atk_speed" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox2/labels"]
+[node name="atk_speed" type="Label" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox2/labels"]
 visible = false
 margin_top = 154.0
 margin_right = 76.0
@@ -891,7 +943,7 @@ theme = ExtResource( 7 )
 text = "ATK Speed"
 align = 2
 
-[node name="min_hit" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox2/labels"]
+[node name="min_hit" type="Label" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox2/labels"]
 visible = false
 margin_top = 168.0
 margin_right = 76.0
@@ -900,7 +952,7 @@ theme = ExtResource( 7 )
 text = "Min Hit"
 align = 2
 
-[node name="max_hit" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox2/labels"]
+[node name="max_hit" type="Label" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox2/labels"]
 visible = false
 margin_top = 182.0
 margin_right = 76.0
@@ -909,15 +961,15 @@ theme = ExtResource( 7 )
 text = "Max Hit"
 align = 2
 
-[node name="values" type="VBoxContainer" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox2"]
-margin_left = 69.0
-margin_right = 131.0
-margin_bottom = 149.0
+[node name="values" type="VBoxContainer" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox2"]
+margin_left = 71.0
+margin_right = 135.0
+margin_bottom = 177.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 0
 
-[node name="atk_stab" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox2/values"]
+[node name="atk_stab" type="Label" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox2/values"]
 visible = false
 margin_right = 63.0
 margin_bottom = 14.0
@@ -925,7 +977,7 @@ theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 text = "12323"
 
-[node name="atk_slash" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox2/values"]
+[node name="atk_slash" type="Label" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox2/values"]
 visible = false
 margin_top = 14.0
 margin_right = 63.0
@@ -933,7 +985,7 @@ margin_bottom = 28.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="atk_crush" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox2/values"]
+[node name="atk_crush" type="Label" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox2/values"]
 visible = false
 margin_top = 28.0
 margin_right = 63.0
@@ -941,14 +993,14 @@ margin_bottom = 42.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="atk_spacer" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox2/values"]
+[node name="atk_spacer" type="Label" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox2/values"]
 visible = false
 margin_right = 63.0
 margin_bottom = 14.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="def_stab" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox2/values"]
+[node name="def_stab" type="Label" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox2/values"]
 visible = false
 margin_top = 56.0
 margin_right = 63.0
@@ -956,7 +1008,7 @@ margin_bottom = 70.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="def_slash" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox2/values"]
+[node name="def_slash" type="Label" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox2/values"]
 visible = false
 margin_top = 70.0
 margin_right = 63.0
@@ -964,7 +1016,7 @@ margin_bottom = 84.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="def_crush" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox2/values"]
+[node name="def_crush" type="Label" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox2/values"]
 visible = false
 margin_top = 84.0
 margin_right = 63.0
@@ -972,14 +1024,14 @@ margin_bottom = 98.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="def_spacer" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox2/values"]
+[node name="def_spacer" type="Label" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox2/values"]
 visible = false
 margin_right = 63.0
 margin_bottom = 14.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="health" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox2/values"]
+[node name="health" type="Label" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox2/values"]
 visible = false
 margin_top = 112.0
 margin_right = 63.0
@@ -987,7 +1039,7 @@ margin_bottom = 126.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="dmg_reduc" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox2/values"]
+[node name="dmg_reduc" type="Label" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox2/values"]
 visible = false
 margin_top = 126.0
 margin_right = 63.0
@@ -995,7 +1047,7 @@ margin_bottom = 140.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="atk_speed" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox2/values"]
+[node name="atk_speed" type="Label" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox2/values"]
 visible = false
 margin_top = 154.0
 margin_right = 63.0
@@ -1003,7 +1055,7 @@ margin_bottom = 168.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="min_hit" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox2/values"]
+[node name="min_hit" type="Label" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox2/values"]
 visible = false
 margin_top = 168.0
 margin_right = 63.0
@@ -1011,7 +1063,7 @@ margin_bottom = 182.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="max_hit" type="Label" parent="parent_vbox/margin/gear/hbox/vbox/hbox/hbox2/values"]
+[node name="max_hit" type="Label" parent="parent_vbox/margin/gear/gear/hbox/vbox/hbox/hbox2/values"]
 visible = false
 margin_top = 182.0
 margin_right = 63.0
@@ -1019,12 +1071,20 @@ margin_bottom = 196.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
-[node name="talents" type="ScrollContainer" parent="parent_vbox/margin"]
+[node name="talents" type="MarginContainer" parent="parent_vbox/margin"]
 visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 24.0
+custom_constants/margin_right = 8
+custom_constants/margin_top = 8
+custom_constants/margin_left = 8
+
+[node name="talents" type="ScrollContainer" parent="parent_vbox/margin/talents"]
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 352.0
-margin_bottom = 335.0
+margin_bottom = 375.0
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1032,78 +1092,78 @@ theme = ExtResource( 21 )
 scroll_horizontal_enabled = false
 script = ExtResource( 22 )
 
-[node name="vbox" type="VBoxContainer" parent="parent_vbox/margin/talents"]
+[node name="vbox" type="VBoxContainer" parent="parent_vbox/margin/talents/talents"]
 margin_right = 344.0
-margin_bottom = 327.0
+margin_bottom = 367.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="vbox" type="VBoxContainer" parent="parent_vbox/margin/talents/vbox"]
-margin_right = 344.0
+[node name="vbox" type="VBoxContainer" parent="parent_vbox/margin/talents/talents/vbox"]
+margin_right = 352.0
 margin_bottom = 42.0
 
-[node name="talent_points" type="HBoxContainer" parent="parent_vbox/margin/talents/vbox/vbox"]
-margin_right = 344.0
+[node name="talent_points" type="HBoxContainer" parent="parent_vbox/margin/talents/talents/vbox/vbox"]
+margin_right = 352.0
 margin_bottom = 17.0
 custom_constants/separation = 8
 alignment = 1
 
-[node name="amount" type="Label" parent="parent_vbox/margin/talents/vbox/vbox/talent_points"]
-margin_left = 68.0
-margin_right = 78.0
+[node name="amount" type="Label" parent="parent_vbox/margin/talents/talents/vbox/vbox/talent_points"]
+margin_left = 72.0
+margin_right = 82.0
 margin_bottom = 17.0
 custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
 text = "4"
 
-[node name="label" type="Label" parent="parent_vbox/margin/talents/vbox/vbox/talent_points"]
-margin_left = 86.0
-margin_right = 275.0
+[node name="label" type="Label" parent="parent_vbox/margin/talents/talents/vbox/vbox/talent_points"]
+margin_left = 90.0
+margin_right = 279.0
 margin_bottom = 17.0
 text = "Available Talent Points"
 
-[node name="buttons" type="HBoxContainer" parent="parent_vbox/margin/talents/vbox/vbox"]
+[node name="buttons" type="HBoxContainer" parent="parent_vbox/margin/talents/talents/vbox/vbox"]
 margin_top = 21.0
-margin_right = 344.0
+margin_right = 352.0
 margin_bottom = 42.0
 alignment = 1
 
-[node name="confirm" type="Button" parent="parent_vbox/margin/talents/vbox/vbox/buttons"]
-margin_left = 27.0
-margin_right = 151.0
+[node name="confirm" type="Button" parent="parent_vbox/margin/talents/talents/vbox/vbox/buttons"]
+margin_left = 31.0
+margin_right = 155.0
 margin_bottom = 21.0
 theme = ExtResource( 17 )
 text = "Confirm Points"
 
-[node name="undo" type="Button" parent="parent_vbox/margin/talents/vbox/vbox/buttons"]
-margin_left = 155.0
-margin_right = 201.0
+[node name="undo" type="Button" parent="parent_vbox/margin/talents/talents/vbox/vbox/buttons"]
+margin_left = 159.0
+margin_right = 205.0
 margin_bottom = 21.0
 theme = ExtResource( 17 )
 text = "Undo"
 
-[node name="reset" type="Button" parent="parent_vbox/margin/talents/vbox/vbox/buttons"]
-margin_left = 205.0
-margin_right = 316.0
+[node name="reset" type="Button" parent="parent_vbox/margin/talents/talents/vbox/vbox/buttons"]
+margin_left = 209.0
+margin_right = 320.0
 margin_bottom = 21.0
 theme = ExtResource( 17 )
 text = "Reset Points"
 
-[node name="sep3" parent="parent_vbox/margin/talents/vbox" instance=ExtResource( 6 )]
+[node name="sep3" parent="parent_vbox/margin/talents/talents/vbox" instance=ExtResource( 6 )]
 margin_top = 46.0
-margin_right = 344.0
+margin_right = 352.0
 margin_bottom = 50.0
 custom_styles/panel = SubResource( 1 )
 
-[node name="hbox" type="HBoxContainer" parent="parent_vbox/margin/talents/vbox"]
+[node name="hbox" type="HBoxContainer" parent="parent_vbox/margin/talents/talents/vbox"]
 margin_top = 54.0
-margin_right = 344.0
+margin_right = 352.0
 margin_bottom = 54.0
 custom_constants/separation = 8
 
-[node name="amounts" type="VBoxContainer" parent="parent_vbox/margin/talents/vbox/hbox"]
+[node name="amounts" type="VBoxContainer" parent="parent_vbox/margin/talents/talents/vbox/hbox"]
 alignment = 1
 
-[node name="default" type="Label" parent="parent_vbox/margin/talents/vbox/hbox/amounts"]
+[node name="default" type="Label" parent="parent_vbox/margin/talents/talents/vbox/hbox/amounts"]
 visible = false
 margin_bottom = 32.0
 size_flags_horizontal = 3
@@ -1111,11 +1171,11 @@ size_flags_vertical = 7
 custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
 valign = 1
 
-[node name="buttons" type="VBoxContainer" parent="parent_vbox/margin/talents/vbox/hbox"]
+[node name="buttons" type="VBoxContainer" parent="parent_vbox/margin/talents/talents/vbox/hbox"]
 margin_left = 8.0
 margin_right = 8.0
 
-[node name="default" type="Button" parent="parent_vbox/margin/talents/vbox/hbox/buttons"]
+[node name="default" type="Button" parent="parent_vbox/margin/talents/talents/vbox/hbox/buttons"]
 visible = false
 margin_right = 32.0
 margin_bottom = 32.0
@@ -1124,92 +1184,44 @@ theme = ExtResource( 17 )
 icon = ExtResource( 20 )
 expand_icon = true
 
-[node name="descriptions" type="VBoxContainer" parent="parent_vbox/margin/talents/vbox/hbox"]
+[node name="descriptions" type="VBoxContainer" parent="parent_vbox/margin/talents/talents/vbox/hbox"]
 margin_left = 16.0
 margin_right = 16.0
 alignment = 1
 
-[node name="default" type="Label" parent="parent_vbox/margin/talents/vbox/hbox/descriptions"]
+[node name="default" type="Label" parent="parent_vbox/margin/talents/talents/vbox/hbox/descriptions"]
 visible = false
 margin_bottom = 17.0
 size_flags_horizontal = 3
 size_flags_vertical = 7
 valign = 1
 
-[node name="companion" type="ScrollContainer" parent="parent_vbox/margin"]
+[node name="companion" type="MarginContainer" parent="parent_vbox/margin"]
 visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 24.0
+custom_constants/margin_right = 8
+custom_constants/margin_top = 8
+custom_constants/margin_left = 8
+
+[node name="companion" type="ScrollContainer" parent="parent_vbox/margin/companion"]
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 352.0
-margin_bottom = 335.0
+margin_bottom = 375.0
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
 scroll_horizontal_enabled = false
 
-[node name="vbox" type="VBoxContainer" parent="parent_vbox/margin/companion"]
+[node name="vbox" type="VBoxContainer" parent="parent_vbox/margin/companion/companion"]
 margin_right = 344.0
-margin_bottom = 327.0
+margin_bottom = 367.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="sep2" parent="parent_vbox" instance=ExtResource( 6 )]
-margin_top = 378.0
-margin_bottom = 382.0
-custom_styles/panel = SubResource( 1 )
-
-[node name="buttons" type="HBoxContainer" parent="parent_vbox"]
-margin_top = 388.0
-margin_right = 360.0
-margin_bottom = 436.0
-custom_constants/separation = 10
-alignment = 1
-
-[node name="stats" type="Button" parent="parent_vbox/buttons"]
-margin_left = 69.0
-margin_right = 117.0
-margin_bottom = 48.0
-rect_min_size = Vector2( 48, 48 )
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = ExtResource( 17 )
-icon = ExtResource( 25 )
-expand_icon = true
-
-[node name="gear" type="Button" parent="parent_vbox/buttons"]
-margin_left = 127.0
-margin_right = 175.0
-margin_bottom = 48.0
-rect_min_size = Vector2( 48, 48 )
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = ExtResource( 17 )
-icon = ExtResource( 24 )
-expand_icon = true
-
-[node name="talents" type="Button" parent="parent_vbox/buttons"]
-margin_left = 185.0
-margin_right = 233.0
-margin_bottom = 48.0
-rect_min_size = Vector2( 48, 48 )
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = ExtResource( 17 )
-icon = ExtResource( 26 )
-expand_icon = true
-
-[node name="companion" type="Button" parent="parent_vbox/buttons"]
-margin_left = 243.0
-margin_right = 291.0
-margin_bottom = 48.0
-rect_min_size = Vector2( 48, 48 )
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = ExtResource( 17 )
-icon = ExtResource( 27 )
-expand_icon = true
-
-[node name="sep" parent="parent_vbox" instance=ExtResource( 6 )]
 margin_top = 442.0
 margin_bottom = 446.0
 custom_styles/panel = SubResource( 1 )
@@ -1567,8 +1579,8 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 text = "CLOSE"
 
-[connection signal="pressed" from="parent_vbox/margin/talents/vbox/vbox/buttons/confirm" to="parent_vbox/margin/talents" method="confirm_spent_points"]
-[connection signal="pressed" from="parent_vbox/margin/talents/vbox/vbox/buttons/undo" to="parent_vbox/margin/talents" method="undo_spent_points"]
-[connection signal="pressed" from="parent_vbox/margin/talents/vbox/vbox/buttons/reset" to="parent_vbox/margin/talents" method="reset_total_points"]
+[connection signal="pressed" from="parent_vbox/margin/talents/talents/vbox/vbox/buttons/confirm" to="parent_vbox/margin/talents/talents" method="confirm_spent_points"]
+[connection signal="pressed" from="parent_vbox/margin/talents/talents/vbox/vbox/buttons/undo" to="parent_vbox/margin/talents/talents" method="undo_spent_points"]
+[connection signal="pressed" from="parent_vbox/margin/talents/talents/vbox/vbox/buttons/reset" to="parent_vbox/margin/talents/talents" method="reset_total_points"]
 [connection signal="pressed" from="create_hero_popup/margin/panel/vbox/buttons/hbox/hire_hero" to="create_hero_popup" method="hire_hero_pressed"]
 [connection signal="pressed" from="create_hero_popup/margin/panel/vbox/buttons/hbox/close" to="create_hero_popup" method="close_create_hero_popup"]

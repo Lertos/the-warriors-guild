@@ -2,11 +2,17 @@ extends MarginContainer
 
 var locked_texture = load('res://assets/icons/locked.png')
 
+onready var tab_buttons = get_node('parent_vbox/margin')
+
 var hero_timers = {}
 
 
 func _ready():
 	load_screen()
+	
+	for index in range(tab_buttons.get_tab_count()):
+		tab_buttons.set_tab_title(index, Helper.get_header_text(tab_buttons.get_tab_title(index)))
+	
 
 
 func load_screen():
@@ -35,37 +41,22 @@ func load_hero_sections(index: int, hero_info):
 	#Change the border color to show which hero is selected
 	Helper.change_border_color(hero_buttons.get_node(str(index)), 'selected')
 	
-	get_node('parent_vbox/margin/stats').load_hero_stats_section(index, hero_info)
-	get_node('parent_vbox/margin/talents').load_hero_talents_section(index, hero_info)
+	get_node('parent_vbox/margin/stats/stats').load_hero_stats_section(index, hero_info)
+	get_node('parent_vbox/margin/talents/talents').load_hero_talents_section(index, hero_info)
 	
-	switch_sections('stats')
+	switch_sections(0)
 
 
 func connect_section_buttons():
-	for node in get_node('parent_vbox/buttons').get_children():
-		node.connect('pressed', self, 'switch_sections', [node.name])
+	for index in range(tab_buttons.get_tab_count()):
+		tab_buttons.connect('tab_selected', self, 'switch_sections')
 	
 
-func switch_sections(key: String):
-	var section_buttons = get_node('parent_vbox/buttons')
-	
-	get_node('parent_vbox/header').text = Helper.get_header_text(key)
-	
-	#Remove all coloring from each button to reset the selected button
-	for node in section_buttons.get_children():
-		Helper.reset_button_custom_colors(node)
-	
-	#Change the border color to show which section is selected
-	Helper.change_border_color(section_buttons.get_node(key), 'selected')
-	
+func switch_sections(tab_index: int):
+	var key = tab_buttons.get_tab_title(tab_index).to_lower()
+
 	#Reset scrollbar to initial spot 
-	get_node('parent_vbox/margin/' + key).scroll_vertical = 0
-	
-	for node in get_node('parent_vbox/margin').get_children():
-		if node.name == key:
-			node.visible = true
-		else:
-			node.visible = false
+	get_node('parent_vbox/margin/' + key + '/' + key).scroll_vertical = 0
 
 
 func open_create_hero_popup(index: int):
