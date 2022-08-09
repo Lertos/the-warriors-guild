@@ -12,6 +12,36 @@ var config = {
 	},
 	
 	#-----------------------
+	# STAT LIST - Display Names for Stat Keys
+	#-----------------------
+	'stat_list': {
+		'base_stats': {
+			'atk_stab': 'Stab ATK',
+			'atk_slash': 'Slash ATK',
+			'atk_crush': 'Crush ATK',
+			'def_stab': 'Stab DEF',
+			'def_slash': 'Slash DEF',
+			'def_crush': 'Crush DEF',
+			'health': 'Health',
+			'atk_speed': 'ATK Speed',
+			'dmg_reduc': 'Armor',
+			'min_hit': 'Min Hit',
+			'max_hit': 'Max Hit',
+		},
+		'modifiers': {
+			'p_health': 'Bonus Health',
+			'p_damage': 'Bonus Damage',
+			'p_min_hit': 'Bonus Min Hit',
+			'p_max_hit': 'Bonus Max Hit',
+			'p_speed': 'Bonus Attack Speed',
+			'p_main_atk': 'Bonus ATK Stat',
+			'p_all_def': 'Bonus DEF Stats',
+			'p_sell_price': 'Bonus Sell Price',
+			'p_dmg_reduc': 'Bonus Armor',
+		},
+	},
+	
+	#-----------------------
 	# GEAR TYPES
 	#-----------------------
 	'gear_types': {
