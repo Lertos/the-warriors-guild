@@ -65,7 +65,14 @@ func load_item_info(item_button: Node):
 		
 		load_item_rarity(item_meta)
 		load_abilities_and_modifiers(item_meta)
-		
+
+
+func open_item_info_popup(item_meta: Dictionary):
+	var popup = get_parent().get_parent().get_parent().get_parent().get_node('item_info_popup')
+	
+	popup.load_page(item_meta)
+	get_node('/root/root').show_root_popup(popup)
+
 
 func load_item_rarity(item_meta: Dictionary):
 	var rarity_label = item_info_parent.get_node('base_info/rarity')
@@ -83,6 +90,8 @@ func load_abilities_and_modifiers(item_meta: Dictionary):
 		if item_meta['identified']:
 			update_ability_labels(item_meta)
 			item_info_parent.get_node('buttons/info').visible = true
+			item_info_parent.get_node('buttons/info').disconnect('pressed', self, 'open_item_info_popup')
+			item_info_parent.get_node('buttons/info').connect('pressed', self, 'open_item_info_popup', [item_meta])
 		else:
 			item_info_parent.get_node('buttons/info').visible = false
 	

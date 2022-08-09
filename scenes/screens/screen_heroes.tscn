@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://scripts/screens/heroes/screen_heroes.gd" type="Script" id=1]
 [ext_resource path="res://themes/popup.tres" type="StyleBox" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://scripts/screens/heroes/section_talents.gd" type="Script" id=22]
 [ext_resource path="res://scripts/screens/heroes/section_stats.gd" type="Script" id=23]
 [ext_resource path="res://scenes/stat_module.tscn" type="PackedScene" id=24]
+[ext_resource path="res://scripts/screens/heroes/gear_item_info_popup.gd" type="Script" id=25]
 [ext_resource path="res://assets/icons/health.png" type="Texture" id=28]
 [ext_resource path="res://assets/icons/xp.png" type="Texture" id=29]
 [ext_resource path="res://themes/buttons/button_standalone.tres" type="Theme" id=30]
@@ -110,7 +111,7 @@ custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
 text = "Hero Info"
 align = 1
 
-[node name="sep4" parent="parent_vbox" instance=ExtResource( 6 )]
+[node name="sep" parent="parent_vbox" instance=ExtResource( 6 )]
 margin_top = 27.0
 margin_bottom = 31.0
 custom_styles/panel = SubResource( 2 )
@@ -138,6 +139,7 @@ theme = SubResource( 11 )
 tab_align = 0
 
 [node name="stats" type="MarginContainer" parent="parent_vbox/margin"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 31.0
@@ -1387,8 +1389,151 @@ size_flags_horizontal = 3
 theme = ExtResource( 17 )
 text = "CLOSE"
 
+[node name="item_info_popup" type="Popup" parent="."]
+margin_top = 6.0
+margin_right = 360.0
+margin_bottom = 506.0
+popup_exclusive = true
+script = ExtResource( 25 )
+
+[node name="margin" type="MarginContainer" parent="item_info_popup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 16
+custom_constants/margin_top = 16
+custom_constants/margin_left = 16
+custom_constants/margin_bottom = 16
+
+[node name="panel" type="PanelContainer" parent="item_info_popup/margin"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 344.0
+margin_bottom = 484.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 2 )
+
+[node name="vbox" type="VBoxContainer" parent="item_info_popup/margin/panel"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 302.0
+margin_bottom = 323.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 16
+
+[node name="header" type="Label" parent="item_info_popup/margin/panel/vbox"]
+margin_right = 292.0
+margin_bottom = 21.0
+theme = ExtResource( 3 )
+custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
+text = "Additional Item Info"
+align = 1
+
+[node name="abilities" type="VBoxContainer" parent="item_info_popup/margin/panel/vbox"]
+margin_top = 37.0
+margin_right = 292.0
+margin_bottom = 90.0
+
+[node name="sep" parent="item_info_popup/margin/panel/vbox/abilities" instance=ExtResource( 6 )]
+margin_top = 0.0
+margin_right = 292.0
+margin_bottom = 4.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="label" type="Label" parent="item_info_popup/margin/panel/vbox/abilities"]
+margin_top = 8.0
+margin_right = 292.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+custom_colors/font_color = Color( 0.945098, 0.580392, 0.0627451, 1 )
+text = "Abilities"
+align = 1
+
+[node name="spacer" type="Label" parent="item_info_popup/margin/panel/vbox/abilities"]
+margin_top = 26.0
+margin_right = 292.0
+margin_bottom = 34.0
+theme = ExtResource( 42 )
+align = 1
+autowrap = true
+
+[node name="vbox" type="VBoxContainer" parent="item_info_popup/margin/panel/vbox/abilities"]
+margin_top = 38.0
+margin_right = 292.0
+margin_bottom = 53.0
+
+[node name="abilities" type="RichTextLabel" parent="item_info_popup/margin/panel/vbox/abilities/vbox"]
+margin_right = 292.0
+margin_bottom = 15.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+bbcode_enabled = true
+fit_content_height = true
+scroll_active = false
+
+[node name="modifiers" type="VBoxContainer" parent="item_info_popup/margin/panel/vbox"]
+margin_top = 106.0
+margin_right = 292.0
+margin_bottom = 276.0
+size_flags_vertical = 3
+
+[node name="sep" parent="item_info_popup/margin/panel/vbox/modifiers" instance=ExtResource( 6 )]
+margin_top = 0.0
+margin_right = 292.0
+margin_bottom = 4.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="label" type="Label" parent="item_info_popup/margin/panel/vbox/modifiers"]
+margin_top = 8.0
+margin_right = 292.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+custom_colors/font_color = Color( 0.945098, 0.580392, 0.0627451, 1 )
+text = "Modifier"
+align = 1
+
+[node name="spacer" type="Label" parent="item_info_popup/margin/panel/vbox/modifiers"]
+margin_top = 26.0
+margin_right = 292.0
+margin_bottom = 34.0
+theme = ExtResource( 42 )
+align = 1
+autowrap = true
+
+[node name="vbox" type="VBoxContainer" parent="item_info_popup/margin/panel/vbox/modifiers"]
+margin_top = 38.0
+margin_right = 292.0
+margin_bottom = 53.0
+
+[node name="modifiers" type="RichTextLabel" parent="item_info_popup/margin/panel/vbox/modifiers/vbox"]
+margin_right = 292.0
+margin_bottom = 15.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+bbcode_enabled = true
+fit_content_height = true
+scroll_active = false
+
+[node name="close" type="Button" parent="item_info_popup/margin/panel/vbox"]
+margin_top = 292.0
+margin_right = 292.0
+margin_bottom = 313.0
+size_flags_horizontal = 3
+theme = ExtResource( 17 )
+shortcut_in_tooltip = false
+action_mode = 0
+text = "CLOSE"
+
 [connection signal="pressed" from="parent_vbox/margin/talents/talents/vbox/vbox/buttons/confirm" to="parent_vbox/margin/talents/talents" method="confirm_spent_points"]
 [connection signal="pressed" from="parent_vbox/margin/talents/talents/vbox/vbox/buttons/undo" to="parent_vbox/margin/talents/talents" method="undo_spent_points"]
 [connection signal="pressed" from="parent_vbox/margin/talents/talents/vbox/vbox/buttons/reset" to="parent_vbox/margin/talents/talents" method="reset_total_points"]
 [connection signal="pressed" from="create_hero_popup/margin/panel/vbox/buttons/hbox/hire_hero" to="create_hero_popup" method="hire_hero_pressed"]
 [connection signal="pressed" from="create_hero_popup/margin/panel/vbox/buttons/hbox/close" to="create_hero_popup" method="close_create_hero_popup"]
+[connection signal="pressed" from="item_info_popup/margin/panel/vbox/close" to="item_info_popup" method="on_close_item_info_popup"]
