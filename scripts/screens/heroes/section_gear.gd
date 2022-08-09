@@ -26,6 +26,10 @@ func _ready():
 	button_group2.get_node('ring').connect('pressed', self, 'switch_sub_type', ['jewelry', 'ring'])
 
 
+func load_hero_gear_section():
+	switch_sub_type('consumable', 'potion')
+
+
 func load_items(storage_type: String, sub_type: String):
 	ItemHelper.load_items_into_node(list_node, storage_type, items_per_row, sub_type)
 	
@@ -71,12 +75,16 @@ func load_item_info(item_button: Node):
 		if 'identified' in item_meta:
 			if item_meta['identified']:
 				load_item_abilities(item_meta)
+				item_info_parent.get_node('buttons/info').visible = true
+			else:
+				item_info_parent.get_node('buttons/info').visible = false
 		
-		if 'modifier' in item_meta:
-			var modifier_name = MasterConfig.config['modifiers'][item_meta['modifier']]['name']
-			
-			item_info_parent.get_node('base_info/modifier/modifier').text = modifier_name
-			item_info_parent.get_node('base_info/modifier').visible = true
+			if 'modifier' in item_meta:
+				if item_meta['modifier'] != '':
+					var modifier_name = MasterConfig.config['modifiers'][item_meta['modifier']]['name']
+					
+					item_info_parent.get_node('base_info/modifier/modifier').text = modifier_name
+					item_info_parent.get_node('base_info/modifier').visible = true
 
 
 func load_item_abilities(item_meta: Dictionary):

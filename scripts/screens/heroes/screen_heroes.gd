@@ -8,11 +8,22 @@ var hero_timers = {}
 
 
 func _ready():
+	initial_setup()
+
+
+func initial_setup():
 	load_screen()
 	
-	for index in range(tab_buttons.get_tab_count()):
-		tab_buttons.set_tab_title(index, Helper.get_header_text(tab_buttons.get_tab_title(index)))
-	
+	if len(Global_Player.player['heroes']) > 0:
+		for index in range(tab_buttons.get_tab_count()):
+			tab_buttons.set_tab_title(index, Helper.get_header_text(tab_buttons.get_tab_title(index)))
+			
+			tab_buttons.visible = true
+			get_node('parent_vbox/no_heroes_msg').visible = false
+	#If there are no heroes, hide the sections and let them know they need to hire a hero
+	else:
+		tab_buttons.visible = false
+		get_node('parent_vbox/no_heroes_msg').visible = true
 
 
 func load_screen():
@@ -42,6 +53,7 @@ func load_hero_sections(index: int, hero_info):
 	Helper.change_border_color(hero_buttons.get_node(str(index)), 'selected')
 	
 	get_node('parent_vbox/margin/stats/stats').load_hero_stats_section(index, hero_info)
+	get_node('parent_vbox/margin/gear/gear').load_hero_gear_section()
 	get_node('parent_vbox/margin/talents/talents').load_hero_talents_section(index, hero_info)
 	
 	switch_sections(0)
@@ -49,11 +61,13 @@ func load_hero_sections(index: int, hero_info):
 
 func connect_section_buttons():
 	for index in range(tab_buttons.get_tab_count()):
-		tab_buttons.connect('tab_selected', self, 'switch_sections')
+		tab_buttons.connect('tab_changed', self, 'switch_sections')
 	
 
 func switch_sections(tab_index: int):
 	var key = tab_buttons.get_tab_title(tab_index).to_lower()
+
+	tab_buttons.current_tab = tab_index
 
 	#Reset scrollbar to initial spot 
 	get_node('parent_vbox/margin/' + key + '/' + key).scroll_vertical = 0

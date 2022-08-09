@@ -115,6 +115,19 @@ margin_top = 27.0
 margin_bottom = 31.0
 custom_styles/panel = SubResource( 2 )
 
+[node name="no_heroes_msg" type="Label" parent="parent_vbox"]
+visible = false
+margin_top = 37.0
+margin_right = 360.0
+margin_bottom = 436.0
+size_flags_vertical = 3
+theme = ExtResource( 3 )
+text = "You must hire a hero in order to send them on missions. 
+
+Click one of the \"+\" buttons below to hire a new hero."
+align = 1
+autowrap = true
+
 [node name="margin" type="TabContainer" parent="parent_vbox"]
 margin_top = 37.0
 margin_right = 360.0
@@ -125,7 +138,6 @@ theme = SubResource( 11 )
 tab_align = 0
 
 [node name="stats" type="MarginContainer" parent="parent_vbox/margin"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 31.0
@@ -562,6 +574,7 @@ theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.909804, 1, 0.513726, 1 )
 
 [node name="gear" type="MarginContainer" parent="parent_vbox/margin"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 24.0
@@ -847,6 +860,7 @@ visible = false
 margin_top = 207.0
 margin_right = 170.0
 margin_bottom = 233.0
+size_flags_horizontal = 4
 
 [node name="equip" type="Button" parent="parent_vbox/margin/gear/gear/vbox/inventory/item_info/vbox/buttons"]
 margin_right = 80.0

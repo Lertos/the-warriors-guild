@@ -86,6 +86,8 @@ func hire_hero_pressed():
 	create_new_hero()
 	
 	close_create_hero_popup()
+	
+	self.get_parent().initial_setup()
 	print('hero hired')
 
 
