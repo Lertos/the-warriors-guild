@@ -63,31 +63,38 @@ func load_item_info(item_button: Node):
 		
 		item_info_parent.get_node('stat_module').build(item)
 		
-		var rarity_label = item_info_parent.get_node('base_info/rarity')
+		load_item_rarity(item_meta)
+		load_abilities_and_modifiers(item_meta)
 		
-		if 'rarity' in item_meta:
-			rarity_label.text = Helper.get_header_text(item_meta['rarity'])
-			Helper.change_label_font_color(rarity_label, item_meta['rarity'])
+
+func load_item_rarity(item_meta: Dictionary):
+	var rarity_label = item_info_parent.get_node('base_info/rarity')
+		
+	if 'rarity' in item_meta:
+		rarity_label.text = Helper.get_header_text(item_meta['rarity'])
+		Helper.change_label_font_color(rarity_label, item_meta['rarity'])
+	else:
+		rarity_label.text = Helper.get_header_text('UNIDENTIFIED')
+		Helper.change_label_font_color(rarity_label, 'unidentified')
+
+
+func load_abilities_and_modifiers(item_meta: Dictionary):
+	if 'identified' in item_meta:
+		if item_meta['identified']:
+			update_ability_labels(item_meta)
+			item_info_parent.get_node('buttons/info').visible = true
 		else:
-			rarity_label.text = Helper.get_header_text('UNIDENTIFIED')
-			Helper.change_label_font_color(rarity_label, 'unidentified')
-		
-		if 'identified' in item_meta:
-			if item_meta['identified']:
-				load_item_abilities(item_meta)
-				item_info_parent.get_node('buttons/info').visible = true
-			else:
-				item_info_parent.get_node('buttons/info').visible = false
-		
-			if 'modifier' in item_meta:
-				if item_meta['modifier'] != '':
-					var modifier_name = MasterConfig.config['modifiers'][item_meta['modifier']]['name']
-					
-					item_info_parent.get_node('base_info/modifier/modifier').text = modifier_name
-					item_info_parent.get_node('base_info/modifier').visible = true
+			item_info_parent.get_node('buttons/info').visible = false
+	
+		if 'modifier' in item_meta:
+			if item_meta['modifier'] != '':
+				var modifier_name = MasterConfig.config['modifiers'][item_meta['modifier']]['name']
+				
+				item_info_parent.get_node('base_info/modifier/modifier').text = modifier_name
+				item_info_parent.get_node('base_info/modifier').visible = true
 
 
-func load_item_abilities(item_meta: Dictionary):
+func update_ability_labels(item_meta: Dictionary):
 	var label_template = ability_list.get_node('base_label')
 	
 	var abilities = Helper.get_pretty_abilities(item_meta)
