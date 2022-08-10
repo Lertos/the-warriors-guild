@@ -31,9 +31,10 @@ func load_all_sections(hero_info: Dictionary, monster_info: Dictionary):
 	
 	#Stats section
 	var hero_total_stats = Helper.get_hero_total_stats(hero_info)
+	var hero_main_stat = Helper.get_hero_main_stat(hero_info)
 	
-	parent_node.get_node('stats_section/stat_module_player').build(hero_total_stats)
-	parent_node.get_node('stats_section/stat_module_enemy').build(monster_info['stats'])
+	parent_node.get_node('stats_section/stat_module_player').build(hero_total_stats, hero_main_stat)
+	parent_node.get_node('stats_section/stat_module_enemy').build(monster_info['stats'], monster_info['main_stat'])
 	
 	update_enemy_drops_section(hero_info, monster_info)
 

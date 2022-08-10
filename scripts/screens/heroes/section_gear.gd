@@ -61,7 +61,10 @@ func load_item_info(item_button: Node):
 		
 		item_info_parent.get_node('base_info/item_name').text = item['name']
 		
-		item_info_parent.get_node('stat_module').build(item)
+		if 'main_stat' in item:
+			item_info_parent.get_node('stat_module').build(item, item['main_stat'])
+		else:
+			item_info_parent.get_node('stat_module').build(item)
 		
 		load_item_rarity(item_meta)
 		load_abilities_and_modifiers(item_meta)

@@ -5,10 +5,11 @@ onready var parent_node = get_node('stats/vbox')
 
 func load_hero_stats_section(index: int, hero_info: Dictionary):
 	var total_stats = Helper.get_hero_total_stats(hero_info)
+	var hero_main_stat = Helper.get_hero_main_stat(hero_info)
 	
 	fill_hero_base_info(total_stats, hero_info)
 	
-	parent_node.get_node('stat_module').build(total_stats)
+	parent_node.get_node('stat_module').build(total_stats, hero_main_stat)
 
 
 func fill_hero_base_info(total_stats, hero_info):
