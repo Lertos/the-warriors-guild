@@ -25,11 +25,16 @@ func load_monster_info(region_name: String, monster_index: int, selected_hero_in
 func load_all_sections(hero_info: Dictionary, monster_info: Dictionary):
 	clear_section_button_borders()
 	hide_all_sections()
-		
+	
 	update_hero_base_info(hero_info)
 	update_enemy_base_info(monster_info)
 	
-	update_enemy_stats_section(hero_info, monster_info)
+	#Stats section
+	var hero_total_stats = Helper.get_hero_total_stats(hero_info)
+	
+	parent_node.get_node('stats_section/stat_module_player').build(hero_total_stats)
+	parent_node.get_node('stats_section/stat_module_enemy').build(monster_info['stats'])
+	
 	update_enemy_drops_section(hero_info, monster_info)
 
 
@@ -80,50 +85,6 @@ func update_enemy_base_info(monster_info):
 	parent_node.get_node('info/xp_given/xp_given').text = str(monster_info['xp_given'])
 	parent_node.get_node('info/travel_time/travel_time').text = str(monster_info['travel_time'])
 	parent_node.get_node('info/food_cost/food_cost').text = str(monster_info['food_cost'])
-
-
-func update_enemy_stats_section(hero_info, monster_info):
-	var values_panel = parent_node.get_node('stats_section/stats/values')
-	var hero_total_stats = Helper.get_hero_total_stats(hero_info)
-	var hero_main_stat = Helper.get_hero_main_stat(hero_info)
-
-	for stat_key in monster_info['stats']:
-		var stat_node = values_panel.get_node(stat_key)
-		var stat_diff = int(hero_total_stats[stat_key]) - int(monster_info['stats'][stat_key])
-		
-		#Show the monsters stat value, coloring it if it's their main stat
-		if stat_key == monster_info['main_stat']:
-			stat_node.bbcode_text = '[color=#db55ed]' + str(monster_info['stats'][stat_key]) + '[/color]'
-		else:
-			stat_node.bbcode_text = '[color=#effa5a]' + str(monster_info['stats'][stat_key]) + '[/color]'
-		
-		#Add the text to show if the hero has more or less than the monster in a stat
-		if stat_diff > 0:
-			stat_node.append_bbcode(' ([color=#29610e]+' + str(stat_diff) + '[/color])')
-		elif stat_diff == 0:
-			stat_node.append_bbcode(' (' + str(stat_diff) + ')')
-		elif stat_diff < 0:
-			stat_node.append_bbcode(' ([color=red]' + str(stat_diff) + '[/color])')
-		
-	update_monster_abilities(monster_info)
-
-
-func update_monster_abilities(monster_info: Dictionary):
-	var ability_panel = parent_node.get_node('stats_section/abilities/labels/abilities')
-	var label_template = ability_panel.get_node('base_label')
-	
-	var abilities = Helper.get_pretty_abilities(monster_info)
-	
-	Helper.clear_list(ability_panel, 'base_label')
-	
-	for index in range(abilities.size()):
-		var new = label_template.duplicate(true)
-		
-		new.visible = true
-		new.text = abilities[index]
-		new.name = str(index)
-		
-		ability_panel.add_child(new)
 
 
 func update_enemy_drops_section(hero_info, monster_info):
