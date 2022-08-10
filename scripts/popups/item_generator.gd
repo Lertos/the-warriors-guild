@@ -296,7 +296,9 @@ func add_type_fields(item_dict, type):
 
 	add_main_stat_to_dict(node, item_dict)
 	add_abilities_to_dict(node, item_dict)
-	add_effects_to_dict(node, item_dict)
+	
+	if type == 'consumable':
+		add_effects_to_dict(node, item_dict)
 
 
 func add_field_to_dict(node: Node, item_dict: Dictionary, stat_key: String):
