@@ -244,7 +244,8 @@ func load_type_fields(item_dict, type):
 							on_potion_type_selected(0)
 
 		else:
-			node.get_node(key + '/' + key).text = item_dict[key]
+			#TODO: Make sub-type a text field for armor in its section
+			node.get_node(key + '/' + key).text = str(item_dict[key])
 
 
 func clear_search_list_items():
@@ -280,6 +281,13 @@ func on_save_pressed(update = false):
 	
 	if type != 'item':
 		add_type_fields(item_dict, type)
+		
+	if type == 'armor':
+		if !(parent.get_node(type + '/vbox/sub_type/sub_type').text in ['helmet', 'chestplate', 'gloves', 'boots']):
+			print('==ERROR: The sub_type value is incorrect')
+			return
+		else:
+			item_dict['sub_type'] = parent.get_node(type + '/vbox/sub_type/sub_type').text
 	
 	if are_fields_incorrect(item_dict):
 		return
@@ -375,7 +383,7 @@ func are_fields_incorrect(item_dict):
 			return true
 		
 		#Check for numbers in pure alpha fields
-		if key == 'name':
+		if key == 'name' or key == 'sub_type':
 			if number_regex.search(item_dict[key]):
 				print('==ERROR: The ' + key + ' field has a number in it')
 				return true

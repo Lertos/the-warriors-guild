@@ -815,6 +815,32 @@ margin_bottom = 334.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="sub_type" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox"]
+margin_top = 112.0
+margin_right = 260.0
+margin_bottom = 136.0
+size_flags_horizontal = 5
+custom_constants/separation = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/sub_type"]
+margin_right = 65.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
+theme = ExtResource( 17 )
+text = "Sub Type"
+align = 2
+valign = 1
+
+[node name="sub_type" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox/sub_type"]
+margin_left = 73.0
+margin_right = 260.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 160, 0 )
+size_flags_horizontal = 3
+theme = ExtResource( 17 )
+clear_button_enabled = true
+
 [node name="def_stab" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/armor/vbox"]
 margin_top = 112.0
 margin_right = 260.0
