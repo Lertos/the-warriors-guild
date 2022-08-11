@@ -62,8 +62,9 @@ func _unhandled_input(event):
 func clear_item_info(type: String):
 	#Clear shared item info
 	parent.get_node('line1/id/id').text = ''
-	parent.get_node('line2/name/name').text = ''
-	parent.get_node('description/description').text = ''
+	parent.get_node('line2/line2/name/name').text = ''
+	parent.get_node('line2/line2/description/description').text = ''
+	parent.get_node('line2/img').icon = null
 	parent.get_node('line3/buy_price/buy_price').text = '-1'
 	parent.get_node('line3/sell_price/sell_price').text = '-1'
 	parent.get_node('line4/img_path/img_path').text = ''
@@ -185,11 +186,22 @@ func load_item_info(item_id):
 
 
 func load_base_fields(item_dict):
-	parent.get_node('line2/name/name').text = item_dict['name']
+	parent.get_node('line2/line2/name/name').text = item_dict['name']
 	parent.get_node('line4/img_path/img_path').text = item_dict['img_path']
-	parent.get_node('description/description').text = item_dict['desc']
+	parent.get_node('line2/line2/description/description').text = item_dict['desc']
 	parent.get_node('line3/buy_price/buy_price').text = item_dict['buy_price']
 	parent.get_node('line3/sell_price/sell_price').text = item_dict['sell_price']
+	
+	load_item_img(item_dict['img_path'])
+
+
+func load_item_img(img_path: String):
+	var path = 'res://assets/' + img_path + '.png'
+	
+	if ResourceLoader.exists(path):
+		parent.get_node('line2/img').icon = load('res://assets/' + img_path + '.png')
+	else:
+		parent.get_node('line2/img').icon = null
 
 
 func load_type_fields(item_dict, type):
@@ -281,9 +293,9 @@ func on_save_pressed(update = false):
 
 
 func add_base_fields(item_dict):
-	item_dict['name'] = parent.get_node('line2/name/name').text
+	item_dict['name'] = parent.get_node('line2/line2/name/name').text
 	item_dict['img_path'] = parent.get_node('line4/img_path/img_path').text
-	item_dict['desc'] = parent.get_node('description/description').text
+	item_dict['desc'] = parent.get_node('line2/line2/description/description').text
 	item_dict['buy_price'] = parent.get_node('line3/buy_price/buy_price').text
 	item_dict['sell_price'] = parent.get_node('line3/sell_price/sell_price').text
 
@@ -440,3 +452,7 @@ func fill_potion_effect_item_list():
 			current_index += 1
 	
 	effect_list.sort_items_by_text()
+
+
+func on_img_path_focus_exited():
+	load_item_img(parent.get_node('line4/img_path/img_path').text)

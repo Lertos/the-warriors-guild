@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://scenes/screens/screen_home.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/avatars/avatar (1).png" type="Texture" id=2]
@@ -17,12 +17,14 @@
 [ext_resource path="res://themes/fonts/font_header.tres" type="Theme" id=15]
 [ext_resource path="res://scripts/popups/item_generator.gd" type="Script" id=16]
 [ext_resource path="res://themes/fonts/font_normal.tres" type="Theme" id=17]
-[ext_resource path="res://themes/fonts/font_title.tres" type="Theme" id=18]
 [ext_resource path="res://scripts/ui/text_edit_tabbing.gd" type="Script" id=19]
 [ext_resource path="res://scripts/combat.gd" type="Script" id=20]
 [ext_resource path="res://scripts/item_manager.gd" type="Script" id=21]
 [ext_resource path="res://themes/fonts/font_spacer.tres" type="Theme" id=22]
 [ext_resource path="res://themes/buttons/main_tab_buttons.tres" type="Theme" id=23]
+[ext_resource path="res://assets/gear/weapons/dagger (1).png" type="Texture" id=24]
+[ext_resource path="res://themes/buttons/button.tres" type="Theme" id=25]
+[ext_resource path="res://themes/buttons/button_standalone.tres" type="Theme" id=26]
 [ext_resource path="res://themes/header.tres" type="StyleBox" id=28]
 
 [sub_resource type="Theme" id=17]
@@ -278,13 +280,13 @@ margin_top = 10.0
 margin_right = 334.0
 margin_bottom = 628.0
 size_flags_vertical = 3
-custom_constants/separation = 6
+custom_constants/separation = 4
 alignment = 1
 
 [node name="top" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox"]
 margin_right = 324.0
-margin_bottom = 32.0
-rect_min_size = Vector2( 0, 32 )
+margin_bottom = 26.0
+rect_min_size = Vector2( 0, 26 )
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -292,29 +294,31 @@ custom_constants/separation = 10
 alignment = 1
 
 [node name="search_bar" type="LineEdit" parent="ItemGenerator/container/parent_vbox/top"]
-margin_right = 206.0
-margin_bottom = 32.0
+margin_right = 218.0
+margin_bottom = 26.0
 size_flags_horizontal = 3
-theme = ExtResource( 18 )
+theme = ExtResource( 17 )
 virtual_keyboard_enabled = false
 
 [node name="search" type="Button" parent="ItemGenerator/container/parent_vbox/top"]
-margin_left = 216.0
-margin_right = 272.0
-margin_bottom = 32.0
+margin_left = 228.0
+margin_right = 278.0
+margin_bottom = 26.0
+theme = ExtResource( 25 )
 text = " Find "
 
 [node name="show_all" type="Button" parent="ItemGenerator/container/parent_vbox/top"]
-margin_left = 282.0
+margin_left = 288.0
 margin_right = 324.0
-margin_bottom = 32.0
+margin_bottom = 26.0
+theme = ExtResource( 25 )
 text = " All "
 
 [node name="bottom" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox"]
-margin_top = 38.0
+margin_top = 30.0
 margin_right = 324.0
-margin_bottom = 70.0
-rect_min_size = Vector2( 0, 32 )
+margin_bottom = 56.0
+rect_min_size = Vector2( 0, 26 )
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -322,41 +326,45 @@ custom_constants/separation = 10
 alignment = 1
 
 [node name="save" type="Button" parent="ItemGenerator/container/parent_vbox/bottom"]
-margin_left = 5.0
-margin_right = 67.0
-margin_bottom = 32.0
+margin_left = 17.0
+margin_right = 73.0
+margin_bottom = 26.0
+theme = ExtResource( 25 )
 text = " Save "
 
 [node name="update" type="Button" parent="ItemGenerator/container/parent_vbox/bottom"]
-margin_left = 77.0
+margin_left = 83.0
 margin_right = 157.0
-margin_bottom = 32.0
+margin_bottom = 26.0
+theme = ExtResource( 25 )
 text = " Update "
 
 [node name="clear" type="Button" parent="ItemGenerator/container/parent_vbox/bottom"]
 margin_left = 167.0
-margin_right = 233.0
-margin_bottom = 32.0
+margin_right = 227.0
+margin_bottom = 26.0
+theme = ExtResource( 25 )
 text = " Clear "
 
 [node name="delete" type="Button" parent="ItemGenerator/container/parent_vbox/bottom"]
-margin_left = 243.0
-margin_right = 318.0
-margin_bottom = 32.0
+margin_left = 237.0
+margin_right = 306.0
+margin_bottom = 26.0
+theme = ExtResource( 25 )
 text = " Delete "
 
 [node name="separator" parent="ItemGenerator/container/parent_vbox" instance=ExtResource( 6 )]
-margin_top = 76.0
+margin_top = 60.0
 margin_right = 324.0
-margin_bottom = 80.0
+margin_bottom = 64.0
 
 [node name="vbox" type="VBoxContainer" parent="ItemGenerator/container/parent_vbox"]
-margin_top = 86.0
+margin_top = 68.0
 margin_right = 324.0
 margin_bottom = 618.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/separation = 8
+custom_constants/separation = 4
 
 [node name="line1" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox"]
 margin_right = 324.0
@@ -408,17 +416,23 @@ theme = ExtResource( 17 )
 clear_button_enabled = true
 
 [node name="line2" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox"]
-margin_top = 32.0
+margin_top = 28.0
 margin_right = 324.0
-margin_bottom = 56.0
-custom_constants/separation = 8
+margin_bottom = 106.0
+custom_constants/separation = 4
 
-[node name="name" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/line2"]
-margin_right = 158.0
+[node name="line2" type="VBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/line2"]
+margin_right = 256.0
+margin_bottom = 78.0
+size_flags_horizontal = 3
+custom_constants/separation = 4
+
+[node name="name" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/line2/line2"]
+margin_right = 256.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/line2/name"]
+[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/line2/line2/name"]
 margin_right = 36.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
@@ -427,21 +441,21 @@ text = "Name"
 align = 2
 valign = 1
 
-[node name="name" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/line2/name"]
+[node name="name" type="LineEdit" parent="ItemGenerator/container/parent_vbox/vbox/line2/line2/name"]
 margin_left = 40.0
-margin_right = 158.0
+margin_right = 256.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 theme = ExtResource( 17 )
 clear_button_enabled = true
 
-[node name="description" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox"]
-margin_top = 64.0
-margin_right = 324.0
-margin_bottom = 114.0
+[node name="description" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/line2/line2"]
+margin_top = 28.0
+margin_right = 256.0
+margin_bottom = 78.0
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/description"]
+[node name="Label" type="Label" parent="ItemGenerator/container/parent_vbox/vbox/line2/line2/description"]
 margin_right = 36.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 0, 50 )
@@ -450,9 +464,9 @@ text = "Desc"
 align = 2
 valign = 1
 
-[node name="description" type="TextEdit" parent="ItemGenerator/container/parent_vbox/vbox/description"]
+[node name="description" type="TextEdit" parent="ItemGenerator/container/parent_vbox/vbox/line2/line2/description"]
 margin_left = 40.0
-margin_right = 324.0
+margin_right = 256.0
 margin_bottom = 50.0
 size_flags_horizontal = 3
 theme = ExtResource( 17 )
@@ -461,10 +475,22 @@ virtual_keyboard_enabled = false
 wrap_enabled = true
 script = ExtResource( 19 )
 
-[node name="line3" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox"]
-margin_top = 122.0
+[node name="img" type="Button" parent="ItemGenerator/container/parent_vbox/vbox/line2"]
+margin_left = 260.0
+margin_top = 7.0
 margin_right = 324.0
-margin_bottom = 146.0
+margin_bottom = 71.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource( 26 )
+icon = ExtResource( 24 )
+expand_icon = true
+
+[node name="line3" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox"]
+margin_top = 110.0
+margin_right = 324.0
+margin_bottom = 134.0
 custom_constants/separation = 8
 
 [node name="buy_price" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/line3"]
@@ -513,9 +539,9 @@ theme = ExtResource( 17 )
 clear_button_enabled = true
 
 [node name="line4" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox"]
-margin_top = 154.0
+margin_top = 138.0
 margin_right = 324.0
-margin_bottom = 178.0
+margin_bottom = 162.0
 custom_constants/separation = 8
 
 [node name="img_path" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox/line4"]
@@ -541,9 +567,9 @@ theme = ExtResource( 17 )
 clear_button_enabled = true
 
 [node name="separator2" parent="ItemGenerator/container/parent_vbox/vbox" instance=ExtResource( 6 )]
-margin_top = 186.0
+margin_top = 166.0
 margin_right = 324.0
-margin_bottom = 190.0
+margin_bottom = 170.0
 
 [node name="weapon" type="MarginContainer" parent="ItemGenerator/container/parent_vbox/vbox"]
 visible = false
@@ -2166,6 +2192,7 @@ select_mode = 2
 [connection signal="pressed" from="ItemGenerator/container/parent_vbox/bottom/clear" to="ItemGenerator" method="on_clear_pressed"]
 [connection signal="pressed" from="ItemGenerator/container/parent_vbox/bottom/delete" to="ItemGenerator" method="on_delete_pressed"]
 [connection signal="item_selected" from="ItemGenerator/container/parent_vbox/vbox/line1/type/type" to="ItemGenerator" method="on_type_selected"]
+[connection signal="focus_exited" from="ItemGenerator/container/parent_vbox/vbox/line4/img_path/img_path" to="ItemGenerator" method="on_img_path_focus_exited"]
 [connection signal="item_selected" from="ItemGenerator/container/parent_vbox/vbox/consumable/vbox/type/type" to="ItemGenerator" method="on_potion_type_selected"]
 [connection signal="pressed" from="ItemGenerator/container/parent_vbox/search_list/vbox/hbox/close" to="ItemGenerator" method="on_close_pressed"]
 [connection signal="pressed" from="MonsterGenerator/container/parent_vbox/buttons/show_all" to="MonsterGenerator" method="on_search_pressed"]
