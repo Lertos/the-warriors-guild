@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://scenes/screens/screen_home.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/avatars/avatar (1).png" type="Texture" id=2]
@@ -22,7 +22,6 @@
 [ext_resource path="res://scripts/item_manager.gd" type="Script" id=21]
 [ext_resource path="res://themes/fonts/font_spacer.tres" type="Theme" id=22]
 [ext_resource path="res://themes/buttons/main_tab_buttons.tres" type="Theme" id=23]
-[ext_resource path="res://assets/gear/weapons/dagger (1).png" type="Texture" id=24]
 [ext_resource path="res://themes/buttons/button.tres" type="Theme" id=25]
 [ext_resource path="res://themes/buttons/button_standalone.tres" type="Theme" id=26]
 [ext_resource path="res://themes/header.tres" type="StyleBox" id=28]
@@ -484,7 +483,6 @@ rect_min_size = Vector2( 64, 64 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource( 26 )
-icon = ExtResource( 24 )
 expand_icon = true
 
 [node name="line3" type="HBoxContainer" parent="ItemGenerator/container/parent_vbox/vbox"]
