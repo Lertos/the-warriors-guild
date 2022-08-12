@@ -7,13 +7,15 @@ onready var right_side = get_node('right_side')
 func build(dict: Dictionary, main_stat := ''):
 	update_values(left_side, dict, main_stat)
 	update_values(right_side, dict, main_stat)
-	
+
 	self.visible = true
 
 
 func update_values(node: Node, dict: Dictionary, main_stat: String):
 	for child in node.get_children():
 		var stat_key = child.name
+		
+		child.visible = true
 		
 		if stat_key in dict:
 			if str(dict[stat_key]) == '0':
