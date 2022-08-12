@@ -99,31 +99,7 @@ var player = {
 			'unlocked': 8,
 			'max': 30,
 			'slots': [
-				{
-					'item_id': 'dul_ingot',
-					'amount': 5,
-					'rarity': 'common',
-				},
-				{
-					'item_id': 'dul_ingot',
-					'amount': 4,
-					'rarity': 'uncommon',
-				},
-				{
-					'item_id': 'dul_ingot',
-					'amount': 2,
-					'rarity': 'rare',
-				},
-				{
-					'item_id': 'dul_ingot',
-					'amount': 3,
-					'rarity': 'legendary',
-				},
-				{
-					'item_id': 'lud_ingot',
-					'amount': 16,
-					'rarity': 'mythic',
-				},
+				
 			],
 		},
 		#Types: necklace, ring
@@ -148,7 +124,7 @@ var player = {
 			'max': 30,
 			'slots': [
 				{
-					'item_id': 'dagger',
+					'item_id': 'cloth_helmet',
 					'identified': true,
 					'amount': 1,
 					'rarity': 'legendary',
@@ -159,7 +135,7 @@ var player = {
 					},
 				},
 				{
-					'item_id': 'dagger',
+					'item_id': 'stone_dagger',
 					'identified': false,
 					'amount': 2,
 				},
