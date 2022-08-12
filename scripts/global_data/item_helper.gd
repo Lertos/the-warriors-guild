@@ -55,8 +55,13 @@ func get_sub_type_items_only(item_list: Array, sub_type: String) -> Array:
 	for index in range(item_list.size()):
 		var item = Global_Items.items[item_list[index]['item_id']]
 
-		if item['type'] == sub_type:
-			new_list.append(item_list[index])
+		if sub_type in ['helmet','chestplate', 'gloves', 'boots']:
+			if 'sub_type' in item:
+				if item['sub_type'] == sub_type:
+					new_list.append(item_list[index])
+		else:
+			if item['type'] == sub_type:
+				new_list.append(item_list[index])
 			
 	return new_list
 
