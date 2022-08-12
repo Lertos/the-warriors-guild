@@ -3,7 +3,7 @@ extends Node
 onready var parent_node = get_node('stats/vbox')
 
 
-func load_hero_stats_section(index: int, hero_info: Dictionary):
+func load_hero_stats_section(hero_info: Dictionary):
 	var total_stats = Helper.get_hero_total_stats(hero_info)
 	var hero_main_stat = Helper.get_hero_main_stat(hero_info)
 	

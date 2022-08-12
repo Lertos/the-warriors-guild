@@ -225,7 +225,6 @@ func load_type_fields(item_dict, type):
 
 		elif key == 'potion_effects':
 			if node.get_node('effects/effects') != null:
-				var effect_list = node.get_node('effects/effects')
 				var effects = item_dict['potion_effects']
 				
 				for list_index in range(0, effect_list.get_item_count()):
@@ -353,8 +352,6 @@ func add_effects_to_dict(node: Node, item_dict: Dictionary):
 	if node.get_node('effects/effects') != null:
 		#If the consumable gives potion effects
 		if node.get_node('duration').visible:
-			var effect_list = node.get_node('effects/effects')
-			
 			for list_index in effect_list.get_selected_items():
 				var item_meta = effect_list.get_item_metadata(list_index)
 				var effect_key = item_meta['id']

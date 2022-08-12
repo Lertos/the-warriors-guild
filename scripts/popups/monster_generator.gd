@@ -8,8 +8,9 @@ func _ready():
 	
 	#Making all the fields align vertically
 	for child in parent.get_children():
-		if child.get_child(0) is Label:
-			child.get_child(0).rect_min_size.x = 120
+		if child.get_child_count() > 0:
+			if child.get_child(0) is Label:
+				child.get_child(0).rect_min_size.x = 120
 	
 	fill_region_dropdown()
 	fill_main_stat_list()
@@ -18,9 +19,10 @@ func _ready():
 
 func clear_item_info():
 	for child in get_node('container/parent_vbox/vbox/vbox').get_children():
-		if child.get_child(0) is HBoxContainer:
-			for child_hbox in child.get_children():
-				clear_field_info(child_hbox)
+		if child.get_child_count() > 0:
+			if child.get_child(0) is HBoxContainer:
+				for child_hbox in child.get_children():
+					clear_field_info(child_hbox)
 		else:
 			clear_field_info(child)
 
@@ -35,7 +37,8 @@ func clear_field_info(parent: Node):
 		elif child_node is ItemList:
 			child_node.unselect_all()
 		elif child_node is OptionButton:
-			child_node.select(0)
+			if child_node.get_item_count() > 0:
+				child_node.select(0)
 
 
 func on_clear_pressed():
@@ -181,10 +184,10 @@ func on_save_pressed(update = false):
 	if are_fields_empty(monster_dict) or are_fields_empty(monster_dict['stats']):
 		return
 	
-	save_monster(region_monsters, region_name, monster_dict)
+	save_monster(region_name, monster_dict)
 
 
-func save_monster(all_monsters, region_name, monster_dict):
+func save_monster(region_name, monster_dict):
 	var index = parent.get_node('line3/index/index').text
 	
 	if index in Global_Enemies.enemies[region_name]:

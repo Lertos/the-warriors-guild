@@ -52,7 +52,7 @@ func load_hero_sections(index: int, hero_info):
 	#Change the border color to show which hero is selected
 	Helper.change_border_color(hero_buttons.get_node(str(index)), 'selected')
 	
-	get_node('parent_vbox/margin/stats/stats').load_hero_stats_section(index, hero_info)
+	get_node('parent_vbox/margin/stats/stats').load_hero_stats_section(hero_info)
 	get_node('parent_vbox/margin/gear/gear').load_hero_gear_section()
 	get_node('parent_vbox/margin/talents/talents').load_hero_talents_section(index, hero_info)
 	
@@ -60,7 +60,7 @@ func load_hero_sections(index: int, hero_info):
 
 
 func connect_section_buttons():
-	for index in range(tab_buttons.get_tab_count()):
+	for _index in range(tab_buttons.get_tab_count()):
 		tab_buttons.connect('tab_changed', self, 'switch_sections')
 	
 

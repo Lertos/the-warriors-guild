@@ -137,7 +137,6 @@ func create_hbox(separation: int, alignment: int) -> HBoxContainer:
 #Takes text such as "stats" and turns it into "Stats", or "hero_gear" -> "Hero Gear"
 func get_header_text(text: String) -> String:
 	var header = text
-	var skip_next = false
 	
 	header[0] = header[0].to_upper()
 	
@@ -147,7 +146,6 @@ func get_header_text(text: String) -> String:
 			
 			if index + 1 < len(header):
 				header[index + 1] = header[index + 1].to_upper()
-				skip_next = true
 
 	return header
 

@@ -26,7 +26,7 @@ func _ready():
 func debug_output(type: String, gear_type: String, amount: int, times_to_roll: int):
 	var list
 	
-	for i in range(0, times_to_roll):
+	for _i in range(0, times_to_roll):
 		if type == 'abilities':
 			list = roll_for_abilities(gear_type, amount)
 		elif type == 'modifiers':
@@ -98,7 +98,7 @@ func roll_for_abilities(gear_type: String, amount: int):
 	var list_to_roll_in = abilities[gear_type]
 	var ability_list = []
 	
-	for i in range(0, amount):
+	for _i in range(0, amount):
 		var ability = roll_the_list(list_to_roll_in, ability_list)
 		
 		if ability != []:
@@ -111,7 +111,7 @@ func roll_for_modifiers(gear_type: String, amount: int):
 	var list_to_roll_in = modifiers[gear_type]
 	var modifier_list = []
 	
-	for i in range(0, amount):
+	for _i in range(0, amount):
 		var modifier = roll_the_list(list_to_roll_in, modifier_list)
 		
 		if modifier != []:
@@ -126,7 +126,7 @@ func roll_the_list(list: Dictionary, current_list: Array):
 	var levels = list['levels']
 	var total_drop_weight = list['total_drop_weight']
 	
-	for roll in range(0, MAX_REROLL_ATTEMPTS):
+	for _roll in range(0, MAX_REROLL_ATTEMPTS):
 		var rand_int = rng.randi_range(0, total_drop_weight)
 		
 		for index in range(0, drop_rates.size()):
