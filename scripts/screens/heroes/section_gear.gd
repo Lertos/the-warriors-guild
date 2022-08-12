@@ -93,7 +93,9 @@ func load_abilities_and_modifiers(item_meta: Dictionary):
 		if item_meta['identified']:
 			update_ability_labels(item_meta)
 			item_info_parent.get_node('buttons/info').visible = true
-			item_info_parent.get_node('buttons/info').disconnect('pressed', self, 'open_item_info_popup')
+			
+			if item_info_parent.get_node('buttons/info').is_connected('pressed', self, 'open_item_info_popup'):
+				item_info_parent.get_node('buttons/info').disconnect('pressed', self, 'open_item_info_popup')
 			item_info_parent.get_node('buttons/info').connect('pressed', self, 'open_item_info_popup', [item_meta])
 		else:
 			item_info_parent.get_node('buttons/info').visible = false
@@ -143,10 +145,13 @@ func add_selected_border(slot_type):
 		Helper.reset_button_custom_colors(node)
 	
 	#Change the border color to show which section is selected
-	if button_group1.get_node(slot_type) != null:
-		Helper.change_border_color(button_group1.get_node(slot_type), 'selected')
-	elif button_group2.get_node(slot_type) != null:
-		Helper.change_border_color(button_group2.get_node(slot_type), 'selected')
+	for node in button_group1.get_children():
+		if node.name == slot_type:
+			Helper.change_border_color(node, 'selected')
+			
+	for node in button_group2.get_children():
+		if node.name == slot_type:
+			Helper.change_border_color(node, 'selected')
 
 	
 func switch_sub_type(storage_type: String, sub_type: String):

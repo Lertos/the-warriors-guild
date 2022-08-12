@@ -61,7 +61,8 @@ func load_hero_sections(index: int, hero_info):
 
 func connect_section_buttons():
 	for _index in range(tab_buttons.get_tab_count()):
-		tab_buttons.connect('tab_changed', self, 'switch_sections')
+		if !(tab_buttons.is_connected('tab_changed', self, 'switch_sections')):
+			tab_buttons.connect('tab_changed', self, 'switch_sections')
 	
 
 func switch_sections(tab_index: int):
