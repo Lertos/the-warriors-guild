@@ -160,3 +160,54 @@ func get_display_name(tuple: Array):
 			
 	return name
 
+
+func roll_for_item(item_drops: Dictionary, hero_info: Dictionary, times_killed: int) -> Dictionary:
+	var items = {}
+	var drop_table = create_drop_table_with_weights(item_drops)
+	var drop_rates = drop_table['drop_rates']
+	var total_drop_weight = drop_table['total_drop_weight']
+	
+	#print('---DROP TABLE---\n')
+	#print(drop_table)
+	
+	#TODO: Get hero info so you can check talents / companion stats to get extra bonuses for drops etc
+	
+	for _i in range(0, times_killed):
+		var rand_int = rng.randi_range(0, total_drop_weight)
+		
+		for index in range(0, drop_rates.size()):
+			if rand_int <= drop_rates[index]:
+				var item_id = drop_table['item_ids'][index]
+				
+				if item_id in items:
+					items[item_id] += int(drop_table['amounts'][index])
+				else:
+					items[item_id] = int(drop_table['amounts'][index])
+					
+				break
+	
+	return items
+
+
+func create_drop_table_with_weights(item_drops: Dictionary) -> Dictionary:
+	var drop_table = {}
+	
+	drop_table['drop_rates'] = []
+	drop_table['item_ids'] = []
+	drop_table['amounts'] = []
+	drop_table['total_drop_weight'] = 0
+	
+	for key in item_drops:
+		var drop = item_drops[key]
+		
+		drop_table['total_drop_weight'] += int(drop['weight'])
+		
+		drop_table['drop_rates'].append(drop_table['total_drop_weight'])
+		drop_table['item_ids'].append(drop['item_id'])
+		drop_table['amounts'].append(int(drop['amount']))
+		
+	return drop_table
+
+
+func identify_item(item_id: String) -> Dictionary:
+	return {}

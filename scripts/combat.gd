@@ -64,10 +64,18 @@ func start_combat(hero, opponent):
 		print(current_hero['name'] + ' LOST...')
 	else:
 		print(current_hero['name'] + ' WON!')
+		add_drops_to_player(hero, opponent)
 		
 	#Save the new current health points of the player
 	save_hero_new_health(current_hero['name'])
 
+
+func add_drops_to_player(hero: Dictionary, opponent: Dictionary):
+	var drops = get_node('/root/root/item_manager').roll_for_item(opponent['drops'], hero, 2)
+	
+	print('\n---DROPS FROM MONSTER---\n')
+	print(drops)
+	
 
 func save_hero_new_health(hero_name):
 	for hero_key in Global_Player.player['heroes']:
@@ -145,7 +153,7 @@ func deal_damage(damage_multiplier: float, attacker, defender):
 	damage *= damage_multiplier
 	
 	if damage == 0.0:
-		print(attacker['name'] + ' missed their attack!')
+		print(attacker['name'] + ' missed!')
 		return
 	
 	damage += get_bonus_damage(attacker, defender)
