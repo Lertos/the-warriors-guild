@@ -16,11 +16,5 @@ func load_page(item_meta: Dictionary):
 	#TODO: Load bonuses from rarity?
 
 
-func close_item_info_popup():
-	print('dd')
-	emit_signal('popup_hide')
-
-
 func on_close_item_info_popup():
-	print('dd')
 	emit_signal('popup_hide')
