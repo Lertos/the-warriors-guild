@@ -15,19 +15,19 @@ var items_per_row = 2
 
 
 func _ready():
-	button_group1.get_node('potion').connect('pressed', self, 'switch_sub_type', ['consumable', 'potion'])
-	button_group1.get_node('weapon').connect('pressed', self, 'switch_sub_type', ['gear', 'weapon'])
-	button_group1.get_node('helmet').connect('pressed', self, 'switch_sub_type', ['gear', 'helmet'])
-	button_group1.get_node('chestplate').connect('pressed', self, 'switch_sub_type', ['gear', 'chestplate'])
+	button_group1.get_node('potion').connect('pressed', self, 'switch_sub_type', ['consumables', 'potion'])
+	button_group1.get_node('weapon').connect('pressed', self, 'switch_sub_type', ['weapons', 'weapon'])
+	button_group1.get_node('helmet').connect('pressed', self, 'switch_sub_type', ['armor', 'helmet'])
+	button_group1.get_node('chestplate').connect('pressed', self, 'switch_sub_type', ['armor', 'chestplate'])
 	
-	button_group2.get_node('gloves').connect('pressed', self, 'switch_sub_type', ['gear', 'gloves'])
-	button_group2.get_node('boots').connect('pressed', self, 'switch_sub_type', ['gear', 'boots'])
+	button_group2.get_node('gloves').connect('pressed', self, 'switch_sub_type', ['armor', 'gloves'])
+	button_group2.get_node('boots').connect('pressed', self, 'switch_sub_type', ['armor', 'boots'])
 	button_group2.get_node('necklace').connect('pressed', self, 'switch_sub_type', ['jewelry', 'necklace'])
 	button_group2.get_node('ring').connect('pressed', self, 'switch_sub_type', ['jewelry', 'ring'])
 
 
 func load_hero_gear_section():
-	switch_sub_type('consumable', 'potion')
+	switch_sub_type('consumables', 'potion')
 
 
 func load_items(storage_type: String, sub_type: String):

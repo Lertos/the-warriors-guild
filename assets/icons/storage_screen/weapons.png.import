@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/potions.png-926381cd76c25a9784cd7427961129a9.stex"
+path="res://.import/weapons.png-6d78ed7b3d4a35b0f7ea5e70162e73d5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/storage_screen/potions.png"
-dest_files=[ "res://.import/potions.png-926381cd76c25a9784cd7427961129a9.stex" ]
+source_file="res://assets/icons/storage_screen/weapons.png"
+dest_files=[ "res://.import/weapons.png-6d78ed7b3d4a35b0f7ea5e70162e73d5.stex" ]
 
 [params]
 

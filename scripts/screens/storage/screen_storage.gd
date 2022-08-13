@@ -8,12 +8,13 @@ var items_per_row = 5
 func _ready():
 	var buttons = get_node('parent_vbox/types_vbox/types')
 	
-	buttons.get_node('material').connect('pressed', self, 'switch_sub_type', ['material'])
+	buttons.get_node('materials').connect('pressed', self, 'switch_sub_type', ['materials'])
 	buttons.get_node('jewelry').connect('pressed', self, 'switch_sub_type', ['jewelry'])
-	buttons.get_node('consumable').connect('pressed', self, 'switch_sub_type', ['consumable'])
-	buttons.get_node('gear').connect('pressed', self, 'switch_sub_type', ['gear'])
+	buttons.get_node('consumables').connect('pressed', self, 'switch_sub_type', ['consumables'])
+	buttons.get_node('armor').connect('pressed', self, 'switch_sub_type', ['armor'])
+	buttons.get_node('weapons').connect('pressed', self, 'switch_sub_type', ['weapons'])
 	
-	load_items('material')
+	load_items('materials')
 
 
 func load_items(storage_type):

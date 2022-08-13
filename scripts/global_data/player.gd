@@ -81,7 +81,7 @@ var player = {
 	#-----------------------
 	'storage': {
 		#Types: crafting, junk
-		'material': {
+		'materials': {
 			'unlocked': 8,
 			'max': 30,
 			'slots': [
@@ -97,16 +97,28 @@ var player = {
 			],
 		},
 		#Types: potion
-		'consumable': {
+		'consumables': {
 			'unlocked': 13,
 			'max': 30,
 			'slots': [
 			
 			],
 		},
-		#Types: weapon, helmet, chestplate, gloves, boots
-		'gear': {
+		#Types: weapon
+		'weapons': {
 			'unlocked': 21,
+			'max': 30,
+			'slots': [
+				{
+					'item_id': 'stone_dagger',
+					'identified': false,
+					'amount': 2,
+				},
+			],
+		},
+		#Types: helmet, chestplate, gloves, boots
+		'armor': {
+			'unlocked': 18,
 			'max': 30,
 			'slots': [
 				{
@@ -119,11 +131,6 @@ var player = {
 						'poisonous': 2,
 						'freezing': 1,
 					},
-				},
-				{
-					'item_id': 'stone_dagger',
-					'identified': false,
-					'amount': 2,
 				},
 			],
 		},
