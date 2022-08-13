@@ -60,7 +60,6 @@ var config = {
 	'talent_bonuses': {
 		'p_gold_from_monsters': 'Gold From Monsters',
 		'p_travel_speed': 'Travel Speed',
-		'p_food_cost': 'Food Cost Savings',
 		'n_atk_slash': 'Slash ATK',
 		'n_atk_stab': 'Stab ATK',
 		'n_atk_crush': 'Crush ATK',
@@ -1206,44 +1205,6 @@ var config = {
 		'gold_find': {
 			'name': 'Gold Find',
 			'description': 'Increase the gold received from monsters by <x>%',
-			'type': 'jewerly',
-			'gear_types': ['jewelry'],
-			'levels': {
-				1: {
-					'can_get_natural': false,
-					'drop_weight': -1,
-					'ability_chance': 100,
-					'x': 5,
-				},
-				2: {
-					'can_get_natural': false,
-					'drop_weight': -1,
-					'ability_chance': 100,
-					'x': 10,
-				},
-				3: {
-					'can_get_natural': false,
-					'drop_weight': -1,
-					'ability_chance': 100,
-					'x': 15,
-				},
-				4: {
-					'can_get_natural': false,
-					'drop_weight': -1,
-					'ability_chance': 100,
-					'x': 20,
-				},
-				5: {
-					'can_get_natural': false,
-					'drop_weight': -1,
-					'ability_chance': 100,
-					'x': 25,
-				},
-			}
-		},
-		'saturation': {
-			'name': 'Saturation',
-			'description': 'Reduces the food cost when traveling by <x>%',
 			'type': 'jewerly',
 			'gear_types': ['jewelry'],
 			'levels': {
