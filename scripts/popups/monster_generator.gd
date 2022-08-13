@@ -133,7 +133,6 @@ func load_fields(monster_info):
 	parent.get_node('line1/name/name').text = monster_info['name']
 	parent.get_node('line2/xp_given/xp_given').text = str(monster_info['xp_given'])
 	parent.get_node('line2/travel_time/travel_time').text = str(monster_info['travel_time'])
-	parent.get_node('line2/food_cost/food_cost').text = str(monster_info['food_cost'])
 	parent.get_node('line3/index/index').text = str(monster_info['index'])
 	
 	var main_stat_node = parent.get_node('main_stat/main_stat')
@@ -214,7 +213,6 @@ func add_fields(monster_dict):
 	monster_dict['name'] = parent.get_node('line1/name/name').text
 	monster_dict['xp_given'] = parent.get_node('line2/xp_given/xp_given').text
 	monster_dict['travel_time'] = parent.get_node('line2/travel_time/travel_time').text
-	monster_dict['food_cost'] = parent.get_node('line2/food_cost/food_cost').text
 	
 	var main_stat_node = parent.get_node('main_stat/main_stat')
 	var main_stat = main_stat_node.get_item_text(main_stat_node.get_selected_id())

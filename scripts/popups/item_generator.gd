@@ -9,13 +9,11 @@ const MIN_SEARCH_TEXT_LEN = 3
 var current_type = 'item'
 var number_regex = RegEx.new()
 
-var types = ['item', 'food', 'weapon', 'armor', 'consumable', 'jewelry', 'companion']
+var types = ['item', 'weapon', 'armor', 'consumable', 'jewelry']
 var all_stats = [
 	'atk_speed', 'min_hit', 'max_hit', 
 	'atk_stab', 'atk_slash', 'atk_crush', 'def_stab', 'def_slash', 'def_crush', 
-	'health', 'dmg_reduc', 
-	'travel_time', 'food_cost', 'gold_bonus', 
-	'ration_amt'
+	'health', 'dmg_reduc'
 ]
 
 onready var weapon_abilities = get_node('container/parent_vbox/vbox/weapon/vbox/abilities/abilities')

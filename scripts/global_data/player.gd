@@ -77,20 +77,6 @@ var player = {
 	},
 	
 	#-----------------------
-	# COMPANIONS
-	#-----------------------
-	'companions': {
-		
-	},
-	
-	#-----------------------
-	# FARMING
-	#-----------------------
-	'farming': {
-		'plots_unlocked': 4,
-	},
-	
-	#-----------------------
 	# STORAGE
 	#-----------------------
 	'storage': {
@@ -139,14 +125,6 @@ var player = {
 					'identified': false,
 					'amount': 2,
 				},
-			],
-		},
-		#Types: food
-		'food': {
-			'unlocked': 20,
-			'max': 30,
-			'slots': [
-				
 			],
 		},
 	},

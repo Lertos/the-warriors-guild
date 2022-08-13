@@ -85,7 +85,6 @@ func update_enemy_base_info(monster_info):
 	
 	parent_node.get_node('info/xp_given/xp_given').text = str(monster_info['xp_given'])
 	parent_node.get_node('info/travel_time/travel_time').text = str(monster_info['travel_time'])
-	parent_node.get_node('info/food_cost/food_cost').text = str(monster_info['food_cost'])
 
 
 func update_enemy_drops_section(hero_info, monster_info):

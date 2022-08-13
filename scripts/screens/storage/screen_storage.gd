@@ -12,7 +12,6 @@ func _ready():
 	buttons.get_node('jewelry').connect('pressed', self, 'switch_sub_type', ['jewelry'])
 	buttons.get_node('consumable').connect('pressed', self, 'switch_sub_type', ['consumable'])
 	buttons.get_node('gear').connect('pressed', self, 'switch_sub_type', ['gear'])
-	buttons.get_node('food').connect('pressed', self, 'switch_sub_type', ['food'])
 	
 	load_items('material')
 

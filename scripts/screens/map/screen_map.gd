@@ -127,14 +127,12 @@ func update_monster_record(region_name, monster_index, monster_node_name, is_bos
 		parent_node.get_node('hbox/name').text = monster_info['name']
 		parent_node.get_node('info/hbox/health/health').text = str(monster_info['stats']['health'])
 		parent_node.get_node('info/hbox/travel_time/travel_time').text = str(monster_info['travel_time'])
-		parent_node.get_node('info/hbox/food_cost/food_cost').text = str(monster_info['food_cost'])
 	else:
 		monster_button.icon = create_animated_texture(monster_info['id'], 'locked')
 		
 		parent_node.get_node('hbox/name').visible = false
 		parent_node.get_node('info/hbox/health').visible = false
 		parent_node.get_node('info/hbox/travel_time').visible = false
-		parent_node.get_node('info/hbox/food_cost').visible = false
 		
 		if path.has_meta('previous_monster'):
 			parent_node.get_node('hbox/kill_message').visible = true

@@ -170,7 +170,7 @@ func roll_for_item(item_drops: Dictionary, hero_info: Dictionary, times_killed: 
 	#print('---DROP TABLE---\n')
 	#print(drop_table)
 	
-	#TODO: Get hero info so you can check talents / companion stats to get extra bonuses for drops etc
+	#TODO: Get hero info so you can check talents stats to get extra bonuses for drops etc
 	
 	for _i in range(0, times_killed):
 		var rand_int = rng.randi_range(0, total_drop_weight)
@@ -210,4 +210,11 @@ func create_drop_table_with_weights(item_drops: Dictionary) -> Dictionary:
 
 
 func identify_item(item_id: String) -> Dictionary:
+	#Run func to see if player has inv space to receive identified object
+	#Figure out rarity first
+	#Get the total abilities / chances
+	#Get the abilities using above methods
+	#Get the modifiers using above methods
+	#Save to player inventory
+	
 	return {}
