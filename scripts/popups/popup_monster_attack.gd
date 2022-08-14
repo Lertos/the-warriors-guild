@@ -5,7 +5,7 @@ onready var section_buttons = parent_node.get_node('buttons/hbox')
 
 
 func load_monster_info(region_name: String, monster_index: int, selected_hero_index: int):
-	var monster_info = Global_Enemies.enemies[region_name][monster_index].duplicate(true)
+	var monster_info = Global_Enemies.enemies[region_name][str(monster_index)].duplicate(true)
 	var hero_info = Global_Player.player['heroes'][selected_hero_index]
 	
 	load_all_sections(hero_info, monster_info)

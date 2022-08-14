@@ -73,7 +73,7 @@ func load_monsters(hero_index: int, region_name: String):
 			inst_monster_record.get_node('margin/inner_box/hbox/monster').disabled = true
 			
 			if index == unlocked_enemy_count:
-				inst_monster_record.set_meta('previous_monster', monster_list[index-1]['name'])
+				inst_monster_record.set_meta('previous_monster', monster_list[str(index-1)]['name'])
 		
 		inst_monster_record.set_meta('region_name', region_name)
 		inst_monster_record.set_meta('index', index)
@@ -112,7 +112,7 @@ func update_selected_region_button(region_name):
 func update_monster_record(region_name, monster_index, monster_node_name, is_boss: bool):
 	var path = record_list_node.get_node(monster_node_name)
 	var parent_node = path.get_node('margin/inner_box/hbox/vbox')
-	var monster_info = Global_Enemies.enemies[region_name][monster_index]
+	var monster_info = Global_Enemies.enemies[region_name][str(monster_index)]
 	
 	var monster_button = parent_node.get_parent().get_node('monster')
 

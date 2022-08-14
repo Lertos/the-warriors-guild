@@ -174,7 +174,7 @@ func on_save_pressed(update = false):
 
 	if !update:
 		for index in region_monsters:
-			if region_monsters[index]['id'] == monster_id:
+			if region_monsters[str(index)]['id'] == monster_id:
 				get_node('/root/root').show_message_popup('That monster id already exists')
 				return
 
@@ -183,26 +183,31 @@ func on_save_pressed(update = false):
 	if are_fields_empty(monster_dict) or are_fields_empty(monster_dict['stats']):
 		return
 	
-	save_monster(region_name, monster_dict)
+	save_monster(region_name, monster_dict, update)
 
 
-func save_monster(region_name, monster_dict):
-	var index = parent.get_node('line3/index/index').text
+func save_monster(region_name: String, monster_dict: Dictionary, update: bool):
+	var index = str(parent.get_node('line3/index/index').text)
 	
 	if index in Global_Enemies.enemies[region_name]:
-		get_node('/root/root').show_message_popup('That monster index already exists')
-		return
+		if !update:
+			get_node('/root/root').show_message_popup('That monster index already exists')
+			return
+	else:
+		if update:
+			get_node('/root/root').show_message_popup('Cannot update as the monster ID does not exist')
+			return
 	
 	if index.is_valid_integer() and int(index) >= 0:
-		for i in range(0, int(index)):
-			if !(i in Global_Enemies.enemies[region_name]):
+		for i in int(index):
+			if !(str(i) in Global_Enemies.enemies[region_name]):
 				get_node('/root/root').show_message_popup('You are using an index where a previous sequential index is missing')
 				return
 	else:
 		get_node('/root/root').show_message_popup('The supplied index is the incorrect format. Must be a positive number')
 		return
 				
-	Global_Enemies.enemies[region_name][int(index)] = monster_dict
+	Global_Enemies.enemies[region_name][str(index)] = monster_dict
 	
 	get_node('/root/root').save_data('enemies')
 	clear_item_info()
