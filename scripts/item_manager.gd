@@ -79,7 +79,7 @@ func roll_for_abilities(gear_type: String, amount: int) -> Array:
 	var list_to_roll_in = abilities[gear_type]
 	var ability_list = []
 	
-	for _i in range(0, amount):
+	for _i in amount:
 		var ability = roll_the_list(list_to_roll_in, ability_list)
 		
 		if ability != []:
@@ -101,10 +101,10 @@ func roll_the_list(list: Dictionary, current_list: Array) -> Array:
 	var levels = list['levels']
 	var total_drop_weight = list['total_drop_weight']
 	
-	for _roll in range(0, MAX_REROLL_ATTEMPTS):
+	for _roll in MAX_REROLL_ATTEMPTS:
 		var rand_int = rng.randi_range(0, total_drop_weight)
 		
-		for index in range(0, drop_rates.size()):
+		for index in drop_rates.size():
 			if rand_int <= drop_rates[index]:
 				if list_has_key(current_list, keys[index]):
 					continue
@@ -118,7 +118,7 @@ func roll_the_list(list: Dictionary, current_list: Array) -> Array:
 
 
 func list_has_key(list, key):
-	for index in range(0, list.size()):
+	for index in list.size():
 		if list[index][0] == key:
 			return true
 	return false
@@ -143,16 +143,13 @@ func roll_for_item(item_drops: Dictionary, hero_info: Dictionary, times_killed: 
 	var drop_table = create_drop_table_with_weights(item_drops)
 	var drop_rates = drop_table['drop_rates']
 	var total_drop_weight = drop_table['total_drop_weight']
-	
-	#print('---DROP TABLE---\n')
-	#print(drop_table)
-	
+
 	#TODO: Get hero info so you can check talents stats to get extra bonuses for drops etc
 	
-	for _i in range(0, times_killed):
+	for _i in times_killed:
 		var rand_int = rng.randi_range(0, total_drop_weight)
 		
-		for index in range(0, drop_rates.size()):
+		for index in drop_rates.size():
 			if rand_int <= drop_rates[index]:
 				var item_id = drop_table['item_ids'][index]
 				
@@ -218,7 +215,7 @@ func add_abilities_to_item(item_info: Dictionary, rarity: Dictionary, item_type:
 	var actual_ability_count = 0
 	
 	#Get the amount of abilities to generate
-	for index in range(0, max_abilities):
+	for index in max_abilities:
 		var rand_int = rng.randi_range(0, 100)
 		
 		if rand_int < chance_for_each_ability:
@@ -229,7 +226,7 @@ func add_abilities_to_item(item_info: Dictionary, rarity: Dictionary, item_type:
 	if actual_ability_count != 0:
 		var abilities = roll_for_abilities(item_type, actual_ability_count)
 		
-		for index in range(0, abilities.size()):
+		for index in abilities.size():
 			var ability_info = abilities[index]
 			var key = ability_info[0]
 			var level = ability_info[1]
@@ -270,7 +267,7 @@ func roll_for_item_rarity() -> String:
 	var rand_int = rng.randi_range(0, total_drop_weight)
 	
 	#Roll for the rarity
-	for index in range(0, rarity_keys.size()):
+	for index in rarity_keys.size():
 		if rand_int <= rarity_weights[index]:
 			return rarity_keys[index]
 	
