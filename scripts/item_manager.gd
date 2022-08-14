@@ -207,6 +207,35 @@ func identify_item(item_id: String) -> Dictionary:
 	return item_info
 
 
+func get_unidentified_item_index(storage_slots: Array, item_id: String) -> int:
+	for index in storage_slots.size():
+		if storage_slots[index]['item_id'] == item_id:
+			if storage_slots[index]['identified'] == false:
+				return index
+	return -1
+
+
+func remove_item_from_inventory(item_id: String, amount: int, index: = -1):
+	var storage = get_storage_info_of_item(item_id)
+	var storage_slots = storage['slots']
+	var actual_index = index
+	
+	if index == -1:
+		actual_index = get_unidentified_item_index(storage_slots, item_id)
+
+	var slot = storage_slots[actual_index]
+	
+	if slot['item_id'] == item_id:
+		var current_amount = int(slot['amount'])
+		
+		if current_amount == amount:
+			storage_slots.remove(actual_index)
+		else:
+			slot['amount'] = current_amount - amount
+	
+	get_node('/root/root').save_data('player')
+
+
 func add_abilities_to_item(item_info: Dictionary, rarity: Dictionary, item_type: String):
 	var max_abilities = int(rarity['max_item_abilities'])
 	var chance_for_each_ability = int(rarity['chance_of_each_ability'])
