@@ -118,9 +118,14 @@ var player = {
 		},
 		#Types: helmet, chestplate, gloves, boots
 		'armor': {
-			'unlocked': 18,
+			'unlocked': 4,
 			'max': 30,
 			'slots': [
+				{
+					'item_id': 'cloth_helmet',
+					'identified': false,
+					'amount': 3,
+				},
 				{
 					'item_id': 'cloth_helmet',
 					'identified': true,

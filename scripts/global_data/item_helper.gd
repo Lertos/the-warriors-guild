@@ -143,7 +143,7 @@ func get_item_storage_category(item_id: String) -> String:
 
 		if 'type' in item:
 			var type = item['type']
-			print(type)
+
 			if type == 'armor':
 				category = 'armor'
 			elif type == 'weapon':
