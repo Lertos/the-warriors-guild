@@ -233,17 +233,21 @@ func add_abilities_to_item(item_info: Dictionary, rarity: Dictionary, item_type:
 
 
 func has_empty_storage_slot(item_id: String) -> bool:
-	var category = ItemHelper.get_item_storage_category(item_id)
-
-	if category in Global_Player.player['storage']:
-		var storage = Global_Player.player['storage'][category]
-		var unlocked_slots = int(storage['unlocked'])
-		var used_slots = storage['slots'].size()
-		
-		if used_slots < unlocked_slots:
-			return true
+	var storage = get_storage_info_of_item(item_id)
+	var unlocked_slots = int(storage['unlocked'])
+	var used_slots = storage['slots'].size()
+	
+	if used_slots < unlocked_slots:
+		return true
 			
 	return false
+
+
+func get_storage_info_of_item(item_id: String) -> Dictionary:
+	var category = ItemHelper.get_item_storage_category(item_id)
+	var storage_info = Global_Player.player['storage'][category]
+	
+	return storage_info
 
 
 #Returns the string key for the rarity, found in the Master Config
