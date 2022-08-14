@@ -18,7 +18,42 @@ var current_hero
 var current_opponent
 
 
-func reset_values(hero, opponent):
+func start_combat(hero, opponent):
+	_reset_values(hero, opponent)
+	
+	hero_speed = float(current_hero['stats']['atk_speed'])
+	opponent_speed = float(current_opponent['stats']['atk_speed'])
+	
+	while float(current_hero['stats']['health']) > 0 && float(current_opponent['stats']['health']) > 0:
+		var attacker = _get_attacker(current_hero, current_opponent)
+		var defender = _get_defender(current_hero, current_opponent)
+
+		_before_turn(current_hero)
+		_before_turn(current_opponent)
+		
+		_start_turn(attacker, defender)
+		
+		_end_turn(current_opponent)
+		_end_turn(current_hero)
+	
+	if current_hero['stats']['health'] <= 0:
+		print(current_hero['name'] + ' LOST...')
+	else:
+		print(current_hero['name'] + ' WON!')
+		_add_drops_to_player(hero, opponent)
+		
+	#Save the new current health points of the player
+	_save_hero_new_health(current_hero['name'])
+
+
+#============================
+#
+# PRIVATE FUNCTIONS
+#
+#============================
+
+
+func _reset_values(hero, opponent):
 	rng.randomize()
 	
 	hero_won = false
@@ -41,50 +76,22 @@ func reset_values(hero, opponent):
 	print('Hero starts with |- ' + str(current_hero['stats']['health']) + ' -| health')
 	print('Opponent starts with |- ' + str(current_opponent['stats']['health']) + ' -| health \n')
 
-	
-func start_combat(hero, opponent):
-	reset_values(hero, opponent)
-	
-	hero_speed = float(current_hero['stats']['atk_speed'])
-	opponent_speed = float(current_opponent['stats']['atk_speed'])
-	
-	while float(current_hero['stats']['health']) > 0 && float(current_opponent['stats']['health']) > 0:
-		var attacker = get_attacker(current_hero, current_opponent)
-		var defender = get_defender(current_hero, current_opponent)
 
-		before_turn(current_hero)
-		before_turn(current_opponent)
-		
-		start_turn(attacker, defender)
-		
-		end_turn(current_opponent)
-		end_turn(current_hero)
-	
-	if current_hero['stats']['health'] <= 0:
-		print(current_hero['name'] + ' LOST...')
-	else:
-		print(current_hero['name'] + ' WON!')
-		add_drops_to_player(hero, opponent)
-		
-	#Save the new current health points of the player
-	save_hero_new_health(current_hero['name'])
-
-
-func add_drops_to_player(hero: Dictionary, opponent: Dictionary):
+func _add_drops_to_player(hero: Dictionary, opponent: Dictionary):
 	var drops = get_node('/root/root/item_manager').roll_for_item(opponent['drops'], hero, 2)
 	
 	print('\n---DROPS FROM MONSTER---\n')
 	print(drops)
 	
 
-func save_hero_new_health(hero_name):
+func _save_hero_new_health(hero_name):
 	for hero_key in Global_Player.player['heroes']:
 		if Global_Player.player['heroes'][hero_key]['name'].to_upper() == hero_name.to_upper():
 			Global_Player.player['heroes'][hero_key]['current_health'] = float(current_hero['stats']['health'])
 			get_node('/root/root').save_data('player')
 
 
-func get_attacker(hero, opponent):
+func _get_attacker(hero, opponent):
 	if hero_speed < opponent_speed:
 		opponent_speed -= hero_speed
 		#print('Opponent Speed: ' + str(opponent_speed))
@@ -97,7 +104,7 @@ func get_attacker(hero, opponent):
 		return opponent
 	
 
-func get_defender(hero, opponent):
+func _get_defender(hero, opponent):
 	if hero_speed == 0:
 		hero_speed = float(hero['stats']['atk_speed'])
 		#print('hero Speed: ' + str(hero_speed))
@@ -109,11 +116,11 @@ func get_defender(hero, opponent):
 
 
 #Checks for abilities, and effects that happen before the round starts
-func before_turn(entity):
+func _before_turn(entity):
 	pass
 
 
-func start_turn(attacker, defender):
+func _start_turn(attacker, defender):
 	print('\n---Start Turn---\n')
 	
 	var attacker_stat = attacker['main_stat']
@@ -122,16 +129,16 @@ func start_turn(attacker, defender):
 	var defend_value = int(defender['stats'][attacker_stat])
 	
 	#Gets the multiplier between 0 (miss), max-min + % damage, 1.25 (higher crit)
-	var damage_multiplier = get_damage_multiplier(attack_value, defend_value)
+	var damage_multiplier = _get_damage_multiplier(attack_value, defend_value)
 	
-	deal_damage(damage_multiplier, attacker, defender)
+	_deal_damage(damage_multiplier, attacker, defender)
 
 
-func end_turn(entity):
+func _end_turn(entity):
 	pass
 
 
-func get_damage_multiplier(attack_value: int, defend_value: int) -> float:
+func _get_damage_multiplier(attack_value: int, defend_value: int) -> float:
 	var attack_roll = rng.randi_range(0, attack_value)
 	var miss_value = defend_value * 0.15
 	var multiplier = 1.0
@@ -147,7 +154,7 @@ func get_damage_multiplier(attack_value: int, defend_value: int) -> float:
 	return multiplier
 
 
-func deal_damage(damage_multiplier: float, attacker, defender):
+func _deal_damage(damage_multiplier: float, attacker, defender):
 	var damage = rng.randi_range(int(attacker['stats']['min_hit']), int(attacker['stats']['max_hit']))
 	
 	damage *= damage_multiplier
@@ -156,7 +163,7 @@ func deal_damage(damage_multiplier: float, attacker, defender):
 		print(attacker['name'] + ' missed!')
 		return
 	
-	damage += get_bonus_damage(attacker, defender)
+	damage += _get_bonus_damage(attacker, defender)
 	damage = stepify(damage, 0.01)
 	
 	#print('BASE DAMAGE: ' + str(damage))
@@ -173,7 +180,7 @@ func deal_damage(damage_multiplier: float, attacker, defender):
 
 
 #Check for on-hit abilities, returning the total additional damage
-func get_bonus_damage(attacker, defender):
+func _get_bonus_damage(attacker, defender):
 	return 2
 
 

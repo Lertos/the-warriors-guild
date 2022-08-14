@@ -5,13 +5,20 @@ onready var right_side = get_node('right_side')
 
 
 func build(dict: Dictionary, main_stat := ''):
-	update_values(left_side, dict, main_stat)
-	update_values(right_side, dict, main_stat)
+	_update_values(left_side, dict, main_stat)
+	_update_values(right_side, dict, main_stat)
 
 	self.visible = true
 
 
-func update_values(node: Node, dict: Dictionary, main_stat: String):
+#============================
+#
+# PRIVATE FUNCTIONS
+#
+#============================
+
+
+func _update_values(node: Node, dict: Dictionary, main_stat: String):
 	for child in node.get_children():
 		var stat_key = child.name
 		

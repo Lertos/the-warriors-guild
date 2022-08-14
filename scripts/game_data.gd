@@ -1,6 +1,6 @@
 extends Node
 
-var file_paths = {
+var _file_paths = {
 	'player': 'user://player_data.dat',
 	'items': 'user://item_data.dat',
 	'enemies': 'user://enemy_data.dat',
@@ -9,16 +9,16 @@ var file_paths = {
 func initial_load():
 	var dir = Directory.new()
 	
-	for key in file_paths:
-		if dir.file_exists(file_paths[key]):
+	for key in _file_paths:
+		if dir.file_exists(_file_paths[key]):
 			load_data(key)
 		else:
 			save_data(key)
 
 
 func save_data(file_key):
-	var file_path = file_paths[file_key]
-	var data = get_data_container(file_key)
+	var file_path = _file_paths[file_key]
+	var data = _get_data_container(file_key)
 
 	var data_as_str = var2str(data)
 	var file := File.new()
@@ -29,7 +29,7 @@ func save_data(file_key):
 
 
 func load_data(file_key):
-	var file_path = file_paths[file_key]
+	var file_path = _file_paths[file_key]
 	
 	var file := File.new()
 	file.open(file_path, file.READ)
@@ -37,10 +37,10 @@ func load_data(file_key):
 	var data : Dictionary = str2var(file.get_as_text())
 	file.close()
 	
-	set_container_data(file_key, data)
+	_set_container_data(file_key, data)
 	
 	
-func get_data_container(file_key):
+func _get_data_container(file_key):
 	if file_key == 'player':
 		return Global_Player.player
 	elif file_key == 'items':
@@ -49,7 +49,7 @@ func get_data_container(file_key):
 		return Global_Enemies.enemies
 		
 
-func set_container_data(file_key, data):
+func _set_container_data(file_key, data):
 	if file_key == 'player':
 		Global_Player.player = data
 	elif file_key == 'items':

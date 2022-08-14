@@ -21,7 +21,7 @@ func load_items_into_node(list_node: Node, storage_type: String, items_per_row: 
 	
 	#Check if the item list needs to only show a certain sub-type of a category
 	if sub_type != '':
-		items = get_sub_type_items_only(items, sub_type)
+		items = _get_sub_type_items_only(items, sub_type)
 	
 	#Create the HBOX row
 	for row in range(0, needed_rows):
@@ -41,41 +41,12 @@ func load_items_into_node(list_node: Node, storage_type: String, items_per_row: 
 				var item = items[index]
 				inst_item_record.set_meta('item', item)
 
-				update_item_record(inst_item_record, item)
+				_update_item_record(inst_item_record, item)
 			else:
 				#Locked slots
 				if (index) >= unlocked_slots:
 					Helper.change_button_background_color(inst_item_record.get_node('rarity'), 'locked')
 					inst_item_record.get_node('rarity/item').texture = locked_texture
-
-
-func get_sub_type_items_only(item_list: Array, sub_type: String) -> Array:
-	var new_list = []
-	
-	for index in range(item_list.size()):
-		var item = Global_Items.items[item_list[index]['item_id']]
-
-		if sub_type in ['helmet','chestplate', 'gloves', 'boots']:
-			if 'sub_type' in item:
-				if item['sub_type'] == sub_type:
-					new_list.append(item_list[index])
-		else:
-			if item['type'] == sub_type:
-				new_list.append(item_list[index])
-			
-	return new_list
-
-
-func update_item_record(item_record, item):
-	var item_data = Global_Items.items[item['item_id']]
-	
-	if 'rarity' in item:
-		Helper.change_border_color(item_record.get_node('rarity'), item['rarity'])
-	else:
-		Helper.change_border_color(item_record.get_node('rarity'), 'unidentified')
-
-	item_record.get_node('rarity/amount').text = str(item['amount'])
-	item_record.get_node('rarity/item').texture = load('res://assets/' + item_data['img_path'] + '.png')
 
 
 func get_bbcode_ability_list(bbcode_label: RichTextLabel, ability_list: Dictionary):
@@ -95,23 +66,10 @@ func get_bbcode_ability_list(bbcode_label: RichTextLabel, ability_list: Dictiona
 		else:
 			bbcode_label.append_bbcode('[color=#db55ed]' + ability['name'] + '[/color] - ')
 			
-		var ability_description = get_ability_description(ability['description'], ability_stats)
+		var ability_description = _get_ability_description(ability['description'], ability_stats)
 		
 		bbcode_label.append_bbcode(ability_description)
 		bbcode_label.append_bbcode('\n\n')
-
-
-func get_ability_description(raw_description: String, ability_stats: Dictionary) -> String:
-	var description = raw_description
-	
-	for indentifier in ability_identifiers:
-		var token = '<' + indentifier + '>'
-		if token in description:
-			if indentifier in ability_stats:
-				description = description.replace('%', '[color=aqua]%[/color]')
-				description = description.replace(token, '[color=aqua]' + str(ability_stats[indentifier]) + '[/color]')
-				
-	return description
 
 
 func get_bbcode_modifier_list(bbcode_label: RichTextLabel, modifier_key: String):
@@ -156,3 +114,52 @@ func get_item_storage_category(item_id: String) -> String:
 				category = 'jewelry'
 	
 	return category
+
+
+#============================
+#
+# PRIVATE FUNCTIONS
+#
+#============================
+
+
+func _get_sub_type_items_only(item_list: Array, sub_type: String) -> Array:
+	var new_list = []
+	
+	for index in range(item_list.size()):
+		var item = Global_Items.items[item_list[index]['item_id']]
+
+		if sub_type in ['helmet','chestplate', 'gloves', 'boots']:
+			if 'sub_type' in item:
+				if item['sub_type'] == sub_type:
+					new_list.append(item_list[index])
+		else:
+			if item['type'] == sub_type:
+				new_list.append(item_list[index])
+			
+	return new_list
+
+
+func _update_item_record(item_record, item):
+	var item_data = Global_Items.items[item['item_id']]
+	
+	if 'rarity' in item:
+		Helper.change_border_color(item_record.get_node('rarity'), item['rarity'])
+	else:
+		Helper.change_border_color(item_record.get_node('rarity'), 'unidentified')
+
+	item_record.get_node('rarity/amount').text = str(item['amount'])
+	item_record.get_node('rarity/item').texture = load('res://assets/' + item_data['img_path'] + '.png')
+
+
+func _get_ability_description(raw_description: String, ability_stats: Dictionary) -> String:
+	var description = raw_description
+	
+	for indentifier in ability_identifiers:
+		var token = '<' + indentifier + '>'
+		if token in description:
+			if indentifier in ability_stats:
+				description = description.replace('%', '[color=aqua]%[/color]')
+				description = description.replace(token, '[color=aqua]' + str(ability_stats[indentifier]) + '[/color]')
+				
+	return description
