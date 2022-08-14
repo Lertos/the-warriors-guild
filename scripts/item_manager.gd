@@ -17,25 +17,6 @@ func _ready():
 	
 	fill_list_and_get_total(MasterConfig.config['abilities'], abilities)
 	fill_list_and_get_total(MasterConfig.config['modifiers'], modifiers)
-	
-	#DEBUGGING PURPOSES
-	debug_output('abilities', 'jewelry', 3, 5)
-	debug_output('modifiers', 'jewelry', 3, 5)
-
-
-func debug_output(type: String, gear_type: String, amount: int, times_to_roll: int):
-	var list
-	
-	for _i in range(0, times_to_roll):
-		if type == 'abilities':
-			list = roll_for_abilities(gear_type, amount)
-		elif type == 'modifiers':
-			list = roll_for_modifiers(gear_type, amount)
-		
-		for index in range(0, list.size()):
-			print(get_display_name(list[index]))
-	
-		print('\n')
 
 
 func create_drop_rate_lists():
@@ -94,7 +75,7 @@ func append_drop_weight_and_name(local_list: Dictionary, drop_weight: int, key: 
 		local_list['levels'].append(level)
 	
 	
-func roll_for_abilities(gear_type: String, amount: int):
+func roll_for_abilities(gear_type: String, amount: int) -> Array:
 	var list_to_roll_in = abilities[gear_type]
 	var ability_list = []
 	
@@ -107,20 +88,14 @@ func roll_for_abilities(gear_type: String, amount: int):
 	return ability_list
 	
 
-func roll_for_modifiers(gear_type: String, amount: int):
+func roll_for_modifier(gear_type: String) -> String:
 	var list_to_roll_in = modifiers[gear_type]
-	var modifier_list = []
+	var modifier = roll_the_list(list_to_roll_in, [])
 	
-	for _i in range(0, amount):
-		var modifier = roll_the_list(list_to_roll_in, modifier_list)
-		
-		if modifier != []:
-			modifier_list.append(modifier)
-			
-	return modifier_list
+	return modifier[0]
 
 
-func roll_the_list(list: Dictionary, current_list: Array):
+func roll_the_list(list: Dictionary, current_list: Array) -> Array:
 	var drop_rates = list['drop_rates']
 	var keys = list['keys']
 	var levels = list['levels']
@@ -138,6 +113,8 @@ func roll_the_list(list: Dictionary, current_list: Array):
 					return [ keys[index], levels[index] ]
 				else:
 					return [ keys[index], -1 ]
+	
+	return []
 
 
 func list_has_key(list, key):
@@ -210,11 +187,91 @@ func create_drop_table_with_weights(item_drops: Dictionary) -> Dictionary:
 
 
 func identify_item(item_id: String) -> Dictionary:
-	#Run func to see if player has inv space to receive identified object
-	#Figure out rarity first
-	#Get the total abilities / chances
-	#Get the abilities using above methods
-	#Get the modifiers using above methods
-	#Save to player inventory
+	var item_type = Global_Items.items[item_id]['type']
+	var item_info = {}
 	
-	return {}
+	item_info['item_id'] = item_id
+	item_info['identified'] = true
+	item_info['amount'] = 1
+	
+	#Check if the item category storage is full as identifying always takes a new spot
+	if !(has_empty_storage_slot(item_id)):
+		return {}
+	
+	var rarity_key = roll_for_item_rarity()
+	var rarity = MasterConfig.config['rarities'][rarity_key]
+	
+	item_info['rarity'] = rarity_key
+	
+	#Add the abilities
+	add_abilities_to_item(item_info, rarity, item_type)
+	
+	#Add the modifier
+	item_info['modifier'] = roll_for_modifier(item_type)
+	
+	return item_info
+
+
+func add_abilities_to_item(item_info: Dictionary, rarity: Dictionary, item_type: String):
+	var max_abilities = rarity['max_item_abilities']
+	var chance_for_each_ability = rarity['chance_of_each_ability']
+	var actual_ability_count = 0
+	
+	#Get the amount of abilities to generate
+	for index in range(0, max_abilities):
+		var rand_int = rng.randi_range(0, 100)
+		
+		if rand_int < chance_for_each_ability:
+			actual_ability_count += 1
+	
+	item_info['abilities'] = {}
+	
+	if actual_ability_count != 0:
+		var abilities = roll_for_abilities(item_type, actual_ability_count)
+		
+		for index in range(0, abilities.size()):
+			var ability_info = abilities[index]
+			var key = ability_info[0]
+			var level = ability_info[1]
+			
+			item_info['abilities'][str(key)] = int(level)
+
+
+func has_empty_storage_slot(item_id: String) -> bool:
+	var category = ItemHelper.get_item_storage_category(item_id)
+
+	if category in Global_Player.player['storage']:
+		var storage = Global_Player.player['storage'][category]
+		var unlocked_slots = int(storage['unlocked'])
+		var used_slots = storage['slots'].size()
+		
+		if used_slots < unlocked_slots:
+			return true
+			
+	return false
+
+
+#Returns the string key for the rarity, found in the Master Config
+func roll_for_item_rarity() -> String:
+	var rarity_key = ''
+	var rarities = MasterConfig.config['rarities']
+	var total_drop_weight = 0
+	
+	var rarity_keys = []
+	var rarity_weights = []
+	
+	#Get the total drop weight of all rarities and their chances
+	for rarity in rarities:
+		total_drop_weight += rarities[rarity]['drop_weight']
+		
+		rarity_keys.append(rarity)
+		rarity_weights.append(total_drop_weight)
+	
+	var rand_int = rng.randi_range(0, total_drop_weight)
+	
+	#Roll for the rarity
+	for index in range(0, rarity_keys.size()):
+		if rand_int <= rarity_weights[index]:
+			return rarity_keys[index]
+	
+	return rarity_key

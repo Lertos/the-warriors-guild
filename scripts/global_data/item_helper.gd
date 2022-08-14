@@ -132,3 +132,27 @@ func get_bbcode_modifier_list(bbcode_label: RichTextLabel, modifier_key: String)
 				bbcode_label.append_bbcode(' ([color=red]' + str(modifier_value) + '%[/color]) ')
 				
 			bbcode_label.append_bbcode('\n')
+
+
+#Returns the storage category that an item belongs to based on its' type
+func get_item_storage_category(item_id: String) -> String:
+	var category = ''
+
+	if item_id in Global_Items.items:
+		var item = Global_Items.items[item_id]
+
+		if 'type' in item:
+			var type = item['type']
+			print(type)
+			if type == 'armor':
+				category = 'armor'
+			elif type == 'weapon':
+				category = 'weapons'
+			elif type == 'consumable':
+				category = 'consumables'
+			elif type == 'material':
+				category = 'materials'
+			elif type == 'jewelry':
+				category = 'jewelry'
+	
+	return category

@@ -23,6 +23,10 @@ func _ready():
 	buttons.get_node('vendors/vendors').connect('pressed', self, 'switch_screen', ['vendors'])
 	buttons.get_node('storage/storage').connect('pressed', self, 'switch_screen', ['storage'])
 
+	#Testing ItemHelper - item generation
+	var item_info = get_node('/root/root/item_manager').identify_item('cloth_helmet')
+	print(item_info)
+
 
 #Find the keys in the game_data.gd dictionary at the top
 func save_data(file_key):
