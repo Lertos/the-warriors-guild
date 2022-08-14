@@ -186,19 +186,17 @@ func create_drop_table_with_weights(item_drops: Dictionary) -> Dictionary:
 func identify_item(item_id: String) -> Dictionary:
 	var item_type = Global_Items.items[item_id]['type']
 	var item_info = {}
+	var rarity_key = roll_for_item_rarity()
+	var rarity = MasterConfig.config['rarities'][rarity_key]
 	
 	item_info['item_id'] = item_id
 	item_info['identified'] = true
 	item_info['amount'] = 1
+	item_info['rarity'] = rarity_key
 	
 	#Check if the item category storage is full as identifying always takes a new spot
 	if !(has_empty_storage_slot(item_id)):
 		return {}
-	
-	var rarity_key = roll_for_item_rarity()
-	var rarity = MasterConfig.config['rarities'][rarity_key]
-	
-	item_info['rarity'] = rarity_key
 	
 	#Add the abilities
 	add_abilities_to_item(item_info, rarity, item_type)
@@ -210,8 +208,8 @@ func identify_item(item_id: String) -> Dictionary:
 
 
 func add_abilities_to_item(item_info: Dictionary, rarity: Dictionary, item_type: String):
-	var max_abilities = rarity['max_item_abilities']
-	var chance_for_each_ability = rarity['chance_of_each_ability']
+	var max_abilities = int(rarity['max_item_abilities'])
+	var chance_for_each_ability = int(rarity['chance_of_each_ability'])
 	var actual_ability_count = 0
 	
 	#Get the amount of abilities to generate
