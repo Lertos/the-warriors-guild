@@ -204,6 +204,9 @@ func identify_item(item_id: String) -> Dictionary:
 	#Add the modifier
 	item_info['modifier'] = roll_for_modifier(item_type)
 	
+	remove_item_from_inventory(item_id, 1)
+	add_item_to_inventory(item_id, 1, item_info)
+	
 	return item_info
 
 
@@ -213,6 +216,53 @@ func get_unidentified_item_index(storage_slots: Array, item_id: String) -> int:
 			if storage_slots[index]['identified'] == false:
 				return index
 	return -1
+	
+
+func get_existing_item_index(storage_slots: Array, item_id: String) -> int:
+	for index in storage_slots.size():
+		if storage_slots[index]['item_id'] == item_id:
+			return index
+	return -1
+
+
+#If item_info is filled in, then it's a custom item and should be it's own stack in storage
+func add_item_to_inventory(item_id: String, amount: int, item_info: = {}) -> bool:
+	var storage = get_storage_info_of_item(item_id)
+	var storage_slots = storage['slots']
+	var item_to_add = null
+	
+	if item_info == {}:
+		var index = get_existing_item_index(storage_slots, item_id)
+		
+		if index != -1:
+			item_to_add = create_new_item(item_id, amount)
+		else:
+			storage_slots[index]['amount'] += amount
+	else:
+		item_to_add = item_info
+	
+	#Check if the item can even be added - if not return false
+	if item_to_add != null:
+		if !(has_empty_storage_slot(item_id)):
+			return false
+	
+	storage_slots.append(item_to_add)
+	get_node('/root/root').save_data('player')
+	
+	return true
+
+
+func create_new_item(item_id: String, amount: int) -> Dictionary:
+	var item_type = Global_Items.items[item_id]['type']
+	var item_info = {}
+	
+	item_info['item_id'] = item_id
+	item_info['amount'] = 1
+	
+	if item_type in ['weapon', 'armor']:
+		item_info['identified'] = false
+	
+	return item_info
 
 
 func remove_item_from_inventory(item_id: String, amount: int, index: = -1):
