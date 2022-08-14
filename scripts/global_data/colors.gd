@@ -30,18 +30,11 @@ var colors = {
 	#BASE COLORS
 	'white': Color("#ffffff"),
 	'black': Color("#000000"),
+	#UI COLORS
+	'ui_light_brown': Color("#584742"),
+	'ui_brown': Color("#301712"),
+	'ui_dark_brown': Color("#120705"),
+	'ui_pressed_brown': Color("#41302a"),
+	'ui_hover_brown': Color("#503e38"),
+	'ui_border': Color("#b7af96"),
 }
-
-"""
-
-dark brown 120705
-brown 301712
-pressed brown 41302a
-hover color 503e38
-light brown 584742
-
-locked color 392b27
-
-border color b7af96
-
-"""
