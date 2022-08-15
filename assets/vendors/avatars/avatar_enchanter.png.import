@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/vendor2.png-7a75675f20056b7fa24ba3233f74b3dc.stex"
+path="res://.import/avatar_enchanter.png-893582d308cf78da48e438825371beba.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vendors/vendor2.png"
-dest_files=[ "res://.import/vendor2.png-7a75675f20056b7fa24ba3233f74b3dc.stex" ]
+source_file="res://assets/vendors/avatars/avatar_enchanter.png"
+dest_files=[ "res://.import/avatar_enchanter.png-893582d308cf78da48e438825371beba.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/vendor9.png-a3d0cbd2c58431c8ff0062946ba7029f.stex"
+path="res://.import/icon_jeweler.png-4a67786b89ad64f9140ded635873455a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vendors/vendor9.png"
-dest_files=[ "res://.import/vendor9.png-a3d0cbd2c58431c8ff0062946ba7029f.stex" ]
+source_file="res://assets/vendors/icons/icon_jeweler.png"
+dest_files=[ "res://.import/icon_jeweler.png-4a67786b89ad64f9140ded635873455a.stex" ]
 
 [params]
 

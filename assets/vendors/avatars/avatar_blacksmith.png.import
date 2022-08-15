@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/vendor13.png-647a0097732c7108aa498c3b27cbe4b1.stex"
+path="res://.import/avatar_blacksmith.png-93f841097dd96a8b87a3233e8d705659.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vendors/vendor13.png"
-dest_files=[ "res://.import/vendor13.png-647a0097732c7108aa498c3b27cbe4b1.stex" ]
+source_file="res://assets/vendors/avatars/avatar_blacksmith.png"
+dest_files=[ "res://.import/avatar_blacksmith.png-93f841097dd96a8b87a3233e8d705659.stex" ]
 
 [params]
 

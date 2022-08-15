@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/vendor8.png-9b39a7968e2762780979f494528aa4a4.stex"
+path="res://.import/icon_alchemist.png-d5b8eb834da7b345d74a8d7acaafd628.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vendors/vendor8.png"
-dest_files=[ "res://.import/vendor8.png-9b39a7968e2762780979f494528aa4a4.stex" ]
+source_file="res://assets/vendors/icons/icon_alchemist.png"
+dest_files=[ "res://.import/icon_alchemist.png-d5b8eb834da7b345d74a8d7acaafd628.stex" ]
 
 [params]
 
