@@ -1,6 +1,6 @@
 extends Node
 
-var scene_vendor_record = preload("res://scenes/record_templates/vendor_record.tscn")
+var scene_vendor_record = preload("res://scenes/record_templates/vendors/vendor_record.tscn")
 var locked_texture = load('res://assets/icons/locked.png')
 
 
