@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/screens/vendors/screen_vendors.gd" type="Script" id=1]
 [ext_resource path="res://ui/separator.tscn" type="PackedScene" id=2]
 [ext_resource path="res://themes/fonts/font_title.tres" type="Theme" id=3]
+[ext_resource path="res://scenes/record_templates/vendors/vendor_header.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/screens/vendors/single_vendor_screen.gd" type="Script" id=5]
+[ext_resource path="res://themes/scrollbar.tres" type="Theme" id=6]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.717647, 0.686275, 0.588235, 1 )
@@ -22,7 +25,6 @@ margin_right = 360.0
 margin_bottom = 506.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/separation = 6
 
 [node name="header2" type="Label" parent="parent_vbox"]
 margin_right = 360.0
@@ -33,20 +35,331 @@ text = "Vendors"
 align = 1
 
 [node name="sep" parent="parent_vbox" instance=ExtResource( 2 )]
-margin_top = 27.0
-margin_bottom = 31.0
+margin_top = 25.0
+margin_bottom = 29.0
 custom_styles/panel = SubResource( 1 )
 
 [node name="vendors" type="ScrollContainer" parent="parent_vbox"]
-margin_top = 37.0
+margin_top = 33.0
 margin_right = 360.0
 margin_bottom = 500.0
 mouse_filter = 1
 size_flags_vertical = 3
+theme = ExtResource( 6 )
 scroll_horizontal_enabled = false
 
 [node name="vbox" type="VBoxContainer" parent="parent_vbox/vendors"]
 margin_right = 360.0
-margin_bottom = 463.0
+margin_bottom = 467.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="steward" type="VBoxContainer" parent="parent_vbox"]
+visible = false
+margin_top = 33.0
+margin_right = 360.0
+margin_bottom = 500.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 5 )
+
+[node name="header" parent="parent_vbox/steward" instance=ExtResource( 4 )]
+margin_right = 360.0
+margin_bottom = 105.0
+
+[node name="margin" type="MarginContainer" parent="parent_vbox/steward"]
+margin_top = 109.0
+margin_right = 360.0
+margin_bottom = 467.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 4
+custom_constants/margin_top = 4
+custom_constants/margin_left = 4
+
+[node name="vbox" type="VBoxContainer" parent="parent_vbox/steward/margin"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 356.0
+margin_bottom = 358.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="merchant" type="VBoxContainer" parent="parent_vbox"]
+visible = false
+margin_top = 169.0
+margin_right = 360.0
+margin_bottom = 295.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 5 )
+
+[node name="header" parent="parent_vbox/merchant" instance=ExtResource( 4 )]
+margin_right = 360.0
+margin_bottom = 118.0
+
+[node name="margin" type="MarginContainer" parent="parent_vbox/merchant"]
+margin_top = 122.0
+margin_right = 360.0
+margin_bottom = 126.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 4
+custom_constants/margin_top = 4
+custom_constants/margin_left = 4
+
+[node name="vbox" type="VBoxContainer" parent="parent_vbox/merchant/margin"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 356.0
+margin_bottom = 4.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="messenger" type="VBoxContainer" parent="parent_vbox"]
+visible = false
+margin_top = 433.0
+margin_right = 360.0
+margin_bottom = 559.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 5 )
+
+[node name="header" parent="parent_vbox/messenger" instance=ExtResource( 4 )]
+margin_right = 360.0
+margin_bottom = 118.0
+
+[node name="margin" type="MarginContainer" parent="parent_vbox/messenger"]
+margin_top = 122.0
+margin_right = 360.0
+margin_bottom = 126.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 4
+custom_constants/margin_top = 4
+custom_constants/margin_left = 4
+
+[node name="vbox" type="VBoxContainer" parent="parent_vbox/messenger/margin"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 356.0
+margin_bottom = 4.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="banker" type="VBoxContainer" parent="parent_vbox"]
+visible = false
+margin_top = 565.0
+margin_right = 360.0
+margin_bottom = 691.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 5 )
+
+[node name="header" parent="parent_vbox/banker" instance=ExtResource( 4 )]
+margin_right = 360.0
+margin_bottom = 118.0
+
+[node name="margin" type="MarginContainer" parent="parent_vbox/banker"]
+margin_top = 122.0
+margin_right = 360.0
+margin_bottom = 126.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 4
+custom_constants/margin_top = 4
+custom_constants/margin_left = 4
+
+[node name="vbox" type="VBoxContainer" parent="parent_vbox/banker/margin"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 356.0
+margin_bottom = 4.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="enchanter" type="VBoxContainer" parent="parent_vbox"]
+visible = false
+margin_top = 697.0
+margin_right = 360.0
+margin_bottom = 823.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 5 )
+
+[node name="header" parent="parent_vbox/enchanter" instance=ExtResource( 4 )]
+margin_right = 360.0
+margin_bottom = 118.0
+
+[node name="margin" type="MarginContainer" parent="parent_vbox/enchanter"]
+margin_top = 122.0
+margin_right = 360.0
+margin_bottom = 126.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 4
+custom_constants/margin_top = 4
+custom_constants/margin_left = 4
+
+[node name="vbox" type="VBoxContainer" parent="parent_vbox/enchanter/margin"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 356.0
+margin_bottom = 4.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="jeweler" type="VBoxContainer" parent="parent_vbox"]
+visible = false
+margin_top = 829.0
+margin_right = 360.0
+margin_bottom = 955.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 5 )
+
+[node name="header" parent="parent_vbox/jeweler" instance=ExtResource( 4 )]
+margin_right = 360.0
+margin_bottom = 118.0
+
+[node name="margin" type="MarginContainer" parent="parent_vbox/jeweler"]
+margin_top = 122.0
+margin_right = 360.0
+margin_bottom = 126.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 4
+custom_constants/margin_top = 4
+custom_constants/margin_left = 4
+
+[node name="vbox" type="VBoxContainer" parent="parent_vbox/jeweler/margin"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 356.0
+margin_bottom = 4.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="carpenter" type="VBoxContainer" parent="parent_vbox"]
+visible = false
+margin_top = 961.0
+margin_right = 360.0
+margin_bottom = 1087.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 5 )
+
+[node name="header" parent="parent_vbox/carpenter" instance=ExtResource( 4 )]
+margin_right = 360.0
+margin_bottom = 118.0
+
+[node name="margin" type="MarginContainer" parent="parent_vbox/carpenter"]
+margin_top = 122.0
+margin_right = 360.0
+margin_bottom = 126.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 4
+custom_constants/margin_top = 4
+custom_constants/margin_left = 4
+
+[node name="vbox" type="VBoxContainer" parent="parent_vbox/carpenter/margin"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 356.0
+margin_bottom = 4.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="alchemist" type="VBoxContainer" parent="parent_vbox"]
+visible = false
+margin_top = 1093.0
+margin_right = 360.0
+margin_bottom = 1219.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 5 )
+
+[node name="header" parent="parent_vbox/alchemist" instance=ExtResource( 4 )]
+margin_right = 360.0
+margin_bottom = 118.0
+
+[node name="margin" type="MarginContainer" parent="parent_vbox/alchemist"]
+margin_top = 122.0
+margin_right = 360.0
+margin_bottom = 126.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 4
+custom_constants/margin_top = 4
+custom_constants/margin_left = 4
+
+[node name="vbox" type="VBoxContainer" parent="parent_vbox/alchemist/margin"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 356.0
+margin_bottom = 4.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="captain" type="VBoxContainer" parent="parent_vbox"]
+visible = false
+margin_top = 1225.0
+margin_right = 360.0
+margin_bottom = 1351.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 5 )
+
+[node name="header" parent="parent_vbox/captain" instance=ExtResource( 4 )]
+margin_right = 360.0
+margin_bottom = 118.0
+
+[node name="margin" type="MarginContainer" parent="parent_vbox/captain"]
+margin_top = 122.0
+margin_right = 360.0
+margin_bottom = 126.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 4
+custom_constants/margin_top = 4
+custom_constants/margin_left = 4
+
+[node name="vbox" type="VBoxContainer" parent="parent_vbox/captain/margin"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 356.0
+margin_bottom = 4.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="blacksmith" type="VBoxContainer" parent="parent_vbox"]
+visible = false
+margin_top = 301.0
+margin_right = 360.0
+margin_bottom = 427.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 5 )
+
+[node name="header" parent="parent_vbox/blacksmith" instance=ExtResource( 4 )]
+margin_right = 360.0
+margin_bottom = 118.0
+
+[node name="margin" type="MarginContainer" parent="parent_vbox/blacksmith"]
+margin_top = 122.0
+margin_right = 360.0
+margin_bottom = 126.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 4
+custom_constants/margin_top = 4
+custom_constants/margin_left = 4
+
+[node name="vbox" type="VBoxContainer" parent="parent_vbox/blacksmith/margin"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 356.0
+margin_bottom = 4.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
