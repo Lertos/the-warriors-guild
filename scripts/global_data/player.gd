@@ -4,6 +4,7 @@ extends Node
 var player = {
 	'guild_renown': 100,
 	'gold': 24000,
+	'max_gold': 30000,
 	'heroes_unlocked': 2,
 	
 	#-----------------------
