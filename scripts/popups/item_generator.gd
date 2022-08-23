@@ -9,7 +9,7 @@ const MIN_SEARCH_TEXT_LEN = 3
 var current_type = 'item'
 var number_regex = RegEx.new()
 
-var types = ['item', 'weapon', 'armor', 'consumable', 'jewelry']
+var types = ['item', 'weapon', 'armor', 'consumable']
 var all_stats = [
 	'atk_speed', 'min_hit', 'max_hit', 
 	'atk_stab', 'atk_slash', 'atk_crush', 'def_stab', 'def_slash', 'def_crush', 
@@ -18,7 +18,6 @@ var all_stats = [
 
 onready var weapon_abilities = get_node('container/parent_vbox/vbox/weapon/vbox/abilities/abilities')
 onready var armor_abilities = get_node('container/parent_vbox/vbox/armor/vbox/abilities/abilities')
-onready var jewelry_abilities = get_node('container/parent_vbox/vbox/jewelry/vbox/abilities/abilities')
 
 onready var effect_list = get_node('container/parent_vbox/vbox/consumable/vbox/effects/effects')
 
@@ -34,7 +33,6 @@ func _ready():
 	
 	fill_ability_item_list(weapon_abilities, 'weapon')
 	fill_ability_item_list(armor_abilities, 'armor')
-	fill_ability_item_list(jewelry_abilities, 'jewelry')
 	
 	fill_potion_types_item_list()
 	fill_potion_effect_item_list()

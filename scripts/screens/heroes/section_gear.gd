@@ -7,23 +7,18 @@ onready var list_node = get_node('vbox/inventory/items/items/vbox')
 onready var item_info_parent = get_node('vbox/inventory/item_info/vbox')
 onready var ability_list = item_info_parent.get_node('base_info/abilities')
 
-onready var button_parent = get_node('vbox/gear_slots')
-onready var button_group1 = button_parent.get_node('group1')
-onready var button_group2 = button_parent.get_node('group2')
+onready var buttons_node = get_node('vbox/gear_slots/buttons')
 
 var items_per_row = 2
 
 
 func _ready():
-	button_group1.get_node('potion').connect('pressed', self, 'switch_sub_type', ['consumables', 'potion'])
-	button_group1.get_node('weapon').connect('pressed', self, 'switch_sub_type', ['weapons', 'weapon'])
-	button_group1.get_node('helmet').connect('pressed', self, 'switch_sub_type', ['armor', 'helmet'])
-	button_group1.get_node('chestplate').connect('pressed', self, 'switch_sub_type', ['armor', 'chestplate'])
-	
-	button_group2.get_node('gloves').connect('pressed', self, 'switch_sub_type', ['armor', 'gloves'])
-	button_group2.get_node('boots').connect('pressed', self, 'switch_sub_type', ['armor', 'boots'])
-	button_group2.get_node('necklace').connect('pressed', self, 'switch_sub_type', ['jewelry', 'necklace'])
-	button_group2.get_node('ring').connect('pressed', self, 'switch_sub_type', ['jewelry', 'ring'])
+	buttons_node.get_node('potion').connect('pressed', self, 'switch_sub_type', ['consumables', 'potion'])
+	buttons_node.get_node('weapon').connect('pressed', self, 'switch_sub_type', ['weapons', 'weapon'])
+	buttons_node.get_node('helmet').connect('pressed', self, 'switch_sub_type', ['armor', 'helmet'])
+	buttons_node.get_node('chestplate').connect('pressed', self, 'switch_sub_type', ['armor', 'chestplate'])
+	buttons_node.get_node('gloves').connect('pressed', self, 'switch_sub_type', ['armor', 'gloves'])
+	buttons_node.get_node('boots').connect('pressed', self, 'switch_sub_type', ['armor', 'boots'])
 
 
 func load_hero_gear_section():
@@ -138,18 +133,11 @@ func reset_info_panel():
 
 func add_selected_border(slot_type):
 	#Remove all coloring from each button to reset the selected button
-	for node in button_group1.get_children():
-		Helper.reset_button_custom_colors(node)
-		
-	for node in button_group2.get_children():
+	for node in buttons_node.get_children():
 		Helper.reset_button_custom_colors(node)
 	
 	#Change the border color to show which section is selected
-	for node in button_group1.get_children():
-		if node.name == slot_type:
-			Helper.change_border_color(node, 'selected')
-			
-	for node in button_group2.get_children():
+	for node in buttons_node.get_children():
 		if node.name == slot_type:
 			Helper.change_border_color(node, 'selected')
 

@@ -111,12 +111,6 @@ func get_avatar_texture(avatar_index: int) -> Texture:
 	return texture
 
 
-#Returns the xp needed for the level after the given level passed to the function
-func get_xp_needed_for_next_level(current_level: int) -> int:
-	#TODO: Find out calculation for leveling
-	return current_level * 100
-
-
 #Returns an hbox with needed custom properties
 func create_hbox(separation: int, alignment: int) -> HBoxContainer:
 	var hbox = HBoxContainer.new()
@@ -163,7 +157,6 @@ func get_hero_total_stats(hero_info: Dictionary) -> Dictionary:
 	stats = Global_Player.player['base_stats'].duplicate(true)
 	
 	stats = get_hero_total_gear_stats(stats, hero_info)
-	stats = get_hero_total_talent_stats(stats, hero_info)
 	
 	return stats
 	
@@ -190,11 +183,6 @@ func get_hero_total_gear_stats(stats, hero_info: Dictionary) -> Dictionary:
 			
 	return stats
 
-
-func get_hero_total_talent_stats(stats, hero_info: Dictionary) -> Dictionary:
-	#TODO: Actually calculate the talent stats
-	return stats
-	
 
 func get_pretty_abilities(info: Dictionary) -> Array:
 	var item_list = []

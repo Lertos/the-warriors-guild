@@ -101,10 +101,7 @@ func create_new_hero():
 	
 	dict['name'] = name_node.text
 	dict['avatar_index'] = selected_avatar_index
-	#TODO: Change from level 1 to "hero_starting_level" once the captain upgrades are in effect
-	dict['level'] = 1
-	dict['exp'] = 0
-	dict['current_health'] = Global_Player.player['base_stats']['health'] * dict['level']
+	dict['current_health'] = Global_Player.player['base_stats']['health']
 
 	dict['current_activity'] = {}
 	dict['current_activity']['type'] = ''
@@ -118,12 +115,6 @@ func create_new_hero():
 	for key in MasterConfig.config['gear_types']:
 		dict['gear'][key] = ''
 
-	#"p_" = percentage, "n_" = flat number
-	dict['talent_bonuses'] = {}
-	
-	for key in MasterConfig.config['talent_bonuses']:
-		dict['talent_bonuses'][key] = 0
-	
 	dict['regions'] = {}
 		
 	for key in MasterConfig.config['regions']:

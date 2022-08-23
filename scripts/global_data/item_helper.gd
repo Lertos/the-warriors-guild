@@ -110,8 +110,6 @@ func get_item_storage_category(item_id: String) -> String:
 				category = 'consumables'
 			elif type == 'material':
 				category = 'materials'
-			elif type == 'jewelry':
-				category = 'jewelry'
 	
 	return category
 

@@ -80,15 +80,6 @@ var vendors = {
 		'renown_needed': 500, #Unlocks starting tier 2
 	},
 	7: {
-		'id': 'jeweler',
-		'name': 'Jeweler',
-		'real_name': 'Shyne Bleeng',
-		'icon_img': 'icon_jeweler',
-		'avatar_img': 'avatar_jeweler',
-		'locked': true,
-		'renown_needed': 1000, #Unlocks starting tier 3
-	},
-	8: {
 		'id': 'enchanter',
 		'name': 'Enchanter',
 		'real_name': 'Geer Mayjik',
@@ -97,7 +88,7 @@ var vendors = {
 		'locked': true,
 		'renown_needed': 1500, #Unlocks starting tier 4
 	},
-	9: {
+	8: {
 		'id': 'blacksmith',
 		'name': 'Blacksmith',
 		'real_name': 'Anne Vell',

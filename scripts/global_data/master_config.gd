@@ -53,25 +53,7 @@ var config = {
 		'necklace': '',
 		'ring': '',
 	},
-	
-	#-----------------------
-	# HERO TALENTS
-	#-----------------------
-	'talent_bonuses': {
-		'p_gold_from_monsters': 'Gold From Monsters',
-		'p_travel_speed': 'Travel Speed',
-		'n_atk_slash': 'Slash ATK',
-		'n_atk_stab': 'Stab ATK',
-		'n_atk_crush': 'Crush ATK',
-		'n_def_slash': 'Slash DEF',
-		'n_def_stab': 'Stab DEF',
-		'n_def_crush': 'Crush DEF',
-		'n_health': 'Health',
-		'p_chance_for_double_loot': 'Chance For Double Loot',
-		'n_heal_additional_health': 'Health Back After Fighting',
-		'p_exp_from_monsters': 'EXP From Monsters',
-	},
-	
+
 	#-----------------------
 	# REGIONS
 	#-----------------------
@@ -218,7 +200,7 @@ var config = {
 		'terrible': {
 			'name': 'Terrible',
 			'drop_weight': 128,
-			'gear_types': ['weapon', 'armor', 'jewelry'],
+			'gear_types': ['weapon', 'armor'],
 			'p_health': -5,
 			'p_damage': -5,
 			'p_dmg_reduc': -5,
@@ -226,7 +208,7 @@ var config = {
 		'awful': {
 			'name': 'Awful',
 			'drop_weight': 128,
-			'gear_types': ['weapon', 'armor', 'jewelry'],
+			'gear_types': ['weapon', 'armor'],
 			'p_health': -2,
 			'p_damage': -2,
 			'p_dmg_reduc': -2,
@@ -234,7 +216,7 @@ var config = {
 		'great': {
 			'name': 'Great',
 			'drop_weight': 128,
-			'gear_types': ['weapon', 'armor', 'jewelry'],
+			'gear_types': ['weapon', 'armor'],
 			'p_health': 2,
 			'p_damage': 2,
 			'p_dmg_reduc': 2,
@@ -242,7 +224,7 @@ var config = {
 		'superior': {
 			'name': 'Superior',
 			'drop_weight': 128,
-			'gear_types': ['weapon', 'armor', 'jewelry'],
+			'gear_types': ['weapon', 'armor'],
 			'p_health': 5,
 			'p_damage': 5,
 			'p_dmg_reduc': 5,
@@ -250,7 +232,7 @@ var config = {
 		'legendary': {
 			'name': 'Legendary',
 			'drop_weight': 128,
-			'gear_types': ['weapon', 'armor', 'jewelry'],
+			'gear_types': ['weapon', 'armor'],
 			'p_health': 8,
 			'p_damage': 8,
 			'p_dmg_reduc': 8,
@@ -258,7 +240,7 @@ var config = {
 		'mythical': {
 			'name': 'Mythical',
 			'drop_weight': 128,
-			'gear_types': ['weapon', 'armor', 'jewelry'],
+			'gear_types': ['weapon', 'armor'],
 			'p_health': 10,
 			'p_damage': 10,
 			'p_dmg_reduc': 10,
@@ -316,19 +298,19 @@ var config = {
 		'flimsy': {
 			'name': 'Flimsy',
 			'drop_weight': 128,
-			'gear_types': ['weapon', 'armor', 'jewelry'],
+			'gear_types': ['weapon', 'armor'],
 			'p_sell_price': -10,
 		},
 		'shiny': {
 			'name': 'Shiny',
 			'drop_weight': 128,
-			'gear_types': ['weapon', 'armor', 'jewelry'],
+			'gear_types': ['weapon', 'armor'],
 			'p_sell_price': 10,
 		},
 		'rare': {
 			'name': 'Rare',
 			'drop_weight': 128,
-			'gear_types': ['weapon', 'armor', 'jewelry'],
+			'gear_types': ['weapon', 'armor'],
 			'p_sell_price': 20,
 		},
 		'flawed': {
@@ -357,7 +339,7 @@ var config = {
 		'brittle': {
 			'name': 'Brittle',
 			'drop_weight': 128,
-			'gear_types': ['armor', 'jewelry'],
+			'gear_types': ['armor'],
 			'p_health': -5,
 			'p_speed': 2,
 			'p_dmg_reduc': -2,
@@ -365,14 +347,14 @@ var config = {
 		'solid': {
 			'name': 'Solid',
 			'drop_weight': 128,
-			'gear_types': ['armor', 'jewelry'],
+			'gear_types': ['armor'],
 			'p_health': 5,
 			'p_dmg_reduc': 2,
 		},
 		'tanky': {
 			'name': 'Tanky',
 			'drop_weight': 128,
-			'gear_types': ['armor', 'jewelry'],
+			'gear_types': ['armor'],
 			'p_health': 10,
 			'p_speed': -5,
 			'p_dmg_reduc': 5,
@@ -396,7 +378,7 @@ var config = {
 		'sluggish': {
 			'name': 'Sluggish',
 			'drop_weight': 128,
-			'gear_types': ['weapon', 'jewelry'],
+			'gear_types': ['weapon'],
 			'p_speed': -10,
 			'p_main_atk': -2,
 			'p_all_def': 5,
@@ -404,7 +386,7 @@ var config = {
 		'nimble': {
 			'name': 'Nimble',
 			'drop_weight': 128,
-			'gear_types': ['weapon', 'jewelry'],
+			'gear_types': ['weapon'],
 			'p_speed': 10,
 			'p_main_atk': 2,
 			'p_all_def': -5,
@@ -412,7 +394,7 @@ var config = {
 		'agile': {
 			'name': 'Agile',
 			'drop_weight': 128,
-			'gear_types': ['weapon', 'jewelry'],
+			'gear_types': ['weapon'],
 			'p_speed': 15,
 			'p_main_atk': 5,
 			'p_all_def': -8,
@@ -667,7 +649,7 @@ var config = {
 			'name': 'Berserk',
 			'description': 'While your health is above <x>% health, take <y>% damage. While below <z>%, deal <xx>% damage',
 			'type': 'passive',
-			'gear_types': ['weapon', 'armor', 'jewelry'],
+			'gear_types': ['weapon', 'armor'],
 			'levels': {
 				0: {
 					'can_get_natural': true,
@@ -684,7 +666,7 @@ var config = {
 			'name': 'Patience',
 			'description': 'If your opponent has higher <def_stat> than your <atk_stat>, lose <x>s attack speed but do <y>% more damage',
 			'type': 'passive',
-			'gear_types': ['armor', 'jewelry'],
+			'gear_types': ['armor'],
 			'levels': {
 				0: {
 					'can_get_natural': true,
@@ -699,7 +681,7 @@ var config = {
 			'name': 'Living Dead',
 			'description': 'When your health falls below <x>% of your max health, regain <y>% of your max health back, but lose <z>% of your defense stats',
 			'type': 'passive',
-			'gear_types': ['armor', 'jewelry'],
+			'gear_types': ['armor'],
 			'levels': {
 				1: {
 					'can_get_natural': true,
@@ -731,7 +713,7 @@ var config = {
 			'name': 'Resistance',
 			'description': 'Reduces the effects of venom and poison by <x>%',
 			'type': 'passive',
-			'gear_types': ['armor', 'jewelry'],
+			'gear_types': ['armor'],
 			'levels': {
 				1: {
 					'can_get_natural': true,
@@ -763,7 +745,7 @@ var config = {
 			'name': 'Final Stand',
 			'description': 'While below <x>% health, gain <y>% of your max health for 1 turn, then lose <z>% of your current health',
 			'type': 'passive',
-			'gear_types': ['jewelry'],
+			'gear_types': ['armor'],
 			'levels': {
 				0: {
 					'can_get_natural': true,
@@ -886,7 +868,7 @@ var config = {
 			'name': 'Strengthen',
 			'description': 'Increase <atk_stat> by <x>% for <y> turns',
 			'type': 'active',
-			'gear_types': ['weapon', 'jewelry'],
+			'gear_types': ['weapon'],
 			'levels': {
 				1: {
 					'can_get_natural': true,
@@ -915,7 +897,7 @@ var config = {
 			'name': 'Weaken',
 			'description': 'Decrease your opponents <def_stat> by <x>% for <y> turns',
 			'type': 'active',
-			'gear_types': ['weapon', 'jewelry'],
+			'gear_types': ['weapon'],
 			'levels': {
 				1: {
 					'can_get_natural': true,
@@ -944,7 +926,7 @@ var config = {
 			'name': 'Heal',
 			'description': 'Heal for <x>% of your max health',
 			'type': 'active',
-			'gear_types': ['armor', 'jewelry'],
+			'gear_types': ['armor'],
 			'levels': {
 				1: {
 					'can_get_natural': true,
@@ -982,7 +964,7 @@ var config = {
 			'name': 'Cure',
 			'description': 'Cures any poison and venom that you are suffering from',
 			'type': 'active',
-			'gear_types': ['armor', 'jewelry'],
+			'gear_types': ['armor'],
 			'levels': {
 				1: {
 					'can_get_natural': true,
@@ -1048,7 +1030,7 @@ var config = {
 			'name': 'Devils Blessing',
 			'description': 'Increase all defensive stats by <x>% for one turn but also lose <y>% of your current health',
 			'type': 'active',
-			'gear_types': ['armor', 'jewelry'],
+			'gear_types': ['armor'],
 			'levels': {
 				1: {
 					'can_get_natural': true,
@@ -1100,7 +1082,7 @@ var config = {
 			'name': 'Windswept',
 			'description': 'For the next <x> turns gain <y> seconds of additional attack speed',
 			'type': 'active',
-			'gear_types': ['armor', 'jewelry'],
+			'gear_types': ['armor'],
 			'levels': {
 				1: {
 					'can_get_natural': true,
@@ -1129,7 +1111,7 @@ var config = {
 			'name': 'Confusion',
 			'description': 'For the next <x> turns your opponent has <y>% chance to attack themselves instead, doing <z>% damage',
 			'type': 'active',
-			'gear_types': ['weapon', 'jewelry'],
+			'gear_types': ['weapon'],
 			'levels': {
 				0: {
 					'can_get_natural': true,
@@ -1145,7 +1127,7 @@ var config = {
 			'name': 'Blood Deal',
 			'description': 'Sacrifice <x>% of your maximum health to deal <y>% additional damage',
 			'type': 'active',
-			'gear_types': ['weapon', 'armor', 'jewelry'],
+			'gear_types': ['weapon', 'armor'],
 			'levels': {
 				1: {
 					'can_get_natural': true,
@@ -1181,7 +1163,7 @@ var config = {
 			'name': 'Intimidation',
 			'description': 'If your opponent has less max health, deal <x>% of their current health as additional damage',
 			'type': 'active',
-			'gear_types': ['weapon', 'armor', 'jewelry'],
+			'gear_types': ['weapon', 'armor'],
 			'levels': {
 				1: {
 					'can_get_natural': true,
@@ -1203,269 +1185,185 @@ var config = {
 				},
 			}
 		},
-		
-		#-----------------------
-		# JEWELRY
-		#-----------------------
 		'gold_find': {
 			'name': 'Gold Find',
 			'description': 'Increase the gold received from monsters by <x>%',
-			'type': 'jewerly',
-			'gear_types': ['jewelry'],
+			'type': 'active',
+			'gear_types': ['armor'],
 			'levels': {
 				1: {
-					'can_get_natural': false,
-					'drop_weight': -1,
+					'can_get_natural': true,
+					'drop_weight': 128,
 					'ability_chance': 100,
 					'x': 5,
 				},
 				2: {
 					'can_get_natural': false,
-					'drop_weight': -1,
+					'drop_weight': 64,
 					'ability_chance': 100,
 					'x': 10,
 				},
 				3: {
 					'can_get_natural': false,
-					'drop_weight': -1,
+					'drop_weight': 32,
 					'ability_chance': 100,
 					'x': 15,
-				},
-				4: {
-					'can_get_natural': false,
-					'drop_weight': -1,
-					'ability_chance': 100,
-					'x': 20,
-				},
-				5: {
-					'can_get_natural': false,
-					'drop_weight': -1,
-					'ability_chance': 100,
-					'x': 25,
 				},
 			}
 		},
 		'insightfulness': {
 			'name': 'Insightfulness',
 			'description': 'Increase the experience received from monsters by <x>%',
-			'type': 'jewerly',
-			'gear_types': ['jewelry'],
+			'type': 'active',
+			'gear_types': ['armor'],
 			'levels': {
 				1: {
-					'can_get_natural': false,
-					'drop_weight': -1,
+					'can_get_natural': true,
+					'drop_weight': 128,
 					'ability_chance': 100,
 					'x': 5,
 				},
 				2: {
 					'can_get_natural': false,
-					'drop_weight': -1,
+					'drop_weight': 64,
 					'ability_chance': 100,
 					'x': 10,
 				},
 				3: {
 					'can_get_natural': false,
-					'drop_weight': -1,
+					'drop_weight': 32,
 					'ability_chance': 100,
 					'x': 15,
-				},
-				4: {
-					'can_get_natural': false,
-					'drop_weight': -1,
-					'ability_chance': 100,
-					'x': 20,
-				},
-				5: {
-					'can_get_natural': false,
-					'drop_weight': -1,
-					'ability_chance': 100,
-					'x': 25,
 				},
 			}
 		},
 		'quick_footed': {
 			'name': 'Quick-footed',
 			'description': 'Reduces the travel time of a hero by <x>%',
-			'type': 'jewerly',
-			'gear_types': ['jewelry'],
+			'type': 'active',
+			'gear_types': ['armor'],
 			'levels': {
 				1: {
-					'can_get_natural': false,
-					'drop_weight': -1,
+					'can_get_natural': true,
+					'drop_weight': 128,
 					'ability_chance': 100,
 					'x': 5,
 				},
 				2: {
 					'can_get_natural': false,
-					'drop_weight': -1,
+					'drop_weight': 64,
 					'ability_chance': 100,
 					'x': 10,
 				},
 				3: {
 					'can_get_natural': false,
-					'drop_weight': -1,
+					'drop_weight': 32,
 					'ability_chance': 100,
 					'x': 15,
-				},
-				4: {
-					'can_get_natural': false,
-					'drop_weight': -1,
-					'ability_chance': 100,
-					'x': 20,
-				},
-				5: {
-					'can_get_natural': false,
-					'drop_weight': -1,
-					'ability_chance': 100,
-					'x': 25,
 				},
 			}
 		},
 		'economical': {
 			'name': 'Economical',
 			'description': 'Increase the chance of receiving double drops from monsters by <x>%',
-			'type': 'jewerly',
-			'gear_types': ['jewelry'],
+			'type': 'active',
+			'gear_types': ['armor'],
 			'levels': {
 				1: {
-					'can_get_natural': false,
-					'drop_weight': -1,
+					'can_get_natural': true,
+					'drop_weight': 128,
 					'ability_chance': 100,
 					'x': 5,
 				},
 				2: {
 					'can_get_natural': false,
-					'drop_weight': -1,
+					'drop_weight': 64,
 					'ability_chance': 100,
 					'x': 10,
 				},
 				3: {
 					'can_get_natural': false,
-					'drop_weight': -1,
+					'drop_weight': 32,
 					'ability_chance': 100,
 					'x': 15,
-				},
-				4: {
-					'can_get_natural': false,
-					'drop_weight': -1,
-					'ability_chance': 100,
-					'x': 20,
-				},
-				5: {
-					'can_get_natural': false,
-					'drop_weight': -1,
-					'ability_chance': 100,
-					'x': 25,
 				},
 			}
 		},
 		'seer': {
 			'name': 'Seer',
 			'description': 'Stop the activation of an enemies ability during combat',
-			'type': 'jewerly',
-			'gear_types': ['jewelry'],
+			'type': 'active',
+			'gear_types': ['armor'],
 			'levels': {
 				1: {
-					'can_get_natural': false,
-					'drop_weight': -1,
-					'ability_chance': 30,
-				},
-				2: {
-					'can_get_natural': false,
-					'drop_weight': -1,
-					'ability_chance': 33,
-				},
-				3: {
-					'can_get_natural': false,
-					'drop_weight': -1,
-					'ability_chance': 36,
-				},
-				4: {
-					'can_get_natural': false,
-					'drop_weight': -1,
-					'ability_chance': 39,
-				},
-				5: {
-					'can_get_natural': false,
-					'drop_weight': -1,
-					'ability_chance': 42,
-				},
-				
-			}
-		},
-		'preservation': {
-			'name': 'Preservation',
-			'description': 'Increases healing after a fight by <x>%',
-			'type': 'jewerly',
-			'gear_types': ['jewelry'],
-			'levels': {
-				1: {
-					'can_get_natural': false,
-					'drop_weight': -1,
+					'can_get_natural': true,
+					'drop_weight': 128,
 					'ability_chance': 100,
 					'x': 5,
 				},
 				2: {
 					'can_get_natural': false,
-					'drop_weight': -1,
+					'drop_weight': 64,
 					'ability_chance': 100,
 					'x': 10,
 				},
 				3: {
 					'can_get_natural': false,
-					'drop_weight': -1,
+					'drop_weight': 32,
 					'ability_chance': 100,
 					'x': 15,
 				},
-				4: {
-					'can_get_natural': false,
-					'drop_weight': -1,
+			}
+		},
+		'preservation': {
+			'name': 'Preservation',
+			'description': 'Increases healing after a fight by <x>%',
+			'type': 'active',
+			'gear_types': ['armor'],
+			'levels': {
+				1: {
+					'can_get_natural': true,
+					'drop_weight': 128,
 					'ability_chance': 100,
-					'x': 20,
+					'x': 5,
 				},
-				5: {
+				2: {
 					'can_get_natural': false,
-					'drop_weight': -1,
+					'drop_weight': 64,
 					'ability_chance': 100,
-					'x': 25,
+					'x': 10,
+				},
+				3: {
+					'can_get_natural': false,
+					'drop_weight': 32,
+					'ability_chance': 100,
+					'x': 15,
 				},
 			}
 		},
 		'arcane': {
 			'name': 'Arcane',
 			'description': 'Increases the chance for higher rarity weapons from monsters by <x>%',
-			'type': 'jewerly',
-			'gear_types': ['jewelry'],
+			'type': 'active',
+			'gear_types': ['armor'],
 			'levels': {
 				1: {
-					'can_get_natural': false,
-					'drop_weight': -1,
+					'can_get_natural': true,
+					'drop_weight': 128,
 					'ability_chance': 100,
 					'x': 5,
 				},
 				2: {
 					'can_get_natural': false,
-					'drop_weight': -1,
+					'drop_weight': 64,
 					'ability_chance': 100,
 					'x': 10,
 				},
 				3: {
 					'can_get_natural': false,
-					'drop_weight': -1,
+					'drop_weight': 32,
 					'ability_chance': 100,
 					'x': 15,
-				},
-				4: {
-					'can_get_natural': false,
-					'drop_weight': -1,
-					'ability_chance': 100,
-					'x': 20,
-				},
-				5: {
-					'can_get_natural': false,
-					'drop_weight': -1,
-					'ability_chance': 100,
-					'x': 25,
 				},
 			}
 		},

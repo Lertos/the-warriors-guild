@@ -54,7 +54,6 @@ func load_hero_sections(index: int, hero_info):
 	
 	get_node('parent_vbox/margin/stats/stats').load_hero_stats_section(hero_info)
 	get_node('parent_vbox/margin/gear/gear').load_hero_gear_section()
-	get_node('parent_vbox/margin/talents/talents').load_hero_talents_section(index, hero_info)
 	
 	switch_sections(0)
 

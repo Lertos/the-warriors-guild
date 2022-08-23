@@ -209,37 +209,6 @@ margin_bottom = 4.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="jeweler" type="VBoxContainer" parent="parent_vbox"]
-visible = false
-margin_top = 829.0
-margin_right = 360.0
-margin_bottom = 955.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource( 5 )
-
-[node name="header" parent="parent_vbox/jeweler" instance=ExtResource( 4 )]
-margin_right = 360.0
-margin_bottom = 118.0
-
-[node name="margin" type="MarginContainer" parent="parent_vbox/jeweler"]
-margin_top = 122.0
-margin_right = 360.0
-margin_bottom = 126.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/margin_right = 4
-custom_constants/margin_top = 4
-custom_constants/margin_left = 4
-
-[node name="vbox" type="VBoxContainer" parent="parent_vbox/jeweler/margin"]
-margin_left = 4.0
-margin_top = 4.0
-margin_right = 356.0
-margin_bottom = 4.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
 [node name="carpenter" type="VBoxContainer" parent="parent_vbox"]
 visible = false
 margin_top = 961.0

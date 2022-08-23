@@ -2,7 +2,7 @@ extends Node
 
 const MAX_REROLL_ATTEMPTS = 6
 
-var categories = ['weapon', 'armor', 'jewelry']
+var categories = ['weapon', 'armor']
 
 var abilities = {}
 var modifiers = {}

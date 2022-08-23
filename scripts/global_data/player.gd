@@ -89,14 +89,6 @@ var player = {
 				
 			],
 		},
-		#Types: necklace, ring
-		'jewelry': {
-			'unlocked': 10,
-			'max': 30,
-			'slots': [
-				
-			],
-		},
 		#Types: potion
 		'consumables': {
 			'unlocked': 13,

@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://scripts/screens/heroes/screen_heroes.gd" type="Script" id=1]
 [ext_resource path="res://themes/popup.tres" type="StyleBox" id=2]
@@ -19,20 +19,14 @@
 [ext_resource path="res://themes/buttons/button.tres" type="Theme" id=17]
 [ext_resource path="res://assets/materials/material31.png" type="Texture" id=18]
 [ext_resource path="res://scripts/popups/create_hero_popup.gd" type="Script" id=19]
-[ext_resource path="res://assets/icons/upgrade.png" type="Texture" id=20]
 [ext_resource path="res://themes/scrollbar.tres" type="Theme" id=21]
-[ext_resource path="res://scripts/screens/heroes/section_talents.gd" type="Script" id=22]
 [ext_resource path="res://scripts/screens/heroes/section_stats.gd" type="Script" id=23]
 [ext_resource path="res://scenes/stat_module.tscn" type="PackedScene" id=24]
 [ext_resource path="res://scripts/screens/heroes/gear_item_info_popup.gd" type="Script" id=25]
-[ext_resource path="res://assets/icons/health.png" type="Texture" id=28]
-[ext_resource path="res://assets/icons/xp.png" type="Texture" id=29]
 [ext_resource path="res://themes/buttons/button_standalone.tres" type="Theme" id=30]
 [ext_resource path="res://assets/icons/heroes_screen/empty_helmet.png" type="Texture" id=32]
 [ext_resource path="res://assets/icons/heroes_screen/empty_chestplate.png" type="Texture" id=33]
 [ext_resource path="res://assets/icons/heroes_screen/empty_boots.png" type="Texture" id=34]
-[ext_resource path="res://assets/icons/heroes_screen/empty_necklace.png" type="Texture" id=35]
-[ext_resource path="res://assets/icons/heroes_screen/empty_ring.png" type="Texture" id=36]
 [ext_resource path="res://assets/icons/heroes_screen/empty_weapon.png" type="Texture" id=37]
 [ext_resource path="res://assets/icons/heroes_screen/empty_gloves.png" type="Texture" id=38]
 [ext_resource path="res://assets/icons/heroes_screen/empty_potion.png" type="Texture" id=39]
@@ -205,121 +199,14 @@ margin_left = 80.0
 margin_right = 344.0
 margin_bottom = 48.0
 size_flags_horizontal = 3
+alignment = 1
 
-[node name="info1" type="HBoxContainer" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox/vbox"]
+[node name="name" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox/vbox"]
+margin_top = 13.0
 margin_right = 264.0
-margin_bottom = 21.0
-
-[node name="name" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox/vbox/info1"]
-margin_right = 66.0
-margin_bottom = 21.0
+margin_bottom = 34.0
 theme = ExtResource( 3 )
 text = "Lertos"
-
-[node name="left_bracket" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox/vbox/info1"]
-margin_left = 70.0
-margin_right = 78.0
-margin_bottom = 21.0
-theme = ExtResource( 3 )
-text = "["
-
-[node name="level" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox/vbox/info1"]
-margin_left = 82.0
-margin_right = 90.0
-margin_bottom = 21.0
-theme = ExtResource( 3 )
-custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
-text = "1"
-
-[node name="right_bracket" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox/vbox/info1"]
-margin_left = 94.0
-margin_right = 102.0
-margin_bottom = 21.0
-theme = ExtResource( 3 )
-text = "]"
-
-[node name="info2" type="HBoxContainer" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox/vbox"]
-margin_top = 25.0
-margin_right = 264.0
-margin_bottom = 41.0
-custom_constants/separation = 16
-
-[node name="xp" type="HBoxContainer" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox/vbox/info2"]
-margin_right = 85.0
-margin_bottom = 16.0
-
-[node name="img" type="TextureRect" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox/vbox/info2/xp"]
-margin_right = 16.0
-margin_bottom = 16.0
-rect_min_size = Vector2( 16, 16 )
-theme = ExtResource( 7 )
-texture = ExtResource( 29 )
-expand = true
-
-[node name="current_xp" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox/vbox/info2/xp"]
-margin_left = 20.0
-margin_top = 1.0
-margin_right = 44.0
-margin_bottom = 15.0
-theme = ExtResource( 7 )
-custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
-text = "100"
-
-[node name="slash" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox/vbox/info2/xp"]
-margin_left = 48.0
-margin_top = 1.0
-margin_right = 57.0
-margin_bottom = 15.0
-theme = ExtResource( 7 )
-text = "/"
-
-[node name="needed_xp" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox/vbox/info2/xp"]
-margin_left = 61.0
-margin_top = 1.0
-margin_right = 85.0
-margin_bottom = 15.0
-theme = ExtResource( 7 )
-custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
-text = "100"
-
-[node name="health" type="HBoxContainer" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox/vbox/info2"]
-margin_left = 101.0
-margin_right = 186.0
-margin_bottom = 16.0
-
-[node name="img" type="TextureRect" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox/vbox/info2/health"]
-margin_right = 16.0
-margin_bottom = 16.0
-rect_min_size = Vector2( 16, 16 )
-theme = ExtResource( 7 )
-texture = ExtResource( 28 )
-expand = true
-
-[node name="current_health" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox/vbox/info2/health"]
-margin_left = 20.0
-margin_top = 1.0
-margin_right = 44.0
-margin_bottom = 15.0
-theme = ExtResource( 7 )
-custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
-text = "100"
-
-[node name="slash" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox/vbox/info2/health"]
-margin_left = 48.0
-margin_top = 1.0
-margin_right = 57.0
-margin_bottom = 15.0
-theme = ExtResource( 7 )
-text = "/"
-
-[node name="max_health" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox/hbox/vbox/info2/health"]
-margin_left = 61.0
-margin_top = 1.0
-margin_right = 85.0
-margin_bottom = 15.0
-theme = ExtResource( 7 )
-custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
-text = "100"
 
 [node name="spacer2" type="Label" parent="parent_vbox/margin/stats/stats/stats/vbox"]
 margin_top = 52.0
@@ -383,19 +270,19 @@ size_flags_vertical = 3
 
 [node name="gear_slots" type="VBoxContainer" parent="parent_vbox/margin/gear/gear/vbox"]
 margin_right = 344.0
-margin_bottom = 104.0
+margin_bottom = 48.0
 custom_constants/separation = 8
 
-[node name="group1" type="HBoxContainer" parent="parent_vbox/margin/gear/gear/vbox/gear_slots"]
-margin_left = 64.0
-margin_right = 280.0
+[node name="buttons" type="HBoxContainer" parent="parent_vbox/margin/gear/gear/vbox/gear_slots"]
+margin_left = 8.0
+margin_right = 336.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 56, 0 )
 size_flags_horizontal = 4
 size_flags_vertical = 0
 custom_constants/separation = 8
 
-[node name="potion" type="Button" parent="parent_vbox/margin/gear/gear/vbox/gear_slots/group1"]
+[node name="potion" type="Button" parent="parent_vbox/margin/gear/gear/vbox/gear_slots/buttons"]
 margin_right = 48.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 48, 48 )
@@ -405,7 +292,7 @@ theme = ExtResource( 17 )
 icon = ExtResource( 39 )
 expand_icon = true
 
-[node name="weapon" type="Button" parent="parent_vbox/margin/gear/gear/vbox/gear_slots/group1"]
+[node name="weapon" type="Button" parent="parent_vbox/margin/gear/gear/vbox/gear_slots/buttons"]
 margin_left = 56.0
 margin_right = 104.0
 margin_bottom = 48.0
@@ -416,7 +303,7 @@ theme = ExtResource( 17 )
 icon = ExtResource( 37 )
 expand_icon = true
 
-[node name="helmet" type="Button" parent="parent_vbox/margin/gear/gear/vbox/gear_slots/group1"]
+[node name="helmet" type="Button" parent="parent_vbox/margin/gear/gear/vbox/gear_slots/buttons"]
 margin_left = 112.0
 margin_right = 160.0
 margin_bottom = 48.0
@@ -427,7 +314,7 @@ theme = ExtResource( 17 )
 icon = ExtResource( 32 )
 expand_icon = true
 
-[node name="chestplate" type="Button" parent="parent_vbox/margin/gear/gear/vbox/gear_slots/group1"]
+[node name="chestplate" type="Button" parent="parent_vbox/margin/gear/gear/vbox/gear_slots/buttons"]
 margin_left = 168.0
 margin_right = 216.0
 margin_bottom = 48.0
@@ -438,18 +325,9 @@ theme = ExtResource( 17 )
 icon = ExtResource( 33 )
 expand_icon = true
 
-[node name="group2" type="HBoxContainer" parent="parent_vbox/margin/gear/gear/vbox/gear_slots"]
-margin_left = 64.0
-margin_top = 56.0
-margin_right = 280.0
-margin_bottom = 104.0
-rect_min_size = Vector2( 56, 0 )
-size_flags_horizontal = 4
-size_flags_vertical = 0
-custom_constants/separation = 8
-
-[node name="gloves" type="Button" parent="parent_vbox/margin/gear/gear/vbox/gear_slots/group2"]
-margin_right = 48.0
+[node name="gloves" type="Button" parent="parent_vbox/margin/gear/gear/vbox/gear_slots/buttons"]
+margin_left = 224.0
+margin_right = 272.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 48, 48 )
 size_flags_horizontal = 4
@@ -458,9 +336,9 @@ theme = ExtResource( 17 )
 icon = ExtResource( 38 )
 expand_icon = true
 
-[node name="boots" type="Button" parent="parent_vbox/margin/gear/gear/vbox/gear_slots/group2"]
-margin_left = 56.0
-margin_right = 104.0
+[node name="boots" type="Button" parent="parent_vbox/margin/gear/gear/vbox/gear_slots/buttons"]
+margin_left = 280.0
+margin_right = 328.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 48, 48 )
 size_flags_horizontal = 4
@@ -469,36 +347,14 @@ theme = ExtResource( 17 )
 icon = ExtResource( 34 )
 expand_icon = true
 
-[node name="necklace" type="Button" parent="parent_vbox/margin/gear/gear/vbox/gear_slots/group2"]
-margin_left = 112.0
-margin_right = 160.0
-margin_bottom = 48.0
-rect_min_size = Vector2( 48, 48 )
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = ExtResource( 17 )
-icon = ExtResource( 35 )
-expand_icon = true
-
-[node name="ring" type="Button" parent="parent_vbox/margin/gear/gear/vbox/gear_slots/group2"]
-margin_left = 168.0
-margin_right = 216.0
-margin_bottom = 48.0
-rect_min_size = Vector2( 48, 48 )
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = ExtResource( 17 )
-icon = ExtResource( 36 )
-expand_icon = true
-
 [node name="sep" parent="parent_vbox/margin/gear/gear/vbox" instance=ExtResource( 6 )]
-margin_top = 108.0
+margin_top = 52.0
 margin_right = 344.0
-margin_bottom = 112.0
+margin_bottom = 56.0
 custom_styles/panel = SubResource( 2 )
 
 [node name="inventory" type="HBoxContainer" parent="parent_vbox/margin/gear/gear/vbox"]
-margin_top = 116.0
+margin_top = 60.0
 margin_right = 344.0
 margin_bottom = 367.0
 size_flags_horizontal = 3
@@ -506,7 +362,7 @@ size_flags_vertical = 3
 
 [node name="items" type="VBoxContainer" parent="parent_vbox/margin/gear/gear/vbox/inventory"]
 margin_right = 170.0
-margin_bottom = 251.0
+margin_bottom = 307.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -520,7 +376,7 @@ align = 1
 [node name="items" type="ScrollContainer" parent="parent_vbox/margin/gear/gear/vbox/inventory/items"]
 margin_top = 18.0
 margin_right = 170.0
-margin_bottom = 251.0
+margin_bottom = 307.0
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -528,7 +384,7 @@ scroll_horizontal_enabled = false
 
 [node name="vbox" type="VBoxContainer" parent="parent_vbox/margin/gear/gear/vbox/inventory/items/items"]
 margin_right = 170.0
-margin_bottom = 233.0
+margin_bottom = 289.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
@@ -536,7 +392,7 @@ alignment = 1
 [node name="item_info" type="VBoxContainer" parent="parent_vbox/margin/gear/gear/vbox/inventory"]
 margin_left = 174.0
 margin_right = 344.0
-margin_bottom = 251.0
+margin_bottom = 307.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -550,13 +406,13 @@ align = 1
 [node name="vbox" type="VBoxContainer" parent="parent_vbox/margin/gear/gear/vbox/inventory/item_info"]
 margin_top = 18.0
 margin_right = 170.0
-margin_bottom = 251.0
+margin_bottom = 307.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="base_info" type="VBoxContainer" parent="parent_vbox/margin/gear/gear/vbox/inventory/item_info/vbox"]
 margin_right = 170.0
-margin_bottom = 233.0
+margin_bottom = 289.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 0
@@ -620,7 +476,7 @@ autowrap = true
 [node name="abilities" type="VBoxContainer" parent="parent_vbox/margin/gear/gear/vbox/inventory/item_info/vbox/base_info"]
 margin_top = 44.0
 margin_right = 170.0
-margin_bottom = 233.0
+margin_bottom = 289.0
 size_flags_vertical = 3
 custom_constants/separation = 0
 
@@ -659,131 +515,6 @@ rect_min_size = Vector2( 80, 26 )
 size_flags_horizontal = 4
 theme = ExtResource( 41 )
 text = "Info"
-
-[node name="talents" type="MarginContainer" parent="parent_vbox/margin"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 24.0
-custom_constants/margin_right = 8
-custom_constants/margin_top = 8
-custom_constants/margin_left = 8
-
-[node name="talents" type="ScrollContainer" parent="parent_vbox/margin/talents"]
-margin_left = 8.0
-margin_top = 8.0
-margin_right = 352.0
-margin_bottom = 375.0
-mouse_filter = 1
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = ExtResource( 21 )
-scroll_horizontal_enabled = false
-script = ExtResource( 22 )
-
-[node name="vbox" type="VBoxContainer" parent="parent_vbox/margin/talents/talents"]
-margin_right = 344.0
-margin_bottom = 367.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="vbox" type="VBoxContainer" parent="parent_vbox/margin/talents/talents/vbox"]
-margin_right = 352.0
-margin_bottom = 42.0
-
-[node name="talent_points" type="HBoxContainer" parent="parent_vbox/margin/talents/talents/vbox/vbox"]
-margin_right = 352.0
-margin_bottom = 17.0
-custom_constants/separation = 8
-alignment = 1
-
-[node name="amount" type="Label" parent="parent_vbox/margin/talents/talents/vbox/vbox/talent_points"]
-margin_left = 72.0
-margin_right = 82.0
-margin_bottom = 17.0
-custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
-text = "4"
-
-[node name="label" type="Label" parent="parent_vbox/margin/talents/talents/vbox/vbox/talent_points"]
-margin_left = 90.0
-margin_right = 279.0
-margin_bottom = 17.0
-text = "Available Talent Points"
-
-[node name="buttons" type="HBoxContainer" parent="parent_vbox/margin/talents/talents/vbox/vbox"]
-margin_top = 21.0
-margin_right = 352.0
-margin_bottom = 42.0
-alignment = 1
-
-[node name="confirm" type="Button" parent="parent_vbox/margin/talents/talents/vbox/vbox/buttons"]
-margin_left = 31.0
-margin_right = 155.0
-margin_bottom = 21.0
-theme = ExtResource( 17 )
-text = "Confirm Points"
-
-[node name="undo" type="Button" parent="parent_vbox/margin/talents/talents/vbox/vbox/buttons"]
-margin_left = 159.0
-margin_right = 205.0
-margin_bottom = 21.0
-theme = ExtResource( 17 )
-text = "Undo"
-
-[node name="reset" type="Button" parent="parent_vbox/margin/talents/talents/vbox/vbox/buttons"]
-margin_left = 209.0
-margin_right = 320.0
-margin_bottom = 21.0
-theme = ExtResource( 17 )
-text = "Reset Points"
-
-[node name="sep3" parent="parent_vbox/margin/talents/talents/vbox" instance=ExtResource( 6 )]
-margin_top = 46.0
-margin_right = 352.0
-margin_bottom = 50.0
-custom_styles/panel = SubResource( 1 )
-
-[node name="hbox" type="HBoxContainer" parent="parent_vbox/margin/talents/talents/vbox"]
-margin_top = 54.0
-margin_right = 352.0
-margin_bottom = 54.0
-custom_constants/separation = 8
-
-[node name="amounts" type="VBoxContainer" parent="parent_vbox/margin/talents/talents/vbox/hbox"]
-alignment = 1
-
-[node name="default" type="Label" parent="parent_vbox/margin/talents/talents/vbox/hbox/amounts"]
-visible = false
-margin_bottom = 32.0
-size_flags_horizontal = 3
-size_flags_vertical = 7
-custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
-valign = 1
-
-[node name="buttons" type="VBoxContainer" parent="parent_vbox/margin/talents/talents/vbox/hbox"]
-margin_left = 8.0
-margin_right = 8.0
-
-[node name="default" type="Button" parent="parent_vbox/margin/talents/talents/vbox/hbox/buttons"]
-visible = false
-margin_right = 32.0
-margin_bottom = 32.0
-rect_min_size = Vector2( 32, 32 )
-theme = ExtResource( 17 )
-icon = ExtResource( 20 )
-expand_icon = true
-
-[node name="descriptions" type="VBoxContainer" parent="parent_vbox/margin/talents/talents/vbox/hbox"]
-margin_left = 16.0
-margin_right = 16.0
-alignment = 1
-
-[node name="default" type="Label" parent="parent_vbox/margin/talents/talents/vbox/hbox/descriptions"]
-visible = false
-margin_bottom = 17.0
-size_flags_horizontal = 3
-size_flags_vertical = 7
-valign = 1
 
 [node name="sep2" parent="parent_vbox" instance=ExtResource( 6 )]
 margin_top = 442.0
@@ -1285,9 +1016,6 @@ shortcut_in_tooltip = false
 action_mode = 0
 text = "CLOSE"
 
-[connection signal="pressed" from="parent_vbox/margin/talents/talents/vbox/vbox/buttons/confirm" to="parent_vbox/margin/talents/talents" method="confirm_spent_points"]
-[connection signal="pressed" from="parent_vbox/margin/talents/talents/vbox/vbox/buttons/undo" to="parent_vbox/margin/talents/talents" method="undo_spent_points"]
-[connection signal="pressed" from="parent_vbox/margin/talents/talents/vbox/vbox/buttons/reset" to="parent_vbox/margin/talents/talents" method="reset_total_points"]
 [connection signal="pressed" from="create_hero_popup/margin/panel/vbox/buttons/hbox/hire_hero" to="create_hero_popup" method="hire_hero_pressed"]
 [connection signal="pressed" from="create_hero_popup/margin/panel/vbox/buttons/hbox/close" to="create_hero_popup" method="close_create_hero_popup"]
 [connection signal="pressed" from="item_info_popup/margin/panel/vbox/close" to="item_info_popup" method="on_close_item_info_popup"]

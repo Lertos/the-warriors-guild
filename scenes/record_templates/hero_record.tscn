@@ -55,42 +55,44 @@ custom_constants/separation = 4
 alignment = 1
 
 [node name="hbox1" type="HBoxContainer" parent="margin/hbox/info"]
-margin_top = 6.0
+margin_top = 15.0
 margin_right = 168.0
-margin_bottom = 20.0
+margin_bottom = 31.0
 
 [node name="name" type="Label" parent="margin/hbox/info/hbox1"]
+margin_top = 1.0
 margin_right = 50.0
-margin_bottom = 14.0
+margin_bottom = 15.0
 theme = ExtResource( 5 )
 text = "Lertos"
 
-[node name="bracket1" type="Label" parent="margin/hbox/info/hbox1"]
+[node name="spacer" type="Label" parent="margin/hbox/info/hbox1"]
 margin_left = 54.0
-margin_right = 60.0
-margin_bottom = 14.0
-theme = ExtResource( 5 )
-text = "["
-
-[node name="lvl" type="Label" parent="margin/hbox/info/hbox1"]
-margin_left = 64.0
-margin_right = 70.0
-margin_bottom = 14.0
+margin_top = 1.0
+margin_right = 54.0
+margin_bottom = 15.0
 theme = ExtResource( 5 )
 custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
-text = "1"
 
-[node name="bracket2" type="Label" parent="margin/hbox/info/hbox1"]
-margin_left = 74.0
-margin_right = 80.0
-margin_bottom = 14.0
+[node name="img" type="TextureRect" parent="margin/hbox/info/hbox1"]
+margin_left = 58.0
+margin_right = 74.0
+margin_bottom = 16.0
+texture = ExtResource( 1 )
+
+[node name="current_health" type="Label" parent="margin/hbox/info/hbox1"]
+margin_left = 78.0
+margin_top = 1.0
+margin_right = 105.0
+margin_bottom = 15.0
 theme = ExtResource( 5 )
-text = "]"
+custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
+text = "323"
 
 [node name="hbox2" type="HBoxContainer" parent="margin/hbox/info"]
-margin_top = 24.0
+margin_top = 35.0
 margin_right = 168.0
-margin_bottom = 38.0
+margin_bottom = 49.0
 
 [node name="label" type="Label" parent="margin/hbox/info/hbox2"]
 margin_right = 60.0
@@ -104,25 +106,6 @@ margin_right = 98.0
 margin_bottom = 14.0
 theme = ExtResource( 5 )
 text = "IDLE"
-
-[node name="hbox3" type="HBoxContainer" parent="margin/hbox/info"]
-margin_top = 42.0
-margin_right = 168.0
-margin_bottom = 58.0
-
-[node name="img" type="TextureRect" parent="margin/hbox/info/hbox3"]
-margin_right = 16.0
-margin_bottom = 16.0
-texture = ExtResource( 1 )
-
-[node name="current_health" type="Label" parent="margin/hbox/info/hbox3"]
-margin_left = 20.0
-margin_top = 1.0
-margin_right = 47.0
-margin_bottom = 15.0
-theme = ExtResource( 5 )
-custom_colors/font_color = Color( 0.937255, 0.980392, 0.352941, 1 )
-text = "323"
 
 [node name="choose" type="Button" parent="margin/hbox"]
 margin_left = 260.0

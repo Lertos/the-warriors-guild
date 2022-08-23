@@ -19,11 +19,4 @@ func fill_hero_base_info(total_stats, hero_info):
 	
 	hero_button.icon = Helper.get_avatar_texture(hero_info['avatar_index'])
 	
-	base_info_node.get_node('info1/name').text = str(hero_info['name'])
-	base_info_node.get_node('info1/level').text = str(hero_info['level'])
-	
-	base_info_node.get_node('info2/xp/current_xp').text = str(hero_info['exp'])
-	base_info_node.get_node('info2/xp/needed_xp').text = str(Helper.get_xp_needed_for_next_level(hero_info['level']))
-	
-	base_info_node.get_node('info2/health/current_health').text = str(hero_info['current_health'])
-	base_info_node.get_node('info2/health/max_health').text = str(total_stats['health'])
+	base_info_node.get_node('name').text = str(hero_info['name'])
