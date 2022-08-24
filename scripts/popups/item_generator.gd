@@ -372,8 +372,9 @@ func are_fields_incorrect(item_dict):
 			
 		#Check for empty values
 		if item_dict[key] == '':
-			print('==ERROR: The ' + key + ' field is empty')
-			return true
+			if key != 'desc':
+				print('==ERROR: The ' + key + ' field is empty')
+				return true
 		
 		#Check for numbers in pure alpha fields
 		if key == 'name' or key == 'sub_type':
