@@ -3619,5 +3619,464 @@ var items = {
 	  "atk_stab":"0",
 	  "max_hit":"1013",
 	  "min_hit":"289"
+   },
+   "cloth_helmet":{
+	  "name":"Cloth Helmet",
+	  "img_path":"gear/armor/helmet (1)",
+	  "desc":"A helmet made from cloth",
+	  "type":"armor",
+	  "sub_type":"helmet",
+	  "buy_price":"79",
+	  "sell_price":"198",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":"188",
+	  "def_crush":"188",
+	  "def_slash":"188",
+	  "health":"0",
+	  "dmg_reduc":"0"
+   },
+   "cloth_chestplate":{
+	  "name":"Cloth Chestplate",
+	  "img_path":"gear/armor/chestplate (1)",
+	  "desc":"A chestplate made from cloth",
+	  "type":"armor",
+	  "sub_type":"chestplate",
+	  "buy_price":"118",
+	  "sell_price":"295",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":"235",
+	  "def_crush":"235",
+	  "def_slash":"235",
+	  "health":"0",
+	  "dmg_reduc":"0"
+   },
+   "cloth_gloves":{
+	  "name":"Cloth Gloves",
+	  "img_path":"gear/armor/gloves (1)",
+	  "desc":"Gloves made from cloth",
+	  "type":"armor",
+	  "sub_type":"gloves",
+	  "buy_price":"49",
+	  "sell_price":"122",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":"141",
+	  "def_crush":"141",
+	  "def_slash":"141",
+	  "health":"0",
+	  "dmg_reduc":"0"
+   },
+   "leather_helmet":{
+	  "name":"Leather Helmet",
+	  "img_path":"gear/armor/helmet (2)",
+	  "desc":"A helmet made from leather",
+	  "type":"armor",
+	  "sub_type":"helmet",
+	  "buy_price":"202",
+	  "sell_price":"505",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":"257",
+	  "def_crush":"257",
+	  "def_slash":"257",
+	  "health":"0",
+	  "dmg_reduc":"0"
+   },
+   "leather_chestplate":{
+	  "name":"Leather Chestplate",
+	  "img_path":"gear/armor/chestplate (2)",
+	  "desc":"A chestplate made from leather",
+	  "type":"armor",
+	  "sub_type":"chestplate",
+	  "buy_price":"291",
+	  "sell_price":"728",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":"321",
+	  "def_crush":"321",
+	  "def_slash":"321",
+	  "health":"0",
+	  "dmg_reduc":"0"
+   },
+   "leather_gloves":{
+	  "name":"Leather Gloves",
+	  "img_path":"gear/armor/gloves (2)",
+	  "desc":"Gloves made from leather",
+	  "type":"armor",
+	  "sub_type":"gloves",
+	  "buy_price":"130",
+	  "sell_price":"325",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":"192",
+	  "def_crush":"192",
+	  "def_slash":"192",
+	  "health":"0",
+	  "dmg_reduc":"0"
+   },
+   "hardleather_helmet":{
+	  "name":"Hardleather Helmet",
+	  "img_path":"gear/armor/helmet (3)",
+	  "desc":"A helmet made from hardleather",
+	  "type":"armor",
+	  "sub_type":"helmet",
+	  "buy_price":"415",
+	  "sell_price":"1036",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":"360",
+	  "def_crush":"360",
+	  "def_slash":"360",
+	  "health":"0",
+	  "dmg_reduc":"0"
+   },
+   "hardleather_chestplate":{
+	  "name":"Hardleather Chestplate",
+	  "img_path":"gear/armor/chestplate (3)",
+	  "desc":"A chestplate made from hardleather",
+	  "type":"armor",
+	  "sub_type":"chestplate",
+	  "buy_price":"572",
+	  "sell_price":"1429",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":"450",
+	  "def_crush":"450",
+	  "def_slash":"450",
+	  "health":"0",
+	  "dmg_reduc":"0"
+   },
+   "hardleather_gloves":{
+	  "name":"Hardleather Gloves",
+	  "img_path":"gear/armor/gloves (3)",
+	  "desc":"Gloves made from hardleather",
+	  "type":"armor",
+	  "sub_type":"gloves",
+	  "buy_price":"276",
+	  "sell_price":"689",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":"270",
+	  "def_crush":"270",
+	  "def_slash":"270",
+	  "health":"0",
+	  "dmg_reduc":"0"
+   },
+   "dulite_helmet":{
+	  "name":"Dulite Helmet",
+	  "img_path":"gear/armor/helmet (4)",
+	  "desc":"A helmet made from dulite",
+	  "type":"armor",
+	  "sub_type":"helmet",
+	  "buy_price":"705",
+	  "sell_price":"1762",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":"428",
+	  "def_crush":"428",
+	  "def_slash":"428",
+	  "health":"0",
+	  "dmg_reduc":"0"
+   },
+   "dulite_chestplate":{
+	  "name":"Dulite Chestplate",
+	  "img_path":"gear/armor/chestplate (4)",
+	  "desc":"A chestplate made from dulite",
+	  "type":"armor",
+	  "sub_type":"chestplate",
+	  "buy_price":"954",
+	  "sell_price":"2386",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":"535",
+	  "def_crush":"535",
+	  "def_slash":"535",
+	  "health":"0",
+	  "dmg_reduc":"0"
+   },
+   "dulite_gloves":{
+	  "name":"Dulite Gloves",
+	  "img_path":"gear/armor/gloves (4)",
+	  "desc":"Gloves made from dulite",
+	  "type":"armor",
+	  "sub_type":"gloves",
+	  "buy_price":"482",
+	  "sell_price":"1204",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":"321",
+	  "def_crush":"321",
+	  "def_slash":"321",
+	  "health":"0",
+	  "dmg_reduc":"0"
+   },
+   "midite_helmet":{
+	  "name":"Midite Helmet",
+	  "img_path":"gear/armor/helmet (5)",
+	  "desc":"A helmet made from midite",
+	  "type":"armor",
+	  "sub_type":"helmet",
+	  "buy_price":"1091",
+	  "sell_price":"2728",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":"565",
+	  "def_crush":"565",
+	  "def_slash":"565",
+	  "health":"0",
+	  "dmg_reduc":"0"
+   },
+   "midite_chestplate":{
+	  "name":"Midite Chestplate",
+	  "img_path":"gear/armor/chestplate (5)",
+	  "desc":"A chestplate made from midite",
+	  "type":"armor",
+	  "sub_type":"chestplate",
+	  "buy_price":"1453",
+	  "sell_price":"3633",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":"707",
+	  "def_crush":"707",
+	  "def_slash":"707",
+	  "health":"0",
+	  "dmg_reduc":"0"
+   },
+   "midite_gloves":{
+	  "name":"Midite Gloves",
+	  "img_path":"gear/armor/gloves (5)",
+	  "desc":"Gloves made from midite",
+	  "type":"armor",
+	  "sub_type":"gloves",
+	  "buy_price":"757",
+	  "sell_price":"1892",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":"424",
+	  "def_crush":"424",
+	  "def_slash":"424",
+	  "health":"0",
+	  "dmg_reduc":"0"
+   },
+   "shinite_helmet":{
+	  "name":"Shinite Helmet",
+	  "img_path":"gear/armor/helmet (6)",
+	  "desc":"A helmet made from shinite",
+	  "type":"armor",
+	  "sub_type":"helmet",
+	  "buy_price":"1566",
+	  "sell_price":"3916",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":"771",
+	  "def_crush":"771",
+	  "def_slash":"771",
+	  "health":"0",
+	  "dmg_reduc":"0"
+   },
+   "shinite_chestplate":{
+	  "name":"Shinite Chestplate",
+	  "img_path":"gear/armor/chestplate (6)",
+	  "desc":"A chestplate made from shinite",
+	  "type":"armor",
+	  "sub_type":"chestplate",
+	  "buy_price":"2085",
+	  "sell_price":"5213",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":"964",
+	  "def_crush":"964",
+	  "def_slash":"964",
+	  "health":"0",
+	  "dmg_reduc":"0"
+   },
+   "shinite_gloves":{
+	  "name":"Shinite Gloves",
+	  "img_path":"gear/armor/gloves (6)",
+	  "desc":"Gloves made from shinite",
+	  "type":"armor",
+	  "sub_type":"gloves",
+	  "buy_price":"1104",
+	  "sell_price":"2759",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":"578",
+	  "def_crush":"578",
+	  "def_slash":"578",
+	  "health":"0",
+	  "dmg_reduc":"0"
+   },
+   "desite_helmet":{
+	  "name":"Desite Helmet",
+	  "img_path":"gear/armor/helmet (7)",
+	  "desc":"A helmet made from desite",
+	  "type":"armor",
+	  "sub_type":"helmet",
+	  "buy_price":"2127",
+	  "sell_price":"5317",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":"908",
+	  "def_crush":"908",
+	  "def_slash":"908",
+	  "health":"0",
+	  "dmg_reduc":"0"
+   },
+   "desite_chestplate":{
+	  "name":"Desite Chestplate",
+	  "img_path":"gear/armor/chestplate (7)",
+	  "desc":"A chestplate made from desite",
+	  "type":"armor",
+	  "sub_type":"chestplate",
+	  "buy_price":"2835",
+	  "sell_price":"7087",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":"1135",
+	  "def_crush":"1135",
+	  "def_slash":"1135",
+	  "health":"0",
+	  "dmg_reduc":"0"
+   },
+   "desite_gloves":{
+	  "name":"Desite Gloves",
+	  "img_path":"gear/armor/gloves (7)",
+	  "desc":"Gloves made from desite",
+	  "type":"armor",
+	  "sub_type":"gloves",
+	  "buy_price":"1498",
+	  "sell_price":"3745",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":"681",
+	  "def_crush":"681",
+	  "def_slash":"681",
+	  "health":"0",
+	  "dmg_reduc":"0"
+   },
+   "lavite_helmet":{
+	  "name":"Lavite Helmet",
+	  "img_path":"gear/armor/helmet (8)",
+	  "desc":"A helmet made from lavite",
+	  "type":"armor",
+	  "sub_type":"helmet",
+	  "buy_price":"2793",
+	  "sell_price":"6984",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":"1182",
+	  "def_crush":"1182",
+	  "def_slash":"1182",
+	  "health":"0",
+	  "dmg_reduc":"0"
+   },
+   "lavite_chestplate":{
+	  "name":"Lavite Chestplate",
+	  "img_path":"gear/armor/chestplate (8)",
+	  "desc":"A chestplate made from lavite",
+	  "type":"armor",
+	  "sub_type":"chestplate",
+	  "buy_price":"3643",
+	  "sell_price":"9108",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":"1478",
+	  "def_crush":"1478",
+	  "def_slash":"1478",
+	  "health":"0",
+	  "dmg_reduc":"0"
+   },
+   "lavite_gloves":{
+	  "name":"Lavite Gloves",
+	  "img_path":"gear/armor/gloves (8)",
+	  "desc":"Gloves made from lavite",
+	  "type":"armor",
+	  "sub_type":"gloves",
+	  "buy_price":"2008",
+	  "sell_price":"5021",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":"887",
+	  "def_crush":"887",
+	  "def_slash":"887",
+	  "health":"0",
+	  "dmg_reduc":"0"
+   },
+   "bonite_helmet":{
+	  "name":"Bonite Helmet",
+	  "img_path":"gear/armor/helmet (9)",
+	  "desc":"A helmet made from bonite",
+	  "type":"armor",
+	  "sub_type":"helmet",
+	  "buy_price":"3554",
+	  "sell_price":"8886",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":"1594",
+	  "def_crush":"1594",
+	  "def_slash":"1594",
+	  "health":"0",
+	  "dmg_reduc":"0"
+   },
+   "bonite_chestplate":{
+	  "name":"Bonite Chestplate",
+	  "img_path":"gear/armor/chestplate (9)",
+	  "desc":"A chestplate made from bonite",
+	  "type":"armor",
+	  "sub_type":"chestplate",
+	  "buy_price":"4637",
+	  "sell_price":"11593",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":"1992",
+	  "def_crush":"1992",
+	  "def_slash":"1992",
+	  "health":"0",
+	  "dmg_reduc":"0"
+   },
+   "bonite_gloves":{
+	  "name":"Bonite Gloves",
+	  "img_path":"gear/armor/gloves (9)",
+	  "desc":"Gloves made from bonite",
+	  "type":"armor",
+	  "sub_type":"gloves",
+	  "buy_price":"2555",
+	  "sell_price":"6388",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":"1195",
+	  "def_crush":"1195",
+	  "def_slash":"1195",
+	  "health":"0",
+	  "dmg_reduc":"0"
    }
 }
