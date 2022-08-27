@@ -8,7 +8,7 @@ var items = {
 	  "desc":"A sword made from stone",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"40",
+	  "buy_price":"173",
 	  "sell_price":"99",
 	  "abilities":{
 		 
@@ -26,7 +26,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"203",
+	  "buy_price":"887",
 	  "sell_price":"507",
 	  "abilities":{
 		 
@@ -44,7 +44,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"203",
+	  "buy_price":"887",
 	  "sell_price":"507",
 	  "abilities":{
 		 
@@ -62,7 +62,7 @@ var items = {
 	  "desc":"A sword made from bloodstone",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"105",
+	  "buy_price":"457",
 	  "sell_price":"261",
 	  "abilities":{
 		 
@@ -80,7 +80,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"471",
+	  "buy_price":"2063",
 	  "sell_price":"1179",
 	  "abilities":{
 		 
@@ -98,7 +98,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"471",
+	  "buy_price":"2063",
 	  "sell_price":"1179",
 	  "abilities":{
 		 
@@ -116,7 +116,7 @@ var items = {
 	  "desc":"A sword made from soulstone",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"225",
+	  "buy_price":"984",
 	  "sell_price":"562",
 	  "abilities":{
 		 
@@ -134,7 +134,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"880",
+	  "buy_price":"3850",
 	  "sell_price":"2200",
 	  "abilities":{
 		 
@@ -152,7 +152,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"880",
+	  "buy_price":"3850",
 	  "sell_price":"2200",
 	  "abilities":{
 		 
@@ -170,7 +170,7 @@ var items = {
 	  "desc":"A sword made from dulite",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"391",
+	  "buy_price":"1712",
 	  "sell_price":"978",
 	  "abilities":{
 		 
@@ -188,7 +188,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"1436",
+	  "buy_price":"6281",
 	  "sell_price":"3589",
 	  "abilities":{
 		 
@@ -206,7 +206,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"1436",
+	  "buy_price":"6281",
 	  "sell_price":"3589",
 	  "abilities":{
 		 
@@ -224,7 +224,7 @@ var items = {
 	  "desc":"A sword made from midite",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"612",
+	  "buy_price":"2676",
 	  "sell_price":"1529",
 	  "abilities":{
 		 
@@ -242,7 +242,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"2145",
+	  "buy_price":"9384",
 	  "sell_price":"5362",
 	  "abilities":{
 		 
@@ -260,7 +260,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"2145",
+	  "buy_price":"9384",
 	  "sell_price":"5362",
 	  "abilities":{
 		 
@@ -278,7 +278,7 @@ var items = {
 	  "desc":"A sword made from shinite",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"888",
+	  "buy_price":"3885",
 	  "sell_price":"2220",
 	  "abilities":{
 		 
@@ -296,7 +296,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"2960",
+	  "buy_price":"12948",
 	  "sell_price":"7399",
 	  "abilities":{
 		 
@@ -314,7 +314,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"2960",
+	  "buy_price":"12948",
 	  "sell_price":"7399",
 	  "abilities":{
 		 
@@ -332,7 +332,7 @@ var items = {
 	  "desc":"A sword made from desite",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"1248",
+	  "buy_price":"5460",
 	  "sell_price":"3120",
 	  "abilities":{
 		 
@@ -350,7 +350,7 @@ var items = {
 	  "desc":"A sword made from elecdesite",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"4017",
+	  "buy_price":"17577",
 	  "sell_price":"10044",
 	  "abilities":{
 		 
@@ -368,7 +368,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"4017",
+	  "buy_price":"17577",
 	  "sell_price":"10044",
 	  "abilities":{
 		 
@@ -386,7 +386,7 @@ var items = {
 	  "desc":"A sword made from lavite",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"1636",
+	  "buy_price":"7159",
 	  "sell_price":"4091",
 	  "abilities":{
 		 
@@ -404,7 +404,7 @@ var items = {
 	  "desc":"A sword made from blazite",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"5159",
+	  "buy_price":"22572",
 	  "sell_price":"12898",
 	  "abilities":{
 		 
@@ -422,7 +422,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"5159",
+	  "buy_price":"22572",
 	  "sell_price":"12898",
 	  "abilities":{
 		 
@@ -440,7 +440,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"5159",
+	  "buy_price":"22572",
 	  "sell_price":"12898",
 	  "abilities":{
 		 
@@ -458,7 +458,7 @@ var items = {
 	  "desc":"A sword made from bonite",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"2129",
+	  "buy_price":"9315",
 	  "sell_price":"5323",
 	  "abilities":{
 		 
@@ -476,7 +476,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"6575",
+	  "buy_price":"28766",
 	  "sell_price":"16438",
 	  "abilities":{
 		 
@@ -494,7 +494,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"6575",
+	  "buy_price":"28766",
 	  "sell_price":"16438",
 	  "abilities":{
 		 
@@ -512,7 +512,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"6575",
+	  "buy_price":"28766",
 	  "sell_price":"16438",
 	  "abilities":{
 		 
@@ -530,7 +530,7 @@ var items = {
 	  "desc":"A sword made from twisted",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"2621",
+	  "buy_price":"11466",
 	  "sell_price":"6552",
 	  "abilities":{
 		 
@@ -548,7 +548,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"8112",
+	  "buy_price":"35492",
 	  "sell_price":"20281",
 	  "abilities":{
 		 
@@ -566,7 +566,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"8112",
+	  "buy_price":"35492",
 	  "sell_price":"20281",
 	  "abilities":{
 		 
@@ -584,7 +584,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"8112",
+	  "buy_price":"35492",
 	  "sell_price":"20281",
 	  "abilities":{
 		 
@@ -602,7 +602,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"8112",
+	  "buy_price":"35492",
 	  "sell_price":"20281",
 	  "abilities":{
 		 
@@ -620,7 +620,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"8112",
+	  "buy_price":"35492",
 	  "sell_price":"20281",
 	  "abilities":{
 		 
@@ -638,7 +638,7 @@ var items = {
 	  "desc":"A dagger made from stone",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"19",
+	  "buy_price":"84",
 	  "sell_price":"48",
 	  "abilities":{
 		 
@@ -656,7 +656,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"203",
+	  "buy_price":"887",
 	  "sell_price":"507",
 	  "abilities":{
 		 
@@ -674,7 +674,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"203",
+	  "buy_price":"887",
 	  "sell_price":"507",
 	  "abilities":{
 		 
@@ -692,7 +692,7 @@ var items = {
 	  "desc":"A dagger made from bloodstone",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"53",
+	  "buy_price":"231",
 	  "sell_price":"132",
 	  "abilities":{
 		 
@@ -710,7 +710,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"471",
+	  "buy_price":"2063",
 	  "sell_price":"1179",
 	  "abilities":{
 		 
@@ -728,7 +728,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"471",
+	  "buy_price":"2063",
 	  "sell_price":"1179",
 	  "abilities":{
 		 
@@ -746,7 +746,7 @@ var items = {
 	  "desc":"A dagger made from soulstone",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"119",
+	  "buy_price":"520",
 	  "sell_price":"297",
 	  "abilities":{
 		 
@@ -764,7 +764,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"880",
+	  "buy_price":"3850",
 	  "sell_price":"2200",
 	  "abilities":{
 		 
@@ -782,7 +782,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"880",
+	  "buy_price":"3850",
 	  "sell_price":"2200",
 	  "abilities":{
 		 
@@ -800,7 +800,7 @@ var items = {
 	  "desc":"A dagger made from dulite",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"214",
+	  "buy_price":"938",
 	  "sell_price":"536",
 	  "abilities":{
 		 
@@ -818,7 +818,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"214",
+	  "buy_price":"938",
 	  "sell_price":"536",
 	  "abilities":{
 		 
@@ -836,7 +836,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"1436",
+	  "buy_price":"6281",
 	  "sell_price":"3589",
 	  "abilities":{
 		 
@@ -854,7 +854,7 @@ var items = {
 	  "desc":"A dagger made from midite",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"340",
+	  "buy_price":"1488",
 	  "sell_price":"850",
 	  "abilities":{
 		 
@@ -872,7 +872,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"2145",
+	  "buy_price":"9384",
 	  "sell_price":"5362",
 	  "abilities":{
 		 
@@ -890,7 +890,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"2145",
+	  "buy_price":"9384",
 	  "sell_price":"5362",
 	  "abilities":{
 		 
@@ -908,7 +908,7 @@ var items = {
 	  "desc":"A dagger made from shinite",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"502",
+	  "buy_price":"2194",
 	  "sell_price":"1254",
 	  "abilities":{
 		 
@@ -926,7 +926,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"2960",
+	  "buy_price":"12948",
 	  "sell_price":"7399",
 	  "abilities":{
 		 
@@ -944,7 +944,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"2960",
+	  "buy_price":"12948",
 	  "sell_price":"7399",
 	  "abilities":{
 		 
@@ -962,7 +962,7 @@ var items = {
 	  "desc":"A dagger made from desite",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"704",
+	  "buy_price":"3080",
 	  "sell_price":"1760",
 	  "abilities":{
 		 
@@ -980,7 +980,7 @@ var items = {
 	  "desc":"A dagger made from elecdesite",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"4017",
+	  "buy_price":"17577",
 	  "sell_price":"10044",
 	  "abilities":{
 		 
@@ -998,7 +998,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"4017",
+	  "buy_price":"17577",
 	  "sell_price":"10044",
 	  "abilities":{
 		 
@@ -1016,7 +1016,7 @@ var items = {
 	  "desc":"A dagger made from lavite",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"942",
+	  "buy_price":"4121",
 	  "sell_price":"2355",
 	  "abilities":{
 		 
@@ -1034,7 +1034,7 @@ var items = {
 	  "desc":"A dagger made from blazite",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"5159",
+	  "buy_price":"22572",
 	  "sell_price":"12898",
 	  "abilities":{
 		 
@@ -1052,7 +1052,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"5159",
+	  "buy_price":"22572",
 	  "sell_price":"12898",
 	  "abilities":{
 		 
@@ -1070,7 +1070,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"5159",
+	  "buy_price":"22572",
 	  "sell_price":"12898",
 	  "abilities":{
 		 
@@ -1088,7 +1088,7 @@ var items = {
 	  "desc":"A dagger made from bonite",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"1196",
+	  "buy_price":"5232",
 	  "sell_price":"2990",
 	  "abilities":{
 		 
@@ -1106,7 +1106,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"6575",
+	  "buy_price":"28766",
 	  "sell_price":"16438",
 	  "abilities":{
 		 
@@ -1124,7 +1124,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"6575",
+	  "buy_price":"28766",
 	  "sell_price":"16438",
 	  "abilities":{
 		 
@@ -1142,7 +1142,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"6575",
+	  "buy_price":"28766",
 	  "sell_price":"16438",
 	  "abilities":{
 		 
@@ -1160,7 +1160,7 @@ var items = {
 	  "desc":"A dagger made from twisted",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"1507",
+	  "buy_price":"6596",
 	  "sell_price":"3769",
 	  "abilities":{
 		 
@@ -1178,7 +1178,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"8112",
+	  "buy_price":"35492",
 	  "sell_price":"20281",
 	  "abilities":{
 		 
@@ -1196,7 +1196,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"8112",
+	  "buy_price":"35492",
 	  "sell_price":"20281",
 	  "abilities":{
 		 
@@ -1214,7 +1214,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"8112",
+	  "buy_price":"35492",
 	  "sell_price":"20281",
 	  "abilities":{
 		 
@@ -1232,7 +1232,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"8112",
+	  "buy_price":"35492",
 	  "sell_price":"20281",
 	  "abilities":{
 		 
@@ -1250,7 +1250,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"8112",
+	  "buy_price":"35492",
 	  "sell_price":"20281",
 	  "abilities":{
 		 
@@ -1268,7 +1268,7 @@ var items = {
 	  "desc":"A gauntlet made from stone",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"68",
+	  "buy_price":"296",
 	  "sell_price":"169",
 	  "abilities":{
 		 
@@ -1286,7 +1286,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"222",
+	  "buy_price":"973",
 	  "sell_price":"556",
 	  "abilities":{
 		 
@@ -1304,7 +1304,7 @@ var items = {
 	  "desc":"A gauntlet made from bloodstone",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"170",
+	  "buy_price":"746",
 	  "sell_price":"426",
 	  "abilities":{
 		 
@@ -1322,7 +1322,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"525",
+	  "buy_price":"2296",
 	  "sell_price":"1312",
 	  "abilities":{
 		 
@@ -1340,7 +1340,7 @@ var items = {
 	  "desc":"A gauntlet made from soulstone",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"351",
+	  "buy_price":"1535",
 	  "sell_price":"877",
 	  "abilities":{
 		 
@@ -1358,7 +1358,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"973",
+	  "buy_price":"4258",
 	  "sell_price":"2433",
 	  "abilities":{
 		 
@@ -1376,7 +1376,7 @@ var items = {
 	  "desc":"A gauntlet made from dulite",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"600",
+	  "buy_price":"2625",
 	  "sell_price":"1500",
 	  "abilities":{
 		 
@@ -1394,7 +1394,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"1570",
+	  "buy_price":"6869",
 	  "sell_price":"3925",
 	  "abilities":{
 		 
@@ -1412,7 +1412,7 @@ var items = {
 	  "desc":"A gauntlet made from midite",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"925",
+	  "buy_price":"4048",
 	  "sell_price":"2313",
 	  "abilities":{
 		 
@@ -1430,7 +1430,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"2352",
+	  "buy_price":"10290",
 	  "sell_price":"5880",
 	  "abilities":{
 		 
@@ -1448,7 +1448,7 @@ var items = {
 	  "desc":"A gauntlet made from shinite",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"1346",
+	  "buy_price":"5887",
 	  "sell_price":"3364",
 	  "abilities":{
 		 
@@ -1466,7 +1466,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"3252",
+	  "buy_price":"14229",
 	  "sell_price":"8131",
 	  "abilities":{
 		 
@@ -1484,7 +1484,7 @@ var items = {
 	  "desc":"A gauntlet made from desite",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"1823",
+	  "buy_price":"7976",
 	  "sell_price":"4558",
 	  "abilities":{
 		 
@@ -1502,7 +1502,7 @@ var items = {
 	  "desc":"A gauntlet made from elecdesite",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"4326",
+	  "buy_price":"18928",
 	  "sell_price":"10816",
 	  "abilities":{
 		 
@@ -1520,7 +1520,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"4326",
+	  "buy_price":"18928",
 	  "sell_price":"10816",
 	  "abilities":{
 		 
@@ -1538,7 +1538,7 @@ var items = {
 	  "desc":"A gauntlet made from lavite",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"2389",
+	  "buy_price":"10451",
 	  "sell_price":"5972",
 	  "abilities":{
 		 
@@ -1556,7 +1556,7 @@ var items = {
 	  "desc":"A gauntlet made from blazite",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"5699",
+	  "buy_price":"24932",
 	  "sell_price":"14247",
 	  "abilities":{
 		 
@@ -1574,7 +1574,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"5699",
+	  "buy_price":"24932",
 	  "sell_price":"14247",
 	  "abilities":{
 		 
@@ -1592,7 +1592,7 @@ var items = {
 	  "desc":"A gauntlet made from bonite",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"3110",
+	  "buy_price":"13606",
 	  "sell_price":"7775",
 	  "abilities":{
 		 
@@ -1610,7 +1610,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"7081",
+	  "buy_price":"30978",
 	  "sell_price":"17702",
 	  "abilities":{
 		 
@@ -1628,7 +1628,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"7081",
+	  "buy_price":"30978",
 	  "sell_price":"17702",
 	  "abilities":{
 		 
@@ -1646,7 +1646,7 @@ var items = {
 	  "desc":"A gauntlet made from twisted",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"3829",
+	  "buy_price":"16753",
 	  "sell_price":"9573",
 	  "abilities":{
 		 
@@ -1664,7 +1664,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"8736",
+	  "buy_price":"38222",
 	  "sell_price":"21841",
 	  "abilities":{
 		 
@@ -1682,7 +1682,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"8736",
+	  "buy_price":"38222",
 	  "sell_price":"21841",
 	  "abilities":{
 		 
@@ -1700,7 +1700,7 @@ var items = {
 	  "desc":"An axe made from stone",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"149",
+	  "buy_price":"651",
 	  "sell_price":"372",
 	  "abilities":{
 		 
@@ -1718,7 +1718,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"291",
+	  "buy_price":"1276",
 	  "sell_price":"729",
 	  "abilities":{
 		 
@@ -1736,7 +1736,7 @@ var items = {
 	  "desc":"An axe made from bloodstone",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"354",
+	  "buy_price":"1550",
 	  "sell_price":"886",
 	  "abilities":{
 		 
@@ -1754,7 +1754,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"675",
+	  "buy_price":"2956",
 	  "sell_price":"1689",
 	  "abilities":{
 		 
@@ -1772,7 +1772,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"675",
+	  "buy_price":"2956",
 	  "sell_price":"1689",
 	  "abilities":{
 		 
@@ -1790,7 +1790,7 @@ var items = {
 	  "desc":"An axe made from soulstone",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"676",
+	  "buy_price":"2958",
 	  "sell_price":"1690",
 	  "abilities":{
 		 
@@ -1808,7 +1808,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"1228",
+	  "buy_price":"5371",
 	  "sell_price":"3069",
 	  "abilities":{
 		 
@@ -1826,7 +1826,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"1228",
+	  "buy_price":"5371",
 	  "sell_price":"3069",
 	  "abilities":{
 		 
@@ -1844,7 +1844,7 @@ var items = {
 	  "desc":"An axe made from dulite",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"1121",
+	  "buy_price":"4904",
 	  "sell_price":"2802",
 	  "abilities":{
 		 
@@ -1862,7 +1862,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"1948",
+	  "buy_price":"8522",
 	  "sell_price":"4870",
 	  "abilities":{
 		 
@@ -1880,7 +1880,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"1948",
+	  "buy_price":"8522",
 	  "sell_price":"4870",
 	  "abilities":{
 		 
@@ -1898,7 +1898,7 @@ var items = {
 	  "desc":"An axe made from midite",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"1674",
+	  "buy_price":"7324",
 	  "sell_price":"4185",
 	  "abilities":{
 		 
@@ -1916,7 +1916,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"2868",
+	  "buy_price":"12548",
 	  "sell_price":"7170",
 	  "abilities":{
 		 
@@ -1934,7 +1934,7 @@ var items = {
 	  "desc":"An axe made from shinite",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"2397",
+	  "buy_price":"10486",
 	  "sell_price":"5992",
 	  "abilities":{
 		 
@@ -1952,7 +1952,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"3967",
+	  "buy_price":"17356",
 	  "sell_price":"9918",
 	  "abilities":{
 		 
@@ -1970,7 +1970,7 @@ var items = {
 	  "desc":"An axe made from desite",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"3185",
+	  "buy_price":"13934",
 	  "sell_price":"7962",
 	  "abilities":{
 		 
@@ -1988,7 +1988,7 @@ var items = {
 	  "desc":"An axe made from elecdesite",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"5286",
+	  "buy_price":"23128",
 	  "sell_price":"13216",
 	  "abilities":{
 		 
@@ -2006,7 +2006,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"5286",
+	  "buy_price":"23128",
 	  "sell_price":"13216",
 	  "abilities":{
 		 
@@ -2024,7 +2024,7 @@ var items = {
 	  "desc":"An axe made from lavite",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"4182",
+	  "buy_price":"18298",
 	  "sell_price":"10456",
 	  "abilities":{
 		 
@@ -2042,7 +2042,7 @@ var items = {
 	  "desc":"An axe made from blazite",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"6805",
+	  "buy_price":"29771",
 	  "sell_price":"17012",
 	  "abilities":{
 		 
@@ -2060,7 +2060,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"6805",
+	  "buy_price":"29771",
 	  "sell_price":"17012",
 	  "abilities":{
 		 
@@ -2078,7 +2078,7 @@ var items = {
 	  "desc":"An axe made from bonite",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"5326",
+	  "buy_price":"23301",
 	  "sell_price":"13315",
 	  "abilities":{
 		 
@@ -2096,7 +2096,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"8458",
+	  "buy_price":"37002",
 	  "sell_price":"21144",
 	  "abilities":{
 		 
@@ -2114,7 +2114,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"8458",
+	  "buy_price":"37002",
 	  "sell_price":"21144",
 	  "abilities":{
 		 
@@ -2132,7 +2132,7 @@ var items = {
 	  "desc":"An axe made from twisted",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"6565",
+	  "buy_price":"28723",
 	  "sell_price":"16413",
 	  "abilities":{
 		 
@@ -2150,7 +2150,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"10446",
+	  "buy_price":"45701",
 	  "sell_price":"26115",
 	  "abilities":{
 		 
@@ -2168,7 +2168,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"10446",
+	  "buy_price":"45701",
 	  "sell_price":"26115",
 	  "abilities":{
 		 
@@ -2186,7 +2186,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"10446",
+	  "buy_price":"45701",
 	  "sell_price":"26115",
 	  "abilities":{
 		 
@@ -2204,7 +2204,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_slash",
 	  "type":"weapon",
-	  "buy_price":"10446",
+	  "buy_price":"45701",
 	  "sell_price":"26115",
 	  "abilities":{
 		 
@@ -2222,7 +2222,7 @@ var items = {
 	  "desc":"A spear made from stone",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"104",
+	  "buy_price":"453",
 	  "sell_price":"259",
 	  "abilities":{
 		 
@@ -2240,7 +2240,7 @@ var items = {
 	  "desc":"A spear made from bloodstone",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"255",
+	  "buy_price":"1113",
 	  "sell_price":"636",
 	  "abilities":{
 		 
@@ -2258,7 +2258,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"612",
+	  "buy_price":"2676",
 	  "sell_price":"1529",
 	  "abilities":{
 		 
@@ -2276,7 +2276,7 @@ var items = {
 	  "desc":"A spear made from soulstone",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"502",
+	  "buy_price":"2198",
 	  "sell_price":"1256",
 	  "abilities":{
 		 
@@ -2294,7 +2294,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"1119",
+	  "buy_price":"4898",
 	  "sell_price":"2799",
 	  "abilities":{
 		 
@@ -2312,7 +2312,7 @@ var items = {
 	  "desc":"A spear made from dulite",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"847",
+	  "buy_price":"3705",
 	  "sell_price":"2117",
 	  "abilities":{
 		 
@@ -2330,7 +2330,7 @@ var items = {
 	  "desc":"A spear made from midite",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"1286",
+	  "buy_price":"5628",
 	  "sell_price":"3216",
 	  "abilities":{
 		 
@@ -2348,7 +2348,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"2639",
+	  "buy_price":"11545",
 	  "sell_price":"6597",
 	  "abilities":{
 		 
@@ -2366,7 +2366,7 @@ var items = {
 	  "desc":"A spear made from shinite",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"1841",
+	  "buy_price":"8055",
 	  "sell_price":"4603",
 	  "abilities":{
 		 
@@ -2384,7 +2384,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"3642",
+	  "buy_price":"15934",
 	  "sell_price":"9105",
 	  "abilities":{
 		 
@@ -2402,7 +2402,7 @@ var items = {
 	  "desc":"A spear made from desite",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"2497",
+	  "buy_price":"10925",
 	  "sell_price":"6243",
 	  "abilities":{
 		 
@@ -2420,7 +2420,7 @@ var items = {
 	  "desc":"A spear made from elecdesite",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"4841",
+	  "buy_price":"21178",
 	  "sell_price":"12102",
 	  "abilities":{
 		 
@@ -2438,7 +2438,7 @@ var items = {
 	  "desc":"A spear made from lavite",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"3279",
+	  "buy_price":"14345",
 	  "sell_price":"8197",
 	  "abilities":{
 		 
@@ -2456,7 +2456,7 @@ var items = {
 	  "desc":"A spear made from blazite",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"6216",
+	  "buy_price":"27195",
 	  "sell_price":"15540",
 	  "abilities":{
 		 
@@ -2474,7 +2474,7 @@ var items = {
 	  "desc":"A spear made from bonite",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"4173",
+	  "buy_price":"18260",
 	  "sell_price":"10434",
 	  "abilities":{
 		 
@@ -2492,7 +2492,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"7929",
+	  "buy_price":"34690",
 	  "sell_price":"19823",
 	  "abilities":{
 		 
@@ -2510,7 +2510,7 @@ var items = {
 	  "desc":"A spear made from twisted",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"5141",
+	  "buy_price":"22493",
 	  "sell_price":"12853",
 	  "abilities":{
 		 
@@ -2528,7 +2528,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"9793",
+	  "buy_price":"42845",
 	  "sell_price":"24483",
 	  "abilities":{
 		 
@@ -2546,7 +2546,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_stab",
 	  "type":"weapon",
-	  "buy_price":"9793",
+	  "buy_price":"42845",
 	  "sell_price":"24483",
 	  "abilities":{
 		 
@@ -2564,7 +2564,7 @@ var items = {
 	  "desc":"A maul made from stone",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"165",
+	  "buy_price":"721",
 	  "sell_price":"412",
 	  "abilities":{
 		 
@@ -2582,7 +2582,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"291",
+	  "buy_price":"1276",
 	  "sell_price":"729",
 	  "abilities":{
 		 
@@ -2600,7 +2600,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"291",
+	  "buy_price":"1276",
 	  "sell_price":"729",
 	  "abilities":{
 		 
@@ -2618,7 +2618,7 @@ var items = {
 	  "desc":"A maul made from bloodstone",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"399",
+	  "buy_price":"1745",
 	  "sell_price":"997",
 	  "abilities":{
 		 
@@ -2636,7 +2636,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"675",
+	  "buy_price":"2956",
 	  "sell_price":"1689",
 	  "abilities":{
 		 
@@ -2654,7 +2654,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"675",
+	  "buy_price":"2956",
 	  "sell_price":"1689",
 	  "abilities":{
 		 
@@ -2672,7 +2672,7 @@ var items = {
 	  "desc":"A maul made from soulstone",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"756",
+	  "buy_price":"3309",
 	  "sell_price":"1891",
 	  "abilities":{
 		 
@@ -2690,7 +2690,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"1228",
+	  "buy_price":"5371",
 	  "sell_price":"3069",
 	  "abilities":{
 		 
@@ -2708,7 +2708,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"1228",
+	  "buy_price":"5371",
 	  "sell_price":"3069",
 	  "abilities":{
 		 
@@ -2726,7 +2726,7 @@ var items = {
 	  "desc":"A maul made from dulite",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"1241",
+	  "buy_price":"5428",
 	  "sell_price":"3102",
 	  "abilities":{
 		 
@@ -2744,7 +2744,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"1948",
+	  "buy_price":"8522",
 	  "sell_price":"4870",
 	  "abilities":{
 		 
@@ -2762,7 +2762,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"1948",
+	  "buy_price":"8522",
 	  "sell_price":"4870",
 	  "abilities":{
 		 
@@ -2780,7 +2780,7 @@ var items = {
 	  "desc":"A maul made from midite",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"1890",
+	  "buy_price":"8270",
 	  "sell_price":"4726",
 	  "abilities":{
 		 
@@ -2798,7 +2798,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"2868",
+	  "buy_price":"12548",
 	  "sell_price":"7170",
 	  "abilities":{
 		 
@@ -2816,7 +2816,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"2868",
+	  "buy_price":"12548",
 	  "sell_price":"7170",
 	  "abilities":{
 		 
@@ -2834,7 +2834,7 @@ var items = {
 	  "desc":"A maul made from shinite",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"2667",
+	  "buy_price":"11669",
 	  "sell_price":"6668",
 	  "abilities":{
 		 
@@ -2852,7 +2852,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"3967",
+	  "buy_price":"17356",
 	  "sell_price":"9918",
 	  "abilities":{
 		 
@@ -2870,7 +2870,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"3967",
+	  "buy_price":"17356",
 	  "sell_price":"9918",
 	  "abilities":{
 		 
@@ -2888,7 +2888,7 @@ var items = {
 	  "desc":"A maul made from desite",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"3552",
+	  "buy_price":"15538",
 	  "sell_price":"8879",
 	  "abilities":{
 		 
@@ -2906,7 +2906,7 @@ var items = {
 	  "desc":"A maul made from elecdesite",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"5286",
+	  "buy_price":"23128",
 	  "sell_price":"13216",
 	  "abilities":{
 		 
@@ -2924,7 +2924,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"5286",
+	  "buy_price":"23128",
 	  "sell_price":"13216",
 	  "abilities":{
 		 
@@ -2942,7 +2942,7 @@ var items = {
 	  "desc":"A maul made from lavite",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"4676",
+	  "buy_price":"20459",
 	  "sell_price":"11691",
 	  "abilities":{
 		 
@@ -2960,7 +2960,7 @@ var items = {
 	  "desc":"A maul made from blazite",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"6805",
+	  "buy_price":"29771",
 	  "sell_price":"17012",
 	  "abilities":{
 		 
@@ -2978,7 +2978,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"6805",
+	  "buy_price":"29771",
 	  "sell_price":"17012",
 	  "abilities":{
 		 
@@ -2996,7 +2996,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"6805",
+	  "buy_price":"29771",
 	  "sell_price":"17012",
 	  "abilities":{
 		 
@@ -3014,7 +3014,7 @@ var items = {
 	  "desc":"A maul made from bonite",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"5810",
+	  "buy_price":"25419",
 	  "sell_price":"14525",
 	  "abilities":{
 		 
@@ -3032,7 +3032,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"8458",
+	  "buy_price":"37002",
 	  "sell_price":"21144",
 	  "abilities":{
 		 
@@ -3050,7 +3050,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"8458",
+	  "buy_price":"37002",
 	  "sell_price":"21144",
 	  "abilities":{
 		 
@@ -3068,7 +3068,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"8458",
+	  "buy_price":"37002",
 	  "sell_price":"21144",
 	  "abilities":{
 		 
@@ -3086,7 +3086,7 @@ var items = {
 	  "desc":"A maul made from twisted",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"7162",
+	  "buy_price":"31334",
 	  "sell_price":"17905",
 	  "abilities":{
 		 
@@ -3104,7 +3104,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"10446",
+	  "buy_price":"45701",
 	  "sell_price":"26115",
 	  "abilities":{
 		 
@@ -3122,7 +3122,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"10446",
+	  "buy_price":"45701",
 	  "sell_price":"26115",
 	  "abilities":{
 		 
@@ -3140,7 +3140,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"10446",
+	  "buy_price":"45701",
 	  "sell_price":"26115",
 	  "abilities":{
 		 
@@ -3158,7 +3158,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"10446",
+	  "buy_price":"45701",
 	  "sell_price":"26115",
 	  "abilities":{
 		 
@@ -3176,7 +3176,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"10446",
+	  "buy_price":"45701",
 	  "sell_price":"26115",
 	  "abilities":{
 		 
@@ -3194,7 +3194,7 @@ var items = {
 	  "desc":"Knuckles made from stone",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"68",
+	  "buy_price":"296",
 	  "sell_price":"169",
 	  "abilities":{
 		 
@@ -3212,7 +3212,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"222",
+	  "buy_price":"973",
 	  "sell_price":"556",
 	  "abilities":{
 		 
@@ -3230,7 +3230,7 @@ var items = {
 	  "desc":"Knuckles made from bloodstone",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"170",
+	  "buy_price":"746",
 	  "sell_price":"426",
 	  "abilities":{
 		 
@@ -3248,7 +3248,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"525",
+	  "buy_price":"2296",
 	  "sell_price":"1312",
 	  "abilities":{
 		 
@@ -3266,7 +3266,7 @@ var items = {
 	  "desc":"Knuckles made from soulstone",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"351",
+	  "buy_price":"1535",
 	  "sell_price":"877",
 	  "abilities":{
 		 
@@ -3284,7 +3284,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"973",
+	  "buy_price":"4258",
 	  "sell_price":"2433",
 	  "abilities":{
 		 
@@ -3302,7 +3302,7 @@ var items = {
 	  "desc":"Knuckles made from dulite",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"600",
+	  "buy_price":"2625",
 	  "sell_price":"1500",
 	  "abilities":{
 		 
@@ -3320,7 +3320,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"1570",
+	  "buy_price":"6869",
 	  "sell_price":"3925",
 	  "abilities":{
 		 
@@ -3338,7 +3338,7 @@ var items = {
 	  "desc":"Knuckles made from midite",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"925",
+	  "buy_price":"4048",
 	  "sell_price":"2313",
 	  "abilities":{
 		 
@@ -3356,7 +3356,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"2352",
+	  "buy_price":"10290",
 	  "sell_price":"5880",
 	  "abilities":{
 		 
@@ -3374,7 +3374,7 @@ var items = {
 	  "desc":"Knuckles made from shinite",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"1346",
+	  "buy_price":"5887",
 	  "sell_price":"3364",
 	  "abilities":{
 		 
@@ -3392,7 +3392,7 @@ var items = {
 	  "desc":"Knuckles made from dual",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"3252",
+	  "buy_price":"14229",
 	  "sell_price":"8131",
 	  "abilities":{
 		 
@@ -3410,7 +3410,7 @@ var items = {
 	  "desc":"Knuckles made from desite",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"1823",
+	  "buy_price":"7976",
 	  "sell_price":"4558",
 	  "abilities":{
 		 
@@ -3428,7 +3428,7 @@ var items = {
 	  "desc":"Knuckles made from elecdesite",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"4326",
+	  "buy_price":"18928",
 	  "sell_price":"10816",
 	  "abilities":{
 		 
@@ -3446,7 +3446,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"4326",
+	  "buy_price":"18928",
 	  "sell_price":"10816",
 	  "abilities":{
 		 
@@ -3464,7 +3464,7 @@ var items = {
 	  "desc":"Knuckles made from lavite",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"2389",
+	  "buy_price":"10451",
 	  "sell_price":"5972",
 	  "abilities":{
 		 
@@ -3482,7 +3482,7 @@ var items = {
 	  "desc":"Knuckles made from blazite",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"5699",
+	  "buy_price":"24932",
 	  "sell_price":"14247",
 	  "abilities":{
 		 
@@ -3500,7 +3500,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"5699",
+	  "buy_price":"24932",
 	  "sell_price":"14247",
 	  "abilities":{
 		 
@@ -3518,7 +3518,7 @@ var items = {
 	  "desc":"Knuckles made from bonite",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"3110",
+	  "buy_price":"13606",
 	  "sell_price":"7775",
 	  "abilities":{
 		 
@@ -3536,7 +3536,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"7081",
+	  "buy_price":"30978",
 	  "sell_price":"17702",
 	  "abilities":{
 		 
@@ -3554,7 +3554,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"7081",
+	  "buy_price":"30978",
 	  "sell_price":"17702",
 	  "abilities":{
 		 
@@ -3572,7 +3572,7 @@ var items = {
 	  "desc":"Knuckles made from twisted",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"3829",
+	  "buy_price":"16753",
 	  "sell_price":"9573",
 	  "abilities":{
 		 
@@ -3590,7 +3590,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"8736",
+	  "buy_price":"38222",
 	  "sell_price":"21841",
 	  "abilities":{
 		 
@@ -3608,7 +3608,7 @@ var items = {
 	  "desc":"",
 	  "main_stat":"atk_crush",
 	  "type":"weapon",
-	  "buy_price":"8736",
+	  "buy_price":"38222",
 	  "sell_price":"21841",
 	  "abilities":{
 		 
@@ -3626,14 +3626,14 @@ var items = {
 	  "desc":"A helmet made from cloth",
 	  "type":"armor",
 	  "sub_type":"helmet",
-	  "buy_price":"79",
+	  "buy_price":"346",
 	  "sell_price":"198",
 	  "abilities":{
 		 
 	  },
-	  "def_stab":"188",
-	  "def_crush":"188",
-	  "def_slash":"188",
+	  "def_stab":188,
+	  "def_crush":188,
+	  "def_slash":188,
 	  "health":"0",
 	  "dmg_reduc":"0"
    },
@@ -3643,14 +3643,14 @@ var items = {
 	  "desc":"A chestplate made from cloth",
 	  "type":"armor",
 	  "sub_type":"chestplate",
-	  "buy_price":"118",
+	  "buy_price":"516",
 	  "sell_price":"295",
 	  "abilities":{
 		 
 	  },
-	  "def_stab":"235",
-	  "def_crush":"235",
-	  "def_slash":"235",
+	  "def_stab":235,
+	  "def_crush":235,
+	  "def_slash":235,
 	  "health":"0",
 	  "dmg_reduc":"0"
    },
@@ -3660,14 +3660,31 @@ var items = {
 	  "desc":"Gloves made from cloth",
 	  "type":"armor",
 	  "sub_type":"gloves",
-	  "buy_price":"49",
+	  "buy_price":"214",
 	  "sell_price":"122",
 	  "abilities":{
 		 
 	  },
-	  "def_stab":"141",
-	  "def_crush":"141",
-	  "def_slash":"141",
+	  "def_stab":141,
+	  "def_crush":141,
+	  "def_slash":141,
+	  "health":"0",
+	  "dmg_reduc":"0"
+   },
+   "cloth_boots":{
+	  "name":"Cloth Boots",
+	  "img_path":"gear/armor/boots (1)",
+	  "desc":"Boots made from cloth",
+	  "type":"armor",
+	  "sub_type":"boots",
+	  "buy_price":"114",
+	  "sell_price":"65",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":94,
+	  "def_crush":94,
+	  "def_slash":94,
 	  "health":"0",
 	  "dmg_reduc":"0"
    },
@@ -3677,14 +3694,14 @@ var items = {
 	  "desc":"A helmet made from leather",
 	  "type":"armor",
 	  "sub_type":"helmet",
-	  "buy_price":"202",
+	  "buy_price":"884",
 	  "sell_price":"505",
 	  "abilities":{
 		 
 	  },
-	  "def_stab":"257",
-	  "def_crush":"257",
-	  "def_slash":"257",
+	  "def_stab":257,
+	  "def_crush":257,
+	  "def_slash":257,
 	  "health":"0",
 	  "dmg_reduc":"0"
    },
@@ -3694,14 +3711,14 @@ var items = {
 	  "desc":"A chestplate made from leather",
 	  "type":"armor",
 	  "sub_type":"chestplate",
-	  "buy_price":"291",
+	  "buy_price":"1274",
 	  "sell_price":"728",
 	  "abilities":{
 		 
 	  },
-	  "def_stab":"321",
-	  "def_crush":"321",
-	  "def_slash":"321",
+	  "def_stab":321,
+	  "def_crush":321,
+	  "def_slash":321,
 	  "health":"0",
 	  "dmg_reduc":"0"
    },
@@ -3711,14 +3728,31 @@ var items = {
 	  "desc":"Gloves made from leather",
 	  "type":"armor",
 	  "sub_type":"gloves",
-	  "buy_price":"130",
+	  "buy_price":"569",
 	  "sell_price":"325",
 	  "abilities":{
 		 
 	  },
-	  "def_stab":"192",
-	  "def_crush":"192",
-	  "def_slash":"192",
+	  "def_stab":192,
+	  "def_crush":192,
+	  "def_slash":192,
+	  "health":"0",
+	  "dmg_reduc":"0"
+   },
+   "leather_boots":{
+	  "name":"Leather Boots",
+	  "img_path":"gear/armor/boots (2)",
+	  "desc":"Boots made from leather",
+	  "type":"armor",
+	  "sub_type":"boots",
+	  "buy_price":"322",
+	  "sell_price":"184",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":128,
+	  "def_crush":128,
+	  "def_slash":128,
 	  "health":"0",
 	  "dmg_reduc":"0"
    },
@@ -3728,14 +3762,14 @@ var items = {
 	  "desc":"A helmet made from hardleather",
 	  "type":"armor",
 	  "sub_type":"helmet",
-	  "buy_price":"415",
+	  "buy_price":"1813",
 	  "sell_price":"1036",
 	  "abilities":{
 		 
 	  },
-	  "def_stab":"360",
-	  "def_crush":"360",
-	  "def_slash":"360",
+	  "def_stab":360,
+	  "def_crush":360,
+	  "def_slash":360,
 	  "health":"0",
 	  "dmg_reduc":"0"
    },
@@ -3745,14 +3779,14 @@ var items = {
 	  "desc":"A chestplate made from hardleather",
 	  "type":"armor",
 	  "sub_type":"chestplate",
-	  "buy_price":"572",
+	  "buy_price":"2501",
 	  "sell_price":"1429",
 	  "abilities":{
 		 
 	  },
-	  "def_stab":"450",
-	  "def_crush":"450",
-	  "def_slash":"450",
+	  "def_stab":450,
+	  "def_crush":450,
+	  "def_slash":450,
 	  "health":"0",
 	  "dmg_reduc":"0"
    },
@@ -3762,14 +3796,31 @@ var items = {
 	  "desc":"Gloves made from hardleather",
 	  "type":"armor",
 	  "sub_type":"gloves",
-	  "buy_price":"276",
+	  "buy_price":"1206",
 	  "sell_price":"689",
 	  "abilities":{
 		 
 	  },
-	  "def_stab":"270",
-	  "def_crush":"270",
-	  "def_slash":"270",
+	  "def_stab":270,
+	  "def_crush":270,
+	  "def_slash":270,
+	  "health":"0",
+	  "dmg_reduc":"0"
+   },
+   "hardleather_boots":{
+	  "name":"Hardleather Boots",
+	  "img_path":"gear/armor/boots (3)",
+	  "desc":"Boots made from hardleather",
+	  "type":"armor",
+	  "sub_type":"boots",
+	  "buy_price":"714",
+	  "sell_price":"408",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":180,
+	  "def_crush":180,
+	  "def_slash":180,
 	  "health":"0",
 	  "dmg_reduc":"0"
    },
@@ -3779,14 +3830,14 @@ var items = {
 	  "desc":"A helmet made from dulite",
 	  "type":"armor",
 	  "sub_type":"helmet",
-	  "buy_price":"705",
+	  "buy_price":"3084",
 	  "sell_price":"1762",
 	  "abilities":{
 		 
 	  },
-	  "def_stab":"428",
-	  "def_crush":"428",
-	  "def_slash":"428",
+	  "def_stab":428,
+	  "def_crush":428,
+	  "def_slash":428,
 	  "health":"0",
 	  "dmg_reduc":"0"
    },
@@ -3796,14 +3847,14 @@ var items = {
 	  "desc":"A chestplate made from dulite",
 	  "type":"armor",
 	  "sub_type":"chestplate",
-	  "buy_price":"954",
+	  "buy_price":"4176",
 	  "sell_price":"2386",
 	  "abilities":{
 		 
 	  },
-	  "def_stab":"535",
-	  "def_crush":"535",
-	  "def_slash":"535",
+	  "def_stab":535,
+	  "def_crush":535,
+	  "def_slash":535,
 	  "health":"0",
 	  "dmg_reduc":"0"
    },
@@ -3813,14 +3864,31 @@ var items = {
 	  "desc":"Gloves made from dulite",
 	  "type":"armor",
 	  "sub_type":"gloves",
-	  "buy_price":"482",
+	  "buy_price":"2107",
 	  "sell_price":"1204",
 	  "abilities":{
 		 
 	  },
-	  "def_stab":"321",
-	  "def_crush":"321",
-	  "def_slash":"321",
+	  "def_stab":321,
+	  "def_crush":321,
+	  "def_slash":321,
+	  "health":"0",
+	  "dmg_reduc":"0"
+   },
+   "dulite_boots":{
+	  "name":"Dulite Boots",
+	  "img_path":"gear/armor/boots (4)",
+	  "desc":"Boots made from dulite",
+	  "type":"armor",
+	  "sub_type":"boots",
+	  "buy_price":"1281",
+	  "sell_price":"732",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":214,
+	  "def_crush":214,
+	  "def_slash":214,
 	  "health":"0",
 	  "dmg_reduc":"0"
    },
@@ -3830,14 +3898,14 @@ var items = {
 	  "desc":"A helmet made from midite",
 	  "type":"armor",
 	  "sub_type":"helmet",
-	  "buy_price":"1091",
+	  "buy_price":"4774",
 	  "sell_price":"2728",
 	  "abilities":{
 		 
 	  },
-	  "def_stab":"565",
-	  "def_crush":"565",
-	  "def_slash":"565",
+	  "def_stab":565,
+	  "def_crush":565,
+	  "def_slash":565,
 	  "health":"0",
 	  "dmg_reduc":"0"
    },
@@ -3847,14 +3915,14 @@ var items = {
 	  "desc":"A chestplate made from midite",
 	  "type":"armor",
 	  "sub_type":"chestplate",
-	  "buy_price":"1453",
+	  "buy_price":"6358",
 	  "sell_price":"3633",
 	  "abilities":{
 		 
 	  },
-	  "def_stab":"707",
-	  "def_crush":"707",
-	  "def_slash":"707",
+	  "def_stab":707,
+	  "def_crush":707,
+	  "def_slash":707,
 	  "health":"0",
 	  "dmg_reduc":"0"
    },
@@ -3864,14 +3932,31 @@ var items = {
 	  "desc":"Gloves made from midite",
 	  "type":"armor",
 	  "sub_type":"gloves",
-	  "buy_price":"757",
+	  "buy_price":"3311",
 	  "sell_price":"1892",
 	  "abilities":{
 		 
 	  },
-	  "def_stab":"424",
-	  "def_crush":"424",
-	  "def_slash":"424",
+	  "def_stab":424,
+	  "def_crush":424,
+	  "def_slash":424,
+	  "health":"0",
+	  "dmg_reduc":"0"
+   },
+   "midite_boots":{
+	  "name":"Midite Boots",
+	  "img_path":"gear/armor/boots (5)",
+	  "desc":"Boots made from midite",
+	  "type":"armor",
+	  "sub_type":"boots",
+	  "buy_price":"2042",
+	  "sell_price":"1167",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":282,
+	  "def_crush":282,
+	  "def_slash":282,
 	  "health":"0",
 	  "dmg_reduc":"0"
    },
@@ -3881,14 +3966,14 @@ var items = {
 	  "desc":"A helmet made from shinite",
 	  "type":"armor",
 	  "sub_type":"helmet",
-	  "buy_price":"1566",
+	  "buy_price":"6853",
 	  "sell_price":"3916",
 	  "abilities":{
 		 
 	  },
-	  "def_stab":"771",
-	  "def_crush":"771",
-	  "def_slash":"771",
+	  "def_stab":771,
+	  "def_crush":771,
+	  "def_slash":771,
 	  "health":"0",
 	  "dmg_reduc":"0"
    },
@@ -3898,14 +3983,14 @@ var items = {
 	  "desc":"A chestplate made from shinite",
 	  "type":"armor",
 	  "sub_type":"chestplate",
-	  "buy_price":"2085",
+	  "buy_price":"9123",
 	  "sell_price":"5213",
 	  "abilities":{
 		 
 	  },
-	  "def_stab":"964",
-	  "def_crush":"964",
-	  "def_slash":"964",
+	  "def_stab":964,
+	  "def_crush":964,
+	  "def_slash":964,
 	  "health":"0",
 	  "dmg_reduc":"0"
    },
@@ -3915,14 +4000,31 @@ var items = {
 	  "desc":"Gloves made from shinite",
 	  "type":"armor",
 	  "sub_type":"gloves",
-	  "buy_price":"1104",
+	  "buy_price":"4828",
 	  "sell_price":"2759",
 	  "abilities":{
 		 
 	  },
-	  "def_stab":"578",
-	  "def_crush":"578",
-	  "def_slash":"578",
+	  "def_stab":578,
+	  "def_crush":578,
+	  "def_slash":578,
+	  "health":"0",
+	  "dmg_reduc":"0"
+   },
+   "shinite_boots":{
+	  "name":"Shinite Boots",
+	  "img_path":"gear/armor/boots (6)",
+	  "desc":"Boots made from shinite",
+	  "type":"armor",
+	  "sub_type":"boots",
+	  "buy_price":"2975",
+	  "sell_price":"1700",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":385,
+	  "def_crush":385,
+	  "def_slash":385,
 	  "health":"0",
 	  "dmg_reduc":"0"
    },
@@ -3932,14 +4034,14 @@ var items = {
 	  "desc":"A helmet made from desite",
 	  "type":"armor",
 	  "sub_type":"helmet",
-	  "buy_price":"2127",
+	  "buy_price":"9305",
 	  "sell_price":"5317",
 	  "abilities":{
 		 
 	  },
-	  "def_stab":"908",
-	  "def_crush":"908",
-	  "def_slash":"908",
+	  "def_stab":908,
+	  "def_crush":908,
+	  "def_slash":908,
 	  "health":"0",
 	  "dmg_reduc":"0"
    },
@@ -3949,14 +4051,14 @@ var items = {
 	  "desc":"A chestplate made from desite",
 	  "type":"armor",
 	  "sub_type":"chestplate",
-	  "buy_price":"2835",
+	  "buy_price":"12402",
 	  "sell_price":"7087",
 	  "abilities":{
 		 
 	  },
-	  "def_stab":"1135",
-	  "def_crush":"1135",
-	  "def_slash":"1135",
+	  "def_stab":1135,
+	  "def_crush":1135,
+	  "def_slash":1135,
 	  "health":"0",
 	  "dmg_reduc":"0"
    },
@@ -3966,14 +4068,31 @@ var items = {
 	  "desc":"Gloves made from desite",
 	  "type":"armor",
 	  "sub_type":"gloves",
-	  "buy_price":"1498",
+	  "buy_price":"6554",
 	  "sell_price":"3745",
 	  "abilities":{
 		 
 	  },
-	  "def_stab":"681",
-	  "def_crush":"681",
-	  "def_slash":"681",
+	  "def_stab":681,
+	  "def_crush":681,
+	  "def_slash":681,
+	  "health":"0",
+	  "dmg_reduc":"0"
+   },
+   "desite_boots":{
+	  "name":"Desite Boots",
+	  "img_path":"gear/armor/boots (7)",
+	  "desc":"Boots made from desite",
+	  "type":"armor",
+	  "sub_type":"boots",
+	  "buy_price":"4188",
+	  "sell_price":"2393",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":454,
+	  "def_crush":454,
+	  "def_slash":454,
 	  "health":"0",
 	  "dmg_reduc":"0"
    },
@@ -3983,14 +4102,14 @@ var items = {
 	  "desc":"A helmet made from lavite",
 	  "type":"armor",
 	  "sub_type":"helmet",
-	  "buy_price":"2793",
+	  "buy_price":"12222",
 	  "sell_price":"6984",
 	  "abilities":{
 		 
 	  },
-	  "def_stab":"1182",
-	  "def_crush":"1182",
-	  "def_slash":"1182",
+	  "def_stab":1182,
+	  "def_crush":1182,
+	  "def_slash":1182,
 	  "health":"0",
 	  "dmg_reduc":"0"
    },
@@ -4000,14 +4119,14 @@ var items = {
 	  "desc":"A chestplate made from lavite",
 	  "type":"armor",
 	  "sub_type":"chestplate",
-	  "buy_price":"3643",
+	  "buy_price":"15939",
 	  "sell_price":"9108",
 	  "abilities":{
 		 
 	  },
-	  "def_stab":"1478",
-	  "def_crush":"1478",
-	  "def_slash":"1478",
+	  "def_stab":1478,
+	  "def_crush":1478,
+	  "def_slash":1478,
 	  "health":"0",
 	  "dmg_reduc":"0"
    },
@@ -4017,14 +4136,31 @@ var items = {
 	  "desc":"Gloves made from lavite",
 	  "type":"armor",
 	  "sub_type":"gloves",
-	  "buy_price":"2008",
+	  "buy_price":"8787",
 	  "sell_price":"5021",
 	  "abilities":{
 		 
 	  },
-	  "def_stab":"887",
-	  "def_crush":"887",
-	  "def_slash":"887",
+	  "def_stab":887,
+	  "def_crush":887,
+	  "def_slash":887,
+	  "health":"0",
+	  "dmg_reduc":"0"
+   },
+   "lavite_boots":{
+	  "name":"Lavite Boots",
+	  "img_path":"gear/armor/boots (8)",
+	  "desc":"Boots made from lavite",
+	  "type":"armor",
+	  "sub_type":"boots",
+	  "buy_price":"5495",
+	  "sell_price":"3140",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":591,
+	  "def_crush":591,
+	  "def_slash":591,
 	  "health":"0",
 	  "dmg_reduc":"0"
    },
@@ -4034,14 +4170,14 @@ var items = {
 	  "desc":"A helmet made from bonite",
 	  "type":"armor",
 	  "sub_type":"helmet",
-	  "buy_price":"3554",
+	  "buy_price":"15550",
 	  "sell_price":"8886",
 	  "abilities":{
 		 
 	  },
-	  "def_stab":"1594",
-	  "def_crush":"1594",
-	  "def_slash":"1594",
+	  "def_stab":1594,
+	  "def_crush":1594,
+	  "def_slash":1594,
 	  "health":"0",
 	  "dmg_reduc":"0"
    },
@@ -4051,14 +4187,14 @@ var items = {
 	  "desc":"A chestplate made from bonite",
 	  "type":"armor",
 	  "sub_type":"chestplate",
-	  "buy_price":"4637",
+	  "buy_price":"20288",
 	  "sell_price":"11593",
 	  "abilities":{
 		 
 	  },
-	  "def_stab":"1992",
-	  "def_crush":"1992",
-	  "def_slash":"1992",
+	  "def_stab":1992,
+	  "def_crush":1992,
+	  "def_slash":1992,
 	  "health":"0",
 	  "dmg_reduc":"0"
    },
@@ -4068,14 +4204,31 @@ var items = {
 	  "desc":"Gloves made from bonite",
 	  "type":"armor",
 	  "sub_type":"gloves",
-	  "buy_price":"2555",
+	  "buy_price":"11179",
 	  "sell_price":"6388",
 	  "abilities":{
 		 
 	  },
-	  "def_stab":"1195",
-	  "def_crush":"1195",
-	  "def_slash":"1195",
+	  "def_stab":1195,
+	  "def_crush":1195,
+	  "def_slash":1195,
+	  "health":"0",
+	  "dmg_reduc":"0"
+   },
+   "bonite_boots":{
+	  "name":"Bonite Boots",
+	  "img_path":"gear/armor/boots (9)",
+	  "desc":"Boots made from bonite",
+	  "type":"armor",
+	  "sub_type":"boots",
+	  "buy_price":"7145",
+	  "sell_price":"4083",
+	  "abilities":{
+		 
+	  },
+	  "def_stab":797,
+	  "def_crush":797,
+	  "def_slash":797,
 	  "health":"0",
 	  "dmg_reduc":"0"
    }
