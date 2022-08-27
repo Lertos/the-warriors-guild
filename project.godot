@@ -24,6 +24,7 @@ Global_Colors="*res://scripts/global_data/colors.gd"
 MasterConfig="*res://scripts/global_data/master_config.gd"
 Helper="*res://scripts/global_data/helper.gd"
 ItemHelper="*res://scripts/global_data/item_helper.gd"
+Global_Crafting="*res://scripts/global_data/crafting.gd"
 
 [display]
 
