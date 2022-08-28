@@ -1,7 +1,8 @@
 extends Node
 
 
-var crafting = {
+#Contains recipes for gear (weapons and armor)
+var workbench_recipes = {
    "cloth_helmet":{
 	  "secs_to_craft":"668",
 	  "gold_to_craft":"68",
@@ -1533,4 +1534,17 @@ var crafting = {
 		 "twisted":"3"
 	  }
    }
+}
+
+#Contains alchemy, blacksmith, carpenter recipes
+var vendor_recipes = {
+	'alchemy_recipes': {
+		
+	},
+	'blacksmith_recipes': {
+		
+	},
+	'carpenter_recipes': {
+		
+	}
 }
